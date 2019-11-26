@@ -1,59 +1,126 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/style.css' %}">
+    <link rel="stylesheet" href="assets/css/style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
 </head>
 <body>
 <header>
     <div class="header">
-        <a href="{% url 'ucBusinessSite:landingPage' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
-        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo.png' %}" alt="logo_uc"/>
-        <h6> <a href="#">PT</a>  <a href="#">EN</a></h6>
+        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/>
+        <img id="logo_uc" src="assets/photos/uc_logo.png" alt="logo_uc"/>
+        <h6> <a>PT</a>  <a>EN</a></h6>
     </div>
 </header>
 
-    <div class="menu">
-        <h5>
-            <a href="{% url 'ucBusinessSite:aboutPage' %}"> About us</a>
-            <a>UC Value</a> <img src="{% static 'ucbusinesssite/photos/arrow.png' %}" height="8" width="14"/>
-            <a>UC Invest</a> <img src="{% static 'ucbusinesssite/photos/arrow.png' %}" height="8" width="14"/>
-            <a>UC Partnership</a> <img src="{% static 'ucbusinesssite/photos/arrow.png' %}" height="8" width="14"/>
-            <a href="{% url 'ucBusinessSite:newsPage' %}"> News</a>
-            <a href="#">Contacts</a>
-        </h5>
-    </div>
-
+        <div class="menu">
+            <h5>
+                <a href="about_us.html"> About us</a>
+                <a>UC Value</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
+                <a>UC Invest</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
+                <a>UC Partnership</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
+                <a href="news.html"> News</a>
+                <a>Contacts</a>
+            </h5>
+        </div>
 
     <div class ="logo-anim">
         <div class="ucs">
-            <h2>UC Value</h2>
-            <h2>UC Invest</h2>
-            <h2>UC Partnership</h2>
+          <h2 class="valuetxt"> UC Value</h2>
+          <h2>UC Invest</h2>
+          <h2>UC Partnership</h2>
         </div>
-        <img id="logo_ucb2" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}" height="1661" width="1997"/>
+
+          <video class="value" width="320" height="240">
+          <source src="assets/photos/AZUL_VERDE_FINAL.mp4" type="video/MP4">
+          </video>
+
     </div>
 
     <div class="timeline">
         <div class="rectangle" id="rectangle">
-<!--            <p id="months"> </p>-->
         </div>
     </div>
 
-    <div class="news">
-        <h1>News</h1>
-        <img id="big-arrow" src="{% static 'ucbusinesssite/photos/arrow2.png' %}" height="44" width="113"/>
-        <div class="slider">
-            <img id="new1"/>
-            <img id="new2" />
-        </div>
-        <img id="big-arrow2" src="{% static 'ucbusinesssite/photos/arrow2_.png' %}" height="44" width="113"/>
-    </div>
+    <section id="noticias">
+        <div class="info">
+          <h1>News</h1>
+            <div class="slider">
+                <span id="slider1"></span>
+                <span id="slider2"></span>
 
-    <script src="{% static 'ucbusinesssite/javascript/index.js' %}"></script>
+                  <div class="news">
+                      <div class="txt_new">
+                          <h4>6 de maio</h4>
+                          <h1>Aaaa</h1>
+                      </div>
+                        <img src="assets/photos/foto.png" alt="img1"/>
+                        <div class="rect-new"> </div>
+                  </div>
+                  <div class="news">
+                      <div class="txt_new">
+                          <h4>6 de maio</h4>
+                          <h1>Bbbb</h1>
+                      </div>
+                        <img src="assets/photos/foto.png" alt="img2"/>
+                          <div class="rect-new"> </div>
+                  </div>
+                  <div class="news">
+                      <div class="txt_new">
+                          <h4>6 de maio</h4>
+                          <h1>Cccc</h1>
+                      </div>
+                        <img src="assets/photos/foto.png" alt="img2"/>
+                          <div class="rect-new"> </div>
+                  </div>
+
+</div>
+            <div class="setas">
+                <a href="#slider1" class="back">
+                    <img src='assets/photos/seta_esq.png' alt="seta-esq">
+                </a>
+                <a href="#slider2" class="next">
+                    <img src='assets/photos/seta_dir.png' alt="seta-dir">
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+      <div class="footer-middle">
+        <h1>Let´s stay in contact!</h1>
+      </div>
+
+      <div class="footer-contacts">
+          <h5> Rectory Pólo II
+          <br> R. Luís Reis dos Santos 290,
+          <br>3030-790 Coimbra</h5>
+          <h5><p> ucbusiness@uc.pt </p> </h5>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
+        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
+        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+      </div>
+
+
+    </footer>
+
+    <script src="assets/javascript/index.js"></script>
 
 </body>
 </html>
+<script>
+  var figure = $(".valuetxt").hover( hoverVideo, hideVideo );
+  function hoverVideo() {
+   $(".value").get(0).play();
+  }
+  function hideVideo() {
+    $(".value").get(0).currentTime = 0;
+    $(".value").get(0).pause();
+  }
+</script>
