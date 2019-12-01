@@ -1,120 +1,68 @@
-body {
-    margin: 0;
-}
 
-h1,h2,h3 {
-    font-family: Nexa;
-}
-
-h4,h5,h6 {
-    font-family: "Nexa Light";
-}
-
-
-.header h6 a {
-    align-content: center;
-    padding-left: 5%;
-}
-
-.header h6{
-    padding-right: 5%;
-    padding-left: 90%;
-    margin-top: 0%;
-}
-
-.menu h5{
-    padding-bottom: 50%;
-    z-index: 5;
-    position: relative;
-    padding-top: 4%;
-}
-
-.menu h5 a {
-    padding-left:5%;
-    color: white;
-    text-decoration: none;
-}
-
-.menu h5 a:hover{
-    text-decoration: underline;
-    text-decoration-color:white;
-}
-
-.ucs h2:hover{
+.ucs-title h4:hover{
     text-decoration: underline;
     text-decoration-color:black;
+}
+.ucs-title{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-around;
+    float: left;
 }
 
 .rectangle span{
     font-family: Nexa;
-    color: #29235C;
+    color: var(--color-blue);
 }
+.info-value{
+  display: none;
 
+}
 .news h1{
     padding: 10% 0 5% 5%;
 }
 
-#logo_ucb , #logo_uc  {
-    height: 7%;
-    width: 7%;
+.circulos{
+  display: flex;
+  justify-content: center;
+
 }
 
-#logo_ucb{
-    padding-right: 77%;
-    padding-left: 4%;
+.circ{
+justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ height: 10vh;
+ width: 10vw;
+ text-align: center;
+ display: flex;
+ background-color: var(--color-lightblue);
+ color: white;
+ border: 3px solid #FFF;
+ border-radius: 18px;
+}
+.texto{
+  display: flex;
+  justify-content: space-around;
 }
 
-#logo_uc{
-    padding-right: 4%;
-    padding-bottom: 0;
+#logo-anim{
+    padding: 20vh 10vw 20vh 10vw;
+
 }
-
-.menu {
-    background-image: url("../photos/foto.png");
-    display: block;
-    position: relative;
+.ucs-anim{
+  left: 0;
+  top: 0;
 }
-
-.menu::after{
-    content: '';
-    width: 100%;
-    height: 15%;
-    background: rgba(41, 35, 92, 0.8);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-#logo_ucb2{
-    padding: 15% 10% 15% 10%;
-    height: 25%;
-    width: 25%;
-    display: block;
-}
-
-.ucs{
-    float: left;
-}
-
-.logo-anim{
-    padding-top: 20vh;
-    padding-bottom:20vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.value video:: -webkit-media-controls {
-  float: right;
-
+.value,  .invest, .partnership {
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .rectangle{
     width: 100%;
     height: 200px;
-    background-color: #29235C;
+    background-color: var(--color-blue);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -132,14 +80,18 @@ h4,h5,h6 {
     justify-content: center;
 }
 
+
 .circle:hover{
-    background-color: #1966AB;
+    background-color: var(--color-lightblue);
 }
-.info {
+#news-slider {
     padding: 3% 5% 5% 5%;
     margin: auto;
 }
-
+.ucs-anim video{
+  width:40vw;
+  height: auto;
+}
 .slider {
     padding-top: 3%;
     width: 90vw;
@@ -159,7 +111,7 @@ h4,h5,h6 {
 .rect-new{
   width: 40vw;
   height: 50%;
-  background-color: #29235C;
+  background-color: var(--color-blue);
   opacity: 0.8;
   position: absolute;
   top      : 0;
@@ -179,7 +131,7 @@ h4,h5,h6 {
   position: absolute;
   z-index: 1;
 }
-.setas {
+.arrows {
     display: flex;
     justify-content: space-between;
     margin-top: 4%;
@@ -195,22 +147,4 @@ h4,h5,h6 {
 
 #slider2:target~.news {
     left: -90vw;
-}
-
-/*-------------------FOOTER-------------------*/
-footer{
-  height: auto;
-  background-color: #29235C;
-  padding: 3% 0 3% 5%;
-  color: white;
-}
-.footer-midlle h1{
-  height: auto;
-  width: auto;
-}
-.footer-social{
-  display: flex;
-}
-.footer-social img{
-  padding-right: 1vw;
 }

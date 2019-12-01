@@ -1,0 +1,37 @@
+
+#info{
+padding: 10vh 10vh;
+margin: 0;
+background-size:cover;
+background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/value-back.png");
+}
+
+#circ-services, #circ-tech,#circ-intelec, #circ-projects,#circ-app {
+    background-color: var(--color-yellow);
+    width: 3vw;
+    height: 6vh;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#circ-services:hover,#circ-tech:hover,#circ-intelec:hover,#circ-projects:hover,#rcirc-app:hover{
+  background-color: var(--color-gray);
+}
+.services, .tech , .intelectual, .projects, .application {
+  padding-bottom: 5vh;
+}
+#info h5{
+  color: black;
+  font-size: 1.5em;
+  margin: auto;
+  padding-top: 2vh;
+}
+#txt1,#txt2,#txt3,#txt4,#txt5{
+  display: none;
+  color: black;
+  text-align: justify;
+  padding: 0 40vw 0 2vw;
+  list-style-type: square;
+  line-height: 1.5;
+}
