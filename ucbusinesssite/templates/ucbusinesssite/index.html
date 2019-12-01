@@ -3,49 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>UC Business</title>
 </head>
 <body>
 <header>
     <div class="header">
-        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/>
-        <img id="logo_uc" src="assets/photos/uc_logo.png" alt="logo_uc"/>
-        <h6> <a>PT</a>  <a>EN</a></h6>
+        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png"  alt="logo_ucb"/>
+          <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+          <h6> <a>PT</a>  <a>EN</a></h6>
+
     </div>
 </header>
 
+<section id=navbar>
         <div class="menu">
             <h5>
                 <a href="about_us.html"> About us</a>
-                <a>UC Value</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
-                <a>UC Invest</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
-                <a>UC Partnership</a> <img src="assets/photos/arrow.png" height="8" width="14"/>
+                <a href="ucvalue.html">UC Value</a>
+                <a href="ucinvest.html">UC Invest</a>
+                <a href="ucpartnership.html">UC Partnership</a>
                 <a href="news.html"> News</a>
                 <a>Contacts</a>
             </h5>
         </div>
+  </section>
 
-    <div class ="logo-anim">
-        <div class="ucs">
-          <h2 class="valuetxt"> UC Value</h2>
-          <h2>UC Invest</h2>
-          <h2>UC Partnership</h2>
+  <section id ="logo-anim">
+
+    <div class="texto">
+
+        <div class="ucs-title">
+          <h4 class="value_txt">UC Value <span> | </span> </h4>
+          <h4 class="invest_txt">UC Invest <span> | </span> </h4>
+          <h4 class="partner_txt">UC Partnership</h4>
+
         </div>
 
-          <video class="value" width="320" height="240">
-          <source src="assets/photos/AZUL_VERDE_FINAL.mp4" type="video/MP4">
+        <div class="ucs-info">
+
+          <div class="info-ucb">
+              <h4>Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+                <p class="circulos">
+                  <a class="circ">Large <br> Companies</a>
+                  <a class="circ">National <br> SMEs</a>
+                  <a class="circ">Start-ups and <br> Spin-offs</a>
+                </p>
+              </h4>
+          </div>
+
+            <div class="info-value">
+              <h4>Create short-term value (with financial return) based on existing skills;
+              </h4>
+        </div>
+
+        </div>
+      </div>
+
+        <div class="ucs-anim">
+          <video class="invest">
+          <source src="assets/photos/azul-verde.mp4" type="video/MP4">
           </video>
 
-    </div>
+          <video class="value">
+          <source src="assets/photos/azul-amarelo.mp4" type="video/MP4">
+          </video>
 
-    <div class="timeline">
+          <video class="partnership">
+          <source src="assets/photos/azul-vermelho.mp4" type="video/MP4">
+          </video>
+        </div>
+
+
+
+    </section>
+
+    <section id="timeline">
         <div class="rectangle" id="rectangle">
         </div>
     </div>
 
-    <section id="noticias">
-        <div class="info">
+    <section id="news-slider">
           <h1>News</h1>
             <div class="slider">
                 <span id="slider1"></span>
@@ -65,7 +107,7 @@
                           <h1>Bbbb</h1>
                       </div>
                         <img src="assets/photos/foto.png" alt="img2"/>
-                          <div class="rect-new"> </div>
+                        <div class="rect-new"> </div>
                   </div>
                   <div class="news">
                       <div class="txt_new">
@@ -73,11 +115,19 @@
                           <h1>Cccc</h1>
                       </div>
                         <img src="assets/photos/foto.png" alt="img2"/>
-                          <div class="rect-new"> </div>
+                        <div class="rect-new"> </div>
+                  </div>
+                  <div class="news">
+                      <div class="txt_new">
+                          <h4>6 de maio</h4>
+                          <h1>Cccc</h1>
+                      </div>
+                        <img src="assets/photos/foto.png" alt="img2"/>
+                        <div class="rect-new"> </div>
                   </div>
 
-</div>
-            <div class="setas">
+              </div>
+            <div class="arrows">
                 <a href="#slider1" class="back">
                     <img src='assets/photos/seta_esq.png' alt="seta-esq">
                 </a>
@@ -85,8 +135,6 @@
                     <img src='assets/photos/seta_dir.png' alt="seta-dir">
                 </a>
             </div>
-
-        </div>
     </section>
 
 
@@ -106,7 +154,7 @@
         <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
         <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
       </div>
-
+      <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
 
     </footer>
 
@@ -115,12 +163,48 @@
 </body>
 </html>
 <script>
-  var figure = $(".valuetxt").hover( hoverVideo, hideVideo );
-  function hoverVideo() {
+
+  var figure = $(".value_txt").hover( hoverVideov, hideVideov);
+  var figure = $(".invest_txt").hover(hoverVideoi,hideVideoi);
+  var figure = $(".partner_txt").hover(hoverVideop,hideVideop);
+
+
+  function hoverVideov() {
    $(".value").get(0).play();
+
+   $(".invest").hide();
+   $(".partnership").hide();
   }
-  function hideVideo() {
+  function hideVideov() {
     $(".value").get(0).currentTime = 0;
     $(".value").get(0).pause();
+    //quando sai volta ao tempo 0 e faz pausa
   }
+
+  function hoverVideoi() {
+  $(".invest").show();
+   $(".invest").get(0).play();
+
+   $(".value").hide();
+   $(".partnership").hide();
+  }
+  function hideVideoi() {
+    $(".invest").get(0).currentTime = 0;
+    $(".invest").get(0).pause();
+  }
+
+
+  function hoverVideop() {
+    $(".partnership").show();
+   $(".partnership").get(0).play();
+
+   $(".invest").hide();
+   $(".value").hide();
+  }
+  function hideVideop() {
+    $(".partnership").get(0).currentTime = 0;
+    $(".partnership").get(0).pause();
+  }
+
+
 </script>

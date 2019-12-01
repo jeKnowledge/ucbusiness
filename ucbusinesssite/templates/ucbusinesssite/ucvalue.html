@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/ucvalue.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>UC Business</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/>
+        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <h6> <a>PT</a>  <a>EN</a></h6>
+    </div>
+</header>
+
+        <div class="menu">
+            <h5>
+                <a href="about_us.html"> About us</a>
+                <a href="ucvalue.html">UC Value</a>
+                <a href="ucinvest.html">UC Invest</a>
+                <a href="ucpartnership.html">UC Partnership</a>
+                <a href="news.html"> News</a>
+                <a>Contacts</a>
+            </h5>
+        </div>
+
+    <section id="info">
+
+      <div class="services">
+        <div onclick="clickSpecial()" id="circ-services"></div>
+          <h5> Specialized Services </h5>
+          <p id="txt1">
+              Collaborations, partnerships, networks, with the community at a regional,
+               national and international level, and with contributors from economic, social and cultural sectors,
+               contributing for the dissemination and application of knowledge and thus for development and general well-being.
+          </p>
+        </div>
+
+      <div  class="tech">
+        <div onclick="clickTech()" id="circ-tech"></div>
+          <h5> Technological Platforms </h5>
+          <ul id="txt2">
+            <li>Nuclear Magnetic Resonance Laboratory (NMRL)</li>
+            <li>Coimbra Laser Laboratory (CLL)</li>
+            <li>Infrastructure for Research in Celular and Molecular Systems (IRCMS)</li>
+            <li>Coimbra Cryogenic Facility (CCF)</li>
+            <li>Coimbra Trace Analysis and Imaging Laboratory (TAIL)</li>
+            <li>Biomed III</li>
+            <li>UCGenomics</li>
+            <li>Brain Imaging Network - BIN</li>
+          </ul>
+      </div>
+
+      <div class="intelectual">
+        <div onclick="clickIntelectual()" id="circ-intelec"></div>
+          <h5> Intelectual Property Management </h5>
+          <p id="txt3">
+            GRAFICO
+            m
+            L
+          </p>
+      </div>
+
+      <div class="projects">
+        <div onclick="clickProjects()" id="circ-projects"></div>
+          <h5> Projects with Companies </h5>
+          <p id="txt4">
+            Strengthening the encouragement of projects with companies in national and international partnerships:
+            <br>Organisation of projects by building consortia;
+            <br>Identification of funding programs, side-by-side with the Research Support Office and their fit to research and innovation proposals.
+          </p>
+      </div>
+
+      <div class="application">
+        <div onclick="clickApp()" id="circ-app"></div>
+            <h5> Application Development </h5>
+            <ul id="txt5">
+              Application elaboration service with companies, side-by-side with the Research Support Office:
+              <li>Maximize the results of application processes with companies for competitive financing programs, involving expert consultants;</li>
+              <li>Teams training using technical training for funding programs for the next framework program.</li>
+            </ul>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-middle">
+        <h1>Let´s stay in contact!</h1>
+      </div>
+
+      <div class="footer-contacts">
+          <h5> Rectory Pólo II
+          <br> R. Luís Reis dos Santos 290,
+          <br>3030-790 Coimbra</h5>
+          <h5><p> ucbusiness@uc.pt </p> </h5>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
+        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
+        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+      </div>
+    </footer>
+</body>
+</html>
+<script>
+
+function clickSpecial() {
+  var moreText = document.getElementById("txt1");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+}
+
+function clickTech() {
+  var moreText = document.getElementById("txt2");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+}
+
+function clickIntelectual() {
+  var moreText = document.getElementById("txt3");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+function clickProjects() {
+  var moreText = document.getElementById("txt4");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+function clickApp() {
+  var moreText = document.getElementById("txt5");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+</script>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/ucpartnership.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>UC Business</title>
+</head>
+<body>
+<header>
+    <div class="header">
+        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/>
+        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <h6> <a>PT</a>  <a>EN</a></h6>
+    </div>
+</header>
+
+        <div class="menu">
+            <h5>
+                <a href="about_us.html"> About us</a>
+                <a href="ucvalue.html">UC Value</a>
+                <a href="ucinvest.html">UC Invest</a>
+                <a href="ucpartnership.html">UC Partnership</a>
+                <a href="news.html"> News</a>
+                <a>Contacts</a>
+            </h5>
+        </div>
+
+    <section id="info">
+
+      <div class="incubators">
+        <div onclick="clickIncubators()" id="circ-incubators"></div>
+          <h5> Incubators and Interface Centers </h5>
+          <p id="txt1">
+            Strengthen the relationship with incubators and interface centers,
+            either with a view to promote knowledge transfer via spin-offs and startups or through involvement in innovation projects.
+
+          </p>
+        </div>
+
+      <div  class="patronage">
+        <div onclick="clickPatronage()" id="circ-patronage"></div>
+          <h5> Patronage </h5>
+          <ul id="txt2">
+            Organization of patronage processes through tools such as:
+            <li>Merit scholarships;
+            <li>Chairs;</li>
+            <li>Funded research projects;</li>
+            <li>Investment in the maintenance of our Historical Heritage;</li>
+            <li>Sponsorship of cultural and sports activities.</li>
+
+          </ul>
+      </div>
+
+      <div class="cooperation">
+        <div onclick="clickCooperation()" id="circ-cooperation"></div>
+          <h5> Cooperation Networks </h5>
+          <p id="txt3">
+            Collaboration with various Cooperation Networks and their projects.
+
+          </p>
+      </div>
+
+      <div class="clusters">
+        <div onclick="clickClusters()" id="circ-clusters"></div>
+          <h5> Clusters </h5>
+          <ul id="txt4">
+            <li>Cluster de Competitividade da Petroquímica, Química Industrial e Refinação</li>
+            <li>Cluster do Calçado e Moda</li>
+            <li>Cluster Habitat Sustentável</li>
+            <li>Cluster AED – Aeronáutica, Espaço e Defesa</li>
+            <li>PRODUTECH - Pólo das Tecnologias de Produção</li>
+            <li>Cluster da Plataforma Ferroviária Portuguesa</li>
+            <li>MOBINOV | Cluster Automóvel Portugal</li>
+            <li>Cluster dos Recursos Minerais de Portugal</li>
+            <li>Cluster da Vinha e do Vinho</li>
+            <li>TICE.PT</li>
+            <li>Cluster do Mar Português</li>
+            <li>Cluster Engineering & Tooling</li>
+            <li>Cluster AEC - Arquitetura, Engenharia e Construção</li>
+            <li>Cluster Turismo</li>
+            <li>Cluster Smart Cities Portugal</li>
+            <li>Cluster Têxtil: Tecnologia e Moda</li>
+          </ul>
+      </div>
+
+      <div class="aisep">
+        <div onclick="clickAisep()" id="circ-aisep"></div>
+            <h5> AISEP and Chambers of Commerce </h5>
+            <p id="txt5">
+              Strengthen positioning with AICEP and national
+              Chambers of Commerce by promoting participation in business missions.
+            </p>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-middle">
+        <h1>Let´s stay in contact!</h1>
+      </div>
+
+      <div class="footer-contacts">
+          <h5> Rectory Pólo II
+          <br> R. Luís Reis dos Santos 290,
+          <br>3030-790 Coimbra</h5>
+          <h5><p> ucbusiness@uc.pt </p> </h5>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
+        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
+        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+      </div>
+    </footer>
+</body>
+</html>
+<script>
+
+function clickIncubators() {
+  var moreText = document.getElementById("txt1");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+}
+
+function clickPatronage() {
+  var moreText = document.getElementById("txt2");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+}
+
+function clickCooperation() {
+  var moreText = document.getElementById("txt3");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+function clickClusters() {
+  var moreText = document.getElementById("txt4");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+function clickAisep() {
+  var moreText = document.getElementById("txt5");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+</script>
