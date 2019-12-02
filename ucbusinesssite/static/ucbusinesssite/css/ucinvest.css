@@ -9,7 +9,7 @@ h4{
 #info{
 padding: 10vh 10vh;
 margin: 0;
-background-size:cover;
+background-size:auto;
 background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/invest.png");
 }
 
@@ -30,17 +30,14 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
 }
 #info h1{
   color: black;
-
   margin: auto;
-  padding-top: 2vh;
+  padding: 2vh 0 2vh 0;
 }
 #academica-start-uc, #explorer-uc,#arrisca-c,#inov-c{
   padding-top:5vh;
   padding-bottom: 5vh;
 }
 .photo img{
-  position: relative;
-  z-index: 0;
   height:30vh;
   width: auto;
 }
@@ -49,7 +46,7 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
   display: flex;
 }
 #txt1,#txt2,#txt3,#txt4,#txt5{
-  /* display: none; */
+   display: none;
   color: black;
   text-align: justify;
   padding: 0 20vw 0 2vw;
@@ -65,11 +62,18 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
   width: auto;
 }
 
-.numbers-anim{
+.numbers-anim {
   padding-top: 5vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.list{
+  display: flex;
+  justify-content: flex-start;
+}
+.list #research, .list #type2 , .list #type3{
+  padding-right: 10vw;
 }
 
 .patr img{
