@@ -10,6 +10,9 @@ h1,h2,h3 {
 h4,h5,h6 {
     font-family: "Nexa Light";
 }
+li{
+  list-style: square;
+}
 .header{
   padding: 1vh 3vw 5vh 3vw;
   margin: 0;
@@ -90,9 +93,4 @@ footer{
 }
 .footer-contacts h5{
   text-align: left;
-}
-#ucbranco{
-  float: right;
-  height: 30vh;
-  width: auto;
 }

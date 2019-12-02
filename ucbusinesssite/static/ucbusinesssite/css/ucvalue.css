@@ -6,6 +6,7 @@ background-size:cover;
 background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/value-back.png");
 }
 
+
 #circ-services, #circ-tech,#circ-intelec, #circ-projects,#circ-app {
     background-color: var(--color-yellow);
     width: 3vw;
@@ -14,24 +15,46 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
     display: flex;
     align-items: center;
 }
-
+.services-grid img{
+  width: 10vh;
+  height: auto;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 120px 120px 120px;
+  grid-template-rows: 80px 80px 80px 80px ;
+  grid-gap: 1rem;
+  padding: 5vh 0 0 2vw;
+}
+.intelectual img{
+  height: 60vh;
+  width: auto;
+  padding: 2vh 0 4vh 0;
+}
+.numbers-anim{
+  float: right;
+}
+.number h4, .number h2{
+  line-height: normal;
+  margin: 0;
+  padding-top: 2vh;
+}
 #circ-services:hover,#circ-tech:hover,#circ-intelec:hover,#circ-projects:hover,#rcirc-app:hover{
   background-color: var(--color-gray);
 }
 .services, .tech , .intelectual, .projects, .application {
   padding-bottom: 5vh;
 }
-#info h5{
+#info h1{
   color: black;
   font-size: 1.5em;
   margin: auto;
-  padding-top: 2vh;
+  padding: 2vh 0 4vh 0;
 }
 #txt1,#txt2,#txt3,#txt4,#txt5{
-  display: none;
+  /* display: none; */
   color: black;
   text-align: justify;
-  padding: 0 40vw 0 2vw;
-  list-style-type: square;
+  padding: 0 20vw 0 2vw;
   line-height: 1.5;
 }

@@ -24,17 +24,16 @@ li{
 .incubators, .patronage , .cooperation, .clusters, .aisep {
   padding-bottom: 5vh;
 }
-#info h5{
+#info h1{
   color: black;
-  font-size: 1.5em;
   margin: auto;
   padding-top: 2vh;
 }
 #txt1, #txt2,#txt3,#txt4,#txt5{
-  display: none;
+  /* display: none; */
   color: black;
   text-align: justify;
-  padding: 0 40vw 0 2vw;
+  padding: 0 20vw 0 2vw;
   list-style-type: square;
   line-height: 1.5;
 }
