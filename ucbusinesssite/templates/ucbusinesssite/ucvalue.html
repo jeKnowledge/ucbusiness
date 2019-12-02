@@ -12,7 +12,7 @@
 <body>
 <header>
     <div class="header">
-        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/>
+        <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
         <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
         <h6> <a>PT</a>  <a>EN</a></h6>
     </div>
@@ -33,18 +33,41 @@
 
       <div class="services">
         <div onclick="clickSpecial()" id="circ-services"></div>
-          <h5> Specialized Services </h5>
-          <p id="txt1">
+          <h1> Specialized Services </h1>
+          <div id="txt1">
               Collaborations, partnerships, networks, with the community at a regional,
                national and international level, and with contributors from economic, social and cultural sectors,
                contributing for the dissemination and application of knowledge and thus for development and general well-being.
-          </p>
+               <div class="services-grid">
+                <div class="item item1" ><img src="assets/photos/specialized/altice.png" alt="altice"></div>
+                <div class="item item2"><img src="assets/photos/specialized/arcelor.png" alt="arcelor"></div>
+                <div class="item item3"><img src="assets/photos/specialized/bluepharma.png" alt="bluepharma"></div>
+                <div class="item item4"><img src="assets/photos/specialized/cern.png" alt="cern"></div>
+                <div class="item item5"><img src="assets/photos/specialized/delta.png" alt="delta"></div>
+                <div class="item item6"><img src="assets/photos/specialized/edp.png" alt="edp"></div>
+                <div class="item item7" ><img src="assets/photos/specialized/ergicon.png" alt="2ergicon"></div>
+                <div class="item item8"><img src="assets/photos/specialized/essilor.png" alt="essilor"></div>
+                <div class="item item9"><img src="assets/photos/specialized/feliz.png" alt="ofeliz"></div>
+                <div class="item item10"><img src="assets/photos/specialized/ferpinta.JPG" alt="ferpinta"></div>
+                <div class="item item11"><img src="assets/photos/specialized/martifer.png" alt="martifer"></div>
+                <div class="item item12"><img src="assets/photos/specialized/meo.png" alt="meo"></div>
+                <div class="item item13"><img src="assets/photos/specialized/navigator.png" alt="navigator"></div>
+                <div class="item item14" ><img src="assets/photos/specialized/ogma.png" alt="ogma"></div>
+                <div class="item item15"><img src="assets/photos/specialized/siemens.png" alt="siemens"></div>
+                <div class="item item16"><img src="assets/photos/specialized/sumol.png" alt="sumol"></div>
+                <div class="item item17"><img src="assets/photos/specialized/tata.png" alt="tata"></div>
+                <div class="item item18"><img src="assets/photos/specialized/teixeira.png" alt="teixeira"></div>
+                <div class="item item19"><img src="assets/photos/specialized/vesam.png" alt="vesam"></div>
+
+              </div>
+          </div>
         </div>
 
       <div  class="tech">
         <div onclick="clickTech()" id="circ-tech"></div>
-          <h5> Technological Platforms </h5>
-          <ul id="txt2">
+          <h1> Technological Platforms </h1>
+          <div id="txt2">
+            <ul>
             <li>Nuclear Magnetic Resonance Laboratory (NMRL)</li>
             <li>Coimbra Laser Laboratory (CLL)</li>
             <li>Infrastructure for Research in Celular and Molecular Systems (IRCMS)</li>
@@ -54,31 +77,52 @@
             <li>UCGenomics</li>
             <li>Brain Imaging Network - BIN</li>
           </ul>
+        </div>
       </div>
 
       <div class="intelectual">
         <div onclick="clickIntelectual()" id="circ-intelec"></div>
-          <h5> Intelectual Property Management </h5>
-          <p id="txt3">
-            GRAFICO
-            m
-            L
-          </p>
+          <h1> Intelectual Property Management </h1>
+          <div id="txt3">
+            <img src="assets/photos/chart.png">
+
+            <div class="numbers-anim">
+              <div class="number" data-number= "81">
+                <h2 id="number1">81</h2>
+                  <h4>International</h4>
+              </div>
+
+              <div class="number" data-number= "19">
+                <h2 id="number2">19</h2>
+                  <h4>National</h4>
+              </div>
+
+              <div class="number" data-number= "82">
+                <h2 id="number3">82</h2>
+                  <h4>Accepted</h4>
+              </div>
+
+              <div class="number" data-number= "7">
+                <h2 id="number4">7</h2>
+                  <h4>In Negotiation</h4>
+              </div>
+            </div>
+          </div>
       </div>
 
       <div class="projects">
         <div onclick="clickProjects()" id="circ-projects"></div>
-          <h5> Projects with Companies </h5>
-          <p id="txt4">
+          <h1> Projects with Companies </h1>
+          <div id="txt4">
             Strengthening the encouragement of projects with companies in national and international partnerships:
             <br>Organisation of projects by building consortia;
             <br>Identification of funding programs, side-by-side with the Research Support Office and their fit to research and innovation proposals.
-          </p>
+          </div>
       </div>
 
       <div class="application">
         <div onclick="clickApp()" id="circ-app"></div>
-            <h5> Application Development </h5>
+            <h1> Application Development </h1>
             <ul id="txt5">
               Application elaboration service with companies, side-by-side with the Research Support Office:
               <li>Maximize the results of application processes with companies for competitive financing programs, involving expert consultants;</li>
@@ -159,4 +203,33 @@ function clickApp() {
   }
 
 }
+// numbers counter animation
+
+	$.fn.jQueryCounter = function( options ) {
+	    var settings = $.extend({
+	        start:  0,
+	        end:    100,
+	        easing: 'swing',
+	        duration: 400,
+	        complete: ''
+	    }, options );
+
+	    var thisElement = $(this);
+
+	    $({count: settings.start}).animate({count: settings.end}, {
+			duration: settings.duration,
+			easing: settings.easing,
+			step: function() {
+				var mathCount = Math.ceil(this.count);
+				thisElement.text(mathCount);
+			},
+			complete: settings.complete
+		});
+	};
+
+$('#number1').jQueryCounter({end: 81,duration: 2000});
+$('#number2').jQueryCounter({end: 19,duration: 2000});
+$('#number3').jQueryCounter({end: 82,duration: 2000});
+$('#number4').jQueryCounter({end: 7,duration: 2000});
+
 </script>

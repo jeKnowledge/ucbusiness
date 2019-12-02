@@ -36,46 +36,49 @@
   <section id ="logo-anim">
 
     <div class="texto">
-
         <div class="ucs-title">
-          <h4 class="value_txt">UC Value <span> | </span> </h4>
-          <h4 class="invest_txt">UC Invest <span> | </span> </h4>
-          <h4 class="partner_txt">UC Partnership</h4>
-
+          <h4 class="value-txt">UC Value  </h4>
+          <h4 class="invest-txt">UC Invest  </h4>
+          <h4 class="partner-txt">UC Partnership</h4>
         </div>
+</div>
 
         <div class="ucs-info">
+            <div class="ucs-anim">
+              <video class="invest" muted>
+              <source src="assets/photos/azul-verde.mp4" type="video/MP4">
+              </video>
 
-          <div class="info-ucb">
-              <h4>Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
-                <p class="circulos">
-                  <a class="circ">Large <br> Companies</a>
-                  <a class="circ">National <br> SMEs</a>
-                  <a class="circ">Start-ups and <br> Spin-offs</a>
-                </p>
-              </h4>
-          </div>
+              <video class="value" muted>
+              <source src="assets/photos/azul-amarelo.mp4" type="video/MP4">
+              </video>
 
+              <video class="partnership" muted>
+              <source src="assets/photos/azul-vermelho.mp4" type="video/MP4">
+              </video>
+            </div>
+
+            <div class="info-ucb">
+                <h4>Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+                  <div id="areas">
+                    <h3>Large <br> Companies</h3>
+                    <h3>National <br> SMEs</h3>
+                    <h3>Start-ups and <br> Spin-offs</h3>
+                </div>
+                </h4>
+            </div>
             <div class="info-value">
-              <h4>Create short-term value (with financial return) based on existing skills;
-              </h4>
-        </div>
+              <h4>Create short-term value (with financial return) based on existing skills.</h4>
+            </div>
 
-        </div>
-      </div>
+            <div class="info-invest">
+              <h4>Invest in value development in the medium term.</h4>
+            </div>
 
-        <div class="ucs-anim">
-          <video class="invest">
-          <source src="assets/photos/azul-verde.mp4" type="video/MP4">
-          </video>
+            <div class="info-partnership">
+              <h4>Foster multi-level partnerships.</h4>
+            </div>
 
-          <video class="value">
-          <source src="assets/photos/azul-amarelo.mp4" type="video/MP4">
-          </video>
-
-          <video class="partnership">
-          <source src="assets/photos/azul-vermelho.mp4" type="video/MP4">
-          </video>
         </div>
 
 
@@ -101,6 +104,7 @@
                         <img src="assets/photos/foto.png" alt="img1"/>
                         <div class="rect-new"> </div>
                   </div>
+
                   <div class="news">
                       <div class="txt_new">
                           <h4>6 de maio</h4>
@@ -164,16 +168,18 @@
 </html>
 <script>
 
-  var figure = $(".value_txt").hover( hoverVideov, hideVideov);
-  var figure = $(".invest_txt").hover(hoverVideoi,hideVideoi);
-  var figure = $(".partner_txt").hover(hoverVideop,hideVideop);
+  var figure = $(".value-txt").hover( hoverVideov, hideVideov);
+  var figure1 = $(".invest-txt").hover(hoverVideoi,hideVideoi);
+  var figure2 = $(".partner-txt").hover(hoverVideop,hideVideop);
 
 
   function hoverVideov() {
-   $(".value").get(0).play();
-
    $(".invest").hide();
    $(".partnership").hide();
+   $(".value").show();
+  $(".value").get(0).play();
+
+
   }
   function hideVideov() {
     $(".value").get(0).currentTime = 0;
@@ -182,17 +188,17 @@
   }
 
   function hoverVideoi() {
-  $(".invest").show();
-   $(".invest").get(0).play();
+    $(".value").hide();
+    $(".partnership").hide();
+    $(".invest").show();
+    $(".invest").get(0).play();
 
-   $(".value").hide();
-   $(".partnership").hide();
   }
   function hideVideoi() {
     $(".invest").get(0).currentTime = 0;
     $(".invest").get(0).pause();
   }
-
+  
 
   function hoverVideop() {
     $(".partnership").show();
