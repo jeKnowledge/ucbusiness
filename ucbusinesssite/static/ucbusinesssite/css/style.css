@@ -1,25 +1,31 @@
 
-.ucs-title h4:hover{
+.ucs-title h4: hover{
     text-decoration: underline;
     text-decoration-color:black;
 }
 .ucs-title{
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     float: left;
+    padding-left: 7vw;
+}
+.ucs-title h4{
+  padding-right: 2vw;
 }
 
 .rectangle span{
     font-family: Nexa;
     color: var(--color-blue);
 }
-.info-value{
-  display: none;
 
-}
 .news h1{
     padding: 10% 0 5% 5%;
+}
+.ucs-info {
+  display: flex;
+  align-items: center;
+
 }
 
 .circulos{
@@ -27,23 +33,17 @@
   justify-content: center;
 
 }
-
-.circ{
-justify-content: center;
- align-items: center;
- border-radius: 50%;
- height: 10vh;
- width: 10vw;
- text-align: center;
- display: flex;
- background-color: var(--color-lightblue);
- color: white;
- border: 3px solid #FFF;
- border-radius: 18px;
-}
 .texto{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+#areas{
+  display:flex;
+  justify-content: center;
+}
+#areas h3{
+  padding-right: 2vw;
+  text-align: center;
 }
 
 #logo-anim{
@@ -51,11 +51,15 @@ justify-content: center;
 
 }
 .ucs-anim{
+  position: relative;
   left: 0;
   top: 0;
 }
-.value,  .invest, .partnership {
+.value{
   position: relative;
+}
+ .invest, .partnership {
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -79,8 +83,15 @@ justify-content: center;
     align-items: center;
     justify-content: center;
 }
-
-
+.info-ucb{
+  text-align: center;
+  justify-content: center;
+}
+.info-value, .info-invest, .info-partnership{
+  display: none;
+  text-align: center;
+  justify-content: center;
+}
 .circle:hover{
     background-color: var(--color-lightblue);
 }
