@@ -11,30 +11,38 @@
 </head>
 <body>
 <header>
-    <div class="header">
-        <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+  <div class="header">
+      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <div id="dir">
         <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
         <h6> <a>PT</a>  <a>EN</a></h6>
     </div>
+  </div>
 </header>
 
+<section id=navbar>
         <div class="menu">
+            <div class="rect-menu">
             <h5>
                 <a href="about_us.html"> About us</a>
                 <a href="ucvalue.html">UC Value</a>
                 <a href="ucinvest.html">UC Invest</a>
                 <a href="ucpartnership.html">UC Partnership</a>
                 <a href="news.html"> News</a>
-                <a>Contacts</a>
+                <a href= "#footer">Contacts</a>
             </h5>
+            </div>
         </div>
+  </section>
 
     <section id="info">
+      <h1 id="value-title"> UC INVEST</h1>
 
       <div class="promoting">
-        <div onclick="clickPromoting()" id="circ-promoting">
-          </div>
-          <h1> Promoting contact with companies </h1>
+        <div class="button-subtitle">
+          <button onclick="clickPromoting()" id="circ-promoting"></button>
+          <h2 id="subtitle"> Promoting contact with companies </h2>
+        </div>
           <div id="txt1">
               <p>Arrange visits to the University for Entrepreneurs, according to the area of intervention, aiming to reduce the gap between companies and researchers, and strengthening mutual trust;</p>
               <p>Strengthen the ability of researchers to provide business services by identifying the needs of these companies;</p>
@@ -59,29 +67,36 @@
       </div>
 
       <div  class="employ">
-        <div onclick="clickEmploy()" id="circ-employ">
-          </div>
-          <h1> Employability </h1>
+        <div class="button-subtitle">
+          <button id="circ-employ" onclick="clickEmploy()"> </button>
+          <h2 id="subtitle"> Employability </h2>
+        </div>
+
           <ul id="txt2">
             Help students from different academic levels enter the labor market:
+            <p>
             <li>Articulate the professional needs of companies with the available training;</li>
             <li>Promotion of doctoral rotation program in companies, aiming at an active search for partnerships between research centers and the national/international business market;</li>
             <li>Contribute to strengthening the structuring of competence centers to be developed at the University of Coimbra.</li>
+            </p>
             <h4>Fit4Work</h4>
+            <p>
             <li>Partnerships with major national and international companies.</li>
             <li>Association with the most important internship and trainee programs;</li>
             <li>Collaboration in the identification of professional opportunities.</li>
             <li>Personalized Consulting to UC students;</li>
             <li>Continuous Training;</li>
             <li>Career support tools;</li>
+          </p>
           </ul>
 
       </div>
 
       <div class="entrep">
-        <div onclick="clickEntrep()" id="circ-entrep">
-            </div>
-          <h1> Entrepeneurship </h1>
+        <div class="button-subtitle">
+          <button onclick="clickEntrep()" id="circ-entrep"> </button>
+          <h2 id="subtitle"> Entrepeneurship </h2>
+        </div>
           <div id="txt3">
             <ul>
             Encouragement of Entrepreneurship among the Univerisity:
@@ -230,9 +245,10 @@
       </div>
 
       <div class="nonprofit">
-        <div onclick="clickNonProfit()" id="circ-nonprofit">
-          </div>
-          <h1> Nonprofit Private Associations </h1>
+        <div class="button-subtitle">
+          <button onclick="clickNonProfit()" id="circ-nonprofit"></button>
+          <h2 id="subtitle"> Nonprofit Private Associations </h2>
+        </div>
           <id id="txt4">
             <p>Articulation and support to the nonprofit private Associations </p>
             <div class="list">
@@ -268,9 +284,10 @@
       </div>
 
       <div class="customer">
-        <div onclick="clickCustomer()" id="circ-customer">
-            </div>
-            <h1> Customer Centered </h1>
+        <div class="button-subtitle">
+            <button onclick="clickCustomer()" id="circ-customer"> </button>
+            <h2 id="subtitle"> Customer Centered </h2>
+          </div>
             <div id="txt5">
               <p>Customer centered policy, working actively in Companies.</p>
               <div class="photo">
@@ -282,21 +299,23 @@
       </div>
     </section>
 
-    <footer>
-      <div class="footer-middle">
+    <footer id="footer">
+      <div class="footer-left">
         <h1>Let´s stay in contact!</h1>
-      </div>
 
-      <div class="footer-contacts">
           <h5> Rectory Pólo II
           <br> R. Luís Reis dos Santos 290,
           <br>3030-790 Coimbra</h5>
           <h5><p> ucbusiness@uc.pt </p> </h5>
-      </div>
+
       <div class="footer-social">
         <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
         <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
         <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+      </div>
+      </div>
+      <div class="footer-right">
+        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
       </div>
     </footer>
 </body>
@@ -312,10 +331,9 @@ function clickPromoting() {
   else {
     moreText.style.display = "none";
   }
-
 }
 
-function clickEmploy() {
+function clickEntrep() {
   var moreText = document.getElementById("txt2");
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
@@ -325,7 +343,7 @@ function clickEmploy() {
   }
 }
 
-function clickEntrep() {
+function clickNonProfit() {
   var moreText = document.getElementById("txt3");
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
@@ -333,10 +351,8 @@ function clickEntrep() {
   else {
     moreText.style.display = "none";
   }
-  $('#number1-inov').jQueryCounter({end: 10,duration: 2100});
-  $('#number2-inov').jQueryCounter({end: 600,duration: 2100});
 }
-function clickNonProfit() {
+function clickProjects() {
   var moreText = document.getElementById("txt4");
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
@@ -348,13 +364,13 @@ function clickNonProfit() {
 }
 function clickCustomer() {
   var moreText = document.getElementById("txt5");
-
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
     }
   else {
     moreText.style.display = "none";
   }
+
 }
 
 // numbers counter animation
@@ -365,7 +381,8 @@ function clickCustomer() {
 	        end:    100,
 	        easing: 'swing',
 	        duration: 400,
-	        complete: ''
+	        complete: '',
+          type: 0,
 	    }, options );
 
 	    var thisElement = $(this);
@@ -375,29 +392,37 @@ function clickCustomer() {
 			easing: settings.easing,
 			step: function() {
 				var mathCount = Math.ceil(this.count);
-				thisElement.text(mathCount+"%");
+        if (type = 0){
+				thisElement.text("+" + mathCount);}
 			},
+      if (type = 1){
+      thisElement.text("+" + mathCount + "€");}
+    },
 			complete: settings.complete
 		});
-	};
+	});
 
-$('#number1-st').jQueryCounter({end: 26,duration: 2100});
-$('#number2-st').jQueryCounter({end: 109,duration: 2100});
-$('#number3-st').jQueryCounter({end: 3,duration: 2100});
-$('#number4-st').jQueryCounter({end: 12000,duration: 2100});
-$('#number5-st').jQueryCounter({end: 600,duration: 2100});
-$('#number6-st').jQueryCounter({end: 100,duration: 2100});
 
-$('#number1-exp').jQueryCounter({end: 10,duration: 2100});
-$('#number2-exp').jQueryCounter({end: 40,duration: 2100});
-$('#number3-exp').jQueryCounter({end: 350,duration: 2100});
-$('#number4-exp').jQueryCounter({end: 600,duration: 2100});
+  $('#number1-st').jQueryCounter({end: 26,duration: 2100});
+  $('#number2-st').jQueryCounter({end: 109,duration: 2100});
+  $('#number3-st').jQueryCounter({end: 3,duration: 2100});
+  $('#number4-st').jQueryCounter({end: 12000,duration: 2100});
+  $('#number5-st').jQueryCounter({end: 600,duration: 2100});
+  $('#number6-st').jQueryCounter({end: 100,duration: 2100, type: 0}); //+
 
-$('#number1-arr').jQueryCounter({end: 10,duration: 2100});
-$('#number2-arr').jQueryCounter({end: 25,duration: 2100});
-$('#number3-arr').jQueryCounter({end: 1000000,duration: 6000});
-$('#number4-arr').jQueryCounter({end: 800,duration: 2100});
-$('#number5-arr').jQueryCounter({end: 2500,duration: 2100});
+  $('#number1-exp').jQueryCounter({end: 10,duration: 2100});
+  $('#number2-exp').jQueryCounter({end: 40,duration: 2100});
+  $('#number3-exp').jQueryCounter({end: 350,duration: 2100 , type: 0}); //+
+  $('#number4-exp').jQueryCounter({end: 600,duration: 2100});
+
+  $('#number1-arr').jQueryCounter({end: 10,duration: 2100});
+  $('#number2-arr').jQueryCounter({end: 25,duration: 2100, type:0}); //+
+  $('#number3-arr').jQueryCounter({end: 1000000,duration: 6000, type:1}); //+ e €
+  $('#number4-arr').jQueryCounter({end: 800,duration: 2100, type:0});//+
+  $('#number5-arr').jQueryCounter({end: 2500,duration: 2100, type:0});//+
+
+  $('#number1-inov').jQueryCounter({end: 10,duration: 2100});
+  $('#number2-inov').jQueryCounter({end: 600,duration: 2100,type:0});// +
 
 
 

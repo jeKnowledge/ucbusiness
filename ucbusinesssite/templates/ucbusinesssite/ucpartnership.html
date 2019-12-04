@@ -11,29 +11,39 @@
 </head>
 <body>
 <header>
-    <div class="header">
-        <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+  <div class="header">
+      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <div id="dir">
         <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
         <h6> <a>PT</a>  <a>EN</a></h6>
     </div>
+  </div>
 </header>
 
+<section id=navbar>
         <div class="menu">
+
+            <div class="rect-menu">
             <h5>
                 <a href="about_us.html"> About us</a>
                 <a href="ucvalue.html">UC Value</a>
                 <a href="ucinvest.html">UC Invest</a>
                 <a href="ucpartnership.html">UC Partnership</a>
                 <a href="news.html"> News</a>
-                <a>Contacts</a>
+                <a href= "#footer">Contacts</a>
             </h5>
+            </div>
         </div>
+  </section>
 
     <section id="info">
+      <h1 id="value-title"> UC PARTNERSHIP</h1>
 
       <div class="incubators">
-        <div onclick="clickIncubators()" id="circ-incubators"></div>
-          <h1> Incubators and Interface Centers </h1>
+        <div class="button-subtitle">
+          <button onclick="clickIncubators()" id="circ-incubators"></button>
+          <h2 id="subtitle"> Incubators and Interface Centers </h2>
+        </div>
           <div id="txt1">
             <p>Strengthen the relationship with incubators and interface centers,either with a view to promote knowledge transfer via spin-offs and startups or through involvement in innovation projects.</p>
 <img id="rierc" src="assets/photos/rierc.png" alt=rierc>
@@ -41,8 +51,10 @@
         </div>
 
       <div  class="patronage">
-        <div onclick="clickPatronage()" id="circ-patronage"></div>
-          <h1> Patronage </h1>
+        <div class="button-subtitle">
+          <button onclick="clickPatronage()" id="circ-patronage"></button>
+          <h2 id="subtitle"> Patronage </h2>
+        </div>
           <ul id="txt2">
             Organization of patronage processes through tools such as:
             <li>Merit scholarships;
@@ -55,8 +67,10 @@
       </div>
 
       <div class="cooperation">
-        <div onclick="clickCooperation()" id="circ-cooperation"></div>
-          <h1> Cooperation Networks </h1>
+        <div class="button-subtitle">
+          <button onclick="clickCooperation()" id="circ-cooperation"></button>
+          <h2 id="subtitle"> Cooperation Networks </h2>
+        </div>
           <div id="txt3">
             <p>Collaboration with various Cooperation Networks and their projects.</p>
             <img src="assets/photos/partnership/eithealth.png" alt="eit-health">
@@ -67,8 +81,10 @@
       </div>
 
       <div class="clusters">
-        <div onclick="clickClusters()" id="circ-clusters"></div>
-          <h1> Clusters </h1>
+        <div class="button-subtitle">
+          <button onclick="clickClusters()" id="circ-clusters"></button>
+          <h2 id="subtitle"> Clusters </h2>
+        </div>
           <ul id="txt4">
             <li>Cluster de Competitividade da Petroquímica, Química Industrial e Refinação</li>
             <li>Cluster do Calçado e Moda</li>
@@ -90,31 +106,34 @@
       </div>
 
       <div class="aisep">
-        <div onclick="clickAisep()" id="circ-aisep"></div>
-            <h1> AISEP and Chambers of Commerce </h1>
+        <div class="button-subtitle">
+          <button onclick="clickAisep()" id="circ-aisep"></button>
+          <h2 id="subtitle"> AISEP and Chambers of Commerce </h2>
+        </div>
             <p id="txt5">
               Strengthen positioning with AICEP and national
               Chambers of Commerce by promoting participation in business missions.
             </p>
-
       </div>
     </section>
 
-    <footer>
-      <div class="footer-middle">
+    <footer id="footer">
+      <div class="footer-left">
         <h1>Let´s stay in contact!</h1>
-      </div>
 
-      <div class="footer-contacts">
           <h5> Rectory Pólo II
           <br> R. Luís Reis dos Santos 290,
           <br>3030-790 Coimbra</h5>
           <h5><p> ucbusiness@uc.pt </p> </h5>
-      </div>
+
       <div class="footer-social">
         <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
         <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
         <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+      </div>
+      </div>
+      <div class="footer-right">
+        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
       </div>
     </footer>
 </body>

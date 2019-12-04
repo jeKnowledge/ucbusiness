@@ -12,29 +12,35 @@
 </head>
 <body>
 <header>
-    <div class="header">
-        <img href="index.html" id="logo_ucb" src="assets/photos/ucb_logo.png"  alt="logo_ucb"/>
-          <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
-          <h6> <a>PT</a>  <a>EN</a></h6>
-
+  <div class="header">
+      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <div id="dir">
+        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <h6> <a>PT</a>  <a>EN</a></h6>
     </div>
+  </div>
+
 </header>
 
 <section id=navbar>
         <div class="menu">
+          <video class="video-ucb" controls>
+          <source src="assets/photos/video.mp4" type="video/MP4">
+          </video>
+            <div class="rect-menu">
             <h5>
                 <a href="about_us.html"> About us</a>
                 <a href="ucvalue.html">UC Value</a>
                 <a href="ucinvest.html">UC Invest</a>
                 <a href="ucpartnership.html">UC Partnership</a>
                 <a href="news.html"> News</a>
-                <a>Contacts</a>
+                <a href= "#footer" >Contacts</a>
             </h5>
+            </div>
         </div>
   </section>
 
   <section id ="logo-anim">
-
     <div class="texto">
         <div class="ucs-title">
           <h4 class="value-txt">UC Value  </h4>
@@ -81,8 +87,6 @@
 
         </div>
 
-
-
     </section>
 
     <section id="timeline">
@@ -99,7 +103,7 @@
                   <div class="news">
                       <div class="txt_new">
                           <h4>6 de maio</h4>
-                          <h1>Aaaa</h1>
+                          <h2>Aaaa</h2>
                       </div>
                         <img src="assets/photos/foto.png" alt="img1"/>
                         <div class="rect-new"> </div>
@@ -108,7 +112,7 @@
                   <div class="news">
                       <div class="txt_new">
                           <h4>6 de maio</h4>
-                          <h1>Bbbb</h1>
+                          <h2>Bbbb</h2>
                       </div>
                         <img src="assets/photos/foto.png" alt="img2"/>
                         <div class="rect-new"> </div>
@@ -116,7 +120,7 @@
                   <div class="news">
                       <div class="txt_new">
                           <h4>6 de maio</h4>
-                          <h1>Cccc</h1>
+                          <h2>Cccc</h2>
                       </div>
                         <img src="assets/photos/foto.png" alt="img2"/>
                         <div class="rect-new"> </div>
@@ -124,7 +128,7 @@
                   <div class="news">
                       <div class="txt_new">
                           <h4>6 de maio</h4>
-                          <h1>Cccc</h1>
+                          <h2>Cccc</h2>
                       </div>
                         <img src="assets/photos/foto.png" alt="img2"/>
                         <div class="rect-new"> </div>
@@ -142,24 +146,24 @@
     </section>
 
 
-    <footer>
-      <div class="footer-middle">
+    <footer id="footer">
+      <div class="footer-left">
         <h1>Let´s stay in contact!</h1>
-      </div>
 
-      <div class="footer-contacts">
           <h5> Rectory Pólo II
           <br> R. Luís Reis dos Santos 290,
           <br>3030-790 Coimbra</h5>
           <h5><p> ucbusiness@uc.pt </p> </h5>
-      </div>
+
       <div class="footer-social">
         <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
         <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
         <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
       </div>
-      <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
-
+      </div>
+      <div class="footer-right">
+        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
+      </div>
     </footer>
 
     <script src="assets/javascript/index.js"></script>
@@ -198,7 +202,7 @@
     $(".invest").get(0).currentTime = 0;
     $(".invest").get(0).pause();
   }
-  
+
 
   function hoverVideop() {
     $(".partnership").show();
