@@ -1,14 +1,15 @@
 
 .about h1{
-    padding: 10% 0 2% 5%;
+    padding: 15vh 0 2vh 5vw;
 }
-.about p{
+#mission {
     padding-left: 7% ;
     padding-right: 7%;
     text-align: justify;
-    text-align: justify;
-    text-justify: inter-word;
     line-height: 1.5;
+}
+.team{
+  padding: 0 5vw 0 5vw;
 }
 
 .team1, .team2, .team3, .team4, .team5, .team6{
@@ -34,11 +35,9 @@
     background-color: var(--color-blue);
     flex-direction: row;
     justify-content: center;
-}
-.rect_team h4 ,h5 {
     color: white;
     text-align: center;
- }
+}
 .team{
   padding-left: 5%;
   padding-bottom: 5%;

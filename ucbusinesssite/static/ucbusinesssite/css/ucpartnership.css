@@ -1,3 +1,15 @@
+#value-title {
+  margin-top: 15vh;
+  padding: 0 0 5vh 0;
+  color: var(--color-red);
+  font-size: 3em;
+}
+#subtitle{
+  color: black;
+  margin: 0;
+  padding: 2vh 0 2vh 0;
+  margin-left: 3vw;
+}
 
 #info{
 padding: 10vh 10vh;
@@ -5,6 +17,11 @@ margin: 0;
 background-size:auto;
 background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/partnership.png");
 }
+.button-subtitle{
+  display: flex;
+  align-items: center;
+}
+
 li{
   list-style: square;
 }
@@ -25,7 +42,7 @@ li{
 .cooperation img{
   height:10vh;
   width: auto;
-  padding-right: 2vw; 
+  padding-right: 2vw;
 }
 #circ-incubators:hover,#circ-patronage:hover,#circ-cooperation:hover,#circ-clusters:hover,#circ-aisep:hover{
   background-color: var(--color-gray);
@@ -33,16 +50,12 @@ li{
 .incubators, .patronage , .cooperation, .clusters, .aisep {
   padding-bottom: 5vh;
 }
-#info h1{
-  color: black;
-  margin: auto;
-  padding-top: 2vh;
-}
+
 #txt1, #txt2,#txt3,#txt4,#txt5{
-  /* display: none; */
+  display: none;
   color: black;
   text-align: justify;
-  padding: 0 20vw 0 2vw;
-  list-style-type: square;
+  margin: 0;
+  padding: 0 20vw 0 0;
   line-height: 1.5;
 }

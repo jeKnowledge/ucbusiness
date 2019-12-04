@@ -1,4 +1,11 @@
 
+.menu video{
+  width: 100%;
+  height:90vh;
+  object-fit:cover;
+  z-index: 0;
+}
+
 .ucs-title h4: hover{
     text-decoration: underline;
     text-decoration-color:black;
@@ -19,8 +26,8 @@
     color: var(--color-blue);
 }
 
-.news h1{
-    padding: 10% 0 5% 5%;
+.news h2{
+    padding-bottom: 2vh;
 }
 .ucs-info {
   display: flex;
@@ -99,13 +106,16 @@
     padding: 3% 5% 5% 5%;
     margin: auto;
 }
+#news-slider h1{
+  font-size: 2em;
+}
 .ucs-anim video{
   width:40vw;
   height: auto;
 }
 .slider {
     padding-top: 3%;
-    width: 90vw;
+    width: 65vw;
     height: auto;
     overflow: hidden;
     margin:auto;
@@ -120,7 +130,7 @@
 
 }
 .rect-new{
-  width: 40vw;
+  width: 30vw;
   height: 50%;
   background-color: var(--color-blue);
   opacity: 0.9;
@@ -131,9 +141,8 @@
 }
 .news img {
   position: relative;
-  width: 40vw;
+  width: 30vw;
   z-index: 0;
-
 }
 
 .txt_new{
@@ -149,13 +158,13 @@
 }
 
 #slider1, #slider2 {
-    display:flex;
+    display:none;
 }
 
 #slider1:target~.news {
-    left:0vw;
+    left:10px;
 }
 
 #slider2:target~.news {
-    left: -90vw;
+    left: -65vw;
 }

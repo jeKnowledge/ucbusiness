@@ -1,3 +1,9 @@
+#value-title {
+  margin-top: 15vh;
+  padding: 0 0 5vh 0;
+  color: var(--color-yellow);
+  font-size: 3em;
+}
 
 #info{
 padding: 10vh 10vh;
@@ -6,6 +12,16 @@ background-size:auto;
 background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/value-back.png");
 }
 
+#subtitle {
+  color: black;
+  margin: 0;
+  padding: 2vh 0 2vh 0;
+  margin-left: 3vw;
+}
+.button-subtitle{
+  display: flex;
+  align-items: center;
+}
 
 #circ-services, #circ-tech,#circ-intelec, #circ-projects,#circ-app {
     background-color: var(--color-yellow);
@@ -14,6 +30,12 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
     border-radius: 100%;
     display: flex;
     align-items: center;
+}
+#circ-services:hover,#circ-tech:hover,#circ-intelec:hover,#circ-projects:hover,#rcirc-app:hover{
+  background-color: var(--color-gray);
+}
+.services, .tech , .intelectual, .projects, .application {
+  padding-bottom: 5vh;
 }
 .services-grid img{
   width: 10vh;
@@ -39,22 +61,14 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
   margin: 0;
   padding-top: 2vh;
 }
-#circ-services:hover,#circ-tech:hover,#circ-intelec:hover,#circ-projects:hover,#rcirc-app:hover{
-  background-color: var(--color-gray);
-}
-.services, .tech , .intelectual, .projects, .application {
-  padding-bottom: 5vh;
-}
-#info h1{
-  color: black;
-  font-size: 1.5em;
-  margin: auto;
-  padding: 2vh 0 4vh 0;
-}
+
+
+
 #txt1,#txt2,#txt3,#txt4,#txt5{
-  /* display: none; */
+  display: none;
   color: black;
   text-align: justify;
-  padding: 0 20vw 0 2vw;
+  margin: 0;
+  padding: 0 20vw 0 0; 
   line-height: 1.5;
 }
