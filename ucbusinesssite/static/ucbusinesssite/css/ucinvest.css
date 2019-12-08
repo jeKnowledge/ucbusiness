@@ -1,71 +1,90 @@
-ul{
-padding-inline-start: 0px;
+ul {
+  padding-inline-start: 0px;
 }
-h4{
+
+h4 {
   margin: 0;
   padding-bottom: 3vh;
 }
+
 #value-title {
   margin-top: 15vh;
   padding: 0 0 5vh 0;
   color: var(--color-green);
   font-size: 3em;
 }
-#info{
-padding: 10vh 10vh;
-margin: 0;
-background-size:auto;
-background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url("../photos/invest.png");
+
+#info {
+  padding: 10vh;
+  margin: 0;
+  background-size: auto;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url("../photos/invest.png");
 }
 
-#subtitle{
+#subtitle {
   color: black;
   margin: 0;
-  padding: 2vh 0 2vh 0;
+  padding: 2vh 0;
   margin-left: 3vw;
 }
 
-.button-subtitle{
+.button-subtitle {
   display: flex;
   align-items: center;
 }
 
-#circ-promoting, #circ-employ,#circ-entrep, #circ-nonprofit,#circ-customer {
-    background-color: var(--color-green);
-    width: 3vw;
-    height: 6vh;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
+#circ-promoting,
+#circ-employ,
+#circ-entrep,
+#circ-nonprofit,
+#circ-customer {
+  background-color: var(--color-green);
+  width: 3vw;
+  height: 6vh;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
 }
 
-#circ-promoting:hover,#circ-employ:hover,#circ-entrep:hover,#circ-nonprofit:hover,#circ-customer:hover{
+#circ-promoting:hover,
+#circ-employ:hover,
+#circ-entrep:hover,
+#circ-nonprofit:hover,
+#circ-customer:hover {
   background-color: var(--color-gray);
 }
-.promoting, .employ , .entrep, .nonprofit, .customer {
+
+.promoting,
+.employ,
+.entrep,
+.nonprofit,
+.customer {
   padding-bottom: 5vh;
 }
 
-#academica-start-uc, #explorer-uc,#arrisca-c,#inov-c{
-  padding-top:5vh;
-  padding-bottom: 5vh;
+#academica-start-uc,
+#explorer-uc,
+#arrisca-c,
+#inov-c {
+  padding-top: 5vh 0;
 }
-.photo img{
-  height:30vh;
+
+.photo img {
+  height: 30vh;
   width: auto;
 }
 
-.photos{
+.photos {
   display: flex;
 }
 
 .photo {
-    position: relative;
-    padding-right: 2vw;
-    padding-bottom: 5vh;
+  position: relative;
+  padding: 0 2vw 5vh 0;
 }
+
 .numbers-anim img {
-  height:30vh;
+  height: 30vh;
   width: auto;
 }
 
@@ -75,26 +94,37 @@ background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,2
   justify-content: space-between;
   align-items: center;
 }
-.list{
+
+.list {
   display: flex;
   justify-content: flex-start;
 }
-.list #research, .list #type2 , .list #type3{
+
+.list #research,
+.list #type2,
+.list #type3 {
   padding-right: 10vw;
 }
 
-.patr img{
-  width:3vw;
+.patr img {
+  width: 3vw;
   height: auto;
-  display:block;
+  display: block;
   padding-bottom: 1vh;
 }
-.number h3, .number h5{
+
+.number h3,
+.number h5 {
   line-height: normal;
-  margin:0;
+  margin: 0;
   padding-bottom: 2vh;
 }
-#txt1,#txt2,#txt3,#txt4,#txt5{
+
+#txt1,
+#txt2,
+#txt3,
+#txt4,
+#txt5 {
   /* display: none; */
   color: black;
   text-align: justify;

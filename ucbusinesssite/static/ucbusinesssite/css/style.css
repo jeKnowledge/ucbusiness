@@ -1,170 +1,185 @@
-
-.menu video{
+.menu video {
   width: 100%;
-  height:90vh;
-  object-fit:cover;
+  height: 90vh;
+  object-fit: cover;
   z-index: 0;
 }
 
-.ucs-title h4: hover{
-    text-decoration: underline;
-    text-decoration-color:black;
+.ucs-title h4:hover {
+  text-decoration: underline;
+  text-decoration-color: black;
 }
-.ucs-title{
-    font-size: 1em;
-    display: flex;
-    justify-content: flex-start;
-    float: left;
-    padding-left: 7vw;
+
+.ucs-title {
+  display: flex;
+  padding-left: 7vw;
 }
-.ucs-title h4{
+
+.ucs-title h4 {
   padding-right: 2vw;
 }
 
-.rectangle span{
-    font-family: Nexa;
-    color: var(--color-blue);
+.rectangle span {
+  font-family: Nexa;
+  color: var(--color-blue);
 }
 
-.news h2{
-    padding-bottom: 2vh;
+.news h2 {
+  padding-bottom: 2vh;
 }
+
 .ucs-info {
   display: flex;
   align-items: center;
 
 }
 
-.circulos{
+.circulos {
   display: flex;
   justify-content: center;
+}
 
-}
-.texto{
+#areas {
   display: flex;
-  justify-content: flex-start;
-}
-#areas{
-  display:flex;
   justify-content: center;
 }
-#areas h3{
+
+#areas h3 {
   padding-right: 2vw;
   text-align: center;
 }
 
-#logo-anim{
-    padding: 20vh 10vw 20vh 10vw;
+#logo-anim {
+  padding: 20vh 10vw;
 
 }
-.ucs-anim{
+
+.ucs-anim {
   position: relative;
   left: 0;
   top: 0;
 }
-.value{
+
+.value,
+.invest,
+.partnership
+{
   position: relative;
 }
- .invest, .partnership {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.invest,
+.partnership
+{
+  display: none;
 }
-.rectangle{
-    width: 100%;
-    height: 200px;
-    background-color: var(--color-blue);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+
+.rectangle {
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .circle {
-    border-radius: 100%;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    margin-right: 3%;
-    margin-top: 7%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border-radius: 100%;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  margin: 7% 3% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.info-ucb{
+
+.info-ucb {
   text-align: center;
   justify-content: center;
 }
-.info-value, .info-invest, .info-partnership{
+
+.info-value,
+.info-invest,
+.info-partnership {
   display: none;
   text-align: center;
   justify-content: center;
 }
-.circle:hover{
-    background-color: var(--color-lightblue);
+
+.circle:hover {
+  background-color: var(--color-lightblue);
 }
+
 #news-slider {
-    padding: 3% 5% 5% 5%;
-    margin: auto;
+  padding: 3% 5% 5%;
+  margin: auto;
 }
-#news-slider h1{
+
+#news-slider h1 {
   font-size: 2em;
 }
-.ucs-anim video{
-  width:40vw;
+
+.ucs-anim video {
+  width: 40vw;
   height: auto;
 }
+
 .slider {
-    padding-top: 3%;
-    width: 65vw;
-    height: auto;
-    overflow: hidden;
-    margin:auto;
-    display: flex;
+  padding-top: 3%;
+  width: 65vw;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+  display: flex;
 }
 
 .news {
-    position: relative;
-    text-align: left;
-    transition: left 2s;
-    margin-right: 5%;
+  position: relative;
+  text-align: left;
+  transition: left 2s;
+  margin-right: 5%;
 
 }
-.rect-new{
+
+.rect-new {
   width: 30vw;
   height: 50%;
   background-color: var(--color-blue);
   opacity: 0.9;
   position: absolute;
-  top      : 0;
-  right    : 0;
+  top: 0;
+  right: 0;
 
 }
+
 .news img {
   position: relative;
   width: 30vw;
   z-index: 0;
 }
 
-.txt_new{
+.txt_new {
   padding-left: 2%;
   color: white;
   position: absolute;
   z-index: 1;
 }
+
 .arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
 }
 
-#slider1, #slider2 {
-    display:none;
+#slider1,
+#slider2 {
+  display: none;
 }
 
 #slider1:target~.news {
-    left:10px;
+  left: 10px;
 }
 
 #slider2:target~.news {
-    left: -65vw;
+  left: -65vw;
 }

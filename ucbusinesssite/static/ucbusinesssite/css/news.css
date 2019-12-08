@@ -1,26 +1,31 @@
-
-#news h1{
+#news h1 {
     padding: 15vh 0 2vh 5vw;
     font-size: 2em;
 }
 
-.new1,.new2{
+.new1,
+.new2 {
     padding-bottom: 5%;
 }
-#news img{
+
+#news img {
     width: 88vw;
     height: 60vh;
     object-fit: cover;
-    padding: 1vh 5vw 1vh 5vw;
+    padding: 1vh 5vw;
 }
-.new1 p, .new2 p  {
-    color: #000000;
-    padding: 1vh 5vw 1vh 5vw;
+
+.new1 p,
+.new2 p {
+    color: #000;
+    padding: 1vh 5vw;
     justify-content: center;
     text-align: justify;
     line-height: 1.5;
 }
-#news h2,h3{
-    color: #000000;
+
+#news h2,
+h3 {
+    color: #000;
     padding-left: 5vw;
 }
