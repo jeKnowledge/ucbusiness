@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/general.css">
   <link rel="stylesheet" href="assets/css/colors.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
@@ -19,7 +20,7 @@
           alt="logo_ucb" /></a>
       <div id="dir">
         <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc" />
-        <h6> <a>PT</a> <a>EN</a></h6>
+        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
       </div>
     </div>
 
@@ -32,14 +33,18 @@
       </video>
       <div class="rect-menu">
         <h5>
-          <a href="about_us.html"> About us</a>
+          <a href="about_us.html">About us</a>
           <a href="ucvalue.html">UC Value</a>
           <a href="ucinvest.html">UC Invest</a>
           <a href="ucpartnership.html">UC Partnership</a>
           <a href="news.html"> News</a>
           <a href="#footer">Contacts</a>
         </h5>
-      </div>
+        <!-- <div onclick="myFunction()" id="menu-hamb" >
+          <div class="hamb"> </div>
+          <div class="hamb"> </div>
+          <div class="hamb"> </div>
+      </div> -->
     </div>
   </section>
 
@@ -93,9 +98,17 @@
   </section>
 
   <section id="timeline">
-    <div class="rectangle" id="rectangle">
+    <div>
+        <div id="rectangle" class="rectangle">
+        <p id="rectangle_message"></p>
+        <div id="txt-background">
+          <h3> DECEMBER </h3>
+        </div>
+        </div>
     </div>
-    </div>
+
+
+  </section>
 
     <section id="news-slider">
       <h1>News</h1>
@@ -105,8 +118,8 @@
 
         <div class="news">
           <div class="txt_new">
-            <h4>6 de maio</h4>
-            <h2>Aaaa</h2>
+            <h4>6 de dezembro</h4>
+            <h4>Inauguração Vice-Reitoria Pólo II e Lançamento do UC Business</h4>
           </div>
           <img src="assets/photos/foto.png" alt="img1" />
           <div class="rect-new"> </div>
@@ -114,24 +127,24 @@
 
         <div class="news">
           <div class="txt_new">
-            <h4>6 de maio</h4>
-            <h2>Bbbb</h2>
+            <h4>6 de dezembro</h4>
+            <h4>Lançamento ASUC Ensino Secundário</h4>
           </div>
           <img src="assets/photos/foto.png" alt="img2" />
           <div class="rect-new"> </div>
         </div>
         <div class="news">
           <div class="txt_new">
-            <h4>6 de maio</h4>
-            <h2>Cccc</h2>
+            <h4>11 de dezembro - 12h</h4>
+            <h4>Apresentação do projeto Fit4work</h4>
           </div>
           <img src="assets/photos/foto.png" alt="img2" />
           <div class="rect-new"> </div>
         </div>
         <div class="news">
           <div class="txt_new">
-            <h4>6 de maio</h4>
-            <h2>Cccc</h2>
+            <!-- <h4>dezembro</h4>
+            <h4>Cccc</h4> -->
           </div>
           <img src="assets/photos/foto.png" alt="img2" />
           <div class="rect-new"> </div>
@@ -151,7 +164,7 @@
 
     <footer id="footer">
       <div class="footer-left">
-        <h1>Let´s stay in contact!</h1>
+        <h1>Let's stay in contact!</h1>
 
         <h5> Rectory Pólo II
           <br> R. Luís Reis dos Santos 290,
@@ -169,9 +182,9 @@
               height="35" width="35" alt="twitter" /> </a>
         </div>
       </div>
-      <div class="footer-right">
+      <!-- <div class="footer-right">
         <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
-      </div>
+      </div> -->
     </footer>
 
     <script src="assets/javascript/index.js"></script>
@@ -180,6 +193,18 @@
 
 </html>
 <script>
+
+// function myfunction() {
+//   var moreText = document.getElementById("rect-menu");
+//
+//   if (moreText.style.display === "none") {
+//     moreText.style.display = "block";
+//     }
+//   else {
+//     moreText.style.display = "none";
+//   }
+// }
+
   var figure = $(".value-txt").hover(hoverVideov, hideVideov);
   var figure1 = $(".invest-txt").hover(hoverVideoi, hideVideoi);
   var figure2 = $(".partner-txt").hover(hoverVideop, hideVideop);

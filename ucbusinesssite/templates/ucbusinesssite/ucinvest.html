@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="assets/css/ucinvest.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
@@ -15,8 +16,8 @@
       <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
       <div id="dir">
         <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
-        <h6> <a>PT</a>  <a>EN</a></h6>
-    </div>
+        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
+      </div>
   </div>
 </header>
 
@@ -40,7 +41,7 @@
 
       <div class="promoting">
         <div class="button-subtitle">
-          <button onclick="clickPromoting()" id="circ-promoting"></button>
+          <button onclick="clickPromoting()" id="circ-promoting"> </button>
           <h2 id="subtitle"> Promoting contact with companies </h2>
         </div>
           <div id="txt1">
@@ -72,7 +73,8 @@
           <h2 id="subtitle"> Employability </h2>
         </div>
 
-          <ul id="txt2">
+          <div id="txt2">
+            <ul>
             Help students from different academic levels enter the labor market:
             <p>
             <li>Articulate the professional needs of companies with the available training;</li>
@@ -89,7 +91,7 @@
             <li>Career support tools;</li>
           </p>
           </ul>
-
+        </div>
       </div>
 
       <div class="entrep">
@@ -98,8 +100,8 @@
           <h2 id="subtitle"> Entrepeneurship </h2>
         </div>
           <div id="txt3">
-            <ul>
             Encouragement of Entrepreneurship among the Univerisity:
+            <ul>
             <li>To strengthen entrepreneurship skills at different academic levels, graduates or non-graduates;</li>
             <li>To strengthen the incentive to entrepreneurship through competitions according to the Arrisca C model;</li>
             <li>To structure national and international entrepreneurial projects with the aim of enhancing the image of the University of Coimbra regarding its target audience (High School, International Higher Education, ...).</li>
@@ -152,7 +154,7 @@
             Explorer UC is a 5-month business idea acceleration program for 18 to 31-year-olds based on 4 domains: face-to-face training, online training, mentoring and access to prizes.
 
             <div class="numbers-anim">
-            <img id="explorer-uc" src="assets/photos/entrepe/exploreruc.jpg" id="explorer_uc">
+            <img id="exploreruc" src="assets/photos/entrepe/exploreruc.jpg" id="explorer_uc">
             <div class="patr">
               <img id="aac" src="assets/photos/entrepe/rede.png" id="redemprendia">
               <img id="santander" src="assets/photos/entrepe/santander.png" id="santander">
@@ -199,7 +201,7 @@
                 </div>
                 <div class="number" data-number= "1000000">
                   <h3 id="number3-arr">1000000</h3>
-                    <h5>In Prizes</h5>
+                    <h5>In Prizes(€)</h5>
                 </div>
               </div>
 
@@ -221,7 +223,7 @@
             Consolidate an open and inclusive Innovation Ecosystem in Central Portugal, incorporating a complete range of resources, infrastructures and dynamics, with cross-sectoral and sectorally oriented approaches to the specific needs of each innovative and entrepreneurial project.
 
             <div class="numbers-anim">
-              <img id="arrisca_c" src="assets/photos/entrepe/arriscac.jpg" id="arrisca_c">
+
 
               <div class="left">
                 <div class="number" data-number= "10">
@@ -249,39 +251,65 @@
           <button onclick="clickNonProfit()" id="circ-nonprofit"></button>
           <h2 id="subtitle"> Nonprofit Private Associations </h2>
         </div>
-          <id id="txt4">
+          <div id="txt4">
             <p>Articulation and support to the nonprofit private Associations </p>
             <div class="list">
 
               <div id="research">
                 <ul>Research Centers</ul>
-                <li>LIP</li>
-                <li>CNC</li>
-                <li>ISR IT</li>
-                <li>AIBILI</li>
-                <li>CEISUC</li>
+                <li>LIP </li>
+                <li>CNC </li>
+                <li>ISR Coimbra </li>
+                <li>LEDAP </li>
+                <li>CEISUC </li>
+                <li>CES</li>
+                <li>CRIA </li>
+                <li>INESC Coimbra </li>
+                <li>IT - Instituto de Telecomunicações</li>
               </div>
 
               <div id="type2">
-                <ul>Type 2</ul>
-                <li>X</li>
-                <li>X</li>
-                <li>X</li>
-                <li>X</li>
-                <li>X</li>
+                <ul>Consultancy and Projects</ul>
+                <li>ADAI</li>
+                <li>ADDF</li>
+                <li>AEEC</li>
+                <li>AEIDH</li>
+                <li>AIBILI</li>
+                <li>AITQ</li>
+                <li>APEC</li>
+                <li>APEU</li>
+                <li>BBS</li>
+                <li>CDB</li>
+                <li>CDC</li>
+                <li>CDF</li>
+                <li>CEDIPRE</li>
+                <li>CEDOUA</li>
+                <li>CIM</li>
+                <li>IDARC</li>
+                <li>IDET</li>
+                <li>IDPEE</li>
+                <li>IERU</li>
+                <li>IGC</li>
+                <li>IJC</li>
+                <li>LED</li>
+                <li>PRODEC</li>
+
               </div>
 
               <div id="type3">
-                <ul>Type 3</ul>
+                <ul>Transfers and Incubation</ul>
                 <li>IPN</li>
                 <li>Biocant</li>
-                <li>IteCons</li>
-                <li>X</li>
-                <li>X</li>
+                <li>SerQ</li>
+                <li>IEFF</li>
+                <li>IATV</li>
+                <li>ITECons</li>
+
               </div>
             </div>
 
       </div>
+        </div>
 
       <div class="customer">
         <div class="button-subtitle">
@@ -301,7 +329,7 @@
 
     <footer id="footer">
       <div class="footer-left">
-        <h1>Let´s stay in contact!</h1>
+        <h1>Let's stay in contact!</h1>
 
           <h5> Rectory Pólo II
           <br> R. Luís Reis dos Santos 290,
@@ -322,6 +350,16 @@
 </html>
 
 <script>
+function clickHam(){
+  var moreText = document.getElementById("rect-menu");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
 
 function clickPromoting() {
   var moreText = document.getElementById("txt1");
@@ -333,7 +371,7 @@ function clickPromoting() {
   }
 }
 
-function clickEntrep() {
+function clickEmploy() {
   var moreText = document.getElementById("txt2");
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
@@ -343,7 +381,7 @@ function clickEntrep() {
   }
 }
 
-function clickNonProfit() {
+function clickEntrep() {
   var moreText = document.getElementById("txt3");
   if (moreText.style.display === "none") {
     moreText.style.display = "block";
@@ -351,57 +389,6 @@ function clickNonProfit() {
   else {
     moreText.style.display = "none";
   }
-}
-function clickProjects() {
-  var moreText = document.getElementById("txt4");
-  if (moreText.style.display === "none") {
-    moreText.style.display = "block";
-    }
-  else {
-    moreText.style.display = "none";
-  }
-
-}
-function clickCustomer() {
-  var moreText = document.getElementById("txt5");
-  if (moreText.style.display === "none") {
-    moreText.style.display = "block";
-    }
-  else {
-    moreText.style.display = "none";
-  }
-
-}
-
-// numbers counter animation
-
-	$.fn.jQueryCounter = function( options ) {
-	    var settings = $.extend({
-	        start:  0,
-	        end:    100,
-	        easing: 'swing',
-	        duration: 400,
-	        complete: '',
-          type: 0,
-	    }, options );
-
-	    var thisElement = $(this);
-
-	    $({count: settings.start}).animate({count: settings.end}, {
-			duration: settings.duration,
-			easing: settings.easing,
-			step: function() {
-				var mathCount = Math.ceil(this.count);
-        if (type = 0){
-				thisElement.text("+" + mathCount);}
-			},
-      if (type = 1){
-      thisElement.text("+" + mathCount + "€");}
-    },
-			complete: settings.complete
-		});
-	});
-
 
   $('#number1-st').jQueryCounter({end: 26,duration: 2100});
   $('#number2-st').jQueryCounter({end: 109,duration: 2100});
@@ -424,6 +411,51 @@ function clickCustomer() {
   $('#number1-inov').jQueryCounter({end: 10,duration: 2100});
   $('#number2-inov').jQueryCounter({end: 600,duration: 2100,type:0});// +
 
+}
 
+function clickNonProfit() {
+  var moreText = document.getElementById("txt4");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+}
+
+function clickCustomer() {
+  var moreText = document.getElementById("txt5");
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block";
+    }
+  else {
+    moreText.style.display = "none";
+  }
+
+}
+
+// numbers counter animation
+
+	$.fn.jQueryCounter = function( options ) {
+	    var settings = $.extend({
+	        start:  0,
+	        end:    100,
+	        easing: 'swing',
+	        duration: 400,
+	        complete: '',
+	    }, options );
+
+	    var thisElement = $(this);
+
+	    $({count: settings.start}).animate({count: settings.end}, {
+			duration: settings.duration,
+			easing: settings.easing,
+			step: function() {
+				var mathCount = Math.ceil(this.count);
+
+    },
+  })
+			complete = settings.complete
+	};
 
 </script>
