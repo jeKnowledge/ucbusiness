@@ -20,18 +20,21 @@
 }
 
 .rectangle span {
-  font-family: Nexa;
   color: var(--color-blue);
+  font-size: 0.8em;
 }
 
-.news h2 {
-  padding-bottom: 2vh;
+#rect-month {
+  color: white;
+}
+
+.news h4 {
+  padding-bottom: 0vh;
 }
 
 .ucs-info {
   display: flex;
   align-items: center;
-
 }
 
 .circulos {
@@ -51,7 +54,6 @@
 
 #logo-anim {
   padding: 20vh 10vw;
-
 }
 
 .ucs-anim {
@@ -62,20 +64,38 @@
 
 .value,
 .invest,
-.partnership
-{
+.partnership {
   position: relative;
 }
 
 .invest,
-.partnership
-{
+.partnership {
+  display: none;
+}
+
+#timeline {
+  position: relative;
+}
+
+#txt-background {
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.5;
+  color: white;
+}
+
+#rectangle_message {
+  padding-top: 3px;
+  position: absolute;
+  color: white;
   display: none;
 }
 
 .rectangle {
   width: 100%;
-  height: 200px;
+  height: 30vh;
   background-color: var(--color-blue);
   display: flex;
   flex-direction: row;
@@ -85,12 +105,13 @@
 .circle {
   border-radius: 100%;
   background-color: white;
-  width: 50px;
-  height: 50px;
-  margin: 7% 3% 0 0;
+  width: 25px;
+  height: 25px;
+  margin: 7% 1% 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .info-ucb {
@@ -106,8 +127,8 @@
   justify-content: center;
 }
 
-.circle:hover {
-  background-color: var(--color-lightblue);
+.filled_circle {
+  background-color: var(--color-lightblue)
 }
 
 #news-slider {
@@ -182,4 +203,67 @@
 
 #slider2:target~.news {
   left: -65vw;
+}
+
+@media screen and (max-width: 900px) {
+  #logo-anim {
+    padding: 10vh 5vw;
+  }
+
+  .rectangle span {
+    font-size: 0.5em;
+  }
+
+  .circle {
+    width: 15px;
+    height: 15px;
+    margin: 7% 1% 0 0;
+  }
+
+  #rectangle_message {
+    font-size: 0.5em;
+    margin: 3% 1% 0 0;
+  }
+
+  .txt_new h4 {
+    font-size: 0.5em;
+    padding-bottom: 0;
+    margin-top: 4px;
+  }
+
+  .arrows img {
+    height: 3vh;
+    width: auto;
+  }
+
+  #logo-anim {
+    font-size: 0.7em;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+  .rectangle {
+    height: 10vh;
+  }
+
+  #txt-background {
+    font-size: 0.8em;
+  }
+
+  #logo-anim {
+    font-size: 0.5em;
+  }
+
+  .circle {
+    width: 15px;
+    height: 10px;
+    margin: 7% 1% 0 0;
+  }
+
+  .rectangle span {
+    font-size: 0.4em;
+  }
+
 }

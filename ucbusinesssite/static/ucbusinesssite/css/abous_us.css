@@ -9,7 +9,7 @@
 }
 
 .team {
-    padding: 0 5vw 0 5vw;
+    padding: 0 10vw 0 5vw;
 }
 
 .team1,
@@ -52,18 +52,14 @@
 .member11 img,
 .member12 img,
 .member13 img {
-    width: 211px;
-    height: 278px;
+    width: 40vh;
+    height: auto;
 }
 
-.rect_team img {
-    width: 211px;
-    height: 278px;
-}
 
 .rect_team {
-    width: 277px;
-    height: 278px;
+    width: 40vh;
+    height: auto;
     background-color: var(--color-blue);
     flex-direction: row;
     justify-content: center;
@@ -72,5 +68,61 @@
 }
 
 .team {
-    padding: 0 0 5% 5%;
+    padding: 0 5% 5% 5%;
+}
+
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+@media screen and (max-width: 900px){
+  .member1 img,
+  .member2 img,
+  .member3 img,
+  .member4 img,
+  .member5 img,
+  .member6 img,
+  .member7 img,
+  .member8 img,
+  .member9 img,
+  .member10 img,
+  .member11 img,
+  .member12 img,
+  .member13 img {
+    height: 30vh;
+    width: auto;
+  }
+  .rect_team{
+    height: 30vh;
+    width: 20vw;
+    font-size: 0.5em;
+  }
+  .about{
+    font-size: 0.9em;
+  }
+
+}
+@media screen and (max-width: 500px){
+  .member1 img,
+  .member2 img,
+  .member3 img,
+  .member4 img,
+  .member5 img,
+  .member6 img,
+  .member7 img,
+  .member8 img,
+  .member9 img,
+  .member10 img,
+  .member11 img,
+  .member12 img,
+  .member13 img {
+    height: 20vh;
+    width: auto;
+  }
+  .rect_team{
+    height: 20vh;
+    width: 10vw;
+    font-size: 0.3em;
+  }
+
+
 }

@@ -3,8 +3,7 @@
     font-size: 2em;
 }
 
-.new1,
-.new2 {
+.new {
     padding-bottom: 5%;
 }
 
@@ -15,9 +14,8 @@
     padding: 1vh 5vw;
 }
 
-.new1 p,
-.new2 p {
-    color: #000;
+.new p {
+    color: #000000;
     padding: 1vh 5vw;
     justify-content: center;
     text-align: justify;
