@@ -8,8 +8,6 @@
 #info {
   padding: 10vh 10vh;
   margin: 0;
-  background-size: auto;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url("../photos/value-back.png");
 }
 
 #subtitle {
@@ -92,9 +90,12 @@
   color: black;
   text-align: justify;
   margin: 0;
-  padding: 0 20vw 0 0;
+  padding: 0 10vw 0 0;
   line-height: 1.5;
 }
+
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
 
 @media screen and (max-width: 600px){
   #value-title, #subtitle{
@@ -116,24 +117,29 @@
   padding: 0;
   margin: 0;
 }
-.intelectual img{
-  display: block;
-  height: 4vh;
+
+.numbers-anim{
+  display: inline;
 }
 
 }
 
 @media screen and (max-width: 800px){
+  #txt1,
+  #txt2,
+  #txt3,
+  #txt4,
+  #txt5{
+    font-size: 0.8em;
+  }
+  .services-grid{
+    display: none;
+  }
   .number h2, .number h4{
     font-size: 0.6em;
     padding: 0;
     margin: 0;
   }
-  .intelectual img{
-    display: inline;
-    height: 20vh;
-  }
-
 }
 @media screen and (max-width: 950px){
   .number h2, .number h4{
@@ -142,8 +148,7 @@
     margin: 0;
   }
   .intelectual img{
-    display: inline;
-    height: 25vh;
+    height: 15vh;
   }
 
 }

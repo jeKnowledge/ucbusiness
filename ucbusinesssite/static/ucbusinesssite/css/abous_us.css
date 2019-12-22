@@ -75,33 +75,23 @@
 
 
 @media screen and (max-width: 900px){
-  .member1 img,
-  .member2 img,
-  .member3 img,
-  .member4 img,
-  .member5 img,
-  .member6 img,
-  .member7 img,
-  .member8 img,
-  .member9 img,
-  .member10 img,
-  .member11 img,
-  .member12 img,
-  .member13 img {
-    height: 30vh;
-    width: auto;
-  }
+
+
   .rect_team{
-    height: 30vh;
-    width: 20vw;
     font-size: 0.5em;
   }
   .about{
     font-size: 0.9em;
   }
-
 }
-@media screen and (max-width: 500px){
+
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+@media screen and (max-width: 600px){
+  .rect_team {
+      width: 20vh;
+      height: auto;
+  }
   .member1 img,
   .member2 img,
   .member3 img,
@@ -115,13 +105,17 @@
   .member11 img,
   .member12 img,
   .member13 img {
-    height: 20vh;
-    width: auto;
+      width: 30vh;
+      height: auto;
   }
-  .rect_team{
-    height: 20vh;
-    width: 10vw;
-    font-size: 0.3em;
+
+  .team1,
+  .team2,
+  .team3,
+  .team4,
+  .team5,
+  .team6 {
+      display: block;
   }
 
 

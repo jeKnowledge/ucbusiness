@@ -1,6 +1,6 @@
 .menu video {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   object-fit: cover;
   z-index: 0;
 }
@@ -172,7 +172,6 @@
   right: 0;
 
 }
-
 .news img {
   position: relative;
   width: 30vw;
@@ -186,24 +185,7 @@
   z-index: 1;
 }
 
-.arrows {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4%;
-}
 
-#slider1,
-#slider2 {
-  display: none;
-}
-
-#slider1:target~.news {
-  left: 10px;
-}
-
-#slider2:target~.news {
-  left: -65vw;
-}
 
 @media screen and (max-width: 900px) {
   #logo-anim {

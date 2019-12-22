@@ -2,10 +2,7 @@ ul {
   padding-inline-start: 0px;
 }
 
-h4 {
-  margin: 0;
-  padding-bottom: 3vh;
-}
+
 
 #value-title {
   margin-top: 15vh;
@@ -17,8 +14,6 @@ h4 {
 #info {
   padding: 10vh;
   margin: 0;
-  background-size: auto;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), url("../photos/invest.png");
 }
 
 #subtitle {
@@ -129,9 +124,11 @@ h4 {
   color: black;
   text-align: justify;
   margin: 0;
-  padding: 0 20vw 0 0;
+  padding: 0 15vw 0 0;
   line-height: 1.5;
 }
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
 
 @media screen and (max-width: 600px){
   #value-title, #subtitle{
@@ -148,33 +145,31 @@ h4 {
   #info img{
     display: none;
   }
-.number h2, .number h4{
-  font-size: 0.8em;
-  padding: 0;
-  margin: 0;
-}
-.intelectual img{
-  display: inline;
-  height: 15vh;
-}
+
 }
 @media screen and (max-width: 800px){
+  #txt1,
+  #txt2,
+  #txt3,
+  #txt4,
+  #txt5{
+    font-size: 0.8em;
+  }
   .number h2, .number h4{
-    font-size: 0.7em;
+    font-size: 0.5em;
     padding: 0;
     margin: 0;
   }
   .photo h4{
     font-size: 0.8em;
     display: list-item;
+    padding-right: 5px
   }
-  .photos{
-    display: block;
-
+  .photos img{
+    display:none;
   }
-  .intelectual img{
-    display: inline;
-    height: 15vh;
+  .patr{
+    display: none;
   }
 
 }

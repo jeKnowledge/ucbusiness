@@ -1,7 +1,3 @@
-* {
-  font-family: 'Open Sans', sans-serif;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -10,15 +6,19 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Nexa, sans-serif;
+  font-weight: 800;
 }
 
 h4,
 h5,
-h6 {
+h6,span {
+  font-family: Nexa, sans-serif;
   font-weight: 400;
 }
-
+p{
+  
+}
 li {
   list-style: square;
 }
@@ -44,12 +44,6 @@ li {
   width: auto;
 }
 
-.hamb {
-  height: 0.5px;
-  width: 10px;
-  background-color: white;
-  margin: 1.5px 0;
-}
 
 .header h6 {
   float: right;
@@ -78,16 +72,13 @@ li {
   left: 0;
 }
 
-.menu h5 {
+.menu h4 {
   display: flex;
   z-index: 5;
 }
 
-#menu-hamb {
-  display: none;
-}
 
-.menu h5 a {
+.menu h4 a {
   padding-left: 5%;
   color: white;
   text-decoration: none;
@@ -96,7 +87,7 @@ li {
   white-space: nowrap;
 }
 
-.menu h5 a:hover {
+.menu h4 a:hover {
   text-decoration: underline;
   text-decoration-color: white;
 }
@@ -137,7 +128,6 @@ li {
   .rect-menu {
     height: 4vh;
   }
-
   .rect-menu h5 a {
     padding-right: 8px;
     font-size: 0.8em;
@@ -163,6 +153,9 @@ li {
   #logo_ucb {
     height: 5vh;
     width: auto;
-
   }
+}
+
+
+
 }
