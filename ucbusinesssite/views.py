@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from .models import AboutText, NewsArticle, Position, Member
+from .models import NewsArticle, Role, Member
 
 
 class LandingPage(View):
@@ -14,7 +14,6 @@ class AboutPage(View):
     template_name = 'ucbusinesssite/about_us.html'
 
     def get(self, request):
-        text = AboutText.objects.all()
         return render(request, self.template_name)
 
 

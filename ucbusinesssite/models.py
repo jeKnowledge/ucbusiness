@@ -1,40 +1,53 @@
 from django.db import models
 
-class AboutText(models.Model):
-    title = models.CharField(max_length=50, blank=False)
-    body = models.TextField(max_length=500, blank=False)
-
-    class Meta:
-        db_table = 'AboutText'
-        verbose_name = 'Text'
-        verbose_name_plural = 'About Texts'
-        ordering = ['title']
-
-
 class NewsArticle(models.Model):
-    title = models.CharField(max_length=50, blank=False)
-    body = models.TextField(blank=False)
-    imgUrl = models.CharField(max_length=500)
+    title = models.CharField(max_length=50, blank=False, verbose_name='Title')
+    titleEn = models.CharField(max_length=50, blank=False, default='No translation', verbose_name='Title(EN)')
+    body = models.TextField(blank=False, verbose_name='Body')
+    bodyEn = models.TextField(blank=False, verbose_name='Body(EN)', default='No translation')
+    datePosted = models.DateTimeField(auto_now_add=True)
+
     class Meta:
-        db_table = 'NewsArticle'
+        db_table = 'News_Articles'
         verbose_name = 'News Article'
-        verbose_name_plural = 'News'
-        ordering = ["title"]
+        verbose_name_plural = 'News Articles'
+        ordering = ["datePosted"]
+
+    def __str__(self):
+        return self.title
 
 
-class Position(models.Model):
-    name = models.CharField(max_length=50, blank=False, primary_key=True)
+class ImageUrl(models.Model):
+    url = models.CharField(max_length=300)
+    newsArticle = models.ForeignKey(NewsArticle, on_delete=models.CASCADE)
 
     class Meta:
-        db_table = 'Position'
-        verbose_name = 'Position'
-        verbose_name_plural = 'Positions'
-        ordering = ['name']
+        db_table = 'News_Images'
+        verbose_name = 'News Article Image'
+        verbose_name_plural = 'News Images'
+
+    def __str__(self):
+        return self.newsArticle.title + ' ('+ self.url +')'
+
+
+class Role(models.Model):
+    name = models.CharField(max_length=50, blank=False, primary_key=True)
+    position = models.IntegerField(unique=True, blank=False)
+
+    class Meta:
+        db_table = 'Roles'
+        verbose_name = 'Role'
+        verbose_name_plural = 'Roles'
+        ordering = ['position']
+
+    def __str__(self):
+        return self.name
+
 
 class Member(models.Model):
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(max_length=255 ,unique=True, blank=False)
-    position = models.ForeignKey(Position, on_delete = models.PROTECT)
+    role = models.ForeignKey(Role, on_delete = models.PROTECT)
     image = models.ImageField(upload_to='ucbusinesssite/')
 
     class Meta:
@@ -42,3 +55,6 @@ class Member(models.Model):
         verbose_name = 'Member'
         verbose_name_plural = 'Members'
         ordering = ['name']
+
+    def __str__(self):
+        return self.name + ' ('+ self.role.name +')'
