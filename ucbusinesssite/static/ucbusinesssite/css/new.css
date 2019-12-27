@@ -1,0 +1,29 @@
+
+#news{
+  padding: 15vh 0 10vh 5vw;
+}
+#news h1{
+  font-size: 2em;
+}
+
+#news img {
+    width: 50vw;
+    height: 55vh;
+    object-fit: cover;
+    border-radius: 2%
+}
+
+#news p{
+  width: 80vw;
+}
+#news span{
+  float: right;
+  margin-right: 10vw;
+}
+
+.slider button{
+  background-color: var(--color-blue);
+  height: 1vh;
+  width: 2vw;
+  border: none;
+}

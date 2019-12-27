@@ -16,8 +16,10 @@ h6,span {
   font-family: Nexa, sans-serif;
   font-weight: 400;
 }
-p{
-  
+p, span, li, a, button{
+  font-family: Nexa, sans-serif;
+  font-weight: 200;
+
 }
 li {
   list-style: square;
@@ -124,38 +126,11 @@ li {
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
-@media screen and (max-width: 900px) {
-  .rect-menu {
-    height: 4vh;
-  }
-  .rect-menu h5 a {
-    padding-right: 8px;
-    font-size: 0.8em;
-  }
 
-  #menu-hamb {
-    display: inline;
-    float: right;
-    margin-right: 2vw;
-    padding-top: 1vh;
+@media screen and (max-width: 900px){
+  .rect-menu{
+  background-color: yellow;
   }
-
-  #footer {
-    font-size: 0.6em;
-  }
-
-  .footer-social img {
-    height: 3vh;
-    width: auto;
-  }
-
-  #logo_uc,
-  #logo_ucb {
-    height: 5vh;
-    width: auto;
-  }
-}
-
 
 
 }

@@ -9,66 +9,35 @@
 }
 
 .team {
-    padding: 0 10vw 0 5vw;
+    margin-left: 8vw;
 }
 
-.team1,
-.team2,
-.team3,
-.team4,
-.team5,
-.team6 {
-    display: flex;
+.member1{
+  display: flex;
+  padding-bottom: 15vh;
+  padding-top: 8vh;
 }
 
-.member1,
-.member2,
-.member3,
-.member4,
-.member5,
-.member6,
-.member7,
-.member8,
-.member9,
-.member10,
-.member11,
-.member12,
-.member13 {
-    padding-top: 5px;
-    display: flex;
-    padding-right: 5px;
+.member-info{
+  text-align: left;
+  color:black;
+  padding-top: 2vh;
+  line-height: 1vh;
+}
+.member-info h4{
+  font-weight: bold;
 }
 
-.member1 img,
-.member2 img,
-.member3 img,
-.member4 img,
-.member5 img,
-.member6 img,
-.member7 img,
-.member8 img,
-.member9 img,
-.member10 img,
-.member11 img,
-.member12 img,
-.member13 img {
+.member img, .member1 img{
+    border-radius: 100%;
     width: 40vh;
     height: auto;
 }
 
-
-.rect_team {
-    width: 40vh;
-    height: auto;
-    background-color: var(--color-blue);
-    flex-direction: row;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-
-.team {
-    padding: 0 5% 5% 5%;
+#team-grid{
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw ;
+  grid-template-rows: 70vh 70vh 70vh;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
@@ -76,47 +45,8 @@
 
 @media screen and (max-width: 900px){
 
-
-  .rect_team{
-    font-size: 0.5em;
-  }
   .about{
     font-size: 0.9em;
   }
-}
-
-/* ------------------------------------------ Media Queries ------------------------------------------ */
-
-@media screen and (max-width: 600px){
-  .rect_team {
-      width: 20vh;
-      height: auto;
-  }
-  .member1 img,
-  .member2 img,
-  .member3 img,
-  .member4 img,
-  .member5 img,
-  .member6 img,
-  .member7 img,
-  .member8 img,
-  .member9 img,
-  .member10 img,
-  .member11 img,
-  .member12 img,
-  .member13 img {
-      width: 30vh;
-      height: auto;
-  }
-
-  .team1,
-  .team2,
-  .team3,
-  .team4,
-  .team5,
-  .team6 {
-      display: block;
-  }
-
 
 }
