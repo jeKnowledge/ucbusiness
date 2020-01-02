@@ -5,10 +5,13 @@
     <link rel="stylesheet" href="assets/css/new.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
-    <title>UC Business</title>
+
+    <title>Insight</title>
 </head>
 <body>
 <header>
@@ -23,16 +26,23 @@
 
 <section id=navbar>
         <div class="menu">
-            <div class="rect-menu">
-            <h4>
-                <a href="about_us.html"> About us</a>
-                <a href="ucvalue.html">Value</a>
-                <a href="ucinvest.html">Invest</a>
-                <a href="ucpartnership.html">Partnership</a>
-                <a href="insight.html"> Insight</a>
-                <a href= "#footer">Contacts</a>
+
+          <div class="rect-menu">
+            <button id="container" onclick="changeMenu()">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+
+            <h4 id="menu-txt">
+              <a href="about_us.html">About us</a>
+              <a href="ucvalue.html"> Value</a>
+              <a href="ucinvest.html"> Invest</a>
+              <a href="ucpartnership.html"> Partnership</a>
+              <a href="insight.html"> Insight</a>
+              <a href=".contacts.html">Contacts</a>
             </h4>
-            </div>
+        </div>
         </div>
   </section>
 
@@ -40,15 +50,17 @@
 
 
     <div class="slider">
-    <span> 6.12.2019 </span>
-    <img id="carousel0"   src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79167160_452866628752560_1749966476086870016_o.jpg?_nc_cat=104&_nc_oc=AQmD9QgG_0qZ7NZUUml-Xcp0CsqiJQTP4yCta28qrVltcoYjo7qbLDcFy3fbCa2cOy8&_nc_ht=scontent.flis6-1.fna&oh=847047ebe89faa4adc3878e551b69284&oe=5E6B1D4C">
     <button type="button" id="arrow-prev" class="slider-arrow slider-arrow-prev" > </button>
+    <img id="carousel0"   src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79167160_452866628752560_1749966476086870016_o.jpg?_nc_cat=104&_nc_oc=AQmD9QgG_0qZ7NZUUml-Xcp0CsqiJQTP4yCta28qrVltcoYjo7qbLDcFy3fbCa2cOy8&_nc_ht=scontent.flis6-1.fna&oh=847047ebe89faa4adc3878e551b69284&oe=5E6B1D4C">
     <button type="button" id="arrow-next" class="slider-arrow slider-arrow-next" > </button>
   </div>
   <h3> Lançamento UC Business </h3>
   <p> Foi hoje, 6 de dezembro, oficialmente lançado o UC Business!
 
-Na mesma ocasião foi ainda apresentado o projeto “Académica Start UC – Ensino Secundário” e assinado um protocolo de colaboração entre a UC e a empresa Tilray. </p>
+Na mesma ocasião foi ainda apresentado o projeto “Académica Start UC – Ensino Secundário” e assinado um protocolo de colaboração entre a UC e a empresa Tilray. 
+  </p>
+  <span> 6.12.2019 </span>
+  <h4 onclick="location.href='insight.html'"> < Back </h4>
 
 </section>
 
@@ -100,4 +112,16 @@ rightArrow.addEventListener("click", function() {
 	}
 	document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
 });
+
+function changeMenu(){
+
+if ($('#menu-txt').css('display') == 'none'){
+  $('#menu-txt').css('display', 'block');
+  $('.rect-menu').css('height', '100vh');
+}
+else{
+  $('#menu-txt').css('display', 'none');
+  $('.rect-menu').css('height', '8vh');
+}
+}
 </script>

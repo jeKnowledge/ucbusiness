@@ -5,7 +5,11 @@
     <link rel="stylesheet" href="assets/css/abous_us.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <title>About Us</title>
 </head>
 <body>
@@ -21,16 +25,23 @@
 
 <section id="navbar">
         <div class="menu">
-            <div class="rect-menu">
-            <h4>
-                <a href="about_us.html"> About us</a>
-                <a href="ucvalue.html">Value</a>
-                <a href="ucinvest.html">Invest</a>
-                <a href="ucpartnership.html"> Partnership</a>
-                <a href="insight.html"> Insight</a>
-                <a href= "#footer">Contacts</a>
+          <div class="rect-menu">
+
+            <button id="container" onclick="changeMenu()">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+
+            <h4 id="menu-txt">
+              <a href="about_us.html">About us</a>
+              <a href="ucvalue.html"> Value</a>
+              <a href="ucinvest.html"> Invest</a>
+              <a href="ucpartnership.html"> Partnership</a>
+              <a href="insight.html"> Insight</a>
+              <a href="contacts.html">Contacts</a>
             </h4>
-            </div>
+        </div>
         </div>
   </section>
 
@@ -60,8 +71,7 @@
           <img src="assets/photos/team/NunoMendonca.jpg"alt="nuno mendonça"/>
              <div class="member-info">
                  <h4>Nuno Mendonça</h4>
-                 <h5>Coordinator</h5>
-                 <h5>nuno.mendoca@uc.pt</h5>
+                 <h5>Coordinator<br>nuno.mendoca@uc.pt</h5>
              </div>
 
         </div>
@@ -70,8 +80,7 @@
           <img src="assets/photos/team/AnaRitaQuerido.jpg" alt="ana querido"/>
             <div class="member-info">
                 <h4>Ana Rita Querido</h4>
-                <h5>Projects Management</h5>
-                <h5>ana.querido@uc.pt</h5>
+                <h5>Projects Management<br>ana.querido@uc.pt</h5>
             </div>
         </div>
 
@@ -80,8 +89,8 @@
             <img src="assets/photos/team/CarlaMarques.jpg" alt="carla marques"/>
           <div class="member-info">
               <h4>Carla Marques</h4>
-              <h5>Projects Management</h5>
-              <h5>carla.marques@uc.pt</h5>
+              <h5>Projects Management
+              <br>carla.marques@uc.pt</h5>
           </div>
       </div>
 
@@ -89,8 +98,7 @@
             <img src="assets/photos/team/DanielSilva.JPG" alt="daniel silva"/>
           <div class="member-info">
               <h4>Daniel Silva</h4>
-              <h5>Projects Management</h5>
-              <h5>daniel.silva@uc.pt</h5>
+              <h5>Projects Management<br>daniel.silva@uc.pt</h5>
           </div>
       </div>
 
@@ -99,8 +107,7 @@
         <img src="assets/photos/team/HelenaHenriques.JPG" alt="helena henriques"/>
           <div class="member-info">
               <h4>Helena Henriques</h4>
-              <h5>Projects Management</h5>
-              <h5>helena.henriques@uc.pt</h5>
+              <h5>Projects Management<br>helena.henriques@uc.pt</h5>
           </div>
 
       </div>
@@ -109,8 +116,7 @@
         <img src="assets/photos/team/LauraAlho.JPG" alt="laura alho"/>
          <div class="member-info">
              <h4>Laura Alho</h4>
-             <h5>Projects Management</h5>
-             <h5>laura.alho@uc.pt</h5>
+             <h5>Projects Management<br>laura.alho@uc.pt</h5>
          </div>
 
       </div>
@@ -119,8 +125,7 @@
         <img src="assets/photos/team/LuisSilva.jpg" alt="luis silva"/>
          <div class="member-info">
              <h4>Luís Silva</h4>
-             <h5>Projects Management</h5>
-             <h5>luis.silva@uc.pt</h5>
+             <h5>Projects Management<br>luis.silva@uc.pt</h5>
          </div>
 
       </div>
@@ -129,8 +134,7 @@
         <img src="assets/photos/team/MartaCostaeSilva.JPG" alt="marta silva"/>
          <div class="member-info">
              <h4>Marta Silva</h4>
-             <h5>Projects Management</h5>
-             <h5>marta.c.silva@uc.pt</h5>
+             <h5>Projects Management<br>marta.c.silva@uc.pt</h5>
          </div>
 
       </div>
@@ -139,8 +143,7 @@
         <img src="assets/photos/team/MonicaWolters.jpg" alt="monica wolters"/>
           <div class="member-info">
               <h4>Mónica Wolters</h4>
-              <h5>Projects Management</h5>
-              <h5>monica.wolters@uc.pt</h5>
+              <h5>Projects Management<br>monica.wolters@uc.pt</h5>
           </div>
        </div>
      </div>
@@ -170,3 +173,17 @@
 
 </body>
 </html>
+
+<script>
+function changeMenu(){
+
+if ($('#menu-txt').css('display') == 'none'){
+  $('#menu-txt').css('display', 'block');
+  $('.rect-menu').css('height', '100vh');
+}
+else{
+  $('#menu-txt').css('display', 'none');
+  $('.rect-menu').css('height', '8vh');
+}
+}
+</script>

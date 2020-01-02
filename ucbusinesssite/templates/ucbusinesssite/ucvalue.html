@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/ucvalue.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
@@ -21,25 +22,31 @@
   </div>
 </header>
 
-<section id=navbar>
-  <div class="menu">
-    <div class="rect-menu">
-      <h4>
-        <a href="about_us.html">About us</a>
-        <a href="ucvalue.html">Value</a>
-        <a href="ucinvest.html">Invest</a>
-        <a href="ucpartnership.html">Partnership</a>
-        <a href="insight.html">Insight</a>
-        <a href="#footer">Contacts</a>
-      </h4>
+<section id="navbar">
+        <div class="menu">
+          <div class="rect-menu">
 
-    </div>
-  </div>
-</section>
+            <button id="container" onclick="changeMenu()">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+
+            <h4 id="menu-txt">
+              <a href="about_us.html">About us</a>
+              <a href="ucvalue.html"> Value</a>
+              <a href="ucinvest.html"> Invest</a>
+              <a href="ucpartnership.html"> Partnership</a>
+              <a href="insight.html"> Insight</a>
+              <a href="contacts.html">Contacts</a>
+            </h4>
+        </div>
+        </div>
+  </section>
 
   <section id="info">
 
-      <h1 id="value-title"> UC VALUE</h1>
+      <h1 id="value-title">Value</h1>
 
       <div class="services">
         <div class="button-subtitle">
@@ -47,9 +54,10 @@
           <h2 id="subtitle"> Specialized Services </h2>
           </div>
           <div id="txt1">
-              Collaborations, partnerships, networks, with the community at a regional,
+              <p>Collaborations, partnerships, networks, with the community at a regional,
                national and international level, and with contributors from economic, social and cultural sectors,
                contributing for the dissemination and application of knowledge and thus for development and general well-being.
+             </p>
                <div class="services-grid">
                 <div class="item item1" ><img src="assets/photos/specialized/altice.png" alt="altice"></div>
                 <div class="item item2"><img src="assets/photos/specialized/arcelor.png" alt="arcelor"></div>
@@ -81,6 +89,7 @@
           <h2 id="subtitle"> Technological Platforms </h2>
           </div>
           <div id="txt2">
+            <p>
             <ul>
             <li>Nuclear Magnetic Resonance Laboratory (NMRL)</li>
             <li>Coimbra Laser Laboratory (CLL)</li>
@@ -91,6 +100,7 @@
             <li>UCGenomics</li>
             <li>Brain Imaging Network - BIN</li>
           </ul>
+        </p>
         </div>
       </div>
 
@@ -104,22 +114,22 @@
 
             <div class="numbers-anim">
               <div class="number" data-number= "81">
-                <h2 id="number1">81</h2>
+                <h2 id="numbers">81</h2>
                   <h4>International</h4>
               </div>
 
               <div class="number" data-number= "19">
-                <h2 id="number2">19</h2>
+                <h2 id="numbers">19</h2>
                   <h4>National</h4>
               </div>
 
               <div class="number" data-number= "82">
-                <h2 id="number3">82</h2>
+                <h2 id="numbers">82</h2>
                   <h4>Accepted</h4>
               </div>
 
               <div class="number" data-number= "7">
-                <h2 id="number4">7</h2>
+                <h2 id="numbers">7</h2>
                   <h4>In Negotiation</h4>
               </div>
             </div>
@@ -132,9 +142,11 @@
           <h2 id="subtitle"> Projects with Companies </h2>
         </div>
           <div id="txt4">
+            <p>
             Strengthening the encouragement of projects with companies in national and international partnerships:
             <br>Organisation of projects by building consortia;
             <br>Identification of funding programs, side-by-side with the Research Support Office and their fit to research and innovation proposals.
+          </p>
           </div>
       </div>
 
@@ -143,12 +155,15 @@
           <button onclick="clickApp()" id="circ-app"></button>
             <h2 id="subtitle"> Application Development </h2>
         </div>
-            <ul id="txt5">
+        <div id=txt5>
+        <p>
+            <ul>
               Application elaboration service with companies, side-by-side with the Research Support Office:
               <li>Maximize the results of application processes with companies for competitive financing programs, involving expert consultants;</li>
               <li>Teams training using technical training for funding programs for the next framework program.</li>
             </ul>
-
+          </p>
+        </div>
       </div>
     </section>
 
@@ -252,6 +267,19 @@ function clickApp() {
 		});
 	};
 
+  //responsive menu
+
+  function changeMenu(){
+
+  if ($('#menu-txt').css('display') == 'none'){
+    $('#menu-txt').css('display', 'block');
+    $('.rect-menu').css('height', '100vh');
+  }
+  else{
+    $('#menu-txt').css('display', 'none');
+    $('.rect-menu').css('height', '8vh');
+  }
+  }
 
 
 </script>

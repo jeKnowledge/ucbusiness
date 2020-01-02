@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
     <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
-    <title>UC Business</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <title>Insight</title>
 </head>
 <body>
 <header>
@@ -21,16 +24,23 @@
 
 <section id=navbar>
         <div class="menu">
-            <div class="rect-menu">
-            <h4>
-                <a href="about_us.html"> About us</a>
-                <a href="ucvalue.html">Value</a>
-                <a href="ucinvest.html">Invest</a>
-                <a href="ucpartnership.html">Partnership</a>
-                <a href="insight.html"> Insight</a>
-                <a href= "#footer">Contacts</a>
+          <div class="rect-menu">
+
+            <button id="container" onclick="changeMenu()">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+
+            <h4 id="menu-txt">
+              <a href="about_us.html">About us</a>
+              <a href="ucvalue.html"> Value</a>
+              <a href="ucinvest.html"> Invest</a>
+              <a href="ucpartnership.html"> Partnership</a>
+              <a href="insight.html"> Insight</a>
+              <a href="contacts.html">Contacts</a>
             </h4>
-            </div>
+        </div>
         </div>
   </section>
 
@@ -101,3 +111,18 @@
     <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
   </div>
 </footer>
+
+<script>
+
+function changeMenu(){
+
+if ($('#menu-txt').css('display') == 'none'){
+  $('#menu-txt').css('display', 'block');
+  $('.rect-menu').css('height', '100vh');
+}
+else{
+  $('#menu-txt').css('display', 'none');
+  $('.rect-menu').css('height', '8vh');
+}
+}
+</script>
