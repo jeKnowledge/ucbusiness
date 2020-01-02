@@ -13,17 +13,43 @@
     border-radius: 2%
 }
 
-#news p{
-  width: 80vw;
+#news p , .slider{
+  width: 85vw;
 }
-#news span{
-  float: right;
-  margin-right: 10vw;
+.slider{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.slider button{
+#news span{
+  font-size: 0.8em;
+}
+#news h4{
+  font-weight: bold;
+  padding-top: 10vh;
+}
+#news h4:hover{
+ text-decoration: underline;
+}
+
+#arrow-prev , #arrow-next{
+  height: 2vh;
+  width: 3vw;
+  border :none;
   background-color: var(--color-blue);
-  height: 1vh;
-  width: 2vw;
-  border: none;
+  margin: 0 2vw;
+}
+
+
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+@media screen and (max-width: 400px) {
+
+  #news img {
+      width: 60vw;
+      height: 20vh;
+  }
+
 }

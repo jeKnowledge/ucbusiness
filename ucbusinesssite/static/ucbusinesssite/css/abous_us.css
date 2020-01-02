@@ -22,7 +22,7 @@
   text-align: left;
   color:black;
   padding-top: 2vh;
-  line-height: 1vh;
+
 }
 .member-info h4{
   font-weight: bold;
@@ -45,8 +45,41 @@
 
 @media screen and (max-width: 900px){
 
-  .about{
-    font-size: 0.9em;
+  .member-info{
+    font-size: 0.8em;
+  }
+  .member img{
+      width: 20vh;
+      height: auto;
   }
 
+  #team-grid{
+    display: grid;
+    grid-template-columns: 50vw 50vw ;
+    grid-template-rows: 40vh 40vh 40vh 40vh;
+  }
+
+}
+
+@media screen and (max-width: 400px){
+
+  .member img{
+      width: 20vw;
+      height: auto;
+  }
+  .member1 img{
+    width: 25vw;
+    height: 15vh;
+    padding-right: 5vw;
+  }
+  .member1{
+    width: 70vw;
+    align-items: center;
+    padding-top: 0;
+  }
+  #team-grid{
+    display: grid;
+    grid-template-columns: 45vw 45vw ;
+    grid-template-rows: 35vh 35vh 35vh 35vh;
+  }
 }

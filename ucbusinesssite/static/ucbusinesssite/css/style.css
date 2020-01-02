@@ -5,20 +5,6 @@
   z-index: 0;
 }
 
-.ucs-title h4:hover {
-  text-decoration: underline;
-  text-decoration-color: black;
-}
-
-.ucs-title {
-  display: flex;
-  padding-left: 7vw;
-}
-
-.ucs-title h4 {
-  padding-right: 2vw;
-}
-
 .rectangle span {
   color: var(--color-blue);
   font-size: 0.8em;
@@ -28,14 +14,52 @@
   color: white;
 }
 
-.news h4 {
+.txt_new{
   padding-bottom: 0vh;
 }
-
-.ucs-info {
-  display: flex;
-  align-items: center;
+#ucb-logo{
+  height:60vh;
+  width: auto;
 }
+.txt-ucb{
+  font-size: 1.6em;
+  width: 40vw;
+}
+#info-ucb{
+    display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 25vh 0;
+}
+#info-pilares{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-bottom: 20vh;
+
+}
+.info{
+  align-items: stretch;
+}
+.info img{
+  height:15vh;
+  width:auto;
+  margin-left: 4vw;
+}
+.info h4{
+  text-align: center;
+  font-size: 1.4em;
+width: 15vw;
+}
+.info button{
+  background-color: var(--color-blue);
+  color: white;
+  border: none;
+  width: 15vw;
+  height:5vh;
+  padding-bottom: 0;
+}
+
 
 .circulos {
   display: flex;
@@ -52,26 +76,6 @@
   text-align: center;
 }
 
-#logo-anim {
-  padding: 20vh 10vw;
-}
-
-.ucs-anim {
-  position: relative;
-  left: 0;
-  top: 0;
-}
-
-.value,
-.invest,
-.partnership {
-  position: relative;
-}
-
-.invest,
-.partnership {
-  display: none;
-}
 
 #timeline {
   position: relative;
@@ -87,7 +91,7 @@
 }
 
 #rectangle_message {
-  padding-top: 3px;
+  padding-top: 6px;
   position: absolute;
   color: white;
   display: none;
@@ -119,33 +123,34 @@
   justify-content: center;
 }
 
-.info-value,
-.info-invest,
-.info-partnership {
-  display: none;
-  text-align: center;
-  justify-content: center;
-}
 
 .filled_circle {
-  background-color: var(--color-lightblue)
+  background-color: var(--color-lightblue);
 }
 
-#news-slider {
+#news-container {
   padding: 3% 5% 5%;
   margin: auto;
 }
-
-#news-slider h1 {
-  font-size: 2em;
+.rect-new button{
+  float: right;
+  margin-top: 15vh;
+  margin-right: 1vw;
+  background-color: white;
+  color:var(--color-blue);
+  border:none;
+  height: 4vh;
+  font-weight: bold;
 }
+
+
 
 .ucs-anim video {
   width: 40vw;
   height: auto;
 }
 
-.slider {
+.container {
   padding-top: 3%;
   width: 65vw;
   height: auto;
@@ -154,7 +159,7 @@
   display: flex;
 }
 
-.news {
+.new1,.new2 {
   position: relative;
   text-align: left;
   transition: left 2s;
@@ -170,9 +175,10 @@
   position: absolute;
   top: 0;
   right: 0;
+  left:0;
 
 }
-.news img {
+.new1 img, .new2 img {
   position: relative;
   width: 30vw;
   z-index: 0;
@@ -184,68 +190,52 @@
   position: absolute;
   z-index: 1;
 }
-
-
-
-@media screen and (max-width: 900px) {
-  #logo-anim {
-    padding: 10vh 5vw;
-  }
-
-  .rectangle span {
-    font-size: 0.5em;
-  }
-
-  .circle {
-    width: 15px;
-    height: 15px;
-    margin: 7% 1% 0 0;
-  }
-
-  #rectangle_message {
-    font-size: 0.5em;
-    margin: 3% 1% 0 0;
-  }
-
-  .txt_new h4 {
-    font-size: 0.5em;
-    padding-bottom: 0;
-    margin-top: 4px;
-  }
-
-  .arrows img {
-    height: 3vh;
-    width: auto;
-  }
-
-  #logo-anim {
-    font-size: 0.7em;
-  }
-
+#news-container h1{
+  font-size: 2em;
 }
 
-@media screen and (max-width: 700px) {
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+@media screen and (max-width: 400px) {
 
   .rectangle {
     height: 10vh;
   }
 
-  #txt-background {
-    font-size: 0.8em;
-  }
-
-  #logo-anim {
+  #txt-background, .txt_new {
     font-size: 0.5em;
   }
 
-  .circle {
-    width: 15px;
-    height: 10px;
-    margin: 7% 1% 0 0;
+  #logo-anim {
+    font-size: 0.4em;
   }
 
-  .rectangle span {
-    font-size: 0.4em;
+  .circle {
+    width: 13px;
+    height: 8px;
+    margin: 7% 1% 0 0;
+  }
+  .container{
+    display: block;
+  }
+
+  .circle span {
+    font-size: 0.3em;
+  }
+  #logo-anim {
+    padding: 10vh 10vw;
+  }
+
+  .new1 img , .container , .new2 img , .rect-new{
+    width:40vw;
+  }
+
+  .new1, .new2{
+    padding-bottom: 3vh;
+  }
+  #news-container h1{
+    font-size: 1.5em;
   }
 
 }
