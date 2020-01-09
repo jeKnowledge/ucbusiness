@@ -27,6 +27,16 @@
     </div>
 
   </header>
+  <div class="cookiebanner">
+    <div class="cookiebanner-message">
+      <h2 class="cookiebanner-text">
+        <p>
+          This website site uses cookies to improve your browsing experience. By continuing to use this site, you are agreeing to our use of cookies.
+        </p>
+      </h2>
+      <button id="cookie-button" onclick="hideCookie()"> Accept and close </button>
+    </div>
+  </div>
 
   <section id=navbar>
     <div class="menu">
@@ -170,9 +180,9 @@
       </div>
     </footer>
 
+
+
     <script src="assets/javascript/index.js"></script>
-
-
 
 </body>
 
@@ -200,10 +210,14 @@ function changeMenu(){
 
 if ($('#menu-txt').css('display') == 'none'){
   $('#menu-txt').css('display', 'block');
-  $('.rect-menu').css('height', '100%');
+  $('.rect-menu').css('height', '100vh');
 }
 else{
   $('#menu-txt').css('display', 'none');
   $('.rect-menu').css('height', '8vh');
 }
 }
+function hideCookie(){
+    $('.cookiebanner').css('display', 'none');
+}
+</script>
