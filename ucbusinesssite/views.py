@@ -7,7 +7,8 @@ class LandingPage(View):
     template_name = 'ucbusinesssite/index.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        news = NewsArticle.objects.all()[:5]
+        return render(request, self.template_name, {'newsArticles': news})
 
 
 class AboutPage(View):
@@ -18,11 +19,11 @@ class AboutPage(View):
 
 
 class NewsPage(View):
-    news = NewsArticle.objects.all()
     template_name = 'ucbusinesssite/news.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        news = NewsArticle.objects.all().order_by('datePosted')
+        return render(request, self.template_name, {'newsArticles': news})
 
 
 class UCInvestPage(View):

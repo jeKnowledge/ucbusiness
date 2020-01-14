@@ -14,7 +14,7 @@ class NewsArticle(models.Model):
         ordering = ["datePosted"]
 
     def __str__(self):
-        return self.title
+        return self.title + " - " + str(self.datePosted.strftime("%d/%m/%Y %H:%M"))
 
 
 class ImageUrl(models.Model):
@@ -51,10 +51,24 @@ class Member(models.Model):
     image = models.ImageField(upload_to='ucbusinesssite/')
 
     class Meta:
-        db_table = 'Member'
+        db_table = 'Members'
         verbose_name = 'Member'
         verbose_name_plural = 'Members'
         ordering = ['name']
 
     def __str__(self):
         return self.name + ' ('+ self.role.name +')'
+
+
+class NonProfitAssociation(models.Model):
+    name = models.CharField(max_length=100, blank=False, unique=True)
+    image = models.ImageField(upload_to='ucbusinesssite/')
+
+    class Meta:
+        db_table = 'Non_Profit_Associations'
+        verbose_name = 'Non-profit Association'
+        verbose_name_plural = 'Non-profit Associations'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
