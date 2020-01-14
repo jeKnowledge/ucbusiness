@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/ucpartnership.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
@@ -22,24 +23,31 @@
 </header>
 
 <section id=navbar>
-        <div class="menu">
+  <div class="menu">
 
-            <div class="rect-menu">
-            <h5>
-                <a href="about_us.html"> About us</a>
-                <a href="ucvalue.html">UC Value</a>
-                <a href="ucinvest.html">UC Invest</a>
-                <a href="ucpartnership.html">UC Partnership</a>
-                <a href="news.html"> News</a>
-                <a href= "#footer">Contacts</a>
-            </h5>
+    <div class="rect-menu">
 
-            </div>
-        </div>
-  </section>
+      <button id="container" onclick="changeMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </button>
+
+      <h4 id="menu-txt">
+        <a href="about_us.html">About us</a>
+        <a href="ucvalue.html"> Value</a>
+        <a href="ucinvest.html"> Invest</a>
+        <a href="ucpartnership.html"> Partnership</a>
+        <a href="insight.html"> Insight</a>
+        <a href="contacts.html">Contacts</a>
+      </h4>
+  </div>
+
+  </div>
+</section>
 
     <section id="info">
-      <h1 id="value-title"> UC PARTNERSHIP</h1>
+      <h1 id="partnership-title"> Partnership</h1>
 
       <div class="incubators">
         <div class="button-subtitle">
@@ -197,5 +205,16 @@ function clickAisep() {
     moreText.style.display = "none";
   }
 
+}
+function changeMenu(){
+
+if ($('#menu-txt').css('display') == 'none'){
+  $('#menu-txt').css('display', 'block');
+  $('.rect-menu').css('height', '100vh');
+}
+else{
+  $('#menu-txt').css('display', 'none');
+  $('.rect-menu').css('height', '8vh');
+}
 }
 </script>

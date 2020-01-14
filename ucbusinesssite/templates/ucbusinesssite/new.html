@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/new.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+
+    <title>Insight</title>
+</head>
+<body>
+<header>
+  <div class="header">
+      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <div id="dir">
+        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
+      </div>
+  </div>
+</header>
+
+<section id=navbar>
+        <div class="menu">
+
+          <div class="rect-menu">
+            <button id="container" onclick="changeMenu()">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+
+            <h4 id="menu-txt">
+              <a href="about_us.html">About us</a>
+              <a href="ucvalue.html"> Value</a>
+              <a href="ucinvest.html"> Invest</a>
+              <a href="ucpartnership.html"> Partnership</a>
+              <a href="insight.html"> Insight</a>
+              <a href=".contacts.html">Contacts</a>
+            </h4>
+        </div>
+        </div>
+  </section>
+
+<section id="news">
+
+
+    <div class="slider">
+    <button type="button" id="arrow-prev" class="slider-arrow slider-arrow-prev" > </button>
+    <img id="carousel0"   src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79167160_452866628752560_1749966476086870016_o.jpg?_nc_cat=104&_nc_oc=AQmD9QgG_0qZ7NZUUml-Xcp0CsqiJQTP4yCta28qrVltcoYjo7qbLDcFy3fbCa2cOy8&_nc_ht=scontent.flis6-1.fna&oh=847047ebe89faa4adc3878e551b69284&oe=5E6B1D4C">
+    <button type="button" id="arrow-next" class="slider-arrow slider-arrow-next" > </button>
+  </div>
+  <h3> Lançamento UC Business </h3>
+  <p> Foi hoje, 6 de dezembro, oficialmente lançado o UC Business!
+
+Na mesma ocasião foi ainda apresentado o projeto “Académica Start UC – Ensino Secundário” e assinado um protocolo de colaboração entre a UC e a empresa Tilray. 
+  </p>
+  <span> 6.12.2019 </span>
+  <h4 onclick="location.href='insight.html'"> < Back </h4>
+
+</section>
+
+<footer id="footer">
+  <div class="footer-left">
+    <h1>Let's stay in contact!</h1>
+
+      <h5> Rectory Pólo II
+      <br> R. Luís Reis dos Santos 290,
+      <br>3030-790 Coimbra</h5>
+      <h5><p> ucbusiness@uc.pt </p> </h5>
+
+  <div class="footer-social">
+    <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
+    <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
+    <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+  </div>
+  </div>
+  <div class="footer-right">
+    <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
+  </div>
+</footer>
+
+
+<script>
+var imageSources= ["https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/78133604_452866805419209_2109085330408734720_o.jpg?_nc_cat=100&_nc_oc=AQllkAFLnlcv68Ob0eIddIEm8uRmNLbkej05PpCkEySyJ7A3PjBITj-6RR7q2DVSWl4&_nc_ht=scontent.flis6-1.fna&oh=8cd49fc2d5809f3b60ec984213c2d1b4&oe=5EAA42C6",
+"https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/78622907_452867605419129_1509869940155351040_o.jpg?_nc_cat=104&_nc_oc=AQlrBf5xQ-h9uxH6PHc-aHKQ9HoSwraJLz92scRVwnflEk4sm6mexQQQfpbx9wZU6q8&_nc_ht=scontent.flis6-1.fna&oh=5cef6c8996e34145e0dc792884b264db&oe=5E6BF44D",
+"https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/78999725_452867132085843_3458557986023145472_o.jpg?_nc_cat=102&_nc_oc=AQlb0tgb5fbPhnUEReBcu0D4w-2Id4XP6qWJ79UNDkghgqoVPW3CZ2w2chxiLtezT7g&_nc_ht=scontent.flis6-1.fna&oh=c71097954d1d7cbf64a8cbd28ff573d9&oe=5E9F6A16 ",
+"https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQm27w_bxBi9E39dkDKP70HkgviGE3V3Y5HSIRNyY6y3Tg-QLbRpiAYmE_kHLciyqC0&_nc_ht=scontent.flis6-1.fna&oh=a18686da0ee7f262a4e525f0dab03915&oe=5EAAA937", ];
+
+var currentIndex = 0;
+
+var leftArrow = document.querySelector("#arrow-prev");
+var rightArrow = document.querySelector("#arrow-next");
+
+leftArrow.addEventListener("click", function() {
+	currentIndex = currentIndex - 1;
+	if (currentIndex < 0) {
+		currentIndex = imageSources.length-1;
+	}
+	document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
+});
+
+
+rightArrow.addEventListener("click", function() {
+	currentIndex = currentIndex + 1;
+	if (currentIndex >= imageSources.length) {
+		currentIndex = 0;
+	}
+	document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
+});
+
+function changeMenu(){
+
+if ($('#menu-txt').css('display') == 'none'){
+  $('#menu-txt').css('display', 'block');
+  $('.rect-menu').css('height', '100vh');
+}
+else{
+  $('#menu-txt').css('display', 'none');
+  $('.rect-menu').css('height', '8vh');
+}
+}
+</script>

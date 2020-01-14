@@ -1,0 +1,48 @@
+
+#news{
+  padding: 15vh 0 10vh 5vw;
+}
+#news h1{
+  font-size: 2em;
+}
+
+#news img {
+    width: 20vw;
+    height: 25vh;
+    object-fit: cover;
+    border-radius: 10%
+}
+#news p{
+  width: 20vw;
+}
+
+.news{
+  display: grid;
+  grid-template-columns: 28vw 28vw 28vw ;
+  grid-template-rows: 60vh 60vh ;
+  grid-gap: 50px;
+}
+.new button{
+  background-color: var(--color-blue);
+  border-radius: 15px;
+  color: white;
+  padding: 1vh 1vw;
+  border: none;
+}
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+@media screen and (max-width: 400px) {
+  .news{
+    display: grid;
+    grid-template-columns: 35vw 35vw  ;
+    grid-template-rows: 50vh 50vh 50vh ;
+    grid-gap: 50px;
+  }
+  #news img {
+      width: 30vw;
+      height: 20vh;
+  }
+
+
+  }

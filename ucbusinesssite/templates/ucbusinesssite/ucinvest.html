@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/ucinvest.css">
     <link rel="stylesheet" href="assets/css/general.css">
     <link rel="stylesheet" href="assets/css/colors.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
 </head>
 <body>
@@ -22,22 +23,31 @@
 </header>
 
 <section id=navbar>
-        <div class="menu">
-            <div class="rect-menu">
-            <h5>
-                <a href="about_us.html"> About us</a>
-                <a href="ucvalue.html">UC Value</a>
-                <a href="ucinvest.html">UC Invest</a>
-                <a href="ucpartnership.html">UC Partnership</a>
-                <a href="news.html"> News</a>
-                <a href= "#footer">Contacts</a>
-            </h5>
-            </div>
-        </div>
-  </section>
+  <div class="menu">
+
+    <div class="rect-menu">
+
+      <button id="container" onclick="changeMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </button>
+
+      <h4 id="menu-txt">
+        <a href="about_us.html">About us</a>
+        <a href="ucvalue.html"> Value</a>
+        <a href="ucinvest.html"> Invest</a>
+        <a href="ucpartnership.html"> Partnership</a>
+        <a href="insight.html"> Insight</a>
+        <a href="contacts.html">Contacts</a>
+      </h4>
+  </div>
+
+  </div>
+</section>
 
     <section id="info">
-      <h1 id="value-title"> UC INVEST</h1>
+      <h1 id="invest-title">Invest</h1>
 
       <div class="promoting">
         <div class="button-subtitle">
@@ -74,6 +84,7 @@
         </div>
 
           <div id="txt2">
+
             <ul>
             Help students from different academic levels enter the labor market:
             <p>
@@ -91,6 +102,7 @@
             <li>Career support tools;</li>
           </p>
           </ul>
+
         </div>
       </div>
 
@@ -100,16 +112,18 @@
           <h2 id="subtitle"> Entrepeneurship </h2>
         </div>
           <div id="txt3">
+            <p>
             Encouragement of Entrepreneurship among the Univerisity:
             <ul>
             <li>To strengthen entrepreneurship skills at different academic levels, graduates or non-graduates;</li>
             <li>To strengthen the incentive to entrepreneurship through competitions according to the Arrisca C model;</li>
             <li>To structure national and international entrepreneurial projects with the aim of enhancing the image of the University of Coimbra regarding its target audience (High School, International Higher Education, ...).</li>
           </ul>
-
+        </p>
           <div id="academica-start-uc">
             <h4> Académica Start UC</h4>
-            Académica Start UC – Network of Ambassadors for Entrepreneurship - is a project with the aim of raising awareness, education and training of our students for Innovation and Entrepreneurship.
+          <p>  Académica Start UC – Network of Ambassadors for Entrepreneurship - is a project with the aim of raising awareness, education and training of our students for Innovation and Entrepreneurship.
+          </p>
             <div class="numbers-anim">
             <img id="academica-startuc" src="assets/photos/entrepe/academicastart.jpg" id="academica_start_uc">
             <div class="patr">
@@ -269,7 +283,7 @@
               </div>
 
               <div id="type2">
-                <ul>Consultancy and Projects</ul>
+                <ul>Consultancy <br>and Projects</ul>
                 <li>ADAI</li>
                 <li>ADDF</li>
                 <li>AEEC</li>
@@ -297,7 +311,7 @@
               </div>
 
               <div id="type3">
-                <ul>Transfers and Incubation</ul>
+                <ul>Transfers <br>and Incubation</ul>
                 <li>IPN</li>
                 <li>Biocant</li>
                 <li>SerQ</li>
@@ -350,16 +364,7 @@
 </html>
 
 <script>
-function clickHam(){
-  var moreText = document.getElementById("rect-menu");
-  if (moreText.style.display === "none") {
-    moreText.style.display = "block";
-    }
-  else {
-    moreText.style.display = "none";
-  }
 
-}
 
 function clickPromoting() {
   var moreText = document.getElementById("txt1");
@@ -457,5 +462,16 @@ function clickCustomer() {
   })
 			complete = settings.complete
 	};
+  function changeMenu(){
+
+  if ($('#menu-txt').css('display') == 'none'){
+    $('#menu-txt').css('display', 'block');
+    $('.rect-menu').css('height', '100vh');
+  }
+  else{
+    $('#menu-txt').css('display', 'none');
+    $('.rect-menu').css('height', '8vh');
+  }
+  }
 
 </script>

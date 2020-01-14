@@ -4,7 +4,7 @@ ul {
 
 
 
-#value-title {
+#invest-title {
   margin-top: 15vh;
   padding: 0 0 5vh 0;
   color: var(--color-green);
@@ -127,12 +127,16 @@ ul {
   padding: 0 15vw 0 0;
   line-height: 1.5;
 }
+#type1, #type2, #type3{
+  width:30vw;
+}
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
 @media screen and (max-width: 600px){
-  #value-title, #subtitle{
-    font-size: 0.9em;
+  #invest-title {
+    margin-top: 5vh;
+    font-size: 1.5em;
   }
   #circ-promoting,
   #circ-employ,
@@ -142,34 +146,22 @@ ul {
     height: 20px;
     width: 20px;
   }
+  #academica-start-uc,
+  #explorer-uc,
+  #arrisca-c,
+  #inov-c {
+    padding-top: 5vh ;
+  }
   #info img{
     display: none;
   }
-
-}
-@media screen and (max-width: 800px){
-  #txt1,
-  #txt2,
-  #txt3,
-  #txt4,
-  #txt5{
+  .photos{
+    display: block;
+  }
+  .photo{
+    padding-bottom: 0;
+  }
+  .number{
     font-size: 0.8em;
   }
-  .number h2, .number h4{
-    font-size: 0.5em;
-    padding: 0;
-    margin: 0;
-  }
-  .photo h4{
-    font-size: 0.8em;
-    display: list-item;
-    padding-right: 5px
-  }
-  .photos img{
-    display:none;
-  }
-  .patr{
-    display: none;
-  }
-
 }

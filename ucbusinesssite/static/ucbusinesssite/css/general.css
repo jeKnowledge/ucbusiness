@@ -16,8 +16,9 @@ h6,span {
   font-family: Nexa, sans-serif;
   font-weight: 400;
 }
-p{
-  
+p, span, ul, li, a, button{
+  font-family: Nexa, sans-serif;
+  font-weight: 200;
 }
 li {
   list-style: square;
@@ -76,8 +77,6 @@ li {
   display: flex;
   z-index: 5;
 }
-
-
 .menu h4 a {
   padding-left: 5%;
   color: white;
@@ -90,6 +89,9 @@ li {
 .menu h4 a:hover {
   text-decoration: underline;
   text-decoration-color: white;
+}
+#container{
+  display: none;
 }
 
 /*-------------------FOOTER-------------------*/
@@ -113,48 +115,61 @@ li {
 }
 
 .footer-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  float:right;
+  padding-top: 28vh;
+}
+#ucbranco{
+height: 10vh;
+width: auto;
 }
 
-#ucbranco {
-  display: none;
-}
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
-@media screen and (max-width: 900px) {
-  .rect-menu {
-    height: 4vh;
-  }
-  .rect-menu h5 a {
-    padding-right: 8px;
-    font-size: 0.8em;
+
+@media screen and (max-width: 400px){
+
+  h1,h2,h3,h4,h5{
+     font-size: 0.8em;
   }
 
-  #menu-hamb {
+  p, span, ul, li, a, button{
+    font-size: 0.5em;
+    font-weight: 100;
+  }
+
+#menu-txt{
+  display: none;
+  text-align: right;
+  font-size: 1.2em;
+  padding-bottom: 50vh;
+  width:50vw;
+  padding-left: 30vw;
+  font-size: 1.5em;
+}
+
+#container {
     display: inline;
-    float: right;
-    margin-right: 2vw;
-    padding-top: 1vh;
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-blue);
   }
 
-  #footer {
-    font-size: 0.6em;
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
   }
-
-  .footer-social img {
+  .footer-social img{
     height: 3vh;
     width: auto;
   }
-
-  #logo_uc,
-  #logo_ucb {
-    height: 5vh;
-    width: auto;
+  footer h5{
+    font-size: 0.6em;
   }
-}
+
 
 
 
