@@ -93,6 +93,32 @@ li {
 #container{
   display: none;
 }
+.cookiebanner-message{
+  width: 28vw;
+  height: 20vh;
+  background: white;
+  border: var(--color-blue);
+  border-radius: 10px;
+  font-size: 0.8em;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  right: 0;
+  z-index: 9999;
+
+}
+.cookiebanner-text   {
+  width: 25vw;
+  padding-left: 2vw;
+    font-size: 0.9rem;
+}
+#cookie-button{
+    margin-left: 2vw;
+    background-color: var(--color-blue);
+    color: white;
+    border: none;
+    height: 4vh;
+}
 
 /*-------------------FOOTER-------------------*/
 #footer {
