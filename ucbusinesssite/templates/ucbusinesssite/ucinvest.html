@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/ucinvest.css">
-    <link rel="stylesheet" href="assets/css/general.css">
-    <link rel="stylesheet" href="assets/css/colors.css">
-    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucinvest.css' %}">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
@@ -14,9 +16,9 @@
 <body>
 <header>
   <div class="header">
-      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
       <div id="dir">
-        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
         <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
       </div>
   </div>
@@ -34,12 +36,12 @@
       </button>
 
       <h4 id="menu-txt">
-        <a href="about_us.html">About us</a>
-        <a href="ucvalue.html"> Value</a>
-        <a href="ucinvest.html"> Invest</a>
-        <a href="ucpartnership.html"> Partnership</a>
-        <a href="insight.html"> Insight</a>
-        <a href="contacts.html">Contacts</a>
+        <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+        <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+        <a href="{% url 'ucbusinesssite:insights' %}"> Insight</a>
+        <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
       </h4>
   </div>
 
@@ -60,17 +62,17 @@
               <div class="photos">
               <div class="photo">
                 <h4>Siemens</h4>
-                <img  id="siemens" src="assets/photos/promoting/siemens-ph.JPG">
+                <img  id="siemens" src="{% static 'ucbusinesssite/photos/promoting/siemens-ph.JPG' %}">
               </div>
 
               <div class="photo">
                 <h4>Hong Kong Startups</h4>
-                <img  id="hongkong" src="assets/photos/promoting/hongkong-ph.JPG"/>
+                <img  id="hongkong" src="{% static 'ucbusinesssite/photos/promoting/hongkong-ph.JPG' %}"/>
               </div>
 
               <div class="photo">
                 <h4>AlticeLabs@UC</h4>
-                <img  id="altice" src="assets/photos/promoting/altice-ph.JPG"/>
+                <img  id="altice" src="{% static 'ucbusinesssite/photos/promoting/altice-ph.JPG' %}"/>
               </div>
             </div>
           </div>
@@ -125,11 +127,11 @@
           <p>  Académica Start UC – Network of Ambassadors for Entrepreneurship - is a project with the aim of raising awareness, education and training of our students for Innovation and Entrepreneurship.
           </p>
             <div class="numbers-anim">
-            <img id="academica-startuc" src="assets/photos/entrepe/academicastart.jpg" id="academica_start_uc">
+            <img id="academica-startuc" src="{% static 'ucbusinesssite/photos/entrepe/academicastart.jpg' %}" id="academica_start_uc">
             <div class="patr">
-              <img id="uc" src="assets/photos/entrepe/uc.png" id="uc">
-              <img id="aac" src="assets/photos/entrepe/ac.png" id="aac">
-              <img id="santander" src="assets/photos/entrepe/santander.png" id="santander">
+              <img id="uc" src="{% static 'ucbusinesssite/photos/entrepe/uc.png' %}" id="uc">
+              <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/ac.png' %}" id="aac">
+              <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
             </div>
               <div class="left">
                 <div class="number" data-number= "81">
@@ -168,10 +170,10 @@
             Explorer UC is a 5-month business idea acceleration program for 18 to 31-year-olds based on 4 domains: face-to-face training, online training, mentoring and access to prizes.
 
             <div class="numbers-anim">
-            <img id="exploreruc" src="assets/photos/entrepe/exploreruc.jpg" id="explorer_uc">
+            <img id="exploreruc" src="{% static 'ucbusinesssite/photos/entrepe/exploreruc.jpg' %}" id="explorer_uc">
             <div class="patr">
-              <img id="aac" src="assets/photos/entrepe/rede.png" id="redemprendia">
-              <img id="santander" src="assets/photos/entrepe/santander.png" id="santander">
+              <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/rede.png' %}" id="redemprendia">
+              <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
             </div>
               <div class="left">
                 <div class="number" data-number= "10">
@@ -202,7 +204,7 @@
             Arrisca C is a competition that aims to stimulate the development of business concepts expecting the creation of new companies as end result. It is divided into two types: Ideas and Business Plans. Specific awards for High School and Technical-Vocational Education and Social Innovation.
 
             <div class="numbers-anim">
-              <img id="arrisca_c" src="assets/photos/entrepe/arriscac.jpg" id="arrisca_c">
+              <img id="arrisca_c" src="{% static 'ucbusinesssite/photos/entrepe/arriscac.jpg' %}" id="arrisca_c">
 
               <div class="left">
                 <div class="number" data-number= "10">
@@ -334,7 +336,7 @@
               <p>Customer centered policy, working actively in Companies.</p>
               <div class="photo">
                 <h4>ICNAS Produção</h4>
-                <img  id="hongkong" src="assets/photos/customer.JPG"/>
+                <img  id="hongkong" src="{% static 'ucbusinesssite/photos/customer.JPG' %}"/>
               </div>
             </div>
 
@@ -351,13 +353,13 @@
           <h5><p> ucbusiness@uc.pt </p> </h5>
 
       <div class="footer-social">
-        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
-        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
-        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35"alt="facebook"/></a>
+        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="{% static 'ucbusinesssite/photos/linkedin.svg' %}"height="35" width="35" alt="linkedin"/> </a>
+        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"height="35" width="35" alt="twitter"/> </a>
       </div>
       </div>
       <div class="footer-right">
-        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
+        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
       </div>
     </footer>
 </body>

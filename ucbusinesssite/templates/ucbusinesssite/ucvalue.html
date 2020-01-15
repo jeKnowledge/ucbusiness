@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/ucvalue.css">
-    <link rel="stylesheet" href="assets/css/general.css">
-    <link rel="stylesheet" href="assets/css/colors.css">
-    <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucvalue.css' %}">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>UC Business</title>
@@ -14,9 +16,9 @@
 <body>
 <header>
   <div class="header">
-      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997" alt="logo_ucb"/></a>
+      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
       <div id="dir">
-        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc"/>
+        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
         <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
     </div>
   </div>
@@ -33,12 +35,12 @@
             </button>
 
             <h4 id="menu-txt">
-              <a href="about_us.html">About us</a>
-              <a href="ucvalue.html"> Value</a>
-              <a href="ucinvest.html"> Invest</a>
-              <a href="ucpartnership.html"> Partnership</a>
-              <a href="insight.html"> Insight</a>
-              <a href="contacts.html">Contacts</a>
+              <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+              <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+              <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+              <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+              <a href="{% url 'ucbusinesssite:insights' %}"> Insight</a>
+              <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
             </h4>
         </div>
         </div>
@@ -59,25 +61,25 @@
                contributing for the dissemination and application of knowledge and thus for development and general well-being.
              </p>
                <div class="services-grid">
-                <div class="item item1" ><img src="assets/photos/specialized/altice.png" alt="altice"></div>
-                <div class="item item2"><img src="assets/photos/specialized/arcelor.png" alt="arcelor"></div>
-                <div class="item item3"><img src="assets/photos/specialized/bluepharma.png" alt="bluepharma"></div>
-                <div class="item item4"><img src="assets/photos/specialized/cern.png" alt="cern"></div>
-                <div class="item item5"><img src="assets/photos/specialized/delta.png" alt="delta"></div>
-                <div class="item item6"><img src="assets/photos/specialized/edp.png" alt="edp"></div>
-                <div class="item item7" ><img src="assets/photos/specialized/ergicon.png" alt="2ergicon"></div>
-                <div class="item item8"><img src="assets/photos/specialized/essilor.png" alt="essilor"></div>
-                <div class="item item9"><img src="assets/photos/specialized/feliz.png" alt="ofeliz"></div>
-                <div class="item item10"><img src="assets/photos/specialized/ferpinta.JPG" alt="ferpinta"></div>
-                <div class="item item11"><img src="assets/photos/specialized/martifer.png" alt="martifer"></div>
-                <div class="item item12"><img src="assets/photos/specialized/meo.png" alt="meo"></div>
-                <div class="item item13"><img src="assets/photos/specialized/navigator.png" alt="navigator"></div>
-                <div class="item item14" ><img src="assets/photos/specialized/ogma.png" alt="ogma"></div>
-                <div class="item item15"><img src="assets/photos/specialized/siemens.png" alt="siemens"></div>
-                <div class="item item16"><img src="assets/photos/specialized/sumol.png" alt="sumol"></div>
-                <div class="item item17"><img src="assets/photos/specialized/tata.png" alt="tata"></div>
-                <div class="item item18"><img src="assets/photos/specialized/teixeira.png" alt="teixeira"></div>
-                <div class="item item19"><img src="assets/photos/specialized/vesam.png" alt="vesam"></div>
+                <div class="item item1" ><img src="{% static 'ucbusinesssite/photos/specialized/altice.png' %}" alt="altice"></div>
+                <div class="item item2"><img src="{% static 'ucbusinesssite/photos/specialized/arcelor.png' %}" alt="arcelor"></div>
+                <div class="item item3"><img src="{% static 'ucbusinesssite/photos/specialized/bluepharma.png' %}" alt="bluepharma"></div>
+                <div class="item item4"><img src="{% static 'ucbusinesssite/photos/specialized/cern.png' %}" alt="cern"></div>
+                <div class="item item5"><img src="{% static 'ucbusinesssite/photos/specialized/delta.png' %}" alt="delta"></div>
+                <div class="item item6"><img src="{% static 'ucbusinesssite/photos/specialized/edp.png' %}" alt="edp"></div>
+                <div class="item item7" ><img src="{% static 'ucbusinesssite/photos/specialized/ergicon.png' %}" alt="2ergicon"></div>
+                <div class="item item8"><img src="{% static 'ucbusinesssite/photos/specialized/essilor.png' %}" alt="essilor"></div>
+                <div class="item item9"><img src="{% static 'ucbusinesssite/photos/specialized/feliz.png' %}" alt="ofeliz"></div>
+                <div class="item item10"><img src="{% static 'ucbusinesssite/photos/specialized/ferpinta.JPG' %}" alt="ferpinta"></div>
+                <div class="item item11"><img src="{% static 'ucbusinesssite/photos/specialized/martifer.png' %}" alt="martifer"></div>
+                <div class="item item12"><img src="{% static 'ucbusinesssite/photos/specialized/meo.png' %}" alt="meo"></div>
+                <div class="item item13"><img src="{% static 'ucbusinesssite/photos/specialized/navigator.png' %}" alt="navigator"></div>
+                <div class="item item14" ><img src="{% static 'ucbusinesssite/photos/specialized/ogma.png' %}" alt="ogma"></div>
+                <div class="item item15"><img src="{% static 'ucbusinesssite/photos/specialized/siemens.png' %}" alt="siemens"></div>
+                <div class="item item16"><img src="{% static 'ucbusinesssite/photos/specialized/sumol.png' %}" alt="sumol"></div>
+                <div class="item item17"><img src="{% static 'ucbusinesssite/photos/specialized/tata.png' %}" alt="tata"></div>
+                <div class="item item18"><img src="{% static 'ucbusinesssite/photos/specialized/teixeira.png' %}" alt="teixeira"></div>
+                <div class="item item19"><img src="{% static 'ucbusinesssite/photos/specialized/vesam.png' %}" alt="vesam"></div>
 
               </div>
           </div>
@@ -110,7 +112,7 @@
           <h2 id="subtitle"> Intelectual Property Management </h2>
         </div>
           <div id="txt3">
-            <img src="assets/photos/chart.png">
+            <img src="{% static 'ucbusinesssite/photos/chart.png' %}">
 
             <div class="numbers-anim">
               <div class="number" data-number= "81">
@@ -177,13 +179,13 @@
           <h5><p> ucbusiness@uc.pt </p> </h5>
 
       <div class="footer-social">
-        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="assets/photos/facebook.svg" height="35" width="35"alt="facebook"/></a>
-        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="assets/photos/linkedin.svg"height="35" width="35" alt="linkedin"/> </a>
-        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="assets/photos/twitter.svg"height="35" width="35" alt="twitter"/> </a>
+        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35"alt="facebook"/></a>
+        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="{% static 'ucbusinesssite/photos/linkedin.svg' %}"height="35" width="35" alt="linkedin"/> </a>
+        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"height="35" width="35" alt="twitter"/> </a>
       </div>
       </div>
       <div class="footer-right">
-        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
+        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
       </div>
     </footer>
 </body>

@@ -62,7 +62,7 @@ class Member(models.Model):
 
 class NonProfitAssociation(models.Model):
     name = models.CharField(max_length=100, blank=False, unique=True)
-    image = models.ImageField(upload_to='ucbusinesssite/')
+    image = models.CharField(max_length=500, blank=False, unique=True)
 
     class Meta:
         db_table = 'Non_Profit_Associations'

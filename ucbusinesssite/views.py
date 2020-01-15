@@ -19,7 +19,7 @@ class AboutPage(View):
 
 
 class NewsPage(View):
-    template_name = 'ucbusinesssite/news.html'
+    template_name = 'ucbusinesssite/insight.html'
 
     def get(self, request):
         news = NewsArticle.objects.all().order_by('datePosted')
@@ -42,6 +42,13 @@ class UCPartnerShipPage(View):
 
 class UCValuePage(View):
     template_name = 'ucbusinesssite/ucvalue.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+
+class ContactsPage(View):
+    template_name = 'ucbusinesssite/contacts.html'
 
     def get(self, request):
         return render(request, self.template_name)

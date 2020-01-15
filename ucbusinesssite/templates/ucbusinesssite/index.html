@@ -1,13 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/general.css">
-  <link rel="stylesheet" href="assets/css/colors.css">
-  <link rel="icon" type="image/x-icon" href="assets/photos/ucb_logo.ico">
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
+  <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,10 +20,10 @@
 <body>
   <header>
     <div class="header">
-      <a href="index.html"><img id="logo_ucb" src="assets/photos/ucb_logo.png" height="1441" width="1997"
+      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
           alt="logo_ucb" /></a>
       <div id="dir">
-        <img id="logo_uc" src="assets/photos/uc_logo_hor.png" alt="logo_uc" />
+        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
         <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
       </div>
     </div>
@@ -41,7 +43,7 @@
   <section id=navbar>
     <div class="menu">
       <video class="video-ucb" muted autoplay controls>
-        <source src="assets/photos/video.mp4" type="video/MP4">
+        <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
       </video>
 
       <div class="rect-menu">
@@ -53,12 +55,12 @@
         </button>
 
         <h4 id="menu-txt">
-          <a href="about_us.html">About us</a>
-          <a href="ucvalue.html"> Value</a>
-          <a href="ucinvest.html"> Invest</a>
-          <a href="ucpartnership.html"> Partnership</a>
-          <a href="insight.html"> Insight</a>
-          <a href="contacts.html">Contacts</a>
+          <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+          <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+          <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+          <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+          <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+          <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
         </h4>
     </div>
 
@@ -68,7 +70,7 @@
   <section id="logo-anim">
 
 <div id="info-ucb">
-      <img id="ucb-logo" src="assets/photos/ucb_logo2.png">
+      <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
 
       <div class="txt-ucb">
         <h4>
@@ -86,21 +88,21 @@
     <div id="info-pilares">
 
       <div class="info">
-        <img src="assets/photos/value.png">
+        <img src="{% static 'ucbusinesssite/photos/value.png' %}">
         <h4>Create short-term value (with financial return) based on existing skills.</h4>
-        <button type="button" onclick="location.href='ucvalue.html'"> > Find out more</button>
+        <button type="button" onclick="window.location.href='ucvalue/'"> > Find out more</button>
       </div>
 
       <div class="info">
-        <img src="assets/photos/partnership.png">
+        <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
         <h4>Foster multi-level partnerships.</h4>
-        <button type="button" onclick="location.href='ucpartnership.html'">> Find out more</button>
+        <button type="button" onclick="window.location.href='ucpartnership/'">> Find out more</button>
       </div>
 
       <div class="info">
-        <img src="assets/photos/invest.png">
+        <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
         <h4>Invest in value development in the medium term.</h4>
-        <button type="button" onclick="location.href='ucinvest.html'">> Find out more</button>
+        <button type="button" onclick="window.location.href='ucinvest/'">> Find out more</button>
       </div>
 
 
@@ -168,21 +170,21 @@
 
         <div class="footer-social">
           <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-              src="assets/photos/facebook.svg" height="35" width="35" alt="facebook" /></a>
+              src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
           <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-              src="assets/photos/linkedin.svg" height="35" width="35" alt="linkedin" /> </a>
-          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="assets/photos/twitter.svg"
+              src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
+          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
               height="35" width="35" alt="twitter" /> </a>
         </div>
       </div>
        <div class="footer-right">
-        <img id="ucbranco" src="assets/photos/uc_branco.png" alt="uc_logo">
+        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
       </div>
     </footer>
 
 
 
-    <script src="assets/javascript/index.js"></script>
+    <script src="{% static 'ucbusinesssite/javascript/index.js' %}"></script>
 
 </body>
 
