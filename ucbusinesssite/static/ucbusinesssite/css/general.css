@@ -1,3 +1,13 @@
+@font-face {
+  font-family: Nexa-light;
+  src: url('../fonts/Nexa-Light.otf');
+}
+
+@font-face {
+  font-family: Nexa-bold;
+  src: url('../fonts/Nexa-Bold.otf');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,19 +16,16 @@ body {
 h1,
 h2,
 h3 {
-  font-family: Nexa, sans-serif;
-  font-weight: 800;
+  font-family: Nexa-bold;
 }
 
 h4,
 h5,
 h6,span {
-  font-family: Nexa, sans-serif;
-  font-weight: 400;
+  font-family: Nexa-light;
 }
 p, span, ul, li, a, button{
-  font-family: Nexa, sans-serif;
-  font-weight: 200;
+  font-family: Nexa-light;
 }
 li {
   list-style: square;
