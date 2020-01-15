@@ -50,6 +50,7 @@
   text-align: center;
   font-size: 1.4em;
 width: 15vw;
+height :20vh;
 }
 .info button{
   background-color: var(--color-blue);
@@ -144,12 +145,6 @@ width: 15vw;
 }
 
 
-
-.ucs-anim video {
-  width: 40vw;
-  height: auto;
-}
-
 .container {
   padding-top: 3%;
   width: 65vw;
@@ -223,10 +218,6 @@ width: 15vw;
   .circle span {
     font-size: 0.3em;
   }
-  #logo-anim {
-    padding: 10vh 10vw;
-  }
-
   .new1 img , .container , .new2 img , .rect-new{
     width:40vw;
   }
@@ -237,5 +228,32 @@ width: 15vw;
   #news-container h1{
     font-size: 1.5em;
   }
+  #ucb-logo{
+      height:20vh;
+    }
+    #info-ucb{
+      padding: 10vh 0;
+    }
+
+#info-pilares{
+  display: block;
+  padding: 5vh 0;
+}
+.info {
+  display: flex;
+  padding-bottom: 5vh;
+  padding-left: 10vw;
+}
+.info h4{
+  width:50vw;
+}
+.info img{
+  height: 10vh;
+}
+.info button{
+display: none;
+}
+
+
 
 }
