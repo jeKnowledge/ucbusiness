@@ -12,14 +12,14 @@
     object-fit: cover;
     border-radius: 10%
 }
-#news p{
+#news p, #news h3{
   width: 20vw;
 }
 
 .news{
   display: grid;
   grid-template-columns: 28vw 28vw 28vw ;
-  grid-template-rows: 60vh 60vh ;
+  grid-template-rows: 65vh 65vh 65vh;
   grid-gap: 50px;
 }
 .new button{
@@ -35,13 +35,17 @@
 @media screen and (max-width: 400px) {
   .news{
     display: grid;
-    grid-template-columns: 35vw 35vw  ;
-    grid-template-rows: 50vh 50vh 50vh ;
+    grid-template-columns: 80vw   ;
+    grid-template-rows: 50vh 50vh 50vh 50vh 50vh 50vh 50vh ;
     grid-gap: 50px;
   }
   #news img {
-      width: 30vw;
+      width: 50vw;
       height: 20vh;
+  }
+  #news h3 , #news p{
+    font-size: 0.8em;
+    width: 80vw;
   }
 
 
