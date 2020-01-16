@@ -128,6 +128,7 @@ li {
 }
 
 /*-------------------FOOTER-------------------*/
+
 #footer {
   height: auto;
   background-color: var(--color-blue);
@@ -145,11 +146,12 @@ li {
 
 .footer-social img {
   padding-right: 1vw;
+  padding-top: 3vh;
 }
 
 .footer-right {
   float:right;
-  padding-top: 28vh;
+  padding-top: 8vh;
 }
 #ucbranco{
 height: 10vh;

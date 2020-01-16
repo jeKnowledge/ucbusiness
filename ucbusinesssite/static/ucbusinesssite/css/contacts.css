@@ -2,9 +2,25 @@
 #contacts{
   padding: 15vh 0 10vh 5vw;
 }
+
+#form{
+  margin: 30vh 0 10vh 20vw;
+  border-radius: 5%;
+  padding: 20px 30px;
+}
+
 #contacts h1{
   padding-bottom: 5vh;
   font-size: 2em;
+}
+.container{
+  display: flex;
+}
+#name, #mail, #text{
+  width:210px;
+}
+#text{
+  height:150px;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
