@@ -39,7 +39,7 @@
               <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
               <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
               <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-              <a href="{% url 'ucbusinesssite:insights' %}"> Insight</a>
+              <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
               <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
             </h4>
         </div>
@@ -55,7 +55,7 @@
         <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/78866910_452866982085858_4685213590792175616_o.jpg?_nc_cat=105&_nc_ohc=uVszBGbFRGUAQm_x8cdtmILbiilcVRXhNUv0wz8BeeyldiUnwDlHyxwxw&_nc_ht=scontent.flis6-1.fna&oh=786f1d3dc0b097f66a549bc28743ea39&oe=5E94A183" />
         <h3> Official UC Business Launch </h3>
         <button  onclick="location.href='new.html'">   Read More </button>
-        
+
         </div>
     <div class="new">
         <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/77347375_438339310205292_3756959235573809152_o.jpg?_nc_cat=106&_nc_ohc=SiFIT2NwzmsAQkyAuxXdycR6HxG1-xW_lNwBQRrf0EpJX2JocWC80K9rA&_nc_ht=scontent.flis6-1.fna&oh=733a0093f280437a6809cb2cb14ce64f&oe=5EAA8942" />
@@ -118,23 +118,20 @@
   </div>
 
 </section>
-
 <footer id="footer">
   <div class="footer-left">
-    <h1>Let's stay in contact!</h1>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
+          src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
+      <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
+          src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
+      <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
+          height="35" width="35" alt="twitter" /> </a>
+    </div>
+    <p>UC Business ® 2020</p>
 
-      <h5> Rectory Pólo II
-      <br> R. Luís Reis dos Santos 290,
-      <br>3030-790 Coimbra</h5>
-      <h5><p> ucbusiness@uc.pt </p> </h5>
-
-  <div class="footer-social">
-    <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35"alt="facebook"/></a>
-    <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="{% static 'ucbusinesssite/photos/linkedin.svg' %}"height="35" width="35" alt="linkedin"/> </a>
-    <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}" height="35" width="35" alt="twitter"/> </a>
   </div>
-  </div>
-  <div class="footer-right">
+   <div class="footer-right">
     <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
   </div>
 </footer>

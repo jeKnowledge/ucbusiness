@@ -40,7 +40,7 @@
         <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
         <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
         <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-        <a href="{% url 'ucbusinesssite:insights' %}"> Insight</a>
+        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
         <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
       </h4>
   </div>
@@ -137,20 +137,18 @@
 
     <footer id="footer">
       <div class="footer-left">
-        <h1>Let's stay in contact!</h1>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
+              src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
+          <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
+              src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
+          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
+              height="35" width="35" alt="twitter" /> </a>
+        </div>
+        <p>UC Business ® 2020</p>
 
-          <h5> Rectory Pólo II
-          <br> R. Luís Reis dos Santos 290,
-          <br>3030-790 Coimbra</h5>
-          <h5><p> ucbusiness@uc.pt </p> </h5>
-
-      <div class="footer-social">
-        <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id= "facebook" src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35"alt="facebook"/></a>
-        <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img  id="linkedin" src="{% static 'ucbusinesssite/photos/linkedin.svg' %}"height="35" width="35" alt="linkedin"/> </a>
-        <a href=" https://twitter.com/business_uc" target="_blank"> <img  id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"height="35" width="35" alt="twitter"/> </a>
       </div>
-      </div>
-      <div class="footer-right">
+       <div class="footer-right">
         <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
       </div>
     </footer>

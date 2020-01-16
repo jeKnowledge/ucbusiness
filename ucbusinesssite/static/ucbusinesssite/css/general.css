@@ -204,6 +204,13 @@ width: auto;
   footer h5{
     font-size: 0.6em;
   }
+  .footer-right {
+    padding-top: 4vh;
+  }
+  #ucbranco{
+    height: 8vh;
+    width: auto;
+  }
 
 
 
