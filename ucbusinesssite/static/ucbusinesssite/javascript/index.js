@@ -1,7 +1,8 @@
 window.onload = function () {
         var data = {
-          "6": "Inauguração Vice-Reitoria Pólo II e Lançamento do UC Business e Lançamento ASUC Ensino Secundário",
-          "11": "Apresentação do projeto Fit4work"
+          // "6": "Inauguração Vice-Reitoria Pólo II e Lançamento do UC Business e Lançamento ASUC Ensino Secundário",
+          // "11": "Apresentação do projeto Fit4work"
+          "10":"Assinatura Protocolo UniLoop com Fundação Calouste Gulbenkian, EGF, The Loop Company e Universidade de Coimbra - 12h"
         }
 
         var node = document.getElementById("rectangle")
@@ -13,11 +14,12 @@ window.onload = function () {
         for (var i = 0; i < numdays; ++i) {
                 var circle = document.createElement("div")
                 var text = document.createElement("span")
+                var hour= document.createElement("span")
                 text.innerHTML = days[i]
                 circle.classList.add("circle")
                 if (data[days[i]] != undefined) {
                   circle.classList.add("filled_circle")
-                  circle.onclick = function() {
+                  circle.onmouseover = function() {
                     if (rectangle_message.style.display == "" || rectangle_message.style.display == "none") {
                       rectangle_message.innerText = data[this.innerText]
                       rectangle_message.style.display = "block"
@@ -33,12 +35,3 @@ window.onload = function () {
 
 
 }
-
-// for (var i=0;i< months.lenght; i++){
-//   if(months[i]%2==0){
-//     numdays=31
-//   }
-//   else if(months[i]%2!=0){
-//     numdays=30
-//   }
-// }
