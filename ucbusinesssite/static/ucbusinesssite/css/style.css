@@ -193,9 +193,12 @@ height :20vh;
 
 
 @media screen and (max-width: 400px) {
-
+  #rectangle_message{
+    font-size: 0.5rem;
+    text-align: center;
+  }
   .rectangle {
-    height: 10vh;
+    height: 15vh;
   }
 
   #txt-background, .txt_new {
@@ -209,7 +212,7 @@ height :20vh;
   .circle {
     width: 13px;
     height: 8px;
-    margin: 7% 1% 0 0;
+    margin: 12% 1% 0 0;
   }
   .container{
     display: block;
@@ -241,8 +244,9 @@ height :20vh;
 }
 .info {
   display: flex;
-  padding-bottom: 5vh;
+  padding-bottom: 0;
   padding-left: 10vw;
+  height:20vh;
 }
 .info h4{
   width:50vw;

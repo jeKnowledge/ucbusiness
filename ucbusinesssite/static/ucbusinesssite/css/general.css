@@ -148,6 +148,9 @@ li {
   padding-right: 1vw;
   padding-top: 3vh;
 }
+#txt_footer{
+  font-size: 0.8rem;
+}
 
 .footer-right {
   float:right;
@@ -201,6 +204,7 @@ width: auto;
     height: 3vh;
     width: auto;
   }
+
   footer h5{
     font-size: 0.6em;
   }
@@ -211,7 +215,12 @@ width: auto;
     height: 8vh;
     width: auto;
   }
-
+  #ucb_footer{
+    font-size: 0.8rem;
+  }
+  #txt_footer{
+    font-size: 0.5rem;
+  }
 
 
 

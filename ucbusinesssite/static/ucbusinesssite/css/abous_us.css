@@ -81,7 +81,7 @@
   }
   #team-grid{
     display: grid;
-    grid-template-columns: 40vw 40vw ;
+    grid-template-columns: 44vw 44vw ;
     grid-template-rows: 40vh 40vh 40vh 40vh;
   }
 }
