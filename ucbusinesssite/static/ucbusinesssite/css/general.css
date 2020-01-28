@@ -94,8 +94,8 @@ li {
 }
 
 .menu h4 a:hover {
-  text-decoration: underline;
-  text-decoration-color: white;
+  color:var(--color-lightblue)
+
 }
 #container{
   display: none;
