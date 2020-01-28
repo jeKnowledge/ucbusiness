@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.views import View
 from .models import NewsArticle, Role, Member
+import datetime
 
 
 class LandingPage(View):
     template_name = 'ucbusinesssite/index.html'
 
     def get(self, request):
-        news = NewsArticle.objects.all()[:5]
-        return render(request, self.template_name, {'newsArticles': news})
+        news = NewsArticle.objects.all()
+        month = datetime.datetime.now().strftime('%B').upper()
+        return render(request, self.template_name, {'month': month,'newsArticles': news})
 
 
 class AboutPage(View):

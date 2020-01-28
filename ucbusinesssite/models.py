@@ -5,7 +5,7 @@ class NewsArticle(models.Model):
     titleEn = models.CharField(max_length=50, blank=False, default='No translation', verbose_name='Title(EN)')
     body = models.TextField(blank=False, verbose_name='Body')
     bodyEn = models.TextField(blank=False, verbose_name='Body(EN)', default='No translation')
-    datePosted = models.DateTimeField(auto_now_add=True)
+    datePosted = models.DateField(verbose_name='Date')
 
     class Meta:
         db_table = 'News_Articles'
@@ -14,7 +14,7 @@ class NewsArticle(models.Model):
         ordering = ["datePosted"]
 
     def __str__(self):
-        return self.title + " - " + str(self.datePosted.strftime("%d/%m/%Y %H:%M"))
+        return self.title + " - " + str(self.datePosted.strftime("%d/%m/%Y"))
 
 
 class ImageUrl(models.Model):
@@ -54,7 +54,7 @@ class Member(models.Model):
         db_table = 'Members'
         verbose_name = 'Member'
         verbose_name_plural = 'Members'
-        ordering = ['name']
+        ordering = ['role','name']
 
     def __str__(self):
         return self.name + ' ('+ self.role.name +')'
@@ -72,3 +72,17 @@ class NonProfitAssociation(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Events(models.Model):
+    name = models.CharField(max_length=500, blank=False, verbose_name='Name')
+    date = models.DateField(verbose_name='Date')
+
+    class Meta:
+        db_table = 'Events'
+        verbose_name = 'Event'
+        verbose_name_plural = 'Events'
+        ordering = ['-date']
+
+    def __str__(self):
+        return self.name + ' ('+ str(self.date) +')'
