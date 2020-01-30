@@ -91,19 +91,25 @@
       <div class="info">
         <img src="{% static 'ucbusinesssite/photos/value.png' %}">
         <h4>Create short-term value (with financial return) based on existing skills.</h4>
-        <button type="button" onclick="window.location.href='ucvalue/'"> > Find out more</button>
+        <a href="{% url 'ucbusinesssite:ucValue' %}">
+          <button type="button">> Find out more</button>
+        </a>
       </div>
 
       <div class="info">
         <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
         <h4>Foster multi-level partnerships.</h4>
-        <button type="button" onclick="window.location.href='ucpartnership/'">> Find out more</button>
+        <a href="{% url 'ucbusinesssite:ucPartnership' %}">
+          <button type="button">> Find out more</button>
+        </a>
       </div>
 
       <div class="info">
         <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
         <h4>Invest in value development in the medium term.</h4>
-        <button type="button" onclick="window.location.href='ucinvest/'">> Find out more</button>
+        <a href="{% url 'ucbusinesssite:ucInvest' %}">
+          <button type="button">> Find out more</button>
+        </a>
       </div>
 
 
@@ -132,25 +138,33 @@
       <div class="container">
 
         <div class="new1">
-          <div class="txt_new">
-            <h4>6 de dezembro</h4><h4>Inauguração Vice-Reitoria Pólo II e Lançamento do UC Business</h4>
-          </div>
-          <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/78999725_452867132085843_3458557986023145472_o.jpg?_nc_cat=102&_nc_oc=AQkW_UYoCMpRUKKy_UVwe66nNz3lwSToL47CzXl4EoE0GP7R8IL_dgGhDhW0kVGpjzc&_nc_ht=scontent.flis6-1.fna&oh=a7b915d72e100965b0f89ccc455bf42c&oe=5E77DD16" alt="img1" />
-          <div class="rect-new">
-            <button type="button" onclick="location.href='insight.html'">> Find out more </button>
-           </div>
-
+          {% if newsArticle1 %}
+            <div class="txt_new">
+              <h4>{{ newsArticle1.datePosted|date:'j F' }}</h4><h4>{{ newsArticle1.title }}</h4>
+            </div>
+            {% if image1 %}
+              <img src="{{ image1.url }}" alt="img1" />
+            {% else %}
+              <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937">
+            {% endif %}
+            <div class="rect-new">
+              <a href="{% url 'ucbusinesssite:newsArticle' newsArticle1.title %}">
+                <button type="button">> Find out more </button>
+              </a>
+            </div>
+          {% endif %}
         </div>
 
         <div class="new2">
-          <div class="txt_new">
-            <h4>6 de dezembro</h4><h4>Lançamento Académica Start UC - <br>Ensino Secundário</h4>
-          </div>
-          <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937" alt="img2" />
-          <div class="rect-new">
-            <button type="button" onclick="location.href='insight.html'">> Find out more </button>
-          </div>
-
+          {% if newsArticle2 %}
+            <div class="txt_new">
+              <h4>6 de dezembro</h4><h4>Lançamento Académica Start UC - <br>Ensino Secundário</h4>
+            </div>
+            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937" alt="img2" />
+            <div class="rect-new">
+              <button type="button" onclick="location.href='insight.html'">> Find out more </button>
+            </div>
+          {% endif %}
         </div>
 
       </div>

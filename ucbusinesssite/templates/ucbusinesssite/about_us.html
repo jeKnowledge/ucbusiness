@@ -59,100 +59,26 @@
      <h1>Team</h1>
  </div>
 <section class="team">
-
+      {% if topMember %}
         <div class="member1">
-          <img src="{% static 'ucbusinesssite/photos/luis_silva.jpg' %}" />
+          <img src="{{ topMember.image.url }}" />
              <div class="member-info">
-                 <h4>Luís Simões da Silva</h4>
-                 <h5>Vice-Rector for Innovation and Entrepreneurship</h5>
-                 <h5>vr.luis.simoes.silva@uc.pt</h5>
+                 <h4>{{ topMember.name }}</h4>
+                 <h5>{{ topMember.role.name }}</h5>
+                 <h5>{{ topMember.email }}</h5>
              </div>
-
         </div>
+      {% endif %}
 <div id="team-grid">
-        <div class="member">
-          <img src="{% static 'ucbusinesssite/photos/NunoMendonca.jpg' %}"alt="nuno mendonça"/>
-             <div class="member-info">
-                 <h4>Nuno Mendonça</h4>
-                 <h5>Coordinator<br>nuno.mendoca@uc.pt</h5>
-             </div>
-
-        </div>
-
-        <div class="member">
-          <img src="{% static 'ucbusinesssite/photos/AnaRitaQuerido.jpg' %}" alt="ana querido"/>
-            <div class="member-info">
-                <h4>Ana Rita Querido</h4>
-                <h5>Projects Management<br>ana.querido@uc.pt</h5>
-            </div>
-        </div>
-
-
+    {% for member in members %}
       <div class="member">
-            <img src="{% static 'ucbusinesssite/photos/CarlaMarques.jpg' %}" alt="carla marques"/>
+        <img src="{{ member.image.url }}"alt="{{ member.name }}"/>
           <div class="member-info">
-              <h4>Carla Marques</h4>
-              <h5>Projects Management
-              <br>carla.marques@uc.pt</h5>
+              <h4>{{ member.name }}</h4>
+              <h5>{{ member.role.name }}<br>{{ member.email }}</h5>
           </div>
       </div>
-
-      <div class="member">
-            <img src="{% static 'ucbusinesssite/photos/DanielSilva.JPG' %}" alt="daniel silva"/>
-          <div class="member-info">
-              <h4>Daniel Silva</h4>
-              <h5>Projects Management<br>daniel.silva@uc.pt</h5>
-          </div>
-      </div>
-
-
-      <div class="member">
-        <img src="{% static 'ucbusinesssite/photos/HelenaHenriques.JPG' %}" alt="helena henriques"/>
-          <div class="member-info">
-              <h4>Helena Henriques</h4>
-              <h5>Projects Management<br>helena.henriques@uc.pt</h5>
-          </div>
-
-      </div>
-
-      <div class="member">
-        <img src="{% static 'ucbusinesssite/photos/LauraAlho.JPG' %}" alt="laura alho"/>
-         <div class="member-info">
-             <h4>Laura Alho</h4>
-             <h5>Projects Management<br>laura.alho@uc.pt</h5>
-         </div>
-
-      </div>
-
-      <div class="member">
-        <img src="{% static 'ucbusinesssite/photos/LuisSilva.jpg' %}" alt="luis silva"/>
-         <div class="member-info">
-             <h4>Luís Silva</h4>
-             <h5>Projects Management<br>luis.silva@uc.pt</h5>
-         </div>
-
-      </div>
-
-      <div  class="member">
-        <img src="{% static 'ucbusinesssite/photos/MartaCostaeSilva.JPG' %}" alt="marta silva"/>
-         <div class="member-info">
-             <h4>Marta Silva</h4>
-             <h5>Projects Management<br>marta.c.silva@uc.pt</h5>
-         </div>
-
-      </div>
-
-      <div class="member">
-        <img src="{% static 'ucbusinesssite/photos/MonicaWolters.jpg' %}" alt="monica wolters"/>
-          <div class="member-info">
-              <h4>Mónica Wolters</h4>
-              <h5>Projects Management<br>monica.wolters@uc.pt</h5>
-          </div>
-       </div>
-     </div>
-
-
-
+    {% endfor %}
 </section>
 <footer id="footer">
   <div class="footer-left">
