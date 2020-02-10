@@ -177,6 +177,7 @@ height :20vh;
   position: relative;
   width: 30vw;
   z-index: 0;
+  object-fit: cover;
 }
 
 .txt_new {

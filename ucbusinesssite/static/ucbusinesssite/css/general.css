@@ -102,7 +102,7 @@ li {
 }
 .cookiebanner-message{
   width: 28vw;
-  height: 20vh;
+  padding: 0.6rem;
   background: white;
   border: var(--color-blue);
   border-radius: 10px;
