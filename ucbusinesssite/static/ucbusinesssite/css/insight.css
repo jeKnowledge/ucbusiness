@@ -15,11 +15,14 @@
 #news p, #news h3{
   width: 20vw;
 }
-
+.new{
+  display: flex;
+  flex-direction: column;
+}
 .news{
   display: grid;
-  grid-template-columns: 28vw 28vw 28vw ;
-  grid-template-rows: 65vh 65vh 65vh;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 50px;
 }
 .new button{
@@ -28,6 +31,8 @@
   color: white;
   padding: 1vh 1vw;
   border: none;
+  margin-top:auto;
+  align-self: end;
 }
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
