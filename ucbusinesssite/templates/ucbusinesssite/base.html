@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
+
+        <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
+        <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body>
+        <header>
+            <div class="header">
+              <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
+                  alt="logo_ucb" /></a>
+              <div id="dir">
+                <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
+                <h6> <a href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}" >PT</a>  <a href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}">EN</a></h6>
+              </div>
+            </div>
+        
+        </header>
+        {% if request.session.cookieBanner == True %}
+        <div class="cookiebanner">
+            <div class="cookiebanner-message">
+            <h2 class="cookiebanner-text">
+                <p>
+                {% if request.session.language == 'EN' %}
+                    This website site uses cookies to improve your browsing experience. By continuing to use this site, you are agreeing to our use of cookies.
+                {% else %}
+                    Este website utiliza cookies para melhorar a sua experiência de navegação. Ao continuar a utilizar este site, está a concordar com o uso de cookies.
+                {% endif %}
+                </p>
+            </h2>
+            <button id="cookie-button" onclick="hideCookie()">
+                {% if request.session.language == 'EN' %}
+                Accept and close 
+                {% else %}
+                Aceitar e fechar
+                {% endif %}
+            </button>
+            </div>
+        </div>
+        {% endif %}
+        
+        <section id=navbar>
+            <div class="menu">
+                <video class="video-ucb" muted autoplay controls>
+                    <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
+                </video>
+        
+                <div class="rect-menu">
+                    <button id="container" onclick="changeMenu()">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    </button>
+        
+                    <h4 id="menu-txt">
+                    {% if request.session.language == 'EN' %}
+                        <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+                        <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+                        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+                        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+                        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                        <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
+                    {% else %}
+                        <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
+                        <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
+                        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
+                        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
+                        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                        <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>  
+                    {% endif %}
+                    </h4>
+                </div>
+            </div>
+        </section>
+        
+        {% block content %}
+        {% endblock content %}
+
+        <footer id="footer">
+            <div class="footer-left">
+              <div class="footer-social">
+                <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
+                    src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
+                <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
+                    src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
+                <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
+                    height="35" width="35" alt="twitter" /> </a>
+              </div>
+              <p id="txt_footer">UC Business ® 2020</p>
+      
+            </div>
+             <div class="footer-right">
+              <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
+            </div>
+        </footer>
+    </body>
+</html>
+{% block script %}
+{% endblock %}

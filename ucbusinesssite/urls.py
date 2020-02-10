@@ -12,4 +12,5 @@ urlpatterns = [
     path('ucpartnership/', views.UCPartnerShipPage.as_view(), name='ucPartnership'),
     path('ucvalue/', views.UCValuePage.as_view(), name='ucValue'),
     path('contacts/', views.ContactsPage.as_view(), name='contacts'),
+    path('changelanguage/<str:language>', views.changeLanguage, name='changeLanguage')
 ]

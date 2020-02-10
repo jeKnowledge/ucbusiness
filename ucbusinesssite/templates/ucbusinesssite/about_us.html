@@ -37,12 +37,21 @@
             </button>
 
             <h4 id="menu-txt">
-              <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-              <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-              <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-              <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-              <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-              <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
+              {% if request.session.language == 'EN' %}
+                <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+                <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
+              {% else %}
+                <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
+                <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
+                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
+                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
+                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>  
+              {% endif %}
             </h4>
         </div>
         </div>
@@ -56,16 +65,28 @@
        </p>
      </div> -->
 
-     <h1>Team</h1>
+    <h1>
+      {% if request.session.language == 'EN' %}
+        Team
+      {% else %}
+        Equipa
+      {% endif %} 
+    </h1>
  </div>
 <section class="team">
       {% if topMember %}
         <div class="member1">
           <img src="{{ topMember.image.url }}" />
              <div class="member-info">
-                 <h4>{{ topMember.name }}</h4>
-                 <h5>{{ topMember.role.name }}</h5>
-                 <h5>{{ topMember.email }}</h5>
+                <h4>{{ topMember.name }}</h4>
+                <h5>
+                  {% if request.session.language == 'EN' %}
+                    {{ topMember.role.nameEn }}
+                  {% else %}
+                    {{ topMember.role.name }}
+                  {% endif %} 
+                </h5>
+                <h5>{{ topMember.email }}</h5>
              </div>
         </div>
       {% endif %}
@@ -75,7 +96,13 @@
         <img src="{{ member.image.url }}"alt="{{ member.name }}"/>
           <div class="member-info">
               <h4>{{ member.name }}</h4>
-              <h5>{{ member.role.name }}<br>{{ member.email }}</h5>
+              <h5>
+                {% if request.session.language == 'EN' %}
+                  {{ member.role.nameEn }}
+                {% else %}
+                  {{ member.role.name }}
+                {% endif %}
+                <br>{{ member.email }}</h5>
           </div>
       </div>
     {% endfor %}

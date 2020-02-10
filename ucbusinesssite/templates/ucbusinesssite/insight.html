@@ -36,12 +36,21 @@
             </button>
 
             <h4 id="menu-txt">
-              <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-              <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-              <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-              <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-              <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-              <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
+              {% if request.session.language == 'EN' %}
+                <a href="{% url 'ucbusinesssite:about' %}">About us</a>
+                <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
+                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
+              {% else %}
+                <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
+                <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
+                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
+                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
+                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>  
+              {% endif %}
             </h4>
         </div>
         </div>
@@ -55,10 +64,21 @@
     {% for article in news %}
       <div class="new">
         <img src="{{ article.imageurl_set.first.url }}" />
-        <h3> {{ article.title }} </h3>
-        <p>{{ article.body|truncatewords:20 }}</p>
+        {% if request.session.language == 'EN' %}
+          <h3> {{ article.titleEn }} </h3>
+          <p>{{ article.bodyEn|truncatewords:20 }}</p>
+        {% else %}
+          <h3> {{ article.title }} </h3>
+          <p>{{ article.body|truncatewords:20 }}</p>
+        {% endif %}
         <a href="{% url 'ucbusinesssite:newsArticle' article.title %}">
-          <button>   Read More </button>
+          <button>
+            {% if request.session.language == 'EN' %}
+              Read More 
+            {% else %}
+              <!-- Inserir texto em PT -->
+            {% endif %}
+          </button>
         </a>
 
       </div>

@@ -32,6 +32,7 @@ class ImageUrl(models.Model):
 
 class Role(models.Model):
     name = models.CharField(max_length=50, blank=False, primary_key=True)
+    nameEn = models.CharField(max_length=50, blank=False)
     position = models.IntegerField(unique=True, blank=False)
 
     class Meta:

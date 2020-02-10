@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponseRedirect
 from .models import NewsArticle, Member
 import datetime
 
@@ -9,15 +10,22 @@ class LandingPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', False)
         news = NewsArticle.objects.all().order_by('-datePosted')
         if news:
             newsArticle1 = news[0]
             context['newsArticle1'] = newsArticle1
             if newsArticle1.imageurl_set.all():
-                context['image1'] = newsArticle1.imageurl_set.all().first()        
+                context['image1'] = newsArticle1.imageurl_set.all().first()
+            if len(news) > 1:
+                newsArticle2 = news[1]
+                context['newsArticle2'] = newsArticle2
+                if newsArticle2.imageurl_set.all():
+                    context['image2'] = newsArticle2.imageurl_set.all().first()
         month = datetime.datetime.now().strftime('%B').upper()
         context['month'] = month
+
         return render(request, self.template_name, context)
 
 
@@ -26,7 +34,8 @@ class AboutPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         members = Member.objects.all()
         if members:
             context['topMember'] = members.first()
@@ -39,7 +48,8 @@ class NewsPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         news = NewsArticle.objects.all()
         if news:
             context['news'] = news.order_by('-datePosted')
@@ -51,7 +61,8 @@ class UCInvestPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         return render(request, self.template_name, context)
 
 
@@ -60,7 +71,8 @@ class UCPartnerShipPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         return render(request, self.template_name, context)
 
 
@@ -69,7 +81,8 @@ class UCValuePage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         return render(request, self.template_name, context)
 
 
@@ -78,7 +91,8 @@ class ContactsPage(View):
 
     def get(self, request):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         return render(request, self.template_name, context)
 
 
@@ -87,7 +101,17 @@ class NewsArticlePage(View):
 
     def get(self, request, title):
         context = {}
-        context['language'] = request.session.get('language', 'EN')
+        request.session['language'] = request.session.get('language', 'EN')
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         newsArticle = NewsArticle.objects.get(title=title)
         context['newsArticle'] = newsArticle
+        newsImages = []
+        for image in newsArticle.imageurl_set.all():
+            newsImages.append(image.url)
+        context['newsImages'] = newsImages
         return render(request, self.template_name, context)
+
+
+def changeLanguage(request, language):
+    request.session['language'] = language
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

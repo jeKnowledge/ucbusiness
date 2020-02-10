@@ -1,216 +1,221 @@
+{% extends 'ucbusinesssite/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block head %}
+<meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
+<link rel="stylesheet" href="{% static 'ucbusinesssite/css/style.css' %}">
+<script src="{% static 'ucbusinesssite/javascript/index.js' %}"></script>
+<title>UC Business</title>
+{% endblock head %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
-  <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
+{% block content %}
 
-
-  <title>UC Business</title>
-</head>
-
-<body>
-  <header>
-    <div class="header">
-      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
-          alt="logo_ucb" /></a>
-      <div id="dir">
-        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
-        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
-      </div>
-    </div>
-
-  </header>
-  <div class="cookiebanner">
-    <div class="cookiebanner-message">
-      <h2 class="cookiebanner-text">
-        <p>
-          This website site uses cookies to improve your browsing experience. By continuing to use this site, you are agreeing to our use of cookies.
-        </p>
-      </h2>
-      <button id="cookie-button" onclick="hideCookie()"> Accept and close </button>
-    </div>
-  </div>
-
-  <section id=navbar>
-    <div class="menu">
-      <video class="video-ucb" muted autoplay controls>
-        <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
-      </video>
-
-      <div class="rect-menu">
-
-        <button id="container" onclick="changeMenu()">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </button>
-
-        <h4 id="menu-txt">
-          <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-          <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-          <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-          <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-          <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-          <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
-        </h4>
-    </div>
-
-    </div>
-  </section>
-
-  <section id="logo-anim">
+<section id="logo-anim">
 
 <div id="info-ucb">
-      <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
+    <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
 
-      <div class="txt-ucb">
-        <h4>
-          Transform the University of Coimbra into an essential partner for the business world, structured in 3 major
-          business areas:
-        </h4>
-        <div id="areas">
+    <div class="txt-ucb">
+      <h4>
+        {% if request.session.language == 'EN' %}
+          Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+        {% else %}
+          <!-- Inserir texto em PT -->
+        {% endif %}
+      </h4>
+      <div id="areas">
+        {% if request.session.language == 'EN' %}  
           <h3>Large <br> Companies</h3>
           <h3>National <br> SMEs</h3>
           <h3>Start-ups and <br> Spin-offs</h3>
-        </div>
+        {% else %}
+          <!-- Inserir texto em PT -->
+        {% endif %}
       </div>
     </div>
+  </div>
 
-    <div id="info-pilares">
+  <div id="info-pilares">
 
-      <div class="info">
-        <img src="{% static 'ucbusinesssite/photos/value.png' %}">
-        <h4>Create short-term value (with financial return) based on existing skills.</h4>
-        <a href="{% url 'ucbusinesssite:ucValue' %}">
-          <button type="button">> Find out more</button>
-        </a>
-      </div>
-
-      <div class="info">
-        <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
-        <h4>Foster multi-level partnerships.</h4>
-        <a href="{% url 'ucbusinesssite:ucPartnership' %}">
-          <button type="button">> Find out more</button>
-        </a>
-      </div>
-
-      <div class="info">
-        <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
-        <h4>Invest in value development in the medium term.</h4>
-        <a href="{% url 'ucbusinesssite:ucInvest' %}">
-          <button type="button">> Find out more</button>
-        </a>
-      </div>
-
-
-
+    <div class="info">
+      <img src="{% static 'ucbusinesssite/photos/value.png' %}">
+      <h4>
+        {% if request.session.language == 'EN' %}
+          Create short-term value (with financial return) based on existing skills.
+        {% else %}
+          <!-- Inserir texto em PT -->
+        {% endif %}
+      </h4>
+      <a href="{% url 'ucbusinesssite:ucValue' %}">
+        <button type="button">> 
+          {% if request.session.language == 'EN' %}
+            Find out more
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %}
+        </button>
+      </a>
     </div>
 
+    <div class="info">
+      <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
+      <h4>
+        {% if request.session.language == 'EN' %}
+          Foster multi-level partnerships.
+        {% else %}
+          <!-- Inseir texto em PT -->
+        {% endif %}
+      </h4>
+
+      <a href="{% url 'ucbusinesssite:ucPartnership' %}">
+        <button type="button">
+          {% if request.session.language == 'EN' %}
+            > Find out more
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %} 
+        </button>
+      </a>
+    </div>
+
+    <div class="info">
+      <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
+      <h4>
+        {% if request.session.language == 'EN' %}
+          Invest in value development in the medium term.
+        {% else %}
+          <!-- Inserir texto em PT -->
+        {% endif %}
+      </h4>
+      <a href="{% url 'ucbusinesssite:ucInvest' %}">
+        <button type="button">
+          {% if request.session.language == 'EN' %}
+            > Find out more
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %}
+        </button>
+      </a>
+    </div>
+
+
+
+  </div>
+
+
+</section>
+
+<section id="timeline">
+  <div>
+      <div id="rectangle" class="rectangle">
+      <p id="rectangle_message">
+      </p>
+      <div id="txt-background">
+        <h3> {{month}} </h3>
+      </div>
+      </div>
+  </div>
+
+
+</section>
+
+  <section id="news-container">
+    <h1>
+      {% if request.session.language == 'EN' %}
+        Insights
+      {% else %}
+        <!-- Inserir texto em PT -->
+      {% endif %}
+    </h1>
+
+    <div class="container">
+
+      <div class="new1">
+        {% if newsArticle1 %}
+          <div class="txt_new">
+            <h4>{{ newsArticle1.datePosted|date:'j F' }}</h4>
+            <h4>
+              {% if request.session.language == 'EN' %}
+                {{ newsArticle1.titleEn }}
+              {% else %}
+                {{ newsArticle1.title }}
+              {% endif %}
+            </h4>
+
+          </div>
+          {% if image1 %}
+            <img src="{{ image1.url }}" alt="img1" />
+          {% else %}
+            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937">
+          {% endif %}
+          <div class="rect-new">
+            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle1.title %}">
+              <button type="button">
+                {% if request.session.language == 'EN' %}
+                  > Find out more 
+                {% else %}
+                  <!-- Inserir texto em PT -->
+                {% endif %}
+              </button>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="new2">
+        {% if newsArticle2 %}
+          <div class="txt_new">
+            <h4>{{ newsArticle2.datePosted|date:'j F' }}</h4>
+            <h4>
+              {% if request.session.language == 'EN' %}
+                {{ newsArticle2.titleEn }}
+              {% else %}
+                {{ newsArticle2.title }}
+              {% endif %}
+            </h4>
+
+          </div>
+          {% if image2 %}
+            <img src="{{ image2.url }}" alt="img2">
+          {% else %}
+            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937" alt="img">
+          {% endif %}
+          <div class="rect-new">
+            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle2.title %}">
+              <button type="button">
+                {% if request.session.language == 'EN' %}
+                  > Find out more 
+                {% else %}
+                  <!-- Inserir texto em PT -->
+                {% endif %}
+              </button>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
 
   </section>
-
-  <section id="timeline">
-    <div>
-        <div id="rectangle" class="rectangle">
-        <p id="rectangle_message">
-        </p>
-        <div id="txt-background">
-          <h3> {{month}} </h3>
-        </div>
-        </div>
-    </div>
+{% endblock content %}
 
 
-  </section>
+{% block script %}
+  <script>
 
-    <section id="news-container">
-      <h1>Insights</h1>
-      <div class="container">
+  function changeMenu(){
 
-        <div class="new1">
-          {% if newsArticle1 %}
-            <div class="txt_new">
-              <h4>{{ newsArticle1.datePosted|date:'j F' }}</h4><h4>{{ newsArticle1.title }}</h4>
-            </div>
-            {% if image1 %}
-              <img src="{{ image1.url }}" alt="img1" />
-            {% else %}
-              <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937">
-            {% endif %}
-            <div class="rect-new">
-              <a href="{% url 'ucbusinesssite:newsArticle' newsArticle1.title %}">
-                <button type="button">> Find out more </button>
-              </a>
-            </div>
-          {% endif %}
-        </div>
-
-        <div class="new2">
-          {% if newsArticle2 %}
-            <div class="txt_new">
-              <h4>6 de dezembro</h4><h4>Lançamento Académica Start UC - <br>Ensino Secundário</h4>
-            </div>
-            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937" alt="img2" />
-            <div class="rect-new">
-              <button type="button" onclick="location.href='insight.html'">> Find out more </button>
-            </div>
-          {% endif %}
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <footer id="footer">
-      <div class="footer-left">
-        <div class="footer-social">
-          <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-              src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
-          <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-              src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
-          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
-              height="35" width="35" alt="twitter" /> </a>
-        </div>
-        <p id="txt_footer">UC Business ® 2020</p>
-
-      </div>
-       <div class="footer-right">
-        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
-      </div>
-    </footer>
-
-
-
-    <script src="{% static 'ucbusinesssite/javascript/index.js' %}"></script>
-
-</body>
-
-</html>
-<script>
-
-function changeMenu(){
-
-if ($('#menu-txt').css('display') == 'none'){
-  $('#menu-txt').css('display', 'block');
-  $('.rect-menu').css('height', '100vh');
-}
-else{
-  $('#menu-txt').css('display', 'none');
-  $('.rect-menu').css('height', '8vh');
-}
-}
-function hideCookie(){
-    $('.cookiebanner').css('display', 'none');
-}
-</script>
+  if ($('#menu-txt').css('display') == 'none'){
+    $('#menu-txt').css('display', 'block');
+    $('.rect-menu').css('height', '100vh');
+  }
+  else{
+    $('#menu-txt').css('display', 'none');
+    $('.rect-menu').css('height', '8vh');
+  }
+  }
+  function hideCookie(){
+      $('.cookiebanner').css('display', 'none');
+  }
+  </script>
+{% endblock %}
