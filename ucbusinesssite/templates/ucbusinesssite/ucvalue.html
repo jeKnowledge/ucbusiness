@@ -1,51 +1,12 @@
+{% extends 'ucbusinesssite/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
+{% block head %}
+<link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucvalue.css' %}">
+<title>UC Business</title>
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucvalue.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>UC Business</title>
-</head>
-<body>
-<header>
-  <div class="header">
-      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
-      <div id="dir">
-        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
-        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
-    </div>
-  </div>
-</header>
-
-<section id="navbar">
-        <div class="menu">
-          <div class="rect-menu">
-
-            <button id="container" onclick="changeMenu()">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </button>
-
-            <h4 id="menu-txt">
-              <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-              <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-              <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-              <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-              <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-              <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
-            </h4>
-        </div>
-        </div>
-  </section>
+{% block content %}
 
   <section id="info">
 
@@ -169,26 +130,9 @@
         </div>
       </div>
     </section>
+{% endblock %}
 
-    <footer id="footer">
-      <div class="footer-left">
-        <div class="footer-social">
-          <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-              src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
-          <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-              src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
-          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
-              height="35" width="35" alt="twitter" /> </a>
-        </div>
-        <p>UC Business ® 2020</p>
-
-      </div>
-       <div class="footer-right">
-        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
-      </div>
-    </footer>
-</body>
-</html>
+{% block script %}
 <script>
 
 function clickSpecial() {
@@ -284,3 +228,4 @@ function clickApp() {
 
 
 </script>
+{% endblock %}

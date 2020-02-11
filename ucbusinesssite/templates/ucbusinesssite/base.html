@@ -52,9 +52,8 @@
         
         <section id=navbar>
             <div class="menu">
-                <video class="video-ucb" muted autoplay controls>
-                    <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
-                </video>
+                {% block video %}
+                {% endblock %}
         
                 <div class="rect-menu">
                     <button id="container" onclick="changeMenu()">
