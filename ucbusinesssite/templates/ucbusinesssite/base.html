@@ -20,9 +20,10 @@
             <div class="header">
               <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
                   alt="logo_ucb" /></a>
-              <div id="dir">    
-                <h6> <a id="pt_button" href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}" >PT</a>
-                      <a id="en_button" href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}">EN</a>
+              <div id="dir">
+                <h6> <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}" >PT</a>
+                      <a id="lang_sep">|</a> 
+                      <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}">EN</a>
                 </h6>
                 <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
               </div>

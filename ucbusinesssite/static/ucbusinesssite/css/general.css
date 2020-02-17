@@ -83,13 +83,13 @@ li {
 .menu h4 {
   display: flex;
   z-index: 5;
+  padding-left: 3%;
 }
 .menu h4 a {
-  padding-left: 2%;
   color: white;
   text-decoration: none;
   font-size: 1.1em;
-  padding-right: 5vw;
+  padding-right: 4vw;
   white-space: nowrap;
 }
 
@@ -126,13 +126,13 @@ li {
     border: none;
     height: 4vh;
 }
-#pt_button , #en_button{
+.lang_button, #lang_sep{
   font-size: 1.2em;
   color:  var(--color-gray);
   text-decoration: none;
-  padding-right: 1.5vw;
+  padding-right: 1.2vw;
 }
-#pt_button:hover  , #en_button:hover{
+.lang_button:hover  {
   color:  var(--color-lightblue);
 }
 
@@ -229,6 +229,9 @@ width: auto;
   }
   #txt_footer{
     font-size: 0.5rem;
+  }
+  .lang_button, #lang_sep{
+    font-size: 0.9em;
   }
 
 

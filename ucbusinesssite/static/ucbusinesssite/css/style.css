@@ -26,7 +26,7 @@
   width: 40vw;
 }
 #info-ucb{
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 25vh 0;
@@ -49,8 +49,8 @@
 .info h4{
   text-align: center;
   font-size: 1.4em;
-width: 15vw;
-height :20vh;
+  width: 15vw;
+  height :20vh;
 }
 .info button{
   background-color: var(--color-blue);
@@ -60,7 +60,6 @@ height :20vh;
   height:5vh;
   padding-bottom: 0;
 }
-
 
 .circulos {
   display: flex;
@@ -125,7 +124,6 @@ height :20vh;
   justify-content: center;
 }
 
-
 .filled_circle {
   background-color: var(--color-lightblue);
 }
@@ -134,6 +132,7 @@ height :20vh;
   padding: 3% 5% 5%;
   margin: auto;
 }
+
 .rect-new button{
   float: right;
   margin-top: 15vh;
@@ -144,7 +143,6 @@ height :20vh;
   height: 4vh;
   font-weight: bold;
 }
-
 
 .container {
   padding-top: 3%;
@@ -160,7 +158,6 @@ height :20vh;
   text-align: left;
   transition: left 2s;
   margin-right: 5%;
-
 }
 
 .rect-new {
@@ -177,6 +174,7 @@ height :20vh;
 .new1 img, .new2 img {
   position: relative;
   width: 30vw;
+  height:40vh;
   z-index: 0;
   object-fit: cover;
 }
@@ -194,14 +192,9 @@ height :20vh;
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
-@media screen and (max-width: 400px) {
-  #rectangle_message{
-    font-size: 0.5rem;
-    text-align: center;
-  }
-  .rectangle {
-    height: 15vh;
-  }
+@media screen and (max-width: 400px)  {
+
+
 
   #txt-background, .txt_new {
     font-size: 0.5em;
@@ -211,20 +204,16 @@ height :20vh;
     font-size: 0.4em;
   }
 
-  .circle {
-    width: 13px;
-    height: 8px;
-    margin: 12% 1% 0 0;
-  }
   .container{
     display: block;
   }
 
-  .circle span {
-    font-size: 0.3em;
-  }
   .new1 img , .container , .new2 img , .rect-new{
     width:40vw;
+    height:50%;
+  }
+  .new1 img ,.new2 img {
+    height:15vh;
   }
 
   .new1, .new2{
@@ -260,6 +249,36 @@ height :20vh;
 display: none;
 }
 
+.rectangle {
+  width: 100%;
+  height: 95vh;
+  display: block;
+  justify-content: center;
+}
+.circle span {
+  font-size: 0.5em;
+  z-index: 4;
+}
+
+.circle {
+  border-radius: 100%;
+  height: 10px;
+  width:  10px;
+  margin: 2% 1% 2% 15%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#rectangle_message{
+  font-size: 0.8rem;
+  text-align: center;
+  height:30vh;
+  width:50vw;
+  /*vertical-align: middle;*/
+  align-items: center;
+
+}
 
 
 }
