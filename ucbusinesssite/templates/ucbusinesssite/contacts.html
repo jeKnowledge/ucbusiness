@@ -63,41 +63,44 @@
     </section>
 
     <section id="form">
-      <h2 class=form-title>
-        {% if request.session.language == 'EN' %}
-          Send us a message 
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </h2>
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Name:
-        {% else %}
-          Nome:
-        {% endif %}
-      </h4>
-      <input name = "name" id="name" type="name"  required >
-
-      <h4> E-mail:</h4>
-      <input name = "mail" id="mail" type="email"  required >
-
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Message:
-        {% else %}
-          Mensagem:
-        {% endif %}
-      </h4>
-      <textarea name = "message" id="text" type="email"  required ></textarea>
-
-      <button id="submit-button" type="button">
-        {% if request.session.language == 'EN' %}
-          Submit
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </button>
+      <form method="POST">
+        {% csrf_token %}
+        <h2 class=form-title>
+          {% if request.session.language == 'EN' %}
+            Send us a message 
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %}
+        </h2>
+        <h4>
+          {% if request.session.language == 'EN' %}
+            Name:
+          {% else %}
+            Nome:
+          {% endif %}
+        </h4>
+        <input name = "name" id="name" type="name"  required >
+  
+        <h4> E-mail:</h4>
+        <input name = "email" id="mail" type="email"  required >
+  
+        <h4>
+          {% if request.session.language == 'EN' %}
+            Message:
+          {% else %}
+            Mensagem:
+          {% endif %}
+        </h4>
+        <textarea name = "message" id="text" type="email"  required ></textarea>
+  
+        <button id="submit-button" type="submit">
+          {% if request.session.language == 'EN' %}
+            Submit
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %}
+        </button>
+      </form>
     </section>
   </div>
 {% endblock %}
