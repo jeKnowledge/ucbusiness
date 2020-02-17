@@ -75,6 +75,7 @@ height :20vh;
 #areas h3 {
   padding-right: 2vw;
   text-align: center;
+  color:var(--color-gray)
 }
 
 

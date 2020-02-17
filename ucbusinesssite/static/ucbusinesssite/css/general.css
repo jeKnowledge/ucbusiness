@@ -85,7 +85,7 @@ li {
   z-index: 5;
 }
 .menu h4 a {
-  padding-left: 5%;
+  padding-left: 2%;
   color: white;
   text-decoration: none;
   font-size: 1.1em;
@@ -125,6 +125,15 @@ li {
     color: white;
     border: none;
     height: 4vh;
+}
+#pt_button , #en_button{
+  font-size: 1.2em;
+  color:  var(--color-gray);
+  text-decoration: none;
+  padding-right: 1.5vw;
+}
+#pt_button:hover  , #en_button:hover{
+  color:  var(--color-lightblue);
 }
 
 /*-------------------FOOTER-------------------*/
