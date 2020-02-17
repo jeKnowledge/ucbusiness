@@ -1,69 +1,19 @@
+{% extends 'ucbusinesssite/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/abous_us.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
+{% block head %}
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/abous_us.css' %}">
+  <title>About Us</title>
+{% endblock %}
 
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
-
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <title>About Us</title>
-</head>
-<body>
-<header>
-    <div class="header">
-        <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
-        <div id="dir">
-          <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
-        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
-    </div>
-    </div>
-</header>
-
-<section id="navbar">
-        <div class="menu">
-          <div class="rect-menu">
-
-            <button id="container" onclick="changeMenu()">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </button>
-
-            <h4 id="menu-txt">
-              {% if request.session.language == 'EN' %}
-                <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-                <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-                <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
-              {% else %}
-                <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
-                <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
-                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
-                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
-                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-                <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>  
-              {% endif %}
-            </h4>
-        </div>
-        </div>
-  </section>
-
- <div class="about">
-     <!-- <h1>About us</h1>
-     <div id="mission">
-       <h4> Our Mission</h4>
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, sapien nec ornare luctus, arcu nunc fringilla mauris, id finibus lorem massa ut arcu. Ut sodales vehicula vehicula. Praesent interdum ante quis ultricies ultrices. Suspendisse potenti. Quisque auctor erat est, tempus finibus est imperdiet id. Quisque ac varius sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin eget finibus enim. Cras gravida ac ante in pretium. Maecenas eu posuere lectus, et sagittis eros. Nulla vel dictum mauris, eu porttitor dui. Nam turpis metus, accumsan at tempus ut, placerat id justo. Aliquam in nisi interdum, rutrum quam vel, blandit libero. In quis purus maximus, convallis ex eget, efficitur sapien.
-       </p>
-     </div> -->
+{% block content %}
+  <div class="about">
+      <!-- <h1>About us</h1>
+      <div id="mission">
+        <h4> Our Mission</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultrices, sapien nec ornare luctus, arcu nunc fringilla mauris, id finibus lorem massa ut arcu. Ut sodales vehicula vehicula. Praesent interdum ante quis ultricies ultrices. Suspendisse potenti. Quisque auctor erat est, tempus finibus est imperdiet id. Quisque ac varius sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin eget finibus enim. Cras gravida ac ante in pretium. Maecenas eu posuere lectus, et sagittis eros. Nulla vel dictum mauris, eu porttitor dui. Nam turpis metus, accumsan at tempus ut, placerat id justo. Aliquam in nisi interdum, rutrum quam vel, blandit libero. In quis purus maximus, convallis ex eget, efficitur sapien.
+        </p>
+      </div> -->
 
     <h1>
       {% if request.session.language == 'EN' %}
@@ -72,12 +22,12 @@
         Equipa
       {% endif %} 
     </h1>
- </div>
-<section class="team">
+  </div>
+  <section class="team">
       {% if topMember %}
         <div class="member1">
           <img src="{{ topMember.image.url }}" />
-             <div class="member-info">
+              <div class="member-info">
                 <h4>{{ topMember.name }}</h4>
                 <h5>
                   {% if request.session.language == 'EN' %}
@@ -87,10 +37,10 @@
                   {% endif %} 
                 </h5>
                 <h5>{{ topMember.email }}</h5>
-             </div>
+              </div>
         </div>
       {% endif %}
-<div id="team-grid">
+  <div id="team-grid">
     {% for member in members %}
       <div class="member">
         <img src="{{ member.image.url }}"alt="{{ member.name }}"/>
@@ -106,38 +56,22 @@
           </div>
       </div>
     {% endfor %}
-</section>
-<footer id="footer">
-  <div class="footer-left">
-    <div class="footer-social">
-      <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-          src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
-      <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-          src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
-      <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
-          height="35" width="35" alt="twitter" /> </a>
-    </div>
-    <p>UC Business ® 2020</p>
+  </section>
+{% endblock %}
 
-  </div>
-   <div class="footer-right">
-    <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
-  </div>
-</footer>
+{% block script %}
+  <script>
+  function changeMenu(){
 
-</body>
-</html>
+  if ($('#menu-txt').css('display') == 'none'){
+    $('#menu-txt').css('display', 'block');
+    $('.rect-menu').css('height', '100vh');
+  }
+  else{
+    $('#menu-txt').css('display', 'none');
+    $('.rect-menu').css('height', '8vh');
+  }
+  }
+  </script>
+{% endblock %}
 
-<script>
-function changeMenu(){
-
-if ($('#menu-txt').css('display') == 'none'){
-  $('#menu-txt').css('display', 'block');
-  $('.rect-menu').css('height', '100vh');
-}
-else{
-  $('#menu-txt').css('display', 'none');
-  $('.rect-menu').css('height', '8vh');
-}
-}
-</script>

@@ -1,7 +1,11 @@
-from django.shortcuts import render
 from django.views import View
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+
 from .models import NewsArticle, Member
+from .forms import ContactForm
+
 import datetime
 
 
@@ -11,7 +15,7 @@ class LandingPage(View):
     def get(self, request):
         context = {}
         request.session['language'] = request.session.get('language', 'EN')
-        request.session['cookieBanner'] = request.session.get('cookieBanner', False)
+        request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         news = NewsArticle.objects.all().order_by('-datePosted')
         if news:
             newsArticle1 = news[0]
@@ -94,6 +98,15 @@ class ContactsPage(View):
         request.session['language'] = request.session.get('language', 'EN')
         request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         return render(request, self.template_name, context)
+
+    def post(self, request):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            #send_mail('UC Business website form', message, 'example@gmail.com', ['ucbusiness@uc.pt'])
+        return render(request, self.template_name, {})
 
 
 class NewsArticlePage(View):

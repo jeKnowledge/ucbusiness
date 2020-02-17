@@ -8,6 +8,12 @@
 <title>UC Business</title>
 {% endblock head %}
 
+{% block video %}
+<video class="video-ucb" muted autoplay controls>
+  <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
+</video>
+{% endblock %}
+
 {% block content %}
 
 <section id="logo-anim">

@@ -1,369 +1,320 @@
+{% extends 'ucbusinesssite/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
+{% block head %}
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucinvest.css' %}">
+  <title>UC Business</title>
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/ucinvest.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>UC Business</title>
-</head>
-<body>
-<header>
-  <div class="header">
-      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
-      <div id="dir">
-        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
-        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
+{% block content %}
+<section id="info">
+  <h1 id="invest-title">Invest</h1>
+
+  <div class="promoting">
+    <div class="button-subtitle">
+      <button onclick="clickPromoting()" id="circ-promoting"> </button>
+      <h2 id="subtitle"> Promoting contact with companies </h2>
+    </div>
+      <div id="txt1">
+          <p>Arrange visits to the University for Entrepreneurs, according to the area of intervention, aiming to reduce the gap between companies and researchers, and strengthening mutual trust;</p>
+          <p>Strengthen the ability of researchers to provide business services by identifying the needs of these companies;</p>
+          <div class="photos">
+          <div class="photo">
+            <h4>Siemens</h4>
+            <img  id="siemens" src="{% static 'ucbusinesssite/photos/promoting/siemens-ph.JPG' %}">
+          </div>
+
+          <div class="photo">
+            <h4>Hong Kong Startups</h4>
+            <img  id="hongkong" src="{% static 'ucbusinesssite/photos/promoting/hongkong-ph.JPG' %}"/>
+          </div>
+
+          <div class="photo">
+            <h4>AlticeLabs@UC</h4>
+            <img  id="altice" src="{% static 'ucbusinesssite/photos/promoting/altice-ph.JPG' %}"/>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div  class="employ">
+    <div class="button-subtitle">
+      <button id="circ-employ" onclick="clickEmploy()"> </button>
+      <h2 id="subtitle"> Employability </h2>
+    </div>
+
+      <div id="txt2">
+
+        <ul>
+        Help students from different academic levels enter the labor market:
+        <p>
+        <li>Articulate the professional needs of companies with the available training;</li>
+        <li>Promotion of doctoral rotation program in companies, aiming at an active search for partnerships between research centers and the national/international business market;</li>
+        <li>Contribute to strengthening the structuring of competence centers to be developed at the University of Coimbra.</li>
+        </p>
+        <h4>Fit4Work</h4>
+        <p>
+        <li>Partnerships with major national and international companies.</li>
+        <li>Association with the most important internship and trainee programs;</li>
+        <li>Collaboration in the identification of professional opportunities.</li>
+        <li>Personalized Consulting to UC students;</li>
+        <li>Continuous Training;</li>
+        <li>Career support tools;</li>
+      </p>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="entrep">
+    <div class="button-subtitle">
+      <button onclick="clickEntrep()" id="circ-entrep"> </button>
+      <h2 id="subtitle"> Entrepeneurship </h2>
+    </div>
+      <div id="txt3">
+        <p>
+        Encouragement of Entrepreneurship among the Univerisity:
+        <ul>
+        <li>To strengthen entrepreneurship skills at different academic levels, graduates or non-graduates;</li>
+        <li>To strengthen the incentive to entrepreneurship through competitions according to the Arrisca C model;</li>
+        <li>To structure national and international entrepreneurial projects with the aim of enhancing the image of the University of Coimbra regarding its target audience (High School, International Higher Education, ...).</li>
+      </ul>
+    </p>
+      <div id="academica-start-uc">
+        <h4> Académica Start UC</h4>
+      <p>  Académica Start UC – Network of Ambassadors for Entrepreneurship - is a project with the aim of raising awareness, education and training of our students for Innovation and Entrepreneurship.
+      </p>
+        <div class="numbers-anim">
+        <img id="academica-startuc" src="{% static 'ucbusinesssite/photos/entrepe/academicastart.jpg' %}" id="academica_start_uc">
+        <div class="patr">
+          <img id="uc" src="{% static 'ucbusinesssite/photos/entrepe/uc.png' %}" id="uc">
+          <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/ac.png' %}" id="aac">
+          <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
+        </div>
+          <div class="left">
+            <div class="number" data-number= "81">
+              <h3 id="number1-st">26</h3>
+                <h5>Student Associations</h5>
+            </div>
+            <div class="number" data-number= "19">
+              <h3 id="number2-st">109</h3>
+                <h5>Trained Ambassadors</h5>
+            </div>
+            <div class="number" data-number= "82">
+              <h3 id="number3-st">3</h3>
+                <h5>Editions</h5>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="number" data-number= "81">
+              <h3 id="number4-st">12000</h3>
+                <h5>Participants</h5>
+            </div>
+            <div class="number" data-number= "19">
+              <h3 id="number5-st">600</h3>
+                <h5>Partners</h5>
+            </div>
+            <div class="number" data-number= "100">
+              <h3 id="number6-st">3</h3>
+                <h5>Events</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="explorer-uc">
+        <h4> Explorer UC</h4>
+        Explorer UC is a 5-month business idea acceleration program for 18 to 31-year-olds based on 4 domains: face-to-face training, online training, mentoring and access to prizes.
+
+        <div class="numbers-anim">
+        <img id="exploreruc" src="{% static 'ucbusinesssite/photos/entrepe/exploreruc.jpg' %}" id="explorer_uc">
+        <div class="patr">
+          <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/rede.png' %}" id="redemprendia">
+          <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
+        </div>
+          <div class="left">
+            <div class="number" data-number= "10">
+              <h3 id="number1-exp">10</h3>
+                <h5>Nationalities</h5>
+            </div>
+            <div class="number" data-number= "40">
+              <h3 id="number2-exp">40</h3>
+                <h5>Universities</h5>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="numbere" data-number= "350">
+              <h3 id="number3-exp">350</h3>
+                <h5>Startups</h5>
+            </div>
+            <div class="number" data-number= "600">
+              <h3 id="number4-exp">600</h3>
+                <h5>Participants</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="arrisca-c">
+        <h4> Arrisca C</h4>
+        Arrisca C is a competition that aims to stimulate the development of business concepts expecting the creation of new companies as end result. It is divided into two types: Ideas and Business Plans. Specific awards for High School and Technical-Vocational Education and Social Innovation.
+
+        <div class="numbers-anim">
+          <img id="arrisca_c" src="{% static 'ucbusinesssite/photos/entrepe/arriscac.jpg' %}" id="arrisca_c">
+
+          <div class="left">
+            <div class="number" data-number= "10">
+              <h3 id="number1-arr">10</h3>
+                <h5>Editions</h5>
+            </div>
+            <div class="number" data-number= "25">
+              <h3 id="number2-arr">25</h3>
+                <h5>Created Startups</h5>
+            </div>
+            <div class="number" data-number= "1000000">
+              <h3 id="number3-arr">1000000</h3>
+                <h5>In Prizes(€)</h5>
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="number" data-number= "800">
+              <h3 id="number4-arr">800</h3>
+                <h5>PCreated Projects</h5>
+            </div>
+            <div class="number" data-number= "2500">
+              <h3 id="number5-arr">2500</h3>
+                <h5>Promoters</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="inov-c">
+        <h4> Inov C</h4>
+        Consolidate an open and inclusive Innovation Ecosystem in Central Portugal, incorporating a complete range of resources, infrastructures and dynamics, with cross-sectoral and sectorally oriented approaches to the specific needs of each innovative and entrepreneurial project.
+
+        <div class="numbers-anim">
+
+
+          <div class="left">
+            <div class="number" data-number= "10">
+              <h3 id="number1-inov">10</h3>
+                <h5>Nuclear Partners</h5>
+              </div>
+          </div>
+
+          <div class="right">
+            <div class="number" data-number= "600">
+              <h3 id="number2-inov">600</h3>
+                <h5>Complementary Partners</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
       </div>
   </div>
-</header>
 
-<section id=navbar>
-  <div class="menu">
+  <div class="nonprofit">
+    <div class="button-subtitle">
+      <button onclick="clickNonProfit()" id="circ-nonprofit"></button>
+      <h2 id="subtitle"> Nonprofit Private Associations </h2>
+    </div>
+      <div id="txt4">
+        <p>Articulation and support to the nonprofit private Associations </p>
+        <div class="list">
+          <!-- 
+            {% for group in groups %}
+              <div class='npaList'>
+                <ul>{{ group.name }}</ul>
+                {% for npa in group.nonprofitassociation_set %}
+                  <li>{{ npa.name }}</li>
+                {% endfor %}
+              </div>
+            {% endfor %}
 
-    <div class="rect-menu">
+           -->
 
-      <button id="container" onclick="changeMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </button>
+          <div id="research">
+            <ul>Research Centers</ul>
+            <li>LIP </li>
+            <li>CNC </li>
+            <li>ISR Coimbra </li>
+            <li>LEDAP </li>
+            <li>CEISUC </li>
+            <li>CES</li>
+            <li>CRIA </li>
+            <li>INESC Coimbra </li>
+            <li>IT - Instituto de Telecomunicações</li>
+          </div>
 
-      <h4 id="menu-txt">
-        <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-        <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-        <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
-      </h4>
+          <div id="type2">
+            <ul>Consultancy <br>and Projects</ul>
+            <li>ADAI</li>
+            <li>ADDF</li>
+            <li>AEEC</li>
+            <li>AEIDH</li>
+            <li>AIBILI</li>
+            <li>AITQ</li>
+            <li>APEC</li>
+            <li>APEU</li>
+            <li>BBS</li>
+            <li>CDB</li>
+            <li>CDC</li>
+            <li>CDF</li>
+            <li>CEDIPRE</li>
+            <li>CEDOUA</li>
+            <li>CIM</li>
+            <li>IDARC</li>
+            <li>IDET</li>
+            <li>IDPEE</li>
+            <li>IERU</li>
+            <li>IGC</li>
+            <li>IJC</li>
+            <li>LED</li>
+            <li>PRODEC</li>
+
+          </div>
+
+          <div id="type3">
+            <ul>Transfers <br>and Incubation</ul>
+            <li>IPN</li>
+            <li>Biocant</li>
+            <li>SerQ</li>
+            <li>IEFF</li>
+            <li>IATV</li>
+            <li>ITECons</li>
+
+          </div>
+        </div>
+
   </div>
+    </div>
+
+  <div class="customer">
+    <div class="button-subtitle">
+        <button onclick="clickCustomer()" id="circ-customer"> </button>
+        <h2 id="subtitle"> Customer Centered </h2>
+      </div>
+        <div id="txt5">
+          <p>Customer centered policy, working actively in Companies.</p>
+          <div class="photo">
+            <h4>ICNAS Produção</h4>
+            <img  id="hongkong" src="{% static 'ucbusinesssite/photos/customer.JPG' %}"/>
+          </div>
+        </div>
 
   </div>
 </section>
+{% endblock %}
 
-    <section id="info">
-      <h1 id="invest-title">Invest</h1>
-
-      <div class="promoting">
-        <div class="button-subtitle">
-          <button onclick="clickPromoting()" id="circ-promoting"> </button>
-          <h2 id="subtitle"> Promoting contact with companies </h2>
-        </div>
-          <div id="txt1">
-              <p>Arrange visits to the University for Entrepreneurs, according to the area of intervention, aiming to reduce the gap between companies and researchers, and strengthening mutual trust;</p>
-              <p>Strengthen the ability of researchers to provide business services by identifying the needs of these companies;</p>
-              <div class="photos">
-              <div class="photo">
-                <h4>Siemens</h4>
-                <img  id="siemens" src="{% static 'ucbusinesssite/photos/promoting/siemens-ph.JPG' %}">
-              </div>
-
-              <div class="photo">
-                <h4>Hong Kong Startups</h4>
-                <img  id="hongkong" src="{% static 'ucbusinesssite/photos/promoting/hongkong-ph.JPG' %}"/>
-              </div>
-
-              <div class="photo">
-                <h4>AlticeLabs@UC</h4>
-                <img  id="altice" src="{% static 'ucbusinesssite/photos/promoting/altice-ph.JPG' %}"/>
-              </div>
-            </div>
-          </div>
-
-      </div>
-
-      <div  class="employ">
-        <div class="button-subtitle">
-          <button id="circ-employ" onclick="clickEmploy()"> </button>
-          <h2 id="subtitle"> Employability </h2>
-        </div>
-
-          <div id="txt2">
-
-            <ul>
-            Help students from different academic levels enter the labor market:
-            <p>
-            <li>Articulate the professional needs of companies with the available training;</li>
-            <li>Promotion of doctoral rotation program in companies, aiming at an active search for partnerships between research centers and the national/international business market;</li>
-            <li>Contribute to strengthening the structuring of competence centers to be developed at the University of Coimbra.</li>
-            </p>
-            <h4>Fit4Work</h4>
-            <p>
-            <li>Partnerships with major national and international companies.</li>
-            <li>Association with the most important internship and trainee programs;</li>
-            <li>Collaboration in the identification of professional opportunities.</li>
-            <li>Personalized Consulting to UC students;</li>
-            <li>Continuous Training;</li>
-            <li>Career support tools;</li>
-          </p>
-          </ul>
-
-        </div>
-      </div>
-
-      <div class="entrep">
-        <div class="button-subtitle">
-          <button onclick="clickEntrep()" id="circ-entrep"> </button>
-          <h2 id="subtitle"> Entrepeneurship </h2>
-        </div>
-          <div id="txt3">
-            <p>
-            Encouragement of Entrepreneurship among the Univerisity:
-            <ul>
-            <li>To strengthen entrepreneurship skills at different academic levels, graduates or non-graduates;</li>
-            <li>To strengthen the incentive to entrepreneurship through competitions according to the Arrisca C model;</li>
-            <li>To structure national and international entrepreneurial projects with the aim of enhancing the image of the University of Coimbra regarding its target audience (High School, International Higher Education, ...).</li>
-          </ul>
-        </p>
-          <div id="academica-start-uc">
-            <h4> Académica Start UC</h4>
-          <p>  Académica Start UC – Network of Ambassadors for Entrepreneurship - is a project with the aim of raising awareness, education and training of our students for Innovation and Entrepreneurship.
-          </p>
-            <div class="numbers-anim">
-            <img id="academica-startuc" src="{% static 'ucbusinesssite/photos/entrepe/academicastart.jpg' %}" id="academica_start_uc">
-            <div class="patr">
-              <img id="uc" src="{% static 'ucbusinesssite/photos/entrepe/uc.png' %}" id="uc">
-              <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/ac.png' %}" id="aac">
-              <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
-            </div>
-              <div class="left">
-                <div class="number" data-number= "81">
-                  <h3 id="number1-st">26</h3>
-                    <h5>Student Associations</h5>
-                </div>
-                <div class="number" data-number= "19">
-                  <h3 id="number2-st">109</h3>
-                    <h5>Trained Ambassadors</h5>
-                </div>
-                <div class="number" data-number= "82">
-                  <h3 id="number3-st">3</h3>
-                    <h5>Editions</h5>
-                </div>
-              </div>
-
-              <div class="right">
-                <div class="number" data-number= "81">
-                  <h3 id="number4-st">12000</h3>
-                    <h5>Participants</h5>
-                </div>
-                <div class="number" data-number= "19">
-                  <h3 id="number5-st">600</h3>
-                    <h5>Partners</h5>
-                </div>
-                <div class="number" data-number= "100">
-                  <h3 id="number6-st">3</h3>
-                    <h5>Events</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="explorer-uc">
-            <h4> Explorer UC</h4>
-            Explorer UC is a 5-month business idea acceleration program for 18 to 31-year-olds based on 4 domains: face-to-face training, online training, mentoring and access to prizes.
-
-            <div class="numbers-anim">
-            <img id="exploreruc" src="{% static 'ucbusinesssite/photos/entrepe/exploreruc.jpg' %}" id="explorer_uc">
-            <div class="patr">
-              <img id="aac" src="{% static 'ucbusinesssite/photos/entrepe/rede.png' %}" id="redemprendia">
-              <img id="santander" src="{% static 'ucbusinesssite/photos/entrepe/santander.png' %}" id="santander">
-            </div>
-              <div class="left">
-                <div class="number" data-number= "10">
-                  <h3 id="number1-exp">10</h3>
-                    <h5>Nationalities</h5>
-                </div>
-                <div class="number" data-number= "40">
-                  <h3 id="number2-exp">40</h3>
-                    <h5>Universities</h5>
-                </div>
-              </div>
-
-              <div class="right">
-                <div class="numbere" data-number= "350">
-                  <h3 id="number3-exp">350</h3>
-                    <h5>Startups</h5>
-                </div>
-                <div class="number" data-number= "600">
-                  <h3 id="number4-exp">600</h3>
-                    <h5>Participants</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="arrisca-c">
-            <h4> Arrisca C</h4>
-            Arrisca C is a competition that aims to stimulate the development of business concepts expecting the creation of new companies as end result. It is divided into two types: Ideas and Business Plans. Specific awards for High School and Technical-Vocational Education and Social Innovation.
-
-            <div class="numbers-anim">
-              <img id="arrisca_c" src="{% static 'ucbusinesssite/photos/entrepe/arriscac.jpg' %}" id="arrisca_c">
-
-              <div class="left">
-                <div class="number" data-number= "10">
-                  <h3 id="number1-arr">10</h3>
-                    <h5>Editions</h5>
-                </div>
-                <div class="number" data-number= "25">
-                  <h3 id="number2-arr">25</h3>
-                    <h5>Created Startups</h5>
-                </div>
-                <div class="number" data-number= "1000000">
-                  <h3 id="number3-arr">1000000</h3>
-                    <h5>In Prizes(€)</h5>
-                </div>
-              </div>
-
-              <div class="right">
-                <div class="number" data-number= "800">
-                  <h3 id="number4-arr">800</h3>
-                    <h5>PCreated Projects</h5>
-                </div>
-                <div class="number" data-number= "2500">
-                  <h3 id="number5-arr">2500</h3>
-                    <h5>Promoters</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="inov-c">
-            <h4> Inov C</h4>
-            Consolidate an open and inclusive Innovation Ecosystem in Central Portugal, incorporating a complete range of resources, infrastructures and dynamics, with cross-sectoral and sectorally oriented approaches to the specific needs of each innovative and entrepreneurial project.
-
-            <div class="numbers-anim">
-
-
-              <div class="left">
-                <div class="number" data-number= "10">
-                  <h3 id="number1-inov">10</h3>
-                    <h5>Nuclear Partners</h5>
-                  </div>
-              </div>
-
-              <div class="right">
-                <div class="number" data-number= "600">
-                  <h3 id="number2-inov">600</h3>
-                    <h5>Complementary Partners</h5>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
-          </div>
-      </div>
-
-      <div class="nonprofit">
-        <div class="button-subtitle">
-          <button onclick="clickNonProfit()" id="circ-nonprofit"></button>
-          <h2 id="subtitle"> Nonprofit Private Associations </h2>
-        </div>
-          <div id="txt4">
-            <p>Articulation and support to the nonprofit private Associations </p>
-            <div class="list">
-
-              <div id="research">
-                <ul>Research Centers</ul>
-                <li>LIP </li>
-                <li>CNC </li>
-                <li>ISR Coimbra </li>
-                <li>LEDAP </li>
-                <li>CEISUC </li>
-                <li>CES</li>
-                <li>CRIA </li>
-                <li>INESC Coimbra </li>
-                <li>IT - Instituto de Telecomunicações</li>
-              </div>
-
-              <div id="type2">
-                <ul>Consultancy <br>and Projects</ul>
-                <li>ADAI</li>
-                <li>ADDF</li>
-                <li>AEEC</li>
-                <li>AEIDH</li>
-                <li>AIBILI</li>
-                <li>AITQ</li>
-                <li>APEC</li>
-                <li>APEU</li>
-                <li>BBS</li>
-                <li>CDB</li>
-                <li>CDC</li>
-                <li>CDF</li>
-                <li>CEDIPRE</li>
-                <li>CEDOUA</li>
-                <li>CIM</li>
-                <li>IDARC</li>
-                <li>IDET</li>
-                <li>IDPEE</li>
-                <li>IERU</li>
-                <li>IGC</li>
-                <li>IJC</li>
-                <li>LED</li>
-                <li>PRODEC</li>
-
-              </div>
-
-              <div id="type3">
-                <ul>Transfers <br>and Incubation</ul>
-                <li>IPN</li>
-                <li>Biocant</li>
-                <li>SerQ</li>
-                <li>IEFF</li>
-                <li>IATV</li>
-                <li>ITECons</li>
-
-              </div>
-            </div>
-
-      </div>
-        </div>
-
-      <div class="customer">
-        <div class="button-subtitle">
-            <button onclick="clickCustomer()" id="circ-customer"> </button>
-            <h2 id="subtitle"> Customer Centered </h2>
-          </div>
-            <div id="txt5">
-              <p>Customer centered policy, working actively in Companies.</p>
-              <div class="photo">
-                <h4>ICNAS Produção</h4>
-                <img  id="hongkong" src="{% static 'ucbusinesssite/photos/customer.JPG' %}"/>
-              </div>
-            </div>
-
-      </div>
-    </section>
-
-    <footer id="footer">
-      <div class="footer-left">
-        <div class="footer-social">
-          <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-              src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
-          <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-              src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
-          <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
-              height="35" width="35" alt="twitter" /> </a>
-        </div>
-        <p>UC Business ® 2020</p>
-
-      </div>
-       <div class="footer-right">
-        <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
-      </div>
-    </footer>
-</body>
-</html>
-
+{% block script %}
 <script>
 
 
@@ -476,3 +427,5 @@ function clickCustomer() {
   }
 
 </script>
+{% endblock %}
+

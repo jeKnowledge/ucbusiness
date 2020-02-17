@@ -18,8 +18,8 @@ class NewsArticle(models.Model):
 
 
 class ImageUrl(models.Model):
-    url = models.CharField(max_length=300)
-    newsArticle = models.ForeignKey(NewsArticle, on_delete=models.CASCADE)
+    url = models.CharField(max_length=300, verbose_name='Image URL')
+    newsArticle = models.ForeignKey(NewsArticle, on_delete=models.CASCADE, verbose_name='News Article')
 
     class Meta:
         db_table = 'News_Images'
@@ -31,9 +31,9 @@ class ImageUrl(models.Model):
 
 
 class Role(models.Model):
-    name = models.CharField(max_length=50, blank=False, primary_key=True)
-    nameEn = models.CharField(max_length=50, blank=False)
-    position = models.IntegerField(unique=True, blank=False)
+    name = models.CharField(max_length=50, blank=False, primary_key=True, verbose_name='Name')
+    nameEn = models.CharField(max_length=50, blank=False, verbose_name='Name(EN)')
+    position = models.IntegerField(unique=True, blank=False, verbose_name='Position')
 
     class Meta:
         db_table = 'Roles'
@@ -46,10 +46,10 @@ class Role(models.Model):
 
 
 class Member(models.Model):
-    name = models.CharField(max_length=100, blank=False)
-    email = models.EmailField(max_length=255 ,unique=True, blank=False)
-    role = models.ForeignKey(Role, on_delete = models.PROTECT)
-    image = models.ImageField(upload_to='ucbusinesssite/')
+    name = models.CharField(max_length=100, blank=False, verbose_name='Name')
+    email = models.EmailField(max_length=255 ,unique=True, blank=False, verbose_name='E-mail')
+    role = models.ForeignKey(Role, on_delete = models.PROTECT, verbose_name='Role')
+    image = models.ImageField(upload_to='ucbusinesssite/', verbose_name='Image')
 
     class Meta:
         db_table = 'Members'
@@ -61,9 +61,21 @@ class Member(models.Model):
         return self.name + ' ('+ self.role.name +')'
 
 
+class NonProfitAssociationGroups(models.Model):
+    name = models.CharField(max_length=300, blank=False, unique=True, verbose_name='Name')
+    class Meta:
+        db_table = 'Non_Profit_Association_Groups'
+        verbose_name = 'Non-profit Association Group'
+        verbose_name_plural = 'Non-profit Association Groups'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
 class NonProfitAssociation(models.Model):
-    name = models.CharField(max_length=100, blank=False, unique=True)
-    image = models.CharField(max_length=500, blank=False, unique=True)
+    name = models.CharField(max_length=100, blank=False, unique=True, verbose_name='Name')
+    group = models.ForeignKey(NonProfitAssociationGroups, on_delete=models.CASCADE, verbose_name='Group')
 
     class Meta:
         db_table = 'Non_Profit_Associations'
@@ -77,6 +89,7 @@ class NonProfitAssociation(models.Model):
 
 class Events(models.Model):
     name = models.CharField(max_length=500, blank=False, verbose_name='Name')
+    nameEn = models.CharField(max_length=500, blank=False, verbose_name='Name(EN)')
     date = models.DateField(verbose_name='Date')
 
     class Meta:

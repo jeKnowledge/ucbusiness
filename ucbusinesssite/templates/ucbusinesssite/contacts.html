@@ -1,183 +1,123 @@
+{% extends 'ucbusinesssite/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/contacts.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
-    <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
+{% block head %}
+  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/contacts.css' %}">
+  <title>Insight</title>
+{% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{% block content %}
+  <div class="container">
 
-    <title>Insight</title>
-</head>
-<body>
-<header>
-  <div class="header">
-      <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997" alt="logo_ucb"/></a>
-      <div id="dir">
-        <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc"/>
-        <!-- <h6> <a>PT</a>  <a>EN</a></h6> -->
-      </div>
-  </div>
-</header>
+    <section id="contacts">
 
-<section id=navbar>
-        <div class="menu">
-          <div class="rect-menu">
-
-            <button id="container" onclick="changeMenu()">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-            </button>
-
-            <h4 id="menu-txt">
-              {% if request.session.language == 'EN' %}
-                <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-                <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
-                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-                <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
-              {% else %}
-                <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
-                <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
-                <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
-                <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
-                <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
-                <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>  
-              {% endif %}
-            </h4>
-        </div>
-        </div>
-  </section>
-<div class="container">
-
-  <section id="contacts">
-
-      <h1>
-        {% if request.session.language == 'EN' %}
-          Get in Touch
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}  
-      </h1>
-
-      <p>
-        <h3>
+        <h1>
           {% if request.session.language == 'EN' %}
-            Address
+            Get in Touch
           {% else %}
-            Endereço
+            <!-- Inserir texto em PT -->
+          {% endif %}  
+        </h1>
+
+        <p>
+          <h3>
+            {% if request.session.language == 'EN' %}
+              Address
+            {% else %}
+              Endereço
+            {% endif %}
+          </h3>
+          <h4>
+            {% if request.session.language == 'EN' %}
+              Rectory Pólo II
+              <br>R. Luís Reis dos Santos 290,
+              <br>3030-790 Coimbra 
+            {% else %}
+              Reitoria do Pólo II
+              <br>R. Luís Reis dos Santos 290,
+              <br>3030-790 Coimbra
+            {% endif %}
+          </h4>
+        </p>
+
+        <p>
+          <h3>E-mail</h3>
+          <h4> ucbusiness@uc.pt</h4>
+        </p>
+
+        <p>
+          <h3>
+            {% if request.session.language == 'EN' %}
+              Social Media
+            {% else %}
+              Redes Sociais
+            {% endif %}
+          </h3>
+            <h4>Facebook:
+            <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"><br>https://www.facebook.com/UCBusinessGlobal/ </a></h4>
+            <h4 > LinkedIn:
+              <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><br>https://www.linkedin.com/company/ucbusinessglobal</a></h4>
+            <h4 > Twitter:
+              <a href=" https://twitter.com/business_uc" target="_blank" ><br>https://twitter.com/business_uc</a></h4>
+        </p>
+    </section>
+
+    <section id="form">
+      <form method="POST">
+        {% csrf_token %}
+        <h2 class=form-title>
+          {% if request.session.language == 'EN' %}
+            Send us a message 
+          {% else %}
+            <!-- Inserir texto em PT -->
           {% endif %}
-        </h3>
+        </h2>
         <h4>
           {% if request.session.language == 'EN' %}
-            Rectory Pólo II
-            <br>R. Luís Reis dos Santos 290,
-            <br>3030-790 Coimbra 
+            Name:
           {% else %}
-            Reitoria do Pólo II
-            <br>R. Luís Reis dos Santos 290,
-            <br>3030-790 Coimbra
+            Nome:
           {% endif %}
         </h4>
-      </p>
-
-      <p>
-        <h3>E-mail</h3>
-        <h4> ucbusiness@uc.pt</h4>
-      </p>
-
-      <p>
-        <h3>
+        <input name = "name" id="name" type="name"  required >
+  
+        <h4> E-mail:</h4>
+        <input name = "email" id="mail" type="email"  required >
+  
+        <h4>
           {% if request.session.language == 'EN' %}
-            Social Media
+            Message:
           {% else %}
-            Redes Sociais
+            Mensagem:
           {% endif %}
-        </h3>
-          <h4>Facebook:
-           <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"><br>https://www.facebook.com/UCBusinessGlobal/ </a></h4>
-          <h4 > LinkedIn:
-            <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><br>https://www.linkedin.com/company/ucbusinessglobal</a></h4>
-          <h4 > Twitter:
-            <a href=" https://twitter.com/business_uc" target="_blank" ><br>https://twitter.com/business_uc</a></h4>
-      </p>
-  </section>
-
-  <section id="form">
-    <h2 class=form-title>
-      {% if request.session.language == 'EN' %}
-        Send us a message 
-      {% else %}
-        <!-- Inserir texto em PT -->
-      {% endif %}
-    </h2>
-    <h4>
-      {% if request.session.language == 'EN' %}
-        Name:
-      {% else %}
-        Nome:
-      {% endif %}
-    </h4>
-    <input name = "name" id="name" type="name"  required >
-
-    <h4> E-mail:</h4>
-     <input name = "mail" id="mail" type="email"  required >
-
-    <h4>
-      {% if request.session.language == 'EN' %}
-        Message:
-      {% else %}
-        Mensagem:
-      {% endif %}
-    </h4>
-    <textarea name = "message" id="text" type="email"  required ></textarea>
-
-    <button id="submit-button" type="button">
-      {% if request.session.language == 'EN' %}
-        Submit
-      {% else %}
-        <!-- Inserir texto em PT -->
-      {% endif %}
-    </button>
-  </section>
-</div>
-
-<footer id="footer">
-  <div class="footer-left">
-    <div class="footer-social">
-      <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"> <img id="facebook"
-          src="{% static 'ucbusinesssite/photos/facebook.svg' %}" height="35" width="35" alt="facebook" /></a>
-      <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><img id="linkedin"
-          src="{% static 'ucbusinesssite/photos/linkedin.svg' %}" height="35" width="35" alt="linkedin" /> </a>
-      <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter" src="{% static 'ucbusinesssite/photos/twitter.svg' %}"
-          height="35" width="35" alt="twitter" /> </a>
-    </div>
-    <p>UC Business ® 2020</p>
-
+        </h4>
+        <textarea name = "message" id="text" type="email"  required ></textarea>
+  
+        <button id="submit-button" type="submit">
+          {% if request.session.language == 'EN' %}
+            Submit
+          {% else %}
+            <!-- Inserir texto em PT -->
+          {% endif %}
+        </button>
+      </form>
+    </section>
   </div>
-   <div class="footer-right">
-    <img id="ucbranco" src="{% static 'ucbusinesssite/photos/uc_branco.png' %}" alt="uc_logo">
-  </div>
-</footer>
+{% endblock %}
 
-<script>
+{% block script %}
+  <script>
 
-function changeMenu(){
+  function changeMenu(){
 
-if ($('#menu-txt').css('display') == 'none'){
-  $('#menu-txt').css('display', 'block');
-  $('.rect-menu').css('height', '100vh');
-}
-else{
-  $('#menu-txt').css('display', 'none');
-  $('.rect-menu').css('height', '8vh');
-}
-}
-</script>
+  if ($('#menu-txt').css('display') == 'none'){
+    $('#menu-txt').css('display', 'block');
+    $('.rect-menu').css('height', '100vh');
+  }
+  else{
+    $('#menu-txt').css('display', 'none');
+    $('.rect-menu').css('height', '8vh');
+  }
+  }
+  </script>
+{% endblock %}
