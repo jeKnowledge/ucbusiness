@@ -105,7 +105,7 @@ class ContactsPage(View):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            #send_mail('UC Business website form', message, 'example@gmail.com', ['ucbusiness@uc.pt'])
+            #send_mail('UC Business website form', message(e-mail e nome), 'example@gmail.com', ['ucbusiness@uc.pt'])
         return render(request, self.template_name, {})
 
 
