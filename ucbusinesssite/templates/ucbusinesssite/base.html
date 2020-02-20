@@ -4,8 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, height=device-height" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
         <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
         <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
         <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
@@ -21,9 +20,9 @@
               <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
                   alt="logo_ucb" /></a>
               <div id="dir">
-                <h6> <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}" >PT</a>
-                      <a id="lang_sep">|</a> 
-                      <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}">EN</a>
+                <h6> <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}"  {% if request.session.language == 'PT' %} style="font-family: Nexa-bold;" {% endif %}> PT</a>
+                      <a id="lang_sep">|</a>
+                      <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}"  {% if request.session.language == 'EN' %} style="font-family: Nexa-bold;" {% endif %}> EN</a>
                 </h6>
                 <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
               </div>

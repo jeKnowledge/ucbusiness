@@ -240,11 +240,12 @@ window.onload = function () {
                 var circle = document.createElement("div")
                 var text = document.createElement("span")
                 var hour= document.createElement("span")
-                
+
                 text.innerHTML = days[i]
                 circle.classList.add("circle")
                 if (data[days[i]] != undefined) {
                   circle.classList.add("filled_circle")
+
                   circle.onmouseover = function()  {
                     if (rectangle_message.style.display == "" || rectangle_message.style.display == "none") {
                       rectangle_message.innerText = data[this.innerText]

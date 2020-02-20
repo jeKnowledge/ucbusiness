@@ -194,8 +194,6 @@
 
 @media screen and (max-width: 400px)  {
 
-
-
   #txt-background, .txt_new {
     font-size: 0.5em;
   }
@@ -204,16 +202,17 @@
     font-size: 0.4em;
   }
 
-  .container{
+  .container {
     display: block;
   }
 
-  .new1 img , .container , .new2 img , .rect-new{
-    width:40vw;
-    height:50%;
+  .new1 img , .container , .new2 img , .rect-new {
+    width: 40vw;
+    height: 50%;
   }
+
   .new1 img ,.new2 img {
-    height:15vh;
+    height: 15vh;
   }
 
   .new1, .new2{
@@ -222,31 +221,37 @@
   #news-container h1{
     font-size: 1.5em;
   }
+
   #ucb-logo{
       height:20vh;
-    }
-    #info-ucb{
-      padding: 10vh 0;
-    }
+  }
+
+  #info-ucb{
+    padding: 10vh 0;
+  }
 
 #info-pilares{
   display: block;
   padding: 5vh 0;
 }
+
 .info {
   display: flex;
   padding-bottom: 0;
   padding-left: 10vw;
   height:20vh;
 }
+
 .info h4{
   width:50vw;
 }
+
 .info img{
   height: 10vh;
 }
+
 .info button{
-display: none;
+  display: none;
 }
 
 .rectangle {
@@ -255,6 +260,7 @@ display: none;
   display: block;
   justify-content: center;
 }
+
 .circle span {
   font-size: 0.5em;
   z-index: 4;
@@ -270,6 +276,7 @@ display: none;
   justify-content: center;
   cursor: pointer;
 }
+
 #rectangle_message{
   font-size: 0.8rem;
   text-align: center;
@@ -277,7 +284,6 @@ display: none;
   width:50vw;
   /*vertical-align: middle;*/
   align-items: center;
-
 }
 
 
