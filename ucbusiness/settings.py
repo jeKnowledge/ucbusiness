@@ -25,7 +25,9 @@ SECRET_KEY = '#hr72#pd*x7@2k2sy^3la3^swy-!^7ky5a47y36!tg3yy9!rwd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['194.210.172.124']
+ALLOWED_HOSTS = []
+
+MAILGUN_API_KEY = ''
 
 
 # Application definition

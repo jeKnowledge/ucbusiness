@@ -1,7 +1,7 @@
 from django.views import View
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 
 from .models import NewsArticle, Member
 from .forms import ContactForm
@@ -105,7 +105,10 @@ class ContactsPage(View):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            #send_mail('UC Business website form', message(e-mail e nome), 'example@gmail.com', ['ucbusiness@uc.pt'])
+            try:
+                send_mail('UC Business website form', name+'\n\n'+message, email, ['joao.cardoso@jeknowledge.com'])
+            except BadHeaderError:
+                print('erro')
         return render(request, self.template_name, {})
 
 
