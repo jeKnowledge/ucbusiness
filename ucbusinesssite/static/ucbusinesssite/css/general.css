@@ -134,6 +134,7 @@ li {
 }
 .lang_button:hover  {
   color:  var(--color-lightblue);
+  cursor: pointer;
 }
 
 /*-------------------FOOTER-------------------*/

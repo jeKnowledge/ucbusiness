@@ -1,4 +1,5 @@
 {% load static %}
+{% csrf_token %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@
         <link rel="stylesheet" href="{% static 'ucbusinesssite/css/general.css' %}">
         <link rel="stylesheet" href="{% static 'ucbusinesssite/css/colors.css' %}">
         <link rel="icon" type="image/x-icon" href="{% static 'ucbusinesssite/photos/ucb_logo.ico' %}">
-        <script src="{% static 'ucbusinesssite/javascript/cookieBanner.js' %}"></script>
+        <script src="{% static 'ucbusinesssite/javascript/ajaxQueries.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
@@ -21,9 +22,9 @@
               <a href="{% url 'ucbusinesssite:index' %}"><img id="logo_ucb" src="{% static 'ucbusinesssite/photos/ucb_logo.png' %}" height="1441" width="1997"
                   alt="logo_ucb" /></a>
               <div id="dir">
-                <h6> <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'PT' %}"  {% if request.session.language == 'PT' %} style="font-family: Nexa-bold;" {% endif %}> PT</a>
+                <h6> <a class="lang_button" id="PTbtn" {% if request.session.language == 'PT' %} style="font-family: Nexa-bold;" {% endif %}> PT</a>
                       <a id="lang_sep">|</a>
-                      <a class="lang_button" href="{% url 'ucbusinesssite:changeLanguage' 'EN' %}"  {% if request.session.language == 'EN' %} style="font-family: Nexa-bold;" {% endif %}> EN</a>
+                      <a class="lang_button" id="ENbtn" {% if request.session.language == 'EN' %} style="font-family: Nexa-bold;" {% endif %}> EN</a>
                 </h6>
                 <img id="logo_uc" src="{% static 'ucbusinesssite/photos/uc_logo_hor.png' %}" alt="logo_uc" />
               </div>
@@ -42,7 +43,7 @@
                 {% endif %}
                 </p>
             </h2>
-            <button id="cookie-button" onclick="hideCookie()">
+            <button id="cookie-button">
                 {% if request.session.language == 'EN' %}
                 Accept and close
                 {% else %}

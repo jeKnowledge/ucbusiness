@@ -1,12 +1,14 @@
 from django.views import View
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.core.mail import send_mail, BadHeaderError
 
 from .models import NewsArticle, Member
 from .forms import ContactForm
+from ucbusiness import settings
 
 import datetime
+import json
 
 
 class LandingPage(View):
@@ -106,7 +108,7 @@ class ContactsPage(View):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             try:
-                send_mail('UC Business website form', name+'\n\n'+message, email, ['joao.cardoso@jeknowledge.com'])
+                send_mail('UC Business website form', 'Name: ' + name+'\n'+ 'E-mail: ' + email +'\n'+message, settings.EMAIL_HOST_USER, ['jfacc31@gmail.com'])
             except BadHeaderError:
                 print('erro')
         return render(request, self.template_name, {})
@@ -128,6 +130,12 @@ class NewsArticlePage(View):
         return render(request, self.template_name, context)
 
 
-def changeLanguage(request, language):
-    request.session['language'] = language
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+def hideCookieBanner(request):
+    request.session['cookieBanner'] = False
+    return JsonResponse({'value':'success'})
+
+
+def changeLanguage(request):
+    language = json.loads(request.body)
+    request.session['language'] = language['value']
+    return JsonResponse({'value':'success'})

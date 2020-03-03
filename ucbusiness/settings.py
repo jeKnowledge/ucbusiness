@@ -27,10 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-MAILGUN_API_KEY = ''
-
-
 # Application definition
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'postmaster@sandbox21c1bba65faa47e7b4df2d7eff206e81.mailgun.org'
+EMAIL_HOST_PASSWORD = '54ef4bdc6be83bd1c33f14344bd02cb7-c322068c-839d24bb'
 
 INSTALLED_APPS = [
     'ucbusinesssite.apps.UcbusinesssiteConfig',
