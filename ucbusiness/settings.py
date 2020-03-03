@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from ucbusinesssite import keys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,11 +32,11 @@ ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST = keys.EMAIL_HOST
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'postmaster@sandbox21c1bba65faa47e7b4df2d7eff206e81.mailgun.org'
-EMAIL_HOST_PASSWORD = '54ef4bdc6be83bd1c33f14344bd02cb7-c322068c-839d24bb'
+EMAIL_HOST_USER = keys.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = keys.EMAIL_HOST_PASSWORD
 
 INSTALLED_APPS = [
     'ucbusinesssite.apps.UcbusinesssiteConfig',
