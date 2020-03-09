@@ -19,7 +19,9 @@
 <section id="logo-anim">
 
 <div id="info-ucb">
-    <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
+    <video autoplay loop>
+      <source src="{% static 'ucbusinesssite/photos/ucbusiness.MP4' %}" type="video/mp4">
+    </video>
 
     <div class="txt-ucb">
       <h4>
@@ -110,7 +112,9 @@
 </section>
 
 <section id="timeline">
-  <button>Previous Month</button>
+
+  <button id="prev-button"> < Previous <br> Month </button>
+  <button id="next-button">Next<br> Month > </button>
   <div>
       <div id="rectangle" class="rectangle">
       <p id="rectangle_message">
@@ -120,7 +124,8 @@
       </div>
       </div>
   </div>
-  <button>Next Month</button>
+
+
 
 </section>
 

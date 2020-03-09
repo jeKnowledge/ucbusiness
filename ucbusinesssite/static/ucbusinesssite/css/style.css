@@ -18,11 +18,11 @@
   padding-bottom: 0vh;
 }
 #ucb-logo{
-  height:60vh;
+  height:40vh;
   width: auto;
 }
 .txt-ucb{
-  font-size: 1.6em;
+  font-size: 1.4em;
   width: 40vw;
 }
 #info-ucb{
@@ -59,6 +59,8 @@
   width: 15vw;
   height:5vh;
   padding-bottom: 0;
+  border-radius: 3%;
+
 }
 
 .circulos {
@@ -84,7 +86,7 @@
 
 #txt-background {
   position: absolute;
-  bottom: 0;
+  bottom: 40;
   z-index: 0;
   overflow: hidden;
   opacity: 0.5;
@@ -127,6 +129,33 @@
 .filled_circle {
   background-color: var(--color-lightblue);
 }
+#prev-button, #next-button{
+  margin-top: 2vh;
+  margin-right: 1vw;
+  background-color: white;
+  color:var(--color-blue);
+  border:none;
+  height: 4vh;
+  font-weight: bold;
+  border-radius: 3%;
+}
+#prev-button:hover, #next-button:hover{
+  color:var(--color-lightblue);
+}
+
+#prev-button{
+  position: absolute;
+  left:10;
+  bottom: 10;
+
+}
+
+#next-button{
+  position: absolute;
+  right:10;
+  bottom:10;
+
+}
 
 #news-container {
   padding: 3% 5% 5%;
@@ -142,6 +171,7 @@
   border:none;
   height: 4vh;
   font-weight: bold;
+  border-radius: 3%;
 }
 
 .container {
@@ -153,7 +183,7 @@
   display: flex;
 }
 
-.new1,.new2 {
+.new1, .new2 {
   position: relative;
   text-align: left;
   transition: left 2s;
