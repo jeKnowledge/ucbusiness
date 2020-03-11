@@ -3,13 +3,26 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, JsonResponse
 from django.core.mail import send_mail, BadHeaderError
 
-from .models import NewsArticle, Member
+from .models import NewsArticle, Member, Events
 from .forms import ContactForm
 from ucbusiness import settings
 
-import datetime
+from datetime import datetime
 import json
 
+months = {1: ('Janeiro', 'January', 31),
+          2: ('Fevereiro', 'February', 28),
+          3: ('Março', 'March', 31),
+          4: ('Abril', 'April', 30),
+          5: ('Maio', 'May', 31),
+          6: ('Junho', 'June', 30),
+          7: ('Julho', 'July', 31),
+          8: ('Agosto', 'August', 31),
+          9: ('Setembro', 'September', 30),
+          10: ('Outubro', 'October', 31),
+          11: ('Novembro', 'November', 30),
+          12: ('Dezembro', 'December', 31)
+          }
 
 class LandingPage(View):
     template_name = 'ucbusinesssite/index.html'
@@ -29,7 +42,7 @@ class LandingPage(View):
                 context['newsArticle2'] = newsArticle2
                 if newsArticle2.imageurl_set.all():
                     context['image2'] = newsArticle2.imageurl_set.all().first()
-        month = datetime.datetime.now().strftime('%B').upper()
+        month = datetime.now().strftime('%B').upper()
         context['month'] = month
 
         return render(request, self.template_name, context)
@@ -139,3 +152,20 @@ def changeLanguage(request):
     language = json.loads(request.body)
     request.session['language'] = language['value']
     return JsonResponse({'value':'success'})
+
+
+def getEvents(request):
+    data = json.loads(request.body)
+    events = {}
+    counter = data['counter']
+    if request.session['language'] == 'PT':
+        month = months[counter][0]
+    else:
+        month = months[counter][1]
+    numDays = months[counter][2]
+    for event in Events.objects.filter(date__month=counter):
+        if request.session['language'] == 'PT':
+            events[event.date.day] = event.name
+        else:
+            events[event.date.day] = event.nameEn
+    return JsonResponse({'numDays':numDays, 'month': month, 'events': events})

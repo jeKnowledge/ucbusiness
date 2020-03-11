@@ -13,5 +13,6 @@ urlpatterns = [
     path('ucvalue/', views.UCValuePage.as_view(), name='ucValue'),
     path('contacts/', views.ContactsPage.as_view(), name='contacts'),
     path('changelanguage/', views.changeLanguage, name='changeLanguage'),
-    path('hideCookieBanner/', views.hideCookieBanner, name='hideCookieBanner')
+    path('hideCookieBanner/', views.hideCookieBanner, name='hideCookieBanner'),
+    path('getEvents/', views.getEvents, name='getEvents'),
 ]
