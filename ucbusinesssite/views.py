@@ -163,6 +163,8 @@ def getEvents(request):
     else:
         month = months[counter][1]
     numDays = months[counter][2]
+    if counter == 2 and datetime.now().year % 4 == 0:
+        numDays += 1
     for event in Events.objects.filter(date__month=counter):
         if request.session['language'] == 'PT':
             events[event.date.day] = event.name
