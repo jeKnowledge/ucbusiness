@@ -19,7 +19,7 @@
 <section id="logo-anim">
 
 <div id="info-ucb">
-    <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">  
+    <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
 
     <div class="txt-ucb">
       <h4>
@@ -138,26 +138,23 @@
 
     <div class="container">
 
-      <div class="new1">
-        {% if newsArticle1 %}
+      {% for newsArticle in newsArticles %}
+        <div class="new1">
           <div class="txt_new">
-            <h4>{{ newsArticle1.datePosted|date:'j F' }}</h4>
+            <h4>{{ newsArticle.datePosted|date:'j / n / Y' }}</h4>
             <h4>
               {% if request.session.language == 'EN' %}
-                {{ newsArticle1.titleEn }}
+                {{ newsArticle.titleEn|truncatechars:40 }}
               {% else %}
-                {{ newsArticle1.title }}
+                {{ newsArticle.title|truncatechars:40 }}
               {% endif %}
             </h4>
-
           </div>
-          {% if image1 %}
-            <img src="{{ image1.url }}" alt="img1" />
-          {% else %}
-            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937">
-          {% endif %}
+          {% with newsArticle.imageurl_set.all|first as image %}
+            <img src="{{ image.url }}" alt="newsImage">
+          {% endwith %}
           <div class="rect-new">
-            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle1.title %}">
+            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle.title %}">
               <button type="button">
                 {% if request.session.language == 'EN' %}
                   > Find out more
@@ -167,40 +164,9 @@
               </button>
             </a>
           </div>
-        {% endif %}
-      </div>
+        </div>
+      {% endfor %}
 
-      <div class="new2">
-        {% if newsArticle2 %}
-          <div class="txt_new">
-            <h4>{{ newsArticle2.datePosted|date:'j F' }}</h4>
-            <h4>
-              {% if request.session.language == 'EN' %}
-                {{ newsArticle2.titleEn }}
-              {% else %}
-                {{ newsArticle2.title }}
-              {% endif %}
-            </h4>
-
-          </div>
-          {% if image2 %}
-            <img src="{{ image2.url }}" alt="img2">
-          {% else %}
-            <img src="https://scontent.flis6-1.fna.fbcdn.net/v/t1.0-9/79658586_452867198752503_5277081971334316032_o.jpg?_nc_cat=107&_nc_oc=AQkN5W522Ur1eRF6DcG-Sgg5fE20yxwCA5eXlnqjhZUkEfy-QEbNLj6nyucIG3kO9as&_nc_ht=scontent.flis6-1.fna&oh=ec4d8c6635338d1a535e6c11fad391ab&oe=5EAAA937" alt="img">
-          {% endif %}
-          <div class="rect-new">
-            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle2.title %}">
-              <button type="button">
-                {% if request.session.language == 'EN' %}
-                  > Find out more
-                {% else %}
-                  <!-- Inserir texto em PT -->
-                {% endif %}
-              </button>
-            </a>
-          </div>
-        {% endif %}
-      </div>
 
     </div>
 

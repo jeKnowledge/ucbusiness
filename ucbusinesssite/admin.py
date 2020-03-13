@@ -1,10 +1,15 @@
 from django.contrib import admin
-from .models import NewsArticle, ImageUrl, Role, Member, NonProfitAssociation, Events, NonProfitAssociationGroups
+from .models import NewsArticle, ImageUrl, Role, Member, Events
 
-admin.site.register(NewsArticle)
-admin.site.register(ImageUrl)
+admin.site.site_header = 'UC Business'
+
+class ImageUrlInline(admin.TabularInline):
+    model = ImageUrl
+
+class NewsArticleAdmin(admin.ModelAdmin):
+    inlines = [ImageUrlInline,]
+
+admin.site.register(NewsArticle, NewsArticleAdmin)
 admin.site.register(Role)
 admin.site.register(Member)
-admin.site.register(NonProfitAssociation)
-admin.site.register(NonProfitAssociationGroups)
 admin.site.register(Events)

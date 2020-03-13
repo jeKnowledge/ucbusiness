@@ -24,7 +24,7 @@ months = {1: ('Janeiro', 'January', 31),
           12: ('Dezembro', 'December', 31)
           }
 
-class LandingPage(View):
+class Index(View):
     template_name = 'ucbusinesssite/index.html'
 
     def get(self, request):
@@ -33,18 +33,19 @@ class LandingPage(View):
         request.session['cookieBanner'] = request.session.get('cookieBanner', True)
         news = NewsArticle.objects.all().order_by('-datePosted')
         if news:
-            newsArticle1 = news[0]
-            context['newsArticle1'] = newsArticle1
-            if newsArticle1.imageurl_set.all():
-                context['image1'] = newsArticle1.imageurl_set.all().first()
-            if len(news) > 1:
-                newsArticle2 = news[1]
-                context['newsArticle2'] = newsArticle2
-                if newsArticle2.imageurl_set.all():
-                    context['image2'] = newsArticle2.imageurl_set.all().first()
-        month = datetime.now().strftime('%B').upper()
-        context['month'] = month
-
+            if len(news) >= 2:
+                context['newsArticles'] = news[:2]
+            else:
+                context['newsArticles'] = news
+            # newsArticle1 = news[0]
+            # context['newsArticle1'] = newsArticle1
+            # if newsArticle1.imageurl_set.all():
+            #     context['image1'] = newsArticle1.imageurl_set.all().first()
+            # if len(news) > 1:
+            #     newsArticle2 = news[1]
+            #     context['newsArticle2'] = newsArticle2
+            #     if newsArticle2.imageurl_set.all():
+            #         context['image2'] = newsArticle2.imageurl_set.all().first()
         return render(request, self.template_name, context)
 
 
@@ -157,15 +158,16 @@ def changeLanguage(request):
 def getEvents(request):
     data = json.loads(request.body)
     events = {}
-    counter = data['counter']
+    monthCounter = data['monthCounter']
+    yearCounter = data['yearCounter']
     if request.session['language'] == 'PT':
-        month = months[counter][0]
+        month = months[monthCounter][0]
     else:
-        month = months[counter][1]
-    numDays = months[counter][2]
-    if counter == 2 and datetime.now().year % 4 == 0:
+        month = months[monthCounter][1]
+    numDays = months[monthCounter][2]
+    if monthCounter == 2 and datetime.now().year % 4 == 0:
         numDays += 1
-    for event in Events.objects.filter(date__month=counter):
+    for event in Events.objects.filter(date__month=monthCounter, date__year=yearCounter):
         if request.session['language'] == 'PT':
             events[event.date.day] = event.name
         else:

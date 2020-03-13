@@ -8,26 +8,46 @@ if(document.readyState === "complete" || (document.readyState!== "loading" && !d
 function main() {
   var date = new Date();
   var monthCounter = date.getMonth() + 1;
+  var yearCounter = date.getFullYear();
+  var diffMonths = 0;
+  var maxDiff = 4;
   var next_btn = document.getElementById('next-button');
-  var prev_btn = document.getElementById('prev-button'); 
-  
-  getEvents(monthCounter, 0);
+  var prev_btn = document.getElementById('prev-button');
 
-  next_btn.addEventListener('click', function(e){ 
-    monthCounter += 1;
-    getEvents(monthCounter);
-  });
-  prev_btn.addEventListener('click', function(e){ 
-    monthCounter -= 1;
-    getEvents(monthCounter);
-  });
+  getEvents(monthCounter, yearCounter);
 
+  next_btn.addEventListener('click', function(e){
+    if (diffMonths < maxDiff) {
+      monthCounter = (monthCounter + 1) % 13;
+      if (monthCounter < 0) {
+        monthCounter = -monthCounter;
+      } else if (monthCounter == 0) {
+        monthCounter = 1;
+        yearCounter++;
+      }
+      diffMonths++;
+      getEvents(monthCounter, yearCounter);
+    }
+  });
+  prev_btn.addEventListener('click', function(e){
+    if (diffMonths > -maxDiff) {
+      monthCounter = (monthCounter - 1) % 13;
+      if (monthCounter < 0) {
+        monthCounter = -monthCounter;
+      } else if (monthCounter == 0) {
+        monthCounter = 12;
+        yearCounter --;
+      }
+      diffMonths--;
+      getEvents(monthCounter, yearCounter);
+    }
+  });
 }
 
-function getEvents(monthCounter) {
+function getEvents(monthCounter, yearCounter) {
   $.ajax({
     headers: {'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value},
-    data: JSON.stringify({counter: monthCounter}),
+    data: JSON.stringify({monthCounter: monthCounter, yearCounter: yearCounter}),
     type: 'PATCH',
     url: '/getEvents/',
     success: (response) => {

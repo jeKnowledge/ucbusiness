@@ -61,32 +61,6 @@ class Member(models.Model):
         return self.name + ' ('+ self.role.name +')'
 
 
-class NonProfitAssociationGroups(models.Model):
-    name = models.CharField(max_length=300, blank=False, unique=True, verbose_name='Name')
-    class Meta:
-        db_table = 'Non_Profit_Association_Groups'
-        verbose_name = 'Non-profit Association Group'
-        verbose_name_plural = 'Non-profit Association Groups'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
-class NonProfitAssociation(models.Model):
-    name = models.CharField(max_length=100, blank=False, unique=True, verbose_name='Name')
-    group = models.ForeignKey(NonProfitAssociationGroups, on_delete=models.CASCADE, verbose_name='Group')
-
-    class Meta:
-        db_table = 'Non_Profit_Associations'
-        verbose_name = 'Non-profit Association'
-        verbose_name_plural = 'Non-profit Associations'
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
 class Events(models.Model):
     name = models.CharField(max_length=500, blank=False, verbose_name='Name')
     nameEn = models.CharField(max_length=500, blank=False, verbose_name='Name(EN)')
