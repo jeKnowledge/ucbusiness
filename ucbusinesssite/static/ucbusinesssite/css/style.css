@@ -183,7 +183,7 @@
   display: flex;
 }
 
-.new1, .new2 {
+.news-index {
   position: relative;
   text-align: left;
   transition: left 2s;
@@ -201,7 +201,7 @@
   left:0;
 
 }
-.new1 img, .new2 img {
+.news-index img {
   position: relative;
   width: 30vw;
   height:40vh;
@@ -236,16 +236,16 @@
     display: block;
   }
 
-  .new1 img , .container , .new2 img , .rect-new {
+  .news-index img , .container , .rect-new {
     width: 40vw;
     height: 50%;
   }
 
-  .new1 img ,.new2 img {
+  .news-index img {
     height: 15vh;
   }
 
-  .new1, .new2{
+  .news-index {
     padding-bottom: 3vh;
   }
   #news-container h1{

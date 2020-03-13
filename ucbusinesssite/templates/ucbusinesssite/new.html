@@ -12,7 +12,13 @@
 
   <div class="slider">
     <button type="button" id="arrow-prev" class="slider-arrow slider-arrow-prev" > </button>
-    <img id="carousel0"   src="{{ newsArticle.imageurl_set.first.url }}">
+    {% if newsArticle.imageurl_set.first %}
+      {% with newsArticle.imageurl_set.all|first as image %}
+          <img src="{{ image.url }}" alt="newsImage">
+      {% endwith %}
+    {% else %}
+      <img src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/69475889_389069908465566_5568746573271138304_o.png?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=isQiCeTGmeQAX_8bYjd&_nc_ht=scontent.fopo1-1.fna&oh=9631798db4a53db512b6958f0ee1f1af&oe=5E93257E" alt="newsImage">
+    {% endif %}
     <button type="button" id="arrow-next" class="slider-arrow slider-arrow-next" > </button>
   </div>
   {% if request.session.language == 'EN' %}
@@ -40,22 +46,24 @@ var currentIndex = 0;
 var leftArrow = document.querySelector("#arrow-prev");
 var rightArrow = document.querySelector("#arrow-next");
 
-leftArrow.addEventListener("click", function() {
-	currentIndex = currentIndex - 1;
-	if (currentIndex < 0) {
-		currentIndex = imageSources.length-1;
-	}
-	document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
-});
+if (imageSources.length) {
+    leftArrow.addEventListener("click", function() {
+        currentIndex = currentIndex - 1;
+        if (currentIndex < 0) {
+            currentIndex = imageSources.length-1;
+        }
+        document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
+    });
 
 
-rightArrow.addEventListener("click", function() {
-	currentIndex = currentIndex + 1;
-	if (currentIndex >= imageSources.length) {
-		currentIndex = 0;
-	}
-	document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
-});
+    rightArrow.addEventListener("click", function() {
+        currentIndex = currentIndex + 1;
+        if (currentIndex >= imageSources.length) {
+            currentIndex = 0;
+        }
+        document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
+    });
+}
 
 function changeMenu(){
 
@@ -70,5 +78,3 @@ else{
 }
 </script>
 {% endblock %}
-
-

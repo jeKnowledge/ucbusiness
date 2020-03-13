@@ -1,17 +1,17 @@
 from django.db import models
 
 class NewsArticle(models.Model):
-    title = models.CharField(max_length=50, blank=False, verbose_name='Title')
-    titleEn = models.CharField(max_length=50, blank=False, default='No translation', verbose_name='Title(EN)')
+    title = models.CharField(max_length=100, blank=False, verbose_name='Title')
+    titleEn = models.CharField(max_length=100, blank=False, verbose_name='Title(EN)')
     body = models.TextField(blank=False, verbose_name='Body')
-    bodyEn = models.TextField(blank=False, verbose_name='Body(EN)', default='No translation')
-    datePosted = models.DateField(verbose_name='Date')
+    bodyEn = models.TextField(blank=False, verbose_name='Body(EN)')
+    datePosted = models.DateField(blank=False, verbose_name='Date')
 
     class Meta:
         db_table = 'News_Articles'
         verbose_name = 'News Article'
         verbose_name_plural = 'News Articles'
-        ordering = ["datePosted"]
+        ordering = ["-datePosted"]
 
     def __str__(self):
         return self.title + " - " + str(self.datePosted.strftime("%d/%m/%Y"))

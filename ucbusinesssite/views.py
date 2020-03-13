@@ -31,21 +31,12 @@ class Index(View):
         context = {}
         request.session['language'] = request.session.get('language', 'EN')
         request.session['cookieBanner'] = request.session.get('cookieBanner', True)
-        news = NewsArticle.objects.all().order_by('-datePosted')
+        news = NewsArticle.objects.all().order_by('datePosted')
         if news:
             if len(news) >= 2:
                 context['newsArticles'] = news[:2]
             else:
                 context['newsArticles'] = news
-            # newsArticle1 = news[0]
-            # context['newsArticle1'] = newsArticle1
-            # if newsArticle1.imageurl_set.all():
-            #     context['image1'] = newsArticle1.imageurl_set.all().first()
-            # if len(news) > 1:
-            #     newsArticle2 = news[1]
-            #     context['newsArticle2'] = newsArticle2
-            #     if newsArticle2.imageurl_set.all():
-            #         context['image2'] = newsArticle2.imageurl_set.all().first()
         return render(request, self.template_name, context)
 
 
