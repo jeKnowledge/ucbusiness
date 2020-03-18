@@ -27,9 +27,11 @@ h6,span {
 p, span, ul, li, a, button{
   font-family: Nexa-light;
 }
+
 li {
   list-style: square;
 }
+
 
 .header {
   padding: 0 3vw;

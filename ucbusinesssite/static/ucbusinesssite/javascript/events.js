@@ -1,9 +1,10 @@
-if(document.readyState === "complete" || (document.readyState!== "loading" && !document.documentElement.doScroll)){
+
+if(document.readyState === "complete" ||
+(document.readyState!== "loading" && !document.documentElement.doScroll)){
     main();
 }else{
     document.addEventListener("DOMContentLoaded", main);
 }
-
 
 function main() {
   var date = new Date();
@@ -17,6 +18,11 @@ function main() {
   getEvents(monthCounter, yearCounter);
 
   next_btn.addEventListener('click', function(e){
+    const myNode = document.getElementById("container_news");
+      while (myNode.firstChild) {
+        myNode.removeChild(myNode.lastChild);
+      }
+
     if (diffMonths < maxDiff) {
       monthCounter = (monthCounter + 1) % 13;
       if (monthCounter < 0) {
@@ -29,7 +35,12 @@ function main() {
       getEvents(monthCounter, yearCounter);
     }
   });
+
   prev_btn.addEventListener('click', function(e){
+    const myNode = document.getElementById("container_news");
+      while (myNode.firstChild) {
+        myNode.removeChild(myNode.lastChild);
+      }
     if (diffMonths > -maxDiff) {
       monthCounter = (monthCounter - 1) % 13;
       if (monthCounter < 0) {
@@ -59,17 +70,22 @@ function getEvents(monthCounter, yearCounter) {
 }
 
 function drawTimeline(month, numdays, data) {
+
   var node = document.getElementById("rectangle")
+  var cont = document.getElementById ("container_news")
 
   var rect_message = document.querySelector("#rectangle_message")
 
   var monthText = document.getElementById('month-txt');
   monthText.innerHTML = month;
 
+
+
   for (var i = 1; i <= numdays; ++i) {
 
-          var circle = document.createElement("div")
-          var day_txt = document.createElement("span")
+          var circle = cont.appendChild(document.createElement("div"))
+          var day_txt = cont.appendChild(document.createElement("span"))
+
 
           var day= i.toString();
           day_txt.innerHTML = day;
@@ -79,7 +95,7 @@ function drawTimeline(month, numdays, data) {
           if (data[i] != undefined) {
             circle.classList.add("filled_circle")
 
-            day_txt.onmouseover  = function()  {
+            circle.onmouseover  = function()  {
 
                 if (rect_message.style.display == "" || rect_message.style.display == "none") {
                 rect_message.innerText = data[this.innerText]
@@ -88,9 +104,12 @@ function drawTimeline(month, numdays, data) {
                 rectangle_message.style.display = "none"
               }
             }
-
           }
+
           circle.appendChild(day_txt);
-          node.appendChild(circle)
+          node.appendChild(circle);
+          document.getElementById("container_news").appendChild(circle)
+
   }
+
 }
