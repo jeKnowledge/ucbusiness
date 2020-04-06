@@ -50,10 +50,9 @@ li {
 }
 
 #logo_uc {
-  height: 8vh;
-  width: auto;
+  height: auto;
+  width: 10vw;
 }
-
 
 .header h6 {
   float: right;
@@ -177,7 +176,7 @@ width: auto;
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 420px){
 
   h1,h2,h3,h4,h5{
      font-size: 0.8em;
@@ -236,7 +235,6 @@ width: auto;
   .lang_button, #lang_sep{
     font-size: 0.9em;
   }
-
 
 
 }

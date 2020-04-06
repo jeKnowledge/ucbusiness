@@ -27,6 +27,7 @@ SECRET_KEY = '#hr72#pd*x7@2k2sy^3la3^swy-!^7ky5a47y36!tg3yy9!rwd'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#telemovel 192.168.1.11
 
 # Application definition
 

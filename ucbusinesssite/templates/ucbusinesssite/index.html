@@ -19,7 +19,11 @@
 <section id="logo-anim">
 
 <div id="info-ucb">
-    <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}">
+    <!-- <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}"> -->
+
+    <video id="ucb-logo" muted autoplay loop>
+      <source src="{% static 'ucbusinesssite/photos/ucbusiness.mp4' %}" type="video/MP4">
+    </video>
 
     <div class="txt-ucb">
       <h4>
@@ -31,9 +35,9 @@
       </h4>
       <div id="areas">
         {% if request.session.language == 'EN' %}
-          <h3>Large <br> Companies</h3>
-          <h3>National <br> SMEs</h3>
-          <h3>Start-ups and <br> Spin-offs</h3>
+          <h3>Large Companies</h3>
+          <h3>National SMEs</h3>
+          <h3>Start-ups and Spin-offs</h3>
         {% else %}
           <!-- Inserir texto em PT -->
         {% endif %}
@@ -45,6 +49,7 @@
 
     <div class="info">
       <img src="{% static 'ucbusinesssite/photos/value.png' %}">
+      <div class="txt-but">
       <h4>
         {% if request.session.language == 'EN' %}
           Create short-term value (with financial return) based on existing skills.
@@ -61,10 +66,12 @@
           {% endif %}
         </button>
       </a>
+      </div>
     </div>
 
     <div class="info">
       <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
+      <div class="txt-but">
       <h4>
         {% if request.session.language == 'EN' %}
           Foster multi-level partnerships.
@@ -82,10 +89,13 @@
           {% endif %}
         </button>
       </a>
+      </div>
     </div>
+
 
     <div class="info">
       <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
+      <div class="txt-but">
       <h4>
         {% if request.session.language == 'EN' %}
           Invest in value development in the medium term.
@@ -102,6 +112,7 @@
           {% endif %}
         </button>
       </a>
+      </div>
     </div>
 
   </div>
@@ -194,5 +205,8 @@
     $('.rect-menu').css('height', '8vh');
   }
   }
+  var vid = document.getElementById("ucb-logo");
+  vid.playbackRate = 0.8;
+
 </script>
 {% endblock %}
