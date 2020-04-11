@@ -22,6 +22,7 @@
   text-align: left;
   color:black;
   padding-top: 2vh;
+  padding-left: 4vw;
 
 }
 .member-info h4{
@@ -30,8 +31,8 @@
 
 .member img, .member1 img{
     border-radius: 50%;
-    width: 240px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -65,17 +66,12 @@
 
 @media screen and (max-width: 400px){
 
-  .member img{
-    width: 100px;
-    height: 100px;
-  }
-  .member1 img{
+  .member1 img, .member img{
     width: 90px;
     height: 90px;
-    padding-right: 5vw;
   }
+
   .member1{
-    width: 70vw;
     align-items: center;
     padding-top: 0;
   }

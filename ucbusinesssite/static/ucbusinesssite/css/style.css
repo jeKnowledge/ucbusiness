@@ -246,7 +246,8 @@
 
 @media screen and (max-width: 800px)  {
   #info-ucb, #info-pilares{
-    margin-top:15vh;
+    margin-top:12vh;
+    margin-bottom: 12vh;
   }
   .txt-ucb{
     font-size: 1.1em;
@@ -260,19 +261,37 @@
   }
 .txt-but h4 {
       font-size: 1em;
+      height: 30vh;
 }
 .info button{
   font-size: 1em
 }
 #container_news{
-  width:90%;
+  width:95%;
 }
 #prev-button , #next-button{
   width:10vw;
 }
+.circle {
+  height: 20px;
+  width:20px;
+}
+.circle span{
+  font-size: 0.8em;
+}
+.container{
+  display: block;
+}
 
+.rect-new , .news-index img{
+  width: 60vw;
+}
+.footer-right{
+  padding-top: 0vh;
+}
 
 }
+
 @media screen and (max-width: 420px)  {
 
   #info-ucb, #info-pilares{
@@ -301,6 +320,7 @@
   }
   .txt-but{
     height: 20vh;
+
   }
 
   .txt-but h4{
@@ -312,7 +332,43 @@
     height:4vh;
     width:18vw;
     margin-left: 20vw;
-  margin-top: 2vh;}
+    margin-top: 2vh;
+  }
+#news-container h1{
+  font-size: 1.4em;
+}
+.news-index img{
+    height: 30vh;
+  }
+  .rect-new button {
+    margin-top: 10vh;
+  }
 
+  .rectangle{
+    height:100vh;
+    width:100vw;
+    margin:auto;
+  }
+
+  #prev-button , #next-button{
+
+    height: 5vh;
+    width:20vw;
+    font-size: 0.6em;
+  }
+  #container_news{
+    display: block;
+    margin: auto;
+    padding: 0;
+  }
+  .circle {
+    height: 14px;
+    width:14px;
+    margin-left: 14vw;
+    margin-bottom: 0.5vh;
+  }
+  .circle span{
+    font-size: 0.5em;
+  }
 
 }

@@ -1,4 +1,3 @@
-
 if(document.readyState === "complete" ||
 (document.readyState!== "loading" && !document.documentElement.doScroll)){
     main();
@@ -95,15 +94,27 @@ function drawTimeline(month, numdays, data) {
           if (data[i] != undefined) {
             circle.classList.add("filled_circle")
 
-            circle.onmouseover  = function()  {
 
-                if (rect_message.style.display == "" || rect_message.style.display == "none") {
+          $(window).resize(function() {
+
+            if ($(window).width() < 420) {
+                circle.style.display = "none"
                 rect_message.innerText = data[this.innerText]
                 rect_message.style.display = "block"
-              } else {
-                rectangle_message.style.display = "none"
+            }
+
+            else {
+              circle.onmouseover  = function()  {
+
+                  if (rect_message.style.display == "" || rect_message.style.display == "none") {
+                  rect_message.innerText = data[this.innerText]
+                  rect_message.style.display = "block"
+                } else {
+                  rectangle_message.style.display = "none"
+                }
               }
             }
+          });
           }
 
           circle.appendChild(day_txt);
