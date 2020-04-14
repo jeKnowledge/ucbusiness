@@ -78,8 +78,6 @@ function drawTimeline(month, numdays, data) {
   var monthText = document.getElementById('month-txt');
   monthText.innerHTML = month;
 
-
-
   for (var i = 1; i <= numdays; ++i) {
 
           var circle = cont.appendChild(document.createElement("div"))
@@ -91,19 +89,11 @@ function drawTimeline(month, numdays, data) {
 
           circle.classList.add("circle")
 
-          if (data[i] != undefined) {
+          if (data[i] != undefined) { //se o dia tiver informaçao
             circle.classList.add("filled_circle")
 
 
-          $(window).resize(function() {
 
-            if ($(window).width() < 420) {
-                circle.style.display = "none"
-                rect_message.innerText = data[this.innerText]
-                rect_message.style.display = "block"
-            }
-
-            else {
               circle.onmouseover  = function()  {
 
                   if (rect_message.style.display == "" || rect_message.style.display == "none") {
@@ -112,10 +102,9 @@ function drawTimeline(month, numdays, data) {
                 } else {
                   rectangle_message.style.display = "none"
                 }
+
               }
-            }
-          });
-          }
+        
 
           circle.appendChild(day_txt);
           node.appendChild(circle);

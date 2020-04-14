@@ -294,6 +294,11 @@
 
 @media screen and (max-width: 420px)  {
 
+  #rectangle_message {
+    padding-top: 30vh;
+    font-size:1.2em;
+  }
+
   #info-ucb, #info-pilares{
     margin-top:10vh;
   }
@@ -320,7 +325,6 @@
   }
   .txt-but{
     height: 20vh;
-
   }
 
   .txt-but h4{
@@ -351,24 +355,60 @@
   }
 
   #prev-button , #next-button{
-
     height: 5vh;
-    width:20vw;
+    width:19vw;
     font-size: 0.6em;
   }
+
+  #prev-button{
+    left:5;
+    bottom: 5;
+  }
+
+  #next-button{
+    right:5;
+    bottom:5;
+  }
+
   #container_news{
     display: block;
-    margin: auto;
     padding: 0;
+    top: 5%;
+    bottom: 0;
+    position: absolute;
   }
   .circle {
-    height: 14px;
-    width:14px;
+    height: 16px;
+    width: 16px;
     margin-left: 14vw;
     margin-bottom: 0.5vh;
-  }
+    }
   .circle span{
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
+
+  #month-txt {
+    font-size: 1em;
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 360px)  {
+  #container_news{
+    padding: 0;
+    top: 4%;
+    bottom: 0;
+  }
+  .circle {
+    height: 12px;
+    width: 12px;
+    margin-left: 14vw;
+    margin-bottom: 0.5vh;
+    }
+  .circle span{
+    font-size: 0.4em;
+  }
+
 
 }

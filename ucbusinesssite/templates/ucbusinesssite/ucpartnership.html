@@ -9,7 +9,7 @@
 {% block content %}
   <section id="info">
     <h1 id="partnership-title"> Partnership</h1>
-  
+
     <div class="incubators">
       <div class="button-subtitle">
         <button onclick="clickIncubators()" id="circ-incubators"></button>
@@ -21,7 +21,7 @@
           <img id="rierc" src="{% static 'ucbusinesssite/photos/rierc.png' %}" alt=rierc>
         </div>
       </div>
-  
+
     <div  class="patronage">
       <div class="button-subtitle">
         <button onclick="clickPatronage()" id="circ-patronage"></button>
@@ -38,7 +38,7 @@
         </ul>
       </div>
     </div>
-  
+
     <div class="cooperation">
       <div class="button-subtitle">
         <button onclick="clickCooperation()" id="circ-cooperation"></button>
@@ -49,10 +49,10 @@
           <img src="{% static 'ucbusinesssite/photos/partnership/eithealth.png' %}" alt="eit-health">
           <img src="{% static 'ucbusinesssite/photos/partnership/redemprendia.png' %}" alt="redemprendia">
           <img src="{% static 'ucbusinesssite/photos/partnership/universia.png' %}" alt="universia">
-  
+
         </div>
     </div>
-  
+
     <div class="clusters">
       <div class="button-subtitle">
         <button onclick="clickClusters()" id="circ-clusters"></button>
@@ -79,7 +79,7 @@
         </ul>
       </div>
     </div>
-  
+
     <div class="aisep">
       <div class="button-subtitle">
         <button onclick="clickAisep()" id="circ-aisep"></button>
@@ -97,7 +97,7 @@
 
 {% block script %}
   <script>
-  
+
   function clickIncubators() {
     var moreText = document.getElementById("txt1");
     if (moreText.style.display === "none") {
@@ -107,7 +107,7 @@
       moreText.style.display = "none";
     }
   }
-  
+
   function clickPatronage() {
     var moreText = document.getElementById("txt2");
     if (moreText.style.display === "none") {
@@ -117,7 +117,7 @@
       moreText.style.display = "none";
     }
   }
-  
+
   function clickCooperation() {
     var moreText = document.getElementById("txt3");
     if (moreText.style.display === "none") {
@@ -126,7 +126,7 @@
     else {
       moreText.style.display = "none";
     }
-  
+
   }
   function clickClusters() {
     var moreText = document.getElementById("txt4");
@@ -136,7 +136,7 @@
     else {
       moreText.style.display = "none";
     }
-  
+
   }
   function clickAisep() {
     var moreText = document.getElementById("txt5");
@@ -146,18 +146,8 @@
     else {
       moreText.style.display = "none";
     }
-  
+
   }
-  function changeMenu(){
-  
-  if ($('#menu-txt').css('display') == 'none'){
-    $('#menu-txt').css('display', 'block');
-    $('.rect-menu').css('height', '100vh');
-  }
-  else{
-    $('#menu-txt').css('display', 'none');
-    $('.rect-menu').css('height', '8vh');
-  }
-  }
+
   </script>
 {% endblock %}

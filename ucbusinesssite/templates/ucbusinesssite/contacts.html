@@ -16,7 +16,7 @@
             Get in Touch
           {% else %}
             <!-- Inserir texto em PT -->
-          {% endif %}  
+          {% endif %}
         </h1>
 
         <p>
@@ -31,7 +31,7 @@
             {% if request.session.language == 'EN' %}
               Rectory Pólo II
               <br>R. Luís Reis dos Santos 290,
-              <br>3030-790 Coimbra 
+              <br>3030-790 Coimbra
             {% else %}
               Reitoria do Pólo II
               <br>R. Luís Reis dos Santos 290,
@@ -67,7 +67,7 @@
         {% csrf_token %}
         <h2 class=form-title>
           {% if request.session.language == 'EN' %}
-            Send us a message 
+            Send us a message
           {% else %}
             <!-- Inserir texto em PT -->
           {% endif %}
@@ -80,10 +80,10 @@
           {% endif %}
         </h4>
         <input name = "name" id="name" type="name"  required >
-  
+
         <h4> E-mail:</h4>
         <input name = "email" id="mail" type="email"  required >
-  
+
         <h4>
           {% if request.session.language == 'EN' %}
             Message:
@@ -92,7 +92,7 @@
           {% endif %}
         </h4>
         <textarea name = "message" id="text" type="email"  required ></textarea>
-  
+
         <button id="submit-button" type="submit">
           {% if request.session.language == 'EN' %}
             Submit
@@ -106,18 +106,5 @@
 {% endblock %}
 
 {% block script %}
-  <script>
 
-  function changeMenu(){
-
-  if ($('#menu-txt').css('display') == 'none'){
-    $('#menu-txt').css('display', 'block');
-    $('.rect-menu').css('height', '100vh');
-  }
-  else{
-    $('#menu-txt').css('display', 'none');
-    $('.rect-menu').css('height', '8vh');
-  }
-  }
-  </script>
 {% endblock %}

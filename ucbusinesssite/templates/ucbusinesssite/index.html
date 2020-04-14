@@ -9,7 +9,7 @@
 {% endblock head %}
 
 {% block video %}
-<video class="video-ucb" muted autoplay controls loop>
+<video class="video-ucb" muted autoplay controls loop playsinline>
   <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
    Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
 </video>
@@ -22,7 +22,7 @@
 <div id="info-ucb">
     <!-- <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}"> -->
 
-    <video id="ucb-logo" width="100%" autoplay="autoplay" loop muted>
+    <video id="ucb-logo" width="100%" autoplay loop muted playsinline>
       <source src="{% static 'ucbusinesssite/photos/ucbusiness.mp4' %}" type="video/MP4">
     </video>
 
@@ -195,17 +195,7 @@
 {% block script %}
   <script>
 
-  function changeMenu(){
 
-  if ($('#menu-txt').css('display') == 'none'){
-    $('#menu-txt').css('display', 'block');
-    $('.rect-menu').css('height', '100vh');
-  }
-  else{
-    $('#menu-txt').css('display', 'none');
-    $('.rect-menu').css('height', '8vh');
-  }
-  }
 
   var vid = document.getElementById("ucb-logo");
   vid.playbackRate = 0.8;

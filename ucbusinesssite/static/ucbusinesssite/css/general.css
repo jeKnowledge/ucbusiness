@@ -235,6 +235,9 @@ width: auto;
   .lang_button, #lang_sep{
     font-size: 0.9em;
   }
+  .rect-menu{
+    display: flex;
+  }
 
 
 }
