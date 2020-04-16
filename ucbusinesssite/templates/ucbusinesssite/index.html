@@ -22,7 +22,7 @@
 <div id="info-ucb">
     <!-- <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}"> -->
 
-    <video id="ucb-logo" width="100%" autoplay loop muted playsinline>
+    <video id="ucb-logo" width="100%"  loop muted playsinline>
       <source src="{% static 'ucbusinesssite/photos/ucbusiness.mp4' %}" type="video/MP4">
     </video>
 
@@ -123,17 +123,20 @@
 
 <section id="timeline">
 
-  <button id="prev-button"> < Previous <br> Month </button>
-  <button id="next-button">Next<br> Month > </button>
+
+
   <div>
       <div id="rectangle" class="rectangle">
-      <p id="rectangle_message">
-      </p>
+        <p id="rectangle_message"> </p>
       <div id="txt-background">
         <h3 id="month-txt">  </h3>
       </div>
          <div id="container_news">
         </div>
+      </div>
+      <div id="buttons-time">
+        <button id="prev-button"> < Previous <br> Month </button>
+        <button id="next-button"> Next<br> Month > </button>
       </div>
   </div>
 

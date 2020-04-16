@@ -73,8 +73,8 @@
                     <h4 id="menu-txt">
                     {% if request.session.language == 'EN' %}
                         <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-                        <a href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-                        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Invest</a>
+                        <a id="value" href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
+                        <a href="{% url 'ucbusinesssite:ucInvest' %}">  Invest</a>
                         <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
                         <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
                         <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>

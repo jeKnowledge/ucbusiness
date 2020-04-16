@@ -64,7 +64,7 @@
 
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 420px){
 
   .member1 img, .member img{
     width: 90px;
@@ -80,4 +80,10 @@
     grid-template-columns: 44vw 44vw ;
     grid-template-rows: 40vh 40vh 40vh 40vh;
   }
+  .about h1{
+    font-size: 1.2em;
+    margin-left: 8vw;
+    padding-left: 0;
+  }
+
 }

@@ -173,6 +173,8 @@ width: auto;
 }
 
 
+
+
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
@@ -196,6 +198,14 @@ width: auto;
   padding-left: 30vw;
   font-size: 1.5em;
 }
+.menu a{
+  padding-bottom: 2vh;
+}
+.menu #value {
+  margin-left: 10vw;
+
+}
+
 
 #container {
     display: inline;

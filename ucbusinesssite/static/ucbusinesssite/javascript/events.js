@@ -17,6 +17,7 @@ function main() {
   getEvents(monthCounter, yearCounter);
 
   next_btn.addEventListener('click', function(e){
+    console.log("clicou");
     const myNode = document.getElementById("container_news");
       while (myNode.firstChild) {
         myNode.removeChild(myNode.lastChild);
@@ -83,16 +84,13 @@ function drawTimeline(month, numdays, data) {
           var circle = cont.appendChild(document.createElement("div"))
           var day_txt = cont.appendChild(document.createElement("span"))
 
-
           var day= i.toString();
           day_txt.innerHTML = day;
 
           circle.classList.add("circle")
 
-          if (data[i] != undefined) { //se o dia tiver informaçao
+          if (data[i] != undefined) {
             circle.classList.add("filled_circle")
-
-
 
               circle.onmouseover  = function()  {
 
@@ -102,14 +100,11 @@ function drawTimeline(month, numdays, data) {
                 } else {
                   rectangle_message.style.display = "none"
                 }
-
               }
-        
+              }
 
           circle.appendChild(day_txt);
           node.appendChild(circle);
           document.getElementById("container_news").appendChild(circle)
-
-  }
-
+        }
 }
