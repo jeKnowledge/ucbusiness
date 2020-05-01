@@ -22,7 +22,7 @@
 <div id="info-ucb">
     <!-- <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}"> -->
 
-    <video id="ucb-logo" width="100%"  loop muted playsinline>
+    <video id="ucb-logo" width="100%"  loop muted >
       <source src="{% static 'ucbusinesssite/photos/ucbusiness.mp4' %}" type="video/MP4">
     </video>
 
@@ -46,114 +46,19 @@
     </div>
   </div>
 
-  <div id="info-pilares">
-
-    <div class="info">
-      <img src="{% static 'ucbusinesssite/photos/value.png' %}">
-      <div class="txt-but">
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Create short-term value (with financial return) based on existing skills.
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </h4>
-      <a href="{% url 'ucbusinesssite:ucValue' %}">
-        <button type="button">>
-          {% if request.session.language == 'EN' %}
-            Find out more
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </button>
-      </a>
-      </div>
-    </div>
-
-    <div class="info">
-      <img src="{% static 'ucbusinesssite/photos/partnership.png' %}">
-      <div class="txt-but">
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Foster multi-level partnerships.
-        {% else %}
-          <!-- Inseir texto em PT -->
-        {% endif %}
-      </h4>
-
-      <a href="{% url 'ucbusinesssite:ucPartnership' %}">
-        <button type="button">
-          {% if request.session.language == 'EN' %}
-            > Find out more
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </button>
-      </a>
-      </div>
-    </div>
-
-
-    <div class="info">
-      <img src="{% static 'ucbusinesssite/photos/invest.png' %}">
-      <div class="txt-but">
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Invest in value development in the medium term.
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </h4>
-      <a href="{% url 'ucbusinesssite:ucInvest' %}">
-        <button type="button">
-          {% if request.session.language == 'EN' %}
-            > Find out more
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </button>
-      </a>
-      </div>
-    </div>
-
-  </div>
-
-
-</section>
-
-<section id="timeline">
-
-
-
-  <div>
-      <div id="rectangle" class="rectangle">
-        <p id="rectangle_message"> </p>
-      <div id="txt-background">
-        <h3 id="month-txt">  </h3>
-      </div>
-         <div id="container_news">
-        </div>
-      </div>
-      <div id="buttons-time">
-        <button id="prev-button"> < Previous <br> Month </button>
-        <button id="next-button"> Next<br> Month > </button>
-      </div>
-  </div>
-
-
 
 </section>
 
   <section id="news-container">
     <h1>
       {% if request.session.language == 'EN' %}
-        Insights
+        Events
       {% else %}
-        <!-- Inserir texto em PT -->
+        Eventos
       {% endif %}
     </h1>
 
-    <div class="container">
+    <!-- <div class="container">
 
       {% for newsArticle in newsArticles %}
         <div class="news-index">
@@ -180,16 +85,82 @@
                 {% if request.session.language == 'EN' %}
                   > Find out more
                 {% else %}
-                  <!-- Inserir texto em PT -->
+                  > Ver mais
                 {% endif %}
               </button>
             </a>
           </div>
         </div>
+
       {% endfor %}
+    </div> -->
 
 
-    </div>
+    <div id="news">
+
+      <div class="rect-new">
+        <div class="cont">
+          <div class="txt-left">
+            <h4> 3rd may <h4>
+            <h3 >This is the first event</h3>
+          </div>
+          <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
+        </div>
+        <div class="descrip">
+          <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+        </div>
+          <button type="button">
+            {% if request.session.language == 'EN' %}
+              > Find out more
+            {% else %}
+              > Ver mais
+            {% endif %}
+          </button>
+      </div>
+
+
+        <div class="rect-new">
+          <div class="cont">
+            <div class="txt-left">
+              <h4> 3rd may <h4>
+              <h3>This is the second event</h3>
+            </div>
+            <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
+
+          </div>
+          <div class="descrip">
+            <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+          </div>
+            <button type="button">
+              {% if request.session.language == 'EN' %}
+                > Find out more
+              {% else %}
+                > Ver mais
+              {% endif %}
+            </button>
+        </div>
+
+
+          <div class="rect-new">
+            <div class="cont">
+              <div class="txt-left">
+                <h4> 3rd may <h4>
+                <h3>This is the third event</h3>
+              </div>
+              <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
+            </div>
+              <div class="descrip">
+                <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+              </div>
+            <button type="button">
+              {% if request.session.language == 'EN' %}
+                > Find out more
+              {% else %}
+                > Ver mais
+              {% endif %}
+            </button>
+          </div>
+      </div>
 
   </section>
 {% endblock content %}
@@ -197,8 +168,6 @@
 
 {% block script %}
   <script>
-
-
 
   var vid = document.getElementById("ucb-logo");
   vid.playbackRate = 0.8;

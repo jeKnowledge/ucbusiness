@@ -43,7 +43,6 @@
                 {% else %}
                     Este website utiliza cookies para melhorar a sua experiência de navegação. Ao continuar a utilizar este site, está a concordar com o uso de cookies.
                 {% endif %}
-                </p>
             </h2>
             <button id="cookie-button">
                 {% if request.session.language == 'EN' %}
@@ -72,18 +71,14 @@
 
                     <h4 id="menu-txt">
                     {% if request.session.language == 'EN' %}
+                        <a href="{% url 'ucbusinesssite:index' %}">Home</a>
                         <a href="{% url 'ucbusinesssite:about' %}">About us</a>
-                        <a id="value" href="{% url 'ucbusinesssite:ucValue' %}"> Value</a>
-                        <a href="{% url 'ucbusinesssite:ucInvest' %}">  Invest</a>
-                        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Partnership</a>
-                        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                        <a href="{% url 'ucbusinesssite:insights' %}">Events</a>
                         <a href="{% url 'ucbusinesssite:contacts' %}">Contacts</a>
                     {% else %}
+                    <a href="{% url 'ucbusinesssite:index' %}">Home</a>
                         <a href="{% url 'ucbusinesssite:about' %}">Sobre nós</a>
-                        <a href="{% url 'ucbusinesssite:ucValue' %}"> Valor</a>
-                        <a href="{% url 'ucbusinesssite:ucInvest' %}"> Investimento</a>
-                        <a href="{% url 'ucbusinesssite:ucPartnership' %}"> Parceria</a>
-                        <a href="{% url 'ucbusinesssite:insights' %}"> Insights</a>
+                        <a href="{% url 'ucbusinesssite:insights' %}">Eventos</a>
                         <a href="{% url 'ucbusinesssite:contacts' %}">Contactos</a>
                     {% endif %}
                     </h4>
