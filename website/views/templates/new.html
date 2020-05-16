@@ -1,70 +1,37 @@
-{% extends 'ucbusinesssite/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../assets/styles/css/new.css">
+    
+    <?php include 'base_head.html'; ?>
+    
+    <title>Insight</title>
+  </head>
+  <body>
 
-{% block head %}
-<link rel="stylesheet" href="{% static 'ucbusinesssite/css/new.css' %}">
-<title>Insight</title>
-{% endblock %}
+    <?php include 'navbar.html'; ?>
+  
+    <section id="news">
 
-{% block content %}
-<section id="news">
+      <div class="slider">
+        <button type="button" id="arrow-prev" class="slider-arrow slider-arrow-prev" > </button>
+          <img src="../assets/images/foto.png" alt="newsImage">
+        <button type="button" id="arrow-next" class="slider-arrow slider-arrow-next" > </button>
+      </div>
+        <h3> Example title </h3>
+        <p> Example description </p>
+      <span> 01/01/2020 </span>
+      <a href="insight.html">
+        <h4> < Back </h4>
+      </a>
+    
+    </section>
 
+    <?php include 'footer.html'; ?>
 
-  <div class="slider">
-    <button type="button" id="arrow-prev" class="slider-arrow slider-arrow-prev" > </button>
-    {% if newsArticle.imageurl_set.first %}
-      {% with newsArticle.imageurl_set.all|first as image %}
-          <img src="{{ image.url }}" alt="newsImage">
-      {% endwith %}
-    {% else %}
-      <img src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/69475889_389069908465566_5568746573271138304_o.png?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=isQiCeTGmeQAX_8bYjd&_nc_ht=scontent.fopo1-1.fna&oh=9631798db4a53db512b6958f0ee1f1af&oe=5E93257E" alt="newsImage">
-    {% endif %}
-    <button type="button" id="arrow-next" class="slider-arrow slider-arrow-next" > </button>
-  </div>
-  {% if request.session.language == 'EN' %}
-    <h3> {{ newsArticle.titleEn }} </h3>
-    <p> {{ newsArticle.bodyEn }} </p>
-  {% else %}
-    <h3> {{ newsArticle.title }} </h3>
-    <p>{{ newsArticle.body }}</p>
-  {% endif %}
-  <span> {{ newsArticle.datePosted }} </span>
-  <a href="{% url 'ucbusinesssite:insights' %}">
-    <h4> < Back </h4>
-  </a>
+  </body>
 
-</section>
-{% endblock %}
+  <script type="text/javascript" src="../assets/scripts/event_slider.js"></script>
+  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
 
-{% block script %}
-<script>
-
-var imageSources= {{ newsImages|safe }}
-
-var currentIndex = 0;
-
-var leftArrow = document.querySelector("#arrow-prev");
-var rightArrow = document.querySelector("#arrow-next");
-
-if (imageSources.length) {
-    leftArrow.addEventListener("click", function() {
-        currentIndex = currentIndex - 1;
-        if (currentIndex < 0) {
-            currentIndex = imageSources.length-1;
-        }
-        document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
-    });
-
-
-    rightArrow.addEventListener("click", function() {
-        currentIndex = currentIndex + 1;
-        if (currentIndex >= imageSources.length) {
-            currentIndex = 0;
-        }
-        document.querySelector(".slider img").setAttribute("src", imageSources[currentIndex]);
-    });
-}
-
-
-</script>
-{% endblock %}
+</html>

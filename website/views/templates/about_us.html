@@ -1,13 +1,16 @@
-{% extends 'ucbusinesssite/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../assets/styles/css/abous_us.css">
+    
+    <?php include 'base_head.html'; ?>
 
-{% block head %}
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/abous_us.css' %}">
-  <title>About Us</title>
-{% endblock %}
+    <title>About Us</title>
+  </head>
+  <body>
+    <?php include 'navbar.html'; ?>
 
-{% block content %}
-  <div class="about">
+    <div class="about">
       <!-- <h1>About us</h1>
       <div id="mission">
         <h4> Our Mission</h4>
@@ -16,51 +19,35 @@
       </div> -->
 
     <h1>
-      {% if request.session.language == 'EN' %}
         Team
-      {% else %}
-        Equipa
-      {% endif %}
     </h1>
   </div>
   <section class="team">
-      {% if topMember %}
         <div class="member1">
-          <img src="{{ topMember.image.url }}" />
+          <img src="../assets/images/luis_silva.jpg" alt="Example Name"/>
               <div class="member-info">
-                <h4>{{ topMember.name }}</h4>
+                <h4>Example Name</h4>
                 <h5>
-                  {% if request.session.language == 'EN' %}
-                    {{ topMember.role.nameEn }}
-                  {% else %}
-                    {{ topMember.role.name }}
-                  {% endif %}
+                  Example Role
                 </h5>
-                <h5>{{ topMember.email }}</h5>
+                <h5>example@mail.com</h5>
               </div>
         </div>
-      {% endif %}
   <div id="team-grid">
-    {% for member in members %}
       <div class="member">
-        <img src="{{ member.image.url }}"alt="{{ member.name }}"/>
+        <img src="../assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
-              <h4>{{ member.name }}</h4>
+              <h4>Example Name</h4>
               <h5>
-                {% if request.session.language == 'EN' %}
-                  {{ member.role.nameEn }}
-                {% else %}
-                  {{ member.role.name }}
-                {% endif %}
-                <br>{{ member.email }}</h5>
+                  Example Role
+                <br>example@mail.com</h5>
           </div>
       </div>
-    {% endfor %}
   </section>
-{% endblock %}
 
-{% block script %}
+    <?php include 'footer.html'; ?>
+  </body>
 
+  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
 
-
-{% endblock %}
+</html>

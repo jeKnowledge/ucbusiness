@@ -1,43 +1,39 @@
-{% extends 'ucbusinesssite/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../assets/styles/css/insight.css">
+  
+    <?php include 'base_head.html'; ?>
 
-{% block head %}
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/insight.css' %}">
-  <title>Insights</title>
-{% endblock %}
+    <title>Insights</title>
+  </head>
+  <body>
+    <?php include 'navbar.html'; ?>
 
-{% block content %}
-<section id="news">
+    <section id="news">
 
-    <h1>Insights</h1>
-
-  <div class="news">
-    {% for article in news %}
-      <div class="new">
-        <img src="{{ article.imageurl_set.first.url }}" />
-        {% if request.session.language == 'EN' %}
-          <h3> {{ article.titleEn }} </h3>
-          <p>{{ article.bodyEn|truncatewords:20 }}</p>
-        {% else %}
-          <h3> {{ article.title }} </h3>
-          <p>{{ article.body|truncatewords:20 }}</p>
-        {% endif %}
-        <a href="{% url 'ucbusinesssite:newsArticle' article.title %}">
-          <button>
-            {% if request.session.language == 'EN' %}
-              Read More
-            {% else %}
-              <!-- Inserir texto em PT -->
-            {% endif %}
-          </button>
-        </a>
-
+      <h1>Insights</h1>
+    
+      <div class="news">
+          <div class="new">
+            
+            <img src="../assets/images/foto.png" />
+              <h3> Example title </h3>
+              <p>Example description</p>
+            <a href="">
+              <button>
+                  Read More
+              </button>
+            </a>
+    
+          </div>
       </div>
-    {% endfor %}
-  </div>
-</section>
-{% endblock %}
+    </section>
 
-{% block script %}
+    <?php include 'footer.html'; ?>
 
-{% endblock %}
+  </body>
+
+  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+
+</html>

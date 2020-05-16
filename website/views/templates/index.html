@@ -1,142 +1,103 @@
-{% extends 'ucbusinesssite/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
+    <link rel="stylesheet" href="../assets/styles/css/style.css">
 
-{% block head %}
-<meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
-<link rel="stylesheet" href="{% static 'ucbusinesssite/css/style.css' %}">
-<script src="{% static 'ucbusinesssite/javascript/events.js' %}"></script>
-<title>UC Business</title>
-{% endblock head %}
+    <?php include 'base_head.html'; ?>
 
-{% block video %}
-<video class="video-ucb" muted autoplay controls loop playsinline>
-  <source src="{% static 'ucbusinesssite/photos/video.mp4' %}" type="video/MP4">
-   Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
-</video>
-{% endblock %}
+    <title>UC Business</title>
+  </head>
+  <body>
+    <?php include 'navbar.html'; ?>
 
-{% block content %}
-
-<section id="logo-anim">
-
-<div id="info-ucb">
-    <!-- <img id="ucb-logo" src="{% static 'ucbusinesssite/photos/ucb_logo2.png' %}"> -->
-
-    <video id="ucb-logo" width="100%"  loop muted >
-      <source src="{% static 'ucbusinesssite/photos/ucbusiness.mp4' %}" type="video/MP4">
+    <video class="video-ucb" muted autoplay controls loop playsinline>
+      <source src="../assets/images/video.mp4" type="video/MP4">
+       Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
     </video>
 
-    <div class="txt-ucb">
-      <h4>
-        {% if request.session.language == 'EN' %}
-          Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </h4>
-      <div id="areas">
-        {% if request.session.language == 'EN' %}
-          <h3>Large Companies</h3>
-          <h3>National SMEs</h3>
-          <h3>Start-ups and Spin-offs</h3>
-        {% else %}
-          <!-- Inserir texto em PT -->
-        {% endif %}
-      </div>
-    </div>
-  </div>
+    <section id="logo-anim">
 
+    <div id="info-ucb">
+        <!-- <img id="ucb-logo" src="../assets/images/ucb_logo2.png"> -->
 
-</section>
+        <video id="ucb-logo" width="100%"  loop muted >
+          <source src="../assets/images/ucbusiness.mp4" type="video/MP4">
+        </video>
 
-  <section id="news-container">
-    <h1>
-      {% if request.session.language == 'EN' %}
-        Events
-      {% else %}
-        Eventos
-      {% endif %}
-    </h1>
-
-    <!-- <div class="container">
-
-      {% for newsArticle in newsArticles %}
-        <div class="news-index">
-          <div class="txt_new">
-            <h4>{{ newsArticle.datePosted|date:'j / n / Y' }}</h4>
-            <h4>
-              {% if request.session.language == 'EN' %}
-                {{ newsArticle.titleEn|truncatechars:40 }}
-              {% else %}
-                {{ newsArticle.title|truncatechars:40 }}
-              {% endif %}
-            </h4>
+        <div class="txt-ucb">
+          <h4>
+            Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+          </h4>
+          <div id="areas">
+            <h3>Large Companies</h3>
+            <h3>National SMEs</h3>
+            <h3>Start-ups and Spin-offs</h3>
           </div>
-          {% if newsArticle.imageurl_set.first %}
-            {% with newsArticle.imageurl_set.all|first as image %}
-                <img src="{{ image.url }}" alt="newsImage">
-            {% endwith %}
-          {% else %}
-            <img src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/69475889_389069908465566_5568746573271138304_o.png?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=isQiCeTGmeQAX_8bYjd&_nc_ht=scontent.fopo1-1.fna&oh=9631798db4a53db512b6958f0ee1f1af&oe=5E93257E" alt="newsImage">
-          {% endif %}
-          <div class="rect-new">
-            <a href="{% url 'ucbusinesssite:newsArticle' newsArticle.title %}">
-              <button type="button">
+        </div>
+      </div>
+
+
+    </section>
+
+    <section id="news-container">
+      <h1>
+          Events
+      </h1>
+
+      <!-- <div class="container">
+
+        {% for newsArticle in newsArticles %}
+          <div class="news-index">
+            <div class="txt_new">
+              <h4>{{ newsArticle.datePosted|date:'j / n / Y' }}</h4>
+              <h4>
                 {% if request.session.language == 'EN' %}
-                  > Find out more
+                  {{ newsArticle.titleEn|truncatechars:40 }}
                 {% else %}
-                  > Ver mais
+                  {{ newsArticle.title|truncatechars:40 }}
                 {% endif %}
-              </button>
-            </a>
-          </div>
-        </div>
-
-      {% endfor %}
-    </div> -->
-
-
-    <div id="news">
-
-      <div class="rect-new">
-        <div class="cont">
-          <div class="txt-left">
-            <h4> 3rd may <h4>
-            <h3 >This is the first event</h3>
-          </div>
-          <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
-        </div>
-        <div class="descrip">
-          <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-        </div>
-          <button type="button">
-            {% if request.session.language == 'EN' %}
-              > Find out more
+              </h4>
+            </div>
+            {% if newsArticle.imageurl_set.first %}
+              {% with newsArticle.imageurl_set.all|first as image %}
+                  <img src="{{ image.url }}" alt="newsImage">
+              {% endwith %}
             {% else %}
-              > Ver mais
+              <img src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/69475889_389069908465566_5568746573271138304_o.png?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=isQiCeTGmeQAX_8bYjd&_nc_ht=scontent.fopo1-1.fna&oh=9631798db4a53db512b6958f0ee1f1af&oe=5E93257E" alt="newsImage">
             {% endif %}
-          </button>
-      </div>
+            <div class="rect-new">
+              <a href="{% url 'ucbusinesssite:newsArticle' newsArticle.title %}">
+                <button type="button">
+                  {% if request.session.language == 'EN' %}
+                    > Find out more
+                  {% else %}
+                    > Ver mais
+                  {% endif %}
+                </button>
+              </a>
+            </div>
+          </div>
 
+        {% endfor %}
+      </div> -->
+
+
+      <div id="news">
 
         <div class="rect-new">
           <div class="cont">
             <div class="txt-left">
               <h4> 3rd may <h4>
-              <h3>This is the second event</h3>
+              <h3 >This is the first event</h3>
             </div>
-            <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
-
+            <img src="../assets/images/foto.png">
           </div>
           <div class="descrip">
             <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
           </div>
             <button type="button">
-              {% if request.session.language == 'EN' %}
                 > Find out more
-              {% else %}
-                > Ver mais
-              {% endif %}
             </button>
         </div>
 
@@ -145,32 +106,50 @@
             <div class="cont">
               <div class="txt-left">
                 <h4> 3rd may <h4>
-                <h3>This is the third event</h3>
+                <h3>This is the second event</h3>
               </div>
-              <img src="{% static 'ucbusinesssite/photos/foto.png' %}">
+              <img src="../assets/images/foto.png">
+
             </div>
-              <div class="descrip">
-                <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-              </div>
-            <button type="button">
-              {% if request.session.language == 'EN' %}
-                > Find out more
-              {% else %}
-                > Ver mais
-              {% endif %}
-            </button>
+            <div class="descrip">
+              <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+            </div>
+              <button type="button">
+                  > Find out more
+              </button>
           </div>
-      </div>
-
-  </section>
-{% endblock content %}
 
 
-{% block script %}
-  <script>
+            <div class="rect-new">
+              <div class="cont">
+                <div class="txt-left">
+                  <h4> 3rd may <h4>
+                  <h3>This is the third event</h3>
+                </div>
+                <img src="../assets/images/foto.png">
+              </div>
+                <div class="descrip">
+                  <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+                </div>
+              <button type="button">
+                  > Find out more
+              </button>
+            </div>
+        </div>
+
+    </section>
+
+    <?php include 'footer.html'; ?>
+
+  </body>
+
+  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+
+</html>
+
+<script>
 
   var vid = document.getElementById("ucb-logo");
   vid.playbackRate = 0.8;
 
 </script>
-{% endblock %}

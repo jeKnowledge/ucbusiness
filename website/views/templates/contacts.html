@@ -1,110 +1,81 @@
-{% extends 'ucbusinesssite/base.html' %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../assets/styles/css/contacts.css">
+    
+    <?php include 'base_head.html'; ?>
 
-{% block head %}
-  <link rel="stylesheet" href="{% static 'ucbusinesssite/css/contacts.css' %}">
-  <title>Insight</title>
-{% endblock %}
+    <title>Insight</title>
+  </head>
+  <body>
+    <?php include 'navbar.html'; ?>
 
-{% block content %}
-  <div class="container">
+    <div class="container">
 
-    <section id="contacts">
-
-        <h1>
-          {% if request.session.language == 'EN' %}
+      <section id="contacts">
+  
+          <h1>
             Get in Touch
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </h1>
-
-        <p>
-          <h3>
-            {% if request.session.language == 'EN' %}
-              Address
-            {% else %}
-              Endereço
-            {% endif %}
-          </h3>
+          </h1>
+  
+          <p>
+            <h3>
+                Address
+            </h3>
+            <h4>
+                Rectory Pólo II
+                <br>R. Luís Reis dos Santos 290,
+                <br>3030-790 Coimbra
+            </h4>
+          </p>
+  
+          <p>
+            <h3>E-mail</h3>
+            <h4> ucbusiness@uc.pt</h4>
+          </p>
+  
+          <p>
+            <h3>
+                Social Media
+            </h3>
+              <h4>Facebook:
+              <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"><br>https://www.facebook.com/UCBusinessGlobal/ </a></h4>
+              <h4 > LinkedIn:
+                <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><br>https://www.linkedin.com/company/ucbusinessglobal</a></h4>
+              <h4 > Twitter:
+                <a href=" https://twitter.com/business_uc" target="_blank" ><br>https://twitter.com/business_uc</a></h4>
+          </p>
+      </section>
+  
+      <section id="form">
+        <form method="POST">
+          <h2 class=form-title>
+              Send us a message
+          </h2>
           <h4>
-            {% if request.session.language == 'EN' %}
-              Rectory Pólo II
-              <br>R. Luís Reis dos Santos 290,
-              <br>3030-790 Coimbra
-            {% else %}
-              Reitoria do Pólo II
-              <br>R. Luís Reis dos Santos 290,
-              <br>3030-790 Coimbra
-            {% endif %}
+              Name:
           </h4>
-        </p>
+          <input name = "name" id="name" type="name"  required >
+  
+          <h4> E-mail:</h4>
+          <input name = "email" id="mail" type="email"  required >
+  
+          <h4>
+              Message:
+          </h4>
+          <textarea name = "message" id="text" type="email"  required ></textarea>
+  
+          <button id="submit-button" type="submit">
+              Submit
+          </button>
+        </form>
+      </section>
+    </div>
 
-        <p>
-          <h3>E-mail</h3>
-          <h4> ucbusiness@uc.pt</h4>
-        </p>
+    <?php include 'footer.html'; ?>
 
-        <p>
-          <h3>
-            {% if request.session.language == 'EN' %}
-              Social Media
-            {% else %}
-              Redes Sociais
-            {% endif %}
-          </h3>
-            <h4>Facebook:
-            <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"><br>https://www.facebook.com/UCBusinessGlobal/ </a></h4>
-            <h4 > LinkedIn:
-              <a href="https://linkedin.com/company/ucbusinessglobal" target="_blank"><br>https://www.linkedin.com/company/ucbusinessglobal</a></h4>
-            <h4 > Twitter:
-              <a href=" https://twitter.com/business_uc" target="_blank" ><br>https://twitter.com/business_uc</a></h4>
-        </p>
-    </section>
+  </body>
 
-    <section id="form">
-      <form method="POST">
-        {% csrf_token %}
-        <h2 class=form-title>
-          {% if request.session.language == 'EN' %}
-            Send us a message
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </h2>
-        <h4>
-          {% if request.session.language == 'EN' %}
-            Name:
-          {% else %}
-            Nome:
-          {% endif %}
-        </h4>
-        <input name = "name" id="name" type="name"  required >
+  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
 
-        <h4> E-mail:</h4>
-        <input name = "email" id="mail" type="email"  required >
-
-        <h4>
-          {% if request.session.language == 'EN' %}
-            Message:
-          {% else %}
-            Mensagem:
-          {% endif %}
-        </h4>
-        <textarea name = "message" id="text" type="email"  required ></textarea>
-
-        <button id="submit-button" type="submit">
-          {% if request.session.language == 'EN' %}
-            Submit
-          {% else %}
-            <!-- Inserir texto em PT -->
-          {% endif %}
-        </button>
-      </form>
-    </section>
-  </div>
-{% endblock %}
-
-{% block script %}
-
-{% endblock %}
+</html>
