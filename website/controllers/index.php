@@ -1,3 +1,3 @@
 <?php
 
-require '../views/templates/index.php';
+require 'views/templates/index_view.php';

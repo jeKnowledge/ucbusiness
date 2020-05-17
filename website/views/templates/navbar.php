@@ -1,6 +1,6 @@
 <header>
     <div class="header">
-      <a href="index.html"><img id="logo_ucb" src="../assets/images/ucb_logo.png" height="1441" width="1997"
+      <a href="/"><img id="logo_ucb" src="views/assets/images/ucb_logo.png" height="1441" width="1997"
           alt="logo_ucb" /></a>
       <div id="dir">
         <h6> <a class="lang_button" id="PTbtn"> PT</a>
@@ -8,7 +8,7 @@
               <a class="lang_button" id="ENbtn"> EN</a>
         </h6>
         <a href="http://www.uc.pt">
-            <img id="logo_uc" src="../assets/images/uc_logo_hor.png" alt="logo_uc" />
+            <img id="logo_uc" src="views/assets/images/uc_logo_hor.png" alt="logo_uc" />
         </a>
       </div>
     </div>
@@ -39,10 +39,10 @@
             </button>
 
             <h4 id="menu-txt">
-                <a href="index.html">Home</a>
-                <a href="about_us.html">About us</a>
-                <a href="insight.html">Events</a>
-                <a href="contacts.html">Contacts</a>
+                <a href="/">Home</a>
+                <a href="/about">About us</a>
+                <a href="/events">Events</a>
+                <a href="/contacts">Contacts</a>
             </h4>
         </div>
     </div>

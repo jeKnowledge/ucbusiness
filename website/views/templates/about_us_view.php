@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../assets/styles/css/abous_us.css">
+    <link rel="stylesheet" href="views/assets/styles/css/abous_us.css">
     
-    <?php include 'base_head.html'; ?>
+    <?php require 'views/templates/base_head.php'; ?>
 
     <title>About Us</title>
   </head>
   <body>
-    <?php include 'navbar.html'; ?>
+    <?php require 'views/templates/navbar.php'; ?>
 
     <div class="about">
       <!-- <h1>About us</h1>
@@ -24,7 +24,7 @@
   </div>
   <section class="team">
         <div class="member1">
-          <img src="../assets/images/luis_silva.jpg" alt="Example Name"/>
+          <img src="views/assets/images/luis_silva.jpg" alt="Example Name"/>
               <div class="member-info">
                 <h4>Example Name</h4>
                 <h5>
@@ -35,7 +35,7 @@
         </div>
   <div id="team-grid">
       <div class="member">
-        <img src="../assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
+        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
               <h4>Example Name</h4>
               <h5>
@@ -45,9 +45,9 @@
       </div>
   </section>
 
-    <?php include 'footer.html'; ?>
+    <?php require 'views/templates/footer.php'; ?>
   </body>
 
-  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+  <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>
 
 </html>

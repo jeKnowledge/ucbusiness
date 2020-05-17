@@ -2,17 +2,17 @@
 <html lang="en">
   <head>
     <meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
-    <link rel="stylesheet" href="../assets/styles/css/style.css">
+    <link rel="stylesheet" href="views/assets/styles/css/style.css">
 
-    <?php include 'base_head.html'; ?>
+    <?php require 'views/templates/base_head.php'; ?>
 
     <title>UC Business</title>
   </head>
   <body>
-    <?php include 'navbar.html'; ?>
+    <?php require 'views/templates/navbar.php'; ?>
 
     <video class="video-ucb" muted autoplay controls loop playsinline>
-      <source src="../assets/images/video.mp4" type="video/MP4">
+      <source src="views/assets/images/video.mp4" type="video/MP4">
        Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
     </video>
 
@@ -22,7 +22,7 @@
         <!-- <img id="ucb-logo" src="../assets/images/ucb_logo2.png"> -->
 
         <video id="ucb-logo" width="100%"  loop muted >
-          <source src="../assets/images/ucbusiness.mp4" type="video/MP4">
+          <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
 
         <div class="txt-ucb">
@@ -91,14 +91,16 @@
               <h4> 3rd may <h4>
               <h3 >This is the first event</h3>
             </div>
-            <img src="../assets/images/foto.png">
+            <img src="views/assets/images/foto.png">
           </div>
           <div class="descrip">
             <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
           </div>
+          <a href="/event">
             <button type="button">
                 > Find out more
             </button>
+          </a>
         </div>
 
 
@@ -108,42 +110,46 @@
                 <h4> 3rd may <h4>
                 <h3>This is the second event</h3>
               </div>
-              <img src="../assets/images/foto.png">
+              <img src="views/assets/images/foto.png">
 
             </div>
             <div class="descrip">
               <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
             </div>
+            <a href="/event">
               <button type="button">
                   > Find out more
               </button>
+            </a>
           </div>
 
 
-            <div class="rect-new">
-              <div class="cont">
-                <div class="txt-left">
-                  <h4> 3rd may <h4>
-                  <h3>This is the third event</h3>
-                </div>
-                <img src="../assets/images/foto.png">
+          <div class="rect-new">
+            <div class="cont">
+              <div class="txt-left">
+                <h4> 3rd may <h4>
+                <h3>This is the third event</h3>
               </div>
-                <div class="descrip">
-                  <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-                </div>
-              <button type="button">
-                  > Find out more
-              </button>
+              <img src="views/assets/images/foto.png">
+            </div>
+              <div class="descrip">
+                <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+              </div>
+              <a href="/event">
+                <button type="button">
+                    > Find out more
+                </button>
+              </a>
             </div>
         </div>
 
     </section>
 
-    <?php include 'footer.html'; ?>
+    <?php require 'views/templates/footer.php'; ?>
 
   </body>
 
-  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+  <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>
 
 </html>
 

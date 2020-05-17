@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../assets/styles/css/insight.css">
+    <link rel="stylesheet" href="views/assets/styles/css/insight.css">
   
-    <?php include 'base_head.html'; ?>
+    <?php require 'views/templates/base_head.php'; ?>
 
     <title>Insights</title>
   </head>
   <body>
-    <?php include 'navbar.html'; ?>
+    <?php require 'views/templates/navbar.php'; ?>
 
     <section id="news">
 
@@ -17,10 +17,10 @@
       <div class="news">
           <div class="new">
             
-            <img src="../assets/images/foto.png" />
+            <img src="views/assets/images/foto.png" />
               <h3> Example title </h3>
               <p>Example description</p>
-            <a href="">
+            <a href="/event">
               <button>
                   Read More
               </button>
@@ -30,10 +30,10 @@
       </div>
     </section>
 
-    <?php include 'footer.html'; ?>
+    <?php require 'views/templates/footer.php'; ?>
 
   </body>
 
-  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+  <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>
 
 </html>

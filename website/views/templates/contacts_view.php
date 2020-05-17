@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../assets/styles/css/contacts.css">
+    <link rel="stylesheet" href="views/assets/styles/css/contacts.css">
     
-    <?php include 'base_head.html'; ?>
+    <?php require 'views/templates/base_head.php'; ?>
 
     <title>Insight</title>
   </head>
   <body>
-    <?php include 'navbar.html'; ?>
+    <?php require 'views/templates/navbar.php'; ?>
 
     <div class="container">
 
@@ -72,10 +72,10 @@
       </section>
     </div>
 
-    <?php include 'footer.html'; ?>
+    <?php require 'views/templates/footer.php'; ?>
 
   </body>
 
-  <script type="text/javascript" src="../assets/scripts/change_menu.js"></script>
+  <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>
 
 </html>
