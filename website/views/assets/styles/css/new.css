@@ -1,44 +1,54 @@
 
-#news{
-  padding: 15vh 0 10vh 5vw;
+#new{
+  padding: 15vh 5vw;
+  display: flex;
+justify-content: space-between;
+  align-items: center;
 }
 #news h1{
   font-size: 2em;
 }
 
-#news img {
-    width: 50vw;
+#left img {
+    width: 42vw;
     height: 55vh;
     object-fit: cover;
-    border-radius: 2%
+}
+#right {
+  width: 42vw;
+  height: 55vh;
+  position: relative;
+}
+#right h3{
+  font-size: 1.4em;
 }
 
-#news p , .slider{
-  width: 85vw;
-}
-.slider{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-#news span{
+#new span{
   font-size: 0.8em;
 }
-#news h4{
-  font-weight: bold;
-  padding-top: 10vh;
-}
-#news h4:hover{
- text-decoration: underline;
+#text{
+  position: absolute;
+  bottom: 0;
 }
 
-#arrow-prev , #arrow-next{
-  height: 2vh;
-  width: 3vw;
-  border :none;
-  background-color: var(--color-blue);
-  margin: 0 2vw;
+#arrow-prev {
+  width: 0;
+ height: 0;
+ border-top: 20px solid white;
+ border-bottom: 20px solid white;
+ border-right:20px solid var(--color-blue);
+ border-left: 0;
+ margin-right: 4vw;
+
+}
+#arrow-next{
+  width: 0;
+ height: 0;
+ border-top: 20px solid white;
+ border-bottom: 20px solid white;
+ border-left:20px solid var(--color-blue);
+ border-right: 0;
 }
 
 

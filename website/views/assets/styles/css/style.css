@@ -49,8 +49,6 @@
   color: var(--color-lightblue);
 }
 
-
-
 .info-ucb {
   text-align: center;
   justify-content: center;
@@ -89,7 +87,8 @@
 }
 .rect-new img{
   width: 15vw;
-  height:auto;
+  height:15vh;
+  object-fit: cover;
 }
 .cont{
   display: flex;

@@ -19,8 +19,6 @@
     <section id="logo-anim">
 
     <div id="info-ucb">
-        <!-- <img id="ucb-logo" src="../assets/images/ucb_logo2.png"> -->
-
         <video id="ucb-logo" width="100%"  loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
@@ -45,43 +43,6 @@
           Events
       </h1>
 
-      <!-- <div class="container">
-
-        {% for newsArticle in newsArticles %}
-          <div class="news-index">
-            <div class="txt_new">
-              <h4>{{ newsArticle.datePosted|date:'j / n / Y' }}</h4>
-              <h4>
-                {% if request.session.language == 'EN' %}
-                  {{ newsArticle.titleEn|truncatechars:40 }}
-                {% else %}
-                  {{ newsArticle.title|truncatechars:40 }}
-                {% endif %}
-              </h4>
-            </div>
-            {% if newsArticle.imageurl_set.first %}
-              {% with newsArticle.imageurl_set.all|first as image %}
-                  <img src="{{ image.url }}" alt="newsImage">
-              {% endwith %}
-            {% else %}
-              <img src="https://scontent.fopo1-1.fna.fbcdn.net/v/t1.0-9/69475889_389069908465566_5568746573271138304_o.png?_nc_cat=109&_nc_sid=09cbfe&_nc_ohc=isQiCeTGmeQAX_8bYjd&_nc_ht=scontent.fopo1-1.fna&oh=9631798db4a53db512b6958f0ee1f1af&oe=5E93257E" alt="newsImage">
-            {% endif %}
-            <div class="rect-new">
-              <a href="{% url 'ucbusinesssite:newsArticle' newsArticle.title %}">
-                <button type="button">
-                  {% if request.session.language == 'EN' %}
-                    > Find out more
-                  {% else %}
-                    > Ver mais
-                  {% endif %}
-                </button>
-              </a>
-            </div>
-          </div>
-
-        {% endfor %}
-      </div> -->
-
 
       <div id="news">
 
@@ -89,7 +50,7 @@
           <div class="cont">
             <div class="txt-left">
               <h4> 3rd may <h4>
-              <h3 >This is the first event</h3>
+              <h3>This is the first event</h3>
             </div>
             <img src="views/assets/images/foto.png">
           </div>

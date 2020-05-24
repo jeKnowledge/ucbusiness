@@ -10,7 +10,6 @@
     width: 20vw;
     height: 25vh;
     object-fit: cover;
-    border-radius: 10%
 }
 #news p, #news h3{
   width: 20vw;
@@ -27,7 +26,7 @@
 }
 .new button{
   background-color: var(--color-blue);
-  border-radius: 15px;
+
   color: white;
   padding: 1vh 1vw;
   border: none;

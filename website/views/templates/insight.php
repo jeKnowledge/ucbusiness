@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="views/assets/styles/css/insight.css">
-  
+
     <?php require 'views/templates/base_head.php'; ?>
 
     <title>Insights</title>
@@ -12,11 +12,11 @@
 
     <section id="news">
 
-      <h1>Insights</h1>
-    
+      <h1>Events</h1>
+
       <div class="news">
           <div class="new">
-            
+
             <img src="views/assets/images/foto.png" />
               <h3> Example title </h3>
               <p>Example description</p>
@@ -25,7 +25,7 @@
                   Read More
               </button>
             </a>
-    
+
           </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="views/assets/styles/css/abous_us.css">
-    
+
     <?php require 'views/templates/base_head.php'; ?>
 
     <title>About Us</title>
@@ -10,6 +10,7 @@
   <body>
     <?php require 'views/templates/navbar.php'; ?>
 
+      
     <div class="about">
       <!-- <h1>About us</h1>
       <div id="mission">
