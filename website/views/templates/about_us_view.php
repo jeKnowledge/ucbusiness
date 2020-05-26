@@ -10,7 +10,7 @@
   <body>
     <?php require 'views/templates/navbar.php'; ?>
 
-      
+
     <div class="about">
       <!-- <h1>About us</h1>
       <div id="mission">
@@ -24,6 +24,7 @@
     </h1>
   </div>
   <section class="team">
+
         <div class="member1">
           <img src="views/assets/images/luis_silva.jpg" alt="Example Name"/>
               <div class="member-info">
@@ -34,16 +35,35 @@
                 <h5>example@mail.com</h5>
               </div>
         </div>
+
   <div id="team-grid">
+
       <div class="member">
         <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
               <h4>Example Name</h4>
-              <h5>
-                  Example Role
-                <br>example@mail.com</h5>
+              <h5>Example Role</h5>
+              <h5>example@mail.com</h5>
           </div>
       </div>
+      <div class="member">
+        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
+          <div class="member-info">
+              <h4>Example Name</h4>
+              <h5>Example Role</h5>
+              <h5>example@mail.com</h5>
+          </div>
+      </div>
+      <div class="member">
+        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
+          <div class="member-info">
+              <h4>Example Name</h4>
+              <h5>Example Role</h5>
+              <h5>example@mail.com</h5>
+          </div>
+      </div>
+
+    </div>
   </section>
 
     <?php require 'views/templates/footer.php'; ?>

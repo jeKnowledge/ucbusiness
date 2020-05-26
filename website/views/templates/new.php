@@ -27,16 +27,17 @@
 
           <div id="text">
             <h3> Example title </h3>
+            <h4> Universidade de Coimbra </h4>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et purus vulputate, laoreet est nec, bibendum nisi.
               Nulla quis posuere augue, nec vehicula nisi. In tristique lacinia nisi. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
               Morbi non tincidunt mauris. Cras mollis massa et facilisis ullamcorper. Nunc at iaculis lorem, ut ultrices justo.
              </p>
-            <span> 01/01/2020 </span>
+            <span> 01/01/2020 12:00</span>
           </div>
 
       </div>
 
-      
+
 
     </section>
 

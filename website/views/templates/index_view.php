@@ -19,7 +19,7 @@
     <section id="logo-anim">
 
     <div id="info-ucb">
-        <video id="ucb-logo" width="100%"  loop muted >
+        <video id="ucb-logo" width="100%" autoplay loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
 
