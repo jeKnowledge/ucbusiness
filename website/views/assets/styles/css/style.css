@@ -1,8 +1,8 @@
-.menu video {
-  width: 100%;
-  height: 100vh;
+.video-ucb{
   object-fit: cover;
-  z-index: 0;
+  height:85vh;
+  width: 100%;
+  padding-top: 8vh;
 }
 .txt_new{
   padding-bottom: 0vh;
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin:25vh 10vw 0 10vw;
+  margin:10% 5%;
 }
 
 
@@ -59,7 +59,6 @@
   margin: auto;
 }
 
-
 .container {
   padding-top: 3%;
   width: 65vw;
@@ -68,13 +67,16 @@
   margin: auto;
   display: flex;
 }
+
 #news-container h1{
   font-size: 2.5em;
 }
+
 #news{
   display: flex;
   justify-content: center;
 }
+
 .rect-new{
   width :40vw;
   height: 30vh;
@@ -130,9 +132,7 @@
     font-size:1.2em;
   }
 
-  #info-ucb{
-    margin-top:10vh;
-  }
+
   .info{
     padding-bottom: 4vh;
   }

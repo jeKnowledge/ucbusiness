@@ -11,32 +11,13 @@
   <body>
     <?php require 'views/templates/navbar.php'; ?>
 
+
     <video class="video-ucb" muted autoplay controls loop playsinline>
       <source src="views/assets/images/video.mp4" type="video/MP4">
        Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
     </video>
 
-    <section id="logo-anim">
 
-    <div id="info-ucb">
-        <video id="ucb-logo" width="100%" autoplay loop muted >
-          <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
-        </video>
-
-        <div class="txt-ucb">
-          <h4>
-            Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
-          </h4>
-          <div id="areas">
-            <h3>Large Companies</h3>
-            <h3>National SMEs</h3>
-            <h3>Start-ups and Spin-offs</h3>
-          </div>
-        </div>
-      </div>
-
-
-    </section>
 
     <section id="news-container">
       <h1>
@@ -103,6 +84,28 @@
               </a>
             </div>
         </div>
+
+    </section>
+
+    <section id="logo-anim">
+
+    <div id="info-ucb">
+        <video id="ucb-logo" width="100%" auto loop muted >
+          <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
+        </video>
+
+        <div class="txt-ucb">
+          <h4>
+            Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+          </h4>
+          <div id="areas">
+            <h3>Large Companies</h3>
+            <h3>National SMEs</h3>
+            <h3>Start-ups and Spin-offs</h3>
+          </div>
+        </div>
+      </div>
+
 
     </section>
 

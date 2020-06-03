@@ -1,28 +1,27 @@
 .about h1 {
     padding: 15vh 0 2vh 5vw;
+    font-size: 2.5em;
 }
 
-#mission {
-    padding: 0 7%;
-    text-align: justify;
-    line-height: 1.5;
-}
+#team {
+  margin: auto;
 
-.team {
-    margin-left: 8vw;
 }
 
 .member1{
   display: flex;
   padding-bottom: 15vh;
   padding-top: 8vh;
+  margin-left: 11%;
+}
+.member1-info{
+  margin-left: 4vw;
 }
 
 .member-info{
   text-align: left;
   color:black;
   padding-top: 2vh;
-  margin-left: 4vw;
 
 }
 .member-info h4{
@@ -37,9 +36,12 @@
 }
 
 #team-grid{
+  margin-left: 11%;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 30vw 30vw 30vw ;
-  grid-template-rows: 70vh 70vh 70vh;
+  grid-gap: 5%;
+  grid-template-columns:  25vw 25vw 25vw ;
+  grid-template-rows: 60vh 60vh 60vh 60vh;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */

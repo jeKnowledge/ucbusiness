@@ -13,8 +13,7 @@
     <section id="news">
 
       <h1>Events</h1>
-
-      <div class="news">
+      
           <div class="new">
 
             <img src="views/assets/images/foto.png" />
@@ -27,7 +26,7 @@
             </a>
 
           </div>
-      </div>
+
     </section>
 
     <?php require 'views/templates/footer.php'; ?>

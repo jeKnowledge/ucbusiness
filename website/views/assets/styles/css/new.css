@@ -1,55 +1,27 @@
 
 #new{
-  padding: 15vh 5vw;
-  display: flex;
-justify-content: space-between;
+  margin: 10vh 10vw;
   align-items: center;
+  height:50vh;
+  width:80vw;
 }
+
 #news h1{
   font-size: 2em;
 }
 
-#left img {
-    width: 42vw;
-    height: 55vh;
+#capa{
     object-fit: cover;
+    height:50vh;
+    width: 100%;
+    padding-top: 8vh;
 }
-#right {
-  width: 42vw;
-  height: 55vh;
-  position: relative;
-}
-#right h3{
-  font-size: 1.4em;
-}
-
 
 #new span{
   font-size: 0.8em;
 }
-#text{
-  position: absolute;
-  bottom: 0;
-}
 
-#arrow-prev {
-  width: 0;
- height: 0;
- border-top: 20px solid white;
- border-bottom: 20px solid white;
- border-right:20px solid var(--color-blue);
- border-left: 0;
- margin-right: 4vw;
 
-}
-#arrow-next{
-  width: 0;
- height: 0;
- border-top: 20px solid white;
- border-bottom: 20px solid white;
- border-left:20px solid var(--color-blue);
- border-right: 0;
-}
 
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
