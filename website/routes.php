@@ -14,5 +14,8 @@ $router->get([
 //  -----   Private Website Routes  -----
 
 $router->post([
-    'addEvent' => 'controllers/add_event.php'
+    'addEvent' => 'controllers/add_event.php',
+    'changeLanguage' => 'controllers/change_language.php',
+    'hideCookieBanner' => 'controllers/hide_cookie_banner.php',
+    'sendEmail' => 'controllers/send_email.php'
 ]);

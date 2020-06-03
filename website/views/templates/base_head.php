@@ -5,3 +5,5 @@
 <link rel="stylesheet" href="views/assets/styles/css/colors.css">
 <link rel="icon" type="image/x-icon" href="views/assets/images/ucb_logo.ico">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="views/assets/scripts/change_language.js"></script>

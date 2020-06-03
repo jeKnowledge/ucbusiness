@@ -1,5 +1,11 @@
 <?php
 
+/*
+*   Router class to save routes and redirect the user.
+*   GET uri's are saved on the GET array
+*   POST uri's are saved on the POST array
+*/
+
 class Router {
 
     protected $routes = [

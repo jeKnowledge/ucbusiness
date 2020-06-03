@@ -15,7 +15,8 @@
 
 </header>
 
-    <div class="cookiebanner">
+<?php if(isset($_SESSION["cookie_banner"]) && $_SESSION["cookie_banner"] ) : ?>
+    <div class="cookiebanner" id="cookie-banner-div">
         <div class="cookiebanner-message">
         <h2 class="cookiebanner-text">
             <p>
@@ -27,6 +28,7 @@
         </button>
         </div>
     </div>
+<?php endif ?>
 
 <section id=navbar>
     <div class="menu">
