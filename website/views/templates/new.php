@@ -23,12 +23,29 @@
               Morbi non tincidunt mauris. Cras mollis massa et facilisis ullamcorper. Nunc at iaculis lorem, ut ultrices justo.
               Cras mollis massa et facilisis ullamcorper. Nunc at iaculis lorem, ut ultrices justo.
              </p>
-            <span> 01/01/2020 12:00</span>
           </div>
 
 
+          <div class="container">
+            <img id="expandedImg" src="views/assets/images/foto.png" style="width:100%">
+          </div>
 
+          <div class="row">
+            <div class="column">
+              <img src="views/assets/images/foto.png" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="views/assets/images/foto.png" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="views/assets/images/foto.png" onclick="myFunction(this);">
+            </div>
+            <div class="column">
+              <img src="views/assets/images/foto.png" onclick="myFunction(this);">
+            </div>
+          </div>
 
+          <span id ="date"> 01/01/2020 12:00 </span>
 
     </section>
 

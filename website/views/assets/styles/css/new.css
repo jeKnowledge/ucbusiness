@@ -2,7 +2,6 @@
 #new{
   margin: 10vh 10vw;
   align-items: center;
-  height:50vh;
   width:80vw;
 }
 
@@ -16,10 +15,30 @@
     width: 100%;
     padding-top: 8vh;
 }
-
 #new span{
   font-size: 0.8em;
 }
+
+#expandedImg{
+  width:80vw;
+  height: 70vh;
+  object-fit: cover;
+  padding: 2% 0;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  width:80vw;
+  padding-bottom: 5vh;
+}
+
+.column img{
+height:20vh;
+width: 18vw;
+object-fit: cover;
+}
+
+
 
 
 

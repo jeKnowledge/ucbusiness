@@ -18,7 +18,6 @@
     </video>
 
 
-
     <section id="news-container">
       <h1>
           Events
@@ -44,7 +43,6 @@
             </button>
           </a>
         </div>
-
 
           <div class="rect-new">
             <div class="cont">
@@ -90,6 +88,7 @@
     <section id="logo-anim">
 
     <div id="info-ucb">
+    
         <video id="ucb-logo" width="100%" auto loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>

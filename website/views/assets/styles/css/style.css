@@ -4,25 +4,28 @@
   width: 100%;
   padding-top: 8vh;
 }
+
 .txt_new{
   padding-bottom: 0vh;
 }
+
 #ucb-logo{
   height:auto;
   width: 40vw;;
 }
+
 .txt-ucb{
   font-size: 1.4em;
   width: 40vw;
   text-align: center;
 }
+
 #info-ucb{
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin:10% 5%;
 }
-
 
 .info img{
   height:auto;
@@ -45,6 +48,7 @@
   border-radius: 3%;
   font-size: 1em;
 }
+
 .info button:hover{
   color: var(--color-lightblue);
 }
