@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="views/assets/styles/css/contacts.css">
 
     <?php require 'views/templates/base_head.php'; ?>
-    
+
     <script src="views/assets/scripts/get_form_info.js"></script>
 
     <title>Insight</title>
@@ -75,7 +75,6 @@
     </div>
 
     <?php require 'views/templates/footer.php'; ?>
-    <?php echo $_SESSION["lang"] ?>
   </body>
 
   <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>

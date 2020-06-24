@@ -13,13 +13,13 @@
     <section id="news">
 
       <h1>Events</h1>
-      
+
           <div class="new">
 
             <img src="views/assets/images/foto.png" />
               <h3> Example title </h3>
               <p>Example description</p>
-            <a href="/event">
+            <a href="/event?q=ola">
               <button>
                   Read More
               </button>

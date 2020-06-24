@@ -37,7 +37,7 @@
           <div class="descrip">
             <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
           </div>
-          <a href="/event">
+          <a href="/events?q=ola">
             <button type="button">
                 > Find out more
             </button>
@@ -56,7 +56,7 @@
             <div class="descrip">
               <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
             </div>
-            <a href="/event">
+            <a href="/events?q=ola">
               <button type="button">
                   > Find out more
               </button>
@@ -75,7 +75,7 @@
               <div class="descrip">
                 <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
               </div>
-              <a href="/event">
+              <a href="/events?q=ola">
                 <button type="button">
                     > Find out more
                 </button>
@@ -88,7 +88,7 @@
     <section id="logo-anim">
 
     <div id="info-ucb">
-    
+
         <video id="ucb-logo" width="100%" auto loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
