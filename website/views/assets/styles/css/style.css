@@ -83,7 +83,7 @@
 
 .rect-new{
   width :40vw;
-  height: 30vh;
+  height: auto;
   margin: 2% 1%;
   background-color: var(--color-blue);
   color: white;
@@ -93,7 +93,7 @@
 }
 .rect-new img{
   width: 15vw;
-  height:15vh;
+  height: auto;
   object-fit: cover;
 }
 .cont{
@@ -107,13 +107,15 @@
 .rect-new button{
   font-size: 0.8em;
   margin-left: 20vw;
-  margin-bottom:4VH;
+  margin-right: 2vw;
+  margin-bottom:4vh;
 }
 
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 @media screen and (max-width: 800px)  {
+
   #info-ucb, #info-pilares{
     margin-top:12vh;
     margin-bottom: 12vh;
@@ -130,6 +132,26 @@
 }
 
 @media screen and (max-width: 420px)  {
+
+  #news {
+    display: block;
+  }
+  .rect-new{
+    width: 70vw;
+    height:18vh;
+    margin: 2% auto;
+  }
+  .rect-new img{
+    width: 35vw;
+    height:11vh;
+  }
+  .txt-left{
+    width: 30vw;
+    height: 0vh;
+  }
+  .descrip{
+    padding: 1vh 2vw;
+  }
 
   #rectangle_message {
     padding-top: 30vh;
@@ -169,6 +191,7 @@
   .news-index img{
     height: 30vh;
   }
+
 
 
 }
