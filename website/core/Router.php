@@ -26,11 +26,18 @@ class Router {
     }
 
     public function direct($uri, $type) {
+
         if (array_key_exists($uri, $this->routes[$type])) {
-            return $this->routes[$type][$uri];
+            return $this->call_action(
+                ...explode('@', $this->routes[$type][$uri])
+            );
         }
 
         throw new Exception('404 no route defined!');
+    }
+
+    protected function call_action($controller, $action) {
+        return (new $controller)->$action();
     }
 
 }

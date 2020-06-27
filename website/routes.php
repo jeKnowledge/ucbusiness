@@ -3,10 +3,10 @@
 //  -----   Public Website Routes    -----
 
 $router->get([
-    '' => 'controllers/index.php',
-    'about' => 'controllers/about_us.php',
-    'contacts' => 'controllers/contacts.php',
-    'events' => 'controllers/events.php',
+    '' => 'PagesController@home',
+    'about' => 'PagesController@about',
+    'contacts' => 'PagesController@contacts',
+    'events' => 'PagesController@events',
     'event' => 'controllers/event.php',
     'admin' => 'controllers/admin.php'
 ]);

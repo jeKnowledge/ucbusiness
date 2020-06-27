@@ -39,7 +39,7 @@
           <div class="descrip">
             <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
           </div>
-          <a href="/event">
+          <a href="/events?q=ola">
             <button type="button">
                 > Find out more
             </button>
@@ -58,7 +58,7 @@
             <div class="descrip">
               <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
             </div>
-            <a href="/event">
+            <a href="/events?q=ola">
               <button type="button">
                   > Find out more
               </button>
@@ -77,7 +77,7 @@
               <div class="descrip">
                 <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
               </div>
-              <a href="/event">
+              <a href="/events?q=ola">
                 <button type="button">
                     > Find out more
                 </button>
