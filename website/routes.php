@@ -7,15 +7,16 @@ $router->get([
     'about' => 'PagesController@about',
     'contacts' => 'PagesController@contacts',
     'events' => 'PagesController@events',
-    'event' => 'controllers/event.php',
-    'admin' => 'controllers/admin.php'
+    'admin' => 'AdminController@home'
 ]);
 
 //  -----   Private Website Routes  -----
 
 $router->post([
-    'addEvent' => 'controllers/add_event.php',
-    'changeLanguage' => 'controllers/change_language.php',
-    'hideCookieBanner' => 'controllers/hide_cookie_banner.php',
-    'sendEmail' => 'controllers/send_email.php'
+    'changeLanguage' => 'PagesController@change_language',
+    'hideCookieBanner' => 'PagesController@hide_cookie_banner',
+    'sendEmail' => 'PagesController@send_email',
+    'addEvent' => 'AdminController@add_event'
 ]);
+
+?>

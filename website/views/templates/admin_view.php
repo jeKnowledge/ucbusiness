@@ -10,16 +10,18 @@
     <h2>Events</h2>
     <br>
     <form action="/addEvent" method="post">
-        <label for="title">Title:</label>
-        <input type="text" name="title" value=""><br>
-        <label for="description">Description:</label>
-        <input type="text" name="description" value=""><br>
-        <label for="place">Place:</label>
-        <input type="text" name="place" value=""><br>
-        <label for="eventDate">Date:</label>
-        <input type="date" name="eventDate" value=""><br>
-        <label for="eventTime">Time:</label>
-        <input type="time" name="eventTime" value=""><br>
+        <label for="Title">Title:</label>
+        <input type="text" name="Title" value=""><br>
+        <label for="Description">Description:</label>
+        <input type="text" name="Description" value=""><br>
+        <label for="Place">Place:</label>
+        <input type="text" name="Place" value=""><br>
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" value=""><br>
+        <label for="Time">Time:</label>
+        <input type="time" name="Time" value=""><br>
+        <label for="Duration">Duration:</label>
+        <input type="time" name="Duration" value=""><br>
         <button type="submit" name="button">Submit</button>
     </form>
     <br>

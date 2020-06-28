@@ -27,6 +27,27 @@
 
           </div>
 
+          <?php foreach ($events as $event) : ?>
+              <div class="new">
+                  <img src=<?= $event->CoverImage; ?> />
+                  <h3> <?= $event->Title ?> </h3>
+                  <p>
+                      <?php
+                          if (strlen($event->Description) > 50) {
+                              echo substr($event->Description, 0, 50)."...";
+                          } else {
+                              echo $event->Description;
+                          }
+                      ?>
+                  </p>
+                  <a href=<?= "/events?q=".urlencode($event->Title) ?>>
+                      <button>
+                          Read More
+                      </button>
+                  </a>
+              </div>
+          <?php endforeach; ?>
+
     </section>
 
     <?php require 'views/templates/footer.php'; ?>

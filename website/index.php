@@ -3,9 +3,9 @@
 $web_app = require 'config.php';
 
 $database = require 'core/db_init.php';
-require 'controllers/PagesController.php';
+require 'controllers/controllers_init.php';
 
-$router = new Router;
+$router = new Router($database);
 require 'routes.php';
 
 session_start();
@@ -18,3 +18,5 @@ if (!isset($_SESSION["cookie_banner"])) {
 }
 
 $router->direct(explode('?', Request::getUri())[0], Request::getMethod());
+
+?>

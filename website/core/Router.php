@@ -8,10 +8,15 @@
 
 class Router {
 
+    protected $database;
     protected $routes = [
         'GET' => [],
         'POST' => []
     ];
+
+    function __construct($database) {
+        $this->database = $database;
+    }
 
     public function get($definitions) {
         foreach ($definitions as $uri => $controller) {
@@ -37,7 +42,9 @@ class Router {
     }
 
     protected function call_action($controller, $action) {
-        return (new $controller)->$action();
+        return (new $controller($this->database))->$action();
     }
 
 }
+
+?>

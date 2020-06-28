@@ -9,10 +9,12 @@ class Connection {
                 $config['username'],
                 $config['password']
             );
-        } 
+        }
         catch (PDOException $e) {
             die($e->getMessage());
         }
     }
 
 }
+
+?>

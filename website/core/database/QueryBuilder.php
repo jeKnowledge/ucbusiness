@@ -1,5 +1,7 @@
 <?php
 
+require 'core/database/Event.php';
+
 class QueryBuilder {
 
     protected $pdo;
@@ -19,10 +21,10 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS, $class);
     }
 
-    public function insertEvent($table, $parameters) {
+    public function insertEvent($parameters) {
         $query = sprintf(
             "insert into %s (%s) values (%s)",
-            $this->tables[$table],
+            $this->tables['Events'],
             implode(', ', array_keys($parameters)),
             ':'.implode(', :', array_keys($parameters))
         );
@@ -32,3 +34,5 @@ class QueryBuilder {
     }
 
 }
+
+?>

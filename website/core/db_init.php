@@ -12,3 +12,5 @@ require 'core/Request.php';
 return new QueryBuilder(
     Connection::make($web_app['database']), $web_app['tables']
 );
+
+?>
