@@ -5,7 +5,7 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
-    <title>Insights</title>
+    <title>Events</title>
   </head>
   <body>
     <?php require 'views/templates/navbar.php'; ?>
@@ -19,7 +19,7 @@
             <img src="views/assets/images/foto.png" />
               <h3> Example title </h3>
               <p>Example description</p>
-            <a href="/event?q=ola">
+            <a href="/events?q=ola">
               <button>
                   Read More
               </button>

@@ -19,24 +19,32 @@
   font-size: 0.8em;
 }
 
-#expandedImg{
-  width:80vw;
-  height: 70vh;
+
+
+/* Position the image container (needed to position the left and right arrows) */
+
+#big_image img{
   object-fit: cover;
-  padding: 2% 0;
-}
-.row{
-  display: flex;
-  justify-content: space-between;
-  width:80vw;
-  padding-bottom: 5vh;
+  height: 70vh;
+  width: 100%;
 }
 
-.column img{
-height:20vh;
-width: 18vw;
-object-fit: cover;
+/* Add a pointer when hovering over the thumbnail images */
+
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 2vh 0;
 }
+.column img{
+  height: 20vh;
+  object-fit: cover;
+  width:100%;
+  cursor: pointer;
+}
+
 
 
 
