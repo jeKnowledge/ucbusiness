@@ -26,7 +26,13 @@ class PagesController {
             require 'views/templates/insight.php';
         }
         else {
-            require 'views/templates/new.php';
+            $event = $this->database->getEvent(urldecode(htmlspecialchars($_GET['q'])));
+
+            if ($event) {
+                require 'views/templates/new.php';
+            } else {
+                die('Não existe bro');
+            }
         }
     }
 

@@ -21,10 +21,10 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_CLASS, $class);
     }
 
-    public function insertEvent($parameters) {
+    public function insert($table, $parameters) {
         $query = sprintf(
             "insert into %s (%s) values (%s)",
-            $this->tables['Events'],
+            $this->tables[$table],
             implode(', ', array_keys($parameters)),
             ':'.implode(', :', array_keys($parameters))
         );
@@ -33,6 +33,20 @@ class QueryBuilder {
         $statement->execute($parameters);
     }
 
+    
+
+    public function getEvent($title) {
+        $query = sprintf(
+            'select * from %s where Title="%s"',
+            $this->tables['Events'],
+            $title
+        );
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetch(PDO::FETCH_OBJ);
+    }
 }
 
 ?>

@@ -10,19 +10,31 @@
   <body>
 
     <?php require 'views/templates/navbar.php'; ?>
-    <img id="capa" src="views/assets/images/foto.png" alt="newsImage">
+    <img id="capa" src=<?= $event->CoverImage ?> alt="newsImage">
 
     <section id="new">
 
 
           <div id="text">
-            <h2> Example title </h2>
-            <h4> Location </h4>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et purus vulputate, laoreet est nec, bibendum nisi.
-              Nulla quis posuere augue, nec vehicula nisi. In tristique lacinia nisi. Nulla facilisi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-              Morbi non tincidunt mauris. Cras mollis massa et facilisis ullamcorper. Nunc at iaculis lorem, ut ultrices justo.
-              Cras mollis massa et facilisis ullamcorper. Nunc at iaculis lorem, ut ultrices justo.
-             </p>
+            <h2>
+              <?php
+                if ($_SESSION["lang"] == "pt") {
+                  echo $event->Title;
+                } else {
+                  echo $event->TitleEn;
+                }
+              ?> 
+            </h2>
+            <h4> <?= $event->Location ?> </h4>
+            <p> 
+              <?php
+                if ($_SESSION["lang"] == "pt") {
+                  echo $event->Description;
+                } else {
+                  echo $event->DescriptionEn;
+                }
+              ?> 
+            </p>
           </div>
 
 
@@ -44,14 +56,14 @@
                 <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
               </div>
               <div class="column">
-                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img4">
+                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"    alt="Img4">
             </div>
           </div>
 
         </div>
 
 
-          <span id ="date"> 01/01/2020 12:00 </span>
+          <span id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </span>
 
     </section>
 

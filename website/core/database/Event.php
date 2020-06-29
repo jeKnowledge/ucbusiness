@@ -3,11 +3,12 @@
 class Event {
     public $Id;
     public $Title;
+    public $TitleEn;
     public $Description;
-    public $Place;
+    public $DescriptionEn;
+    public $Location;
     public $Date;
-    public $time;
-    public $Duration;
+    public $Time;
     public $CoverImage;
 }
 
