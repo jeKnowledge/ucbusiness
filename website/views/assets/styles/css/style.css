@@ -1,4 +1,4 @@
-.video-ucb{
+#video-ucb{
   object-fit: cover;
   height:85vh;
   width: 100%;
@@ -106,9 +106,8 @@
 }
 .rect-new button{
   font-size: 0.8em;
-  margin-left: 20vw;
-  margin-right: 2vw;
-  margin-bottom:4vh;
+float: right;
+margin: 5%;
 }
 
 
@@ -139,12 +138,14 @@
   .rect-new{
     width: 70vw;
     height:18vh;
-    margin: 2% auto;
+    margin: 8% auto;
   }
   .rect-new img{
     width: 35vw;
     height:11vh;
   }
+
+
   .txt-left{
     width: 30vw;
     height: 0vh;

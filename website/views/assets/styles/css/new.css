@@ -19,20 +19,12 @@
   font-size: 0.8em;
 }
 
-
-
-/* Position the image container (needed to position the left and right arrows) */
-
-#big_image img{
+#big_image {
   object-fit: cover;
   height: 70vh;
   width: 100%;
 }
 
-/* Add a pointer when hovering over the thumbnail images */
-
-
-/* Six columns side by side */
 .column {
   float: left;
   width: 25%;
@@ -49,16 +41,28 @@
 
 
 
-
-
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
 @media screen and (max-width: 400px) {
 
-  #news img {
-      width: 60vw;
-      height: 20vh;
+#new{
+  margin: 15vh 10vw;
+}
+  #capa{
+      display: none;
   }
+  #big_image {
+    object-fit: cover;
+    height: 22vh;
+    width: 100%;
+  }
+  .column img{
+    height: 5vh;
+    object-fit: cover;
+    width:100%;
+    cursor: pointer;
+  }
+
 
 }

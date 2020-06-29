@@ -28,28 +28,27 @@
 
           <div class="cont_gallery">
 
-            <div id="big_image">
-                <img src="views/assets/images/foto.png">
+            <div id="Big_image">
+                <img id= "big_image" src="views/assets/images/foto.png">
             </div>
 
 
             <div class="row">
               <div class="column">
-                <img id="img1" src="views/assets/images/foto.png"  onclick="changeBig_image(this)" alt="Img1">
+                <img id="img1" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img1">
               </div>
               <div class="column">
-                <img id="img2" src="views/assets/images/value.png"  onclick="changeBig_image(this)" alt="Img2">
+                <img id="img2" onclick="changeBig_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
               </div>
               <div class="column">
-                <img id="img3" src="views/assets/images/invest.png" onclick="changeBig_image(this)" alt="Img3">
+                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
               </div>
               <div class="column">
-                <img id="img3" src="views/assets/images/foto.png"  onclick="changeBig_image(this)" alt="Img4">
+                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img4">
             </div>
           </div>
 
         </div>
-
 
 
           <span id ="date"> 01/01/2020 12:00 </span>

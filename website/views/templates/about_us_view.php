@@ -36,26 +36,30 @@
         <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
               <h4>Example Name</h4>
-              <h5>Example Role</h5>
-              <h5>example@mail.com</h5>
+              <p>Example Role<p>
+              <p>example@mail.com</p>
           </div>
       </div>
+
       <div class="member">
         <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
               <h4>Example Name</h4>
-              <h5>Example Role</h5>
-              <h5>example@mail.com</h5>
+              <p>Example Role<p>
+              <p>example@mail.com</p>
           </div>
       </div>
+
       <div class="member">
         <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
           <div class="member-info">
               <h4>Example Name</h4>
-              <h5>Example Role</h5>
-              <h5>example@mail.com</h5>
+              <p>Example Role<p>
+              <p>example@mail.com</p>
           </div>
       </div>
+
+
 
     </div>
   </section>

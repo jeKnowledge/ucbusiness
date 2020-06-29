@@ -33,10 +33,12 @@ li {
 }
 
 
+
 .header {
   padding: 0 3vw;
   margin: 0;
 }
+
 
 #dir {
   display: flex;
@@ -201,10 +203,7 @@ width: auto;
 .menu a{
   padding-bottom: 2vh;
 }
-.menu #value {
-  margin-left: 10vw;
 
-}
 
 
 #container {

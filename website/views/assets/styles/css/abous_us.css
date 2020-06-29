@@ -36,12 +36,13 @@
 }
 
 #team-grid{
-  margin-left: 11%;
-  width: 100vw;
+  margin:auto;
+  width: 80vw;
   display: grid;
-  grid-gap: 5%;
-  grid-template-columns:  25vw 25vw 25vw ;
-  grid-template-rows: 60vh 60vh 60vh 60vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5vw;
+  grid-row-gap: 10vh;
+  margin-bottom: 5vh;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
@@ -52,17 +53,23 @@
   .member-info{
     font-size: 0.8em;
   }
-  .member img{
-    width: 150px;
-    height: 150px;
+
+  .member img, .member1 img{
+    width: 180px;
+    height: 180px;
     object-fit: cover;
   }
 
-  #team-grid{
-    display: grid;
-    grid-template-columns: 50vw 50vw ;
-    grid-template-rows: 40vh 40vh 40vh 40vh;
-  }
+
+  @media screen and (max-width: 700px){
+
+    #team-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 5vw;
+        grid-row-gap: 3vh;
+      }
+
 
 }
 
@@ -76,12 +83,15 @@
   .member1{
     align-items: center;
     padding-top: 0;
+    padding-bottom: 4vh;
   }
   #team-grid{
-    display: grid;
-    grid-template-columns: 44vw 44vw ;
-    grid-template-rows: 40vh 40vh 40vh 40vh;
-  }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 5vw;
+      grid-row-gap: 3vh;
+
+    }
   .about h1{
     font-size: 1.2em;
     margin-left: 8vw;

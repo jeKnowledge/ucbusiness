@@ -1,9 +1,6 @@
-function changeBig_image(element){
+function changeBig_image(source){
 
-  var img = element.src
-  console.log(img)
-
-  big_img= document.getElementById("big_image");
-  big_img.src= img;
+  var big_image = document.getElementById("big_image")
+  big_image.src =  source ;
 
 }

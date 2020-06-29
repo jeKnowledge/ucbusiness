@@ -12,7 +12,7 @@
 
 <?php require 'views/templates/navbar.php'; ?>
 
-    <video class="video-ucb" muted autoplay controls loop playsinline>
+    <video id="video-ucb" muted autoplay controls loop playsinline>
       <source src="views/assets/images/video.mp4" type="video/MP4">
        Your browser does not support the HTML5 video tag. Try updating your browser or using a different one.
     </video>

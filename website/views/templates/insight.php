@@ -13,19 +13,20 @@
     <section id="news">
 
       <h1>Events</h1>
+        <div id="news-container">
 
-          <div class="new">
-
-            <img src="views/assets/images/foto.png" />
-              <h3> Example title </h3>
-              <p>Example description</p>
-            <a href="/events?q=ola">
-              <button>
-                  Read More
-              </button>
-            </a>
-
-          </div>
+            <div class="new">
+              <img src="views/assets/images/foto.png" />
+                <h3> Example title </h3>
+                <p>Example description</p>
+              <a href="/events?q=ola">
+                <button>
+                    Read More
+                </button>
+              </a>
+            </div>
+            
+        </div>
 
           <?php foreach ($events as $event) : ?>
               <div class="new">
