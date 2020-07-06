@@ -9,6 +9,15 @@ class PagesController {
     }
 
     public function home() {
+        $events = $this->database->selectCustom(
+            'SELECT
+            *
+            FROM Events
+            LEFT OUTER JOIN Images USING(EventId)
+            WHERE IsCover = 1 OR IsCover IS NULL
+            ORDER BY DatePosted desc
+            LIMIT 3'
+        );
         require 'views/templates/index_view.php';
     }
 
@@ -22,11 +31,18 @@ class PagesController {
 
     public function events() {
         if (!isset($_GET['q'])) {
-            $events = $this->database->selectAll('Events', 'Event');
+            $events = $this->database->selectCustom(
+                'SELECT
+                *
+                FROM Events
+                LEFT OUTER JOIN Images USING(EventId)
+                WHERE IsCover = 1 OR IsCover IS NULL
+                ORDER BY DatePosted desc'
+            );
             require 'views/templates/insight.php';
         }
         else {
-            $event = $this->database->getEvent(urldecode(htmlspecialchars($_GET['q'])));
+            $event = $this->database->get('Events', 'Title', urldecode(htmlspecialchars($_GET['q'])));
 
             if ($event) {
                 require 'views/templates/new.php';

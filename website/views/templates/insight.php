@@ -14,28 +14,18 @@
 
       <h1>Events</h1>
         <div id="news-container">
-
-            <div class="new">
-              <img src="views/assets/images/foto.png" />
-                <h3> Example title </h3>
-                <p>Example description</p>
-              <a href="/events?q=ola">
-                <button>
-                    Read More
-                </button>
-              </a>
-            </div>
-            
-        </div>
-
-          <?php foreach ($events as $event) : ?>
+            <?php foreach ($events as $event) : ?>
               <div class="new">
-                  <img src=<?= $event->CoverImage; ?> />
+                  <?php if ($event->ImageUrl) : ?>
+                    <img src=<?= $event->ImageUrl ?> />
+                  <?php else : ?>
+                    <img src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg">
+                  <?php endif ?>
                   <h3> <?= $event->Title ?> </h3>
                   <p>
                       <?php
-                          if (strlen($event->Description) > 50) {
-                              echo substr($event->Description, 0, 50)."...";
+                          if (strlen($event->Description) > 75) {
+                              echo substr($event->Description, 0, 75)."...";
                           } else {
                               echo $event->Description;
                           }
@@ -47,8 +37,8 @@
                       </button>
                   </a>
               </div>
-          <?php endforeach; ?>
-
+            <?php endforeach; ?>           
+        </div>
     </section>
 
     <?php require 'views/templates/footer.php'; ?>

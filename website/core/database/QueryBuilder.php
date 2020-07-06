@@ -1,7 +1,5 @@
 <?php
 
-require 'core/database/Event.php';
-
 class QueryBuilder {
 
     protected $pdo;
@@ -10,15 +8,6 @@ class QueryBuilder {
     public function __construct(PDO $pdo, $tables) {
         $this->pdo = $pdo;
         $this->tables = $tables;
-    }
-
-    public function selectAll($table, $class) {
-        $query = "select * from ".$this->tables[$table];
-
-        $statement = $this->pdo->prepare($query);
-        $statement->execute();
-
-        return $statement->fetchAll(PDO::FETCH_CLASS, $class);
     }
 
     public function insert($table, $parameters) {
@@ -33,13 +22,51 @@ class QueryBuilder {
         $statement->execute($parameters);
     }
 
-    
+    public function selectAll($table, $order) {
+        $query = "select * from ".$this->tables[$table];
 
-    public function getEvent($title) {
+        if ($order) {
+            $query = $query." order by ".$order;
+        }
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function select($table, $where, $order, $limit) {
+        $query = "select * from ".$this->tables[$table];
+
+        if ($where) {
+            $query = $query." where ".$where;
+        }
+        if ($order) {
+            $query = $query." order by ".$order;
+        }
+        if ($limit) {
+            $query = $query." limit ".$limit;
+        }
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function selectCustom($query) {
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function get($table, $attribute, $value) {
         $query = sprintf(
-            'select * from %s where Title="%s"',
-            $this->tables['Events'],
-            $title
+            'select * from %s where %s="%s"',
+            $this->tables[$table],
+            $attribute,
+            $value
         );
 
         $statement = $this->pdo->prepare($query);

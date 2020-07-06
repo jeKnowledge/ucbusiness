@@ -28,62 +28,35 @@
 
       <div id="news">
 
-        <div class="rect-new">
-          <div class="cont">
-            <div class="txt-left">
-              <h4> 3rd may <h4>
-              <h3>This is the first event</h3>
-            </div>
-            <img src="views/assets/images/foto.png">
-          </div>
-          <div class="descrip">
-            <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-          </div>
-          <a href="/events?q=ola">
-            <button type="button">
-                > Find out more
-            </button>
-          </a>
-        </div>
-
+        <?php foreach($events as $event) : ?>
           <div class="rect-new">
             <div class="cont">
               <div class="txt-left">
-                <h4> 3rd may <h4>
-                <h3>This is the second event</h3>
+                <h4> <?= date("d/m/Y", strtotime($event->Date)) ?> <h4>
+                <h3> <?= $event->Title ?> </h3>
               </div>
-              <img src="views/assets/images/foto.png">
-
+              <img src=<?= $event->ImageUrl ?>>
             </div>
             <div class="descrip">
-              <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
+              <a> 
+              <?php
+                  if (strlen($event->Description) > 75) {
+                      echo substr($event->Description, 0, 75)."...";
+                  } else {
+                      echo $event->Description;
+                  }
+              ?> 
+              </a>
             </div>
-            <a href="/events?q=ola">
+            <a href=<?= "/events?q=".$event->Title ?>>
               <button type="button">
                   > Find out more
               </button>
             </a>
           </div>
+        <?php endforeach ?>
 
-
-          <div class="rect-new">
-            <div class="cont">
-              <div class="txt-left">
-                <h4> 3rd may <h4>
-                <h3>This is the third event</h3>
-              </div>
-              <img src="views/assets/images/foto.png">
-            </div>
-              <div class="descrip">
-                <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </a>
-              </div>
-              <a href="/events?q=ola">
-                <button type="button">
-                    > Find out more
-                </button>
-              </a>
-            </div>
-        </div>
+      </div>
 
     </section>
 
@@ -91,7 +64,7 @@
 
     <div id="info-ucb">
 
-        <video id="ucb-logo" width="100%" auto loop muted >
+        <video id="ucb-logo" width="100%" autoplay auto loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
 
