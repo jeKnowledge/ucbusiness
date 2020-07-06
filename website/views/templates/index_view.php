@@ -35,17 +35,17 @@
                 <h4> <?= date("d/m/Y", strtotime($event->Date)) ?> <h4>
                 <h3> <?= $event->Title ?> </h3>
               </div>
-              <img src=<?= $event->ImageUrl ?>>
+              <img src=<?= $event->ImageUrl ?> >
             </div>
             <div class="descrip">
-              <a> 
+              <a>
               <?php
                   if (strlen($event->Description) > 75) {
                       echo substr($event->Description, 0, 75)."...";
                   } else {
                       echo $event->Description;
                   }
-              ?> 
+              ?>
               </a>
             </div>
             <a href=<?= "/events?q=".$event->Title ?>>
@@ -64,7 +64,7 @@
 
     <div id="info-ucb">
 
-        <video id="ucb-logo" width="100%" autoplay auto loop muted >
+        <video id="ucb-logo" width="100%" autoplay loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
 

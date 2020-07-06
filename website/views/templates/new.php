@@ -10,7 +10,7 @@
   <body>
 
     <?php require 'views/templates/navbar.php'; ?>
-    
+
     <?php if ($event->ImageUrl) : ?>
       <img id="capa" src=<?= $event->ImageUrl ?> alt="newsImage">
     <?php else : ?>
@@ -27,40 +27,47 @@
                 } else {
                   echo $event->TitleEn;
                 }
-              ?> 
+              ?>
             </h2>
             <h4> <?= $event->Location ?> </h4>
-            <p> 
+            <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {
                   echo $event->Description;
                 } else {
                   echo $event->DescriptionEn;
                 }
-              ?> 
+              ?>
             </p>
+
+            <button id="watch-video">
+                Ver vídeo
+            </button>
           </div>
 
 
           <div class="cont_gallery">
 
             <div id="Big_image">
-                <img id= "big_image" src="views/assets/images/foto.png">
+            <video id="big_image"  onclick="changeImage_image(this.src)" poster="views/assets/images/value.png">
+            <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
             </div>
 
 
             <div class="row">
+
               <div class="column">
-                <img id="img1" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img1">
+                <img id="img1" onclick="changeImage_image(this.src)" src="views/assets/images/value.png"   alt="Img1">
+              </div>
+
+              <div class="column">
+                <img id="img2" onclick="changeImage_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
               </div>
               <div class="column">
-                <img id="img2" onclick="changeBig_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
+                <img id="img3" onclick="changeImage_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
               </div>
               <div class="column">
-                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
-              </div>
-              <div class="column">
-                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"    alt="Img4">
+                <img id="img3" onclick="changeImage_image(this.src)" src="views/assets/images/foto.png"    alt="Img4" >
             </div>
           </div>
 

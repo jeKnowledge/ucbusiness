@@ -59,7 +59,7 @@
 }
 
 #news-container {
-  padding: 10% 5% ;
+  padding: 5% 5% ;
   margin: auto;
 }
 
@@ -106,8 +106,8 @@
 }
 .rect-new button{
   font-size: 0.8em;
-float: right;
-margin: 5%;
+  float: right;
+  margin: 5%;
 }
 
 
@@ -116,11 +116,11 @@ margin: 5%;
 @media screen and (max-width: 800px)  {
 
   #info-ucb, #info-pilares{
-    margin-top:12vh;
-    margin-bottom: 12vh;
+    margin:12vh 0;
+
   }
   .txt-ucb{
-    font-size: 1.1em;
+  font-size: 1.1em;
     width: 50vw;
   }
 
@@ -137,7 +137,7 @@ margin: 5%;
   }
   .rect-new{
     width: 70vw;
-    height:18vh;
+    height:22vh;
     margin: 8% auto;
   }
   .rect-new img{
@@ -145,29 +145,36 @@ margin: 5%;
     height:11vh;
   }
 
-
   .txt-left{
     width: 30vw;
     height: 0vh;
   }
   .descrip{
     padding: 1vh 2vw;
+    width:60vw;
   }
 
   #rectangle_message {
     padding-top: 30vh;
     font-size:1.2em;
   }
+#logo-anim{
+  padding: auto;
+}
+  #info-ucb{
+    display: block;
+    margin: auto;
+  width: 80%;
 
+  }
+  #info-ucb video{
+    width: 80vw;
+  }
+  .txt-ucb{
+    margin-right:0;
 
-  .info{
-    padding-bottom: 4vh;
   }
 
-  .info img{
-    width:auto;
-    height: 9vh;
-  }
   .txt-but{
     height: 20vh;
   }
@@ -191,6 +198,9 @@ margin: 5%;
 
   .news-index img{
     height: 30vh;
+  }
+  .rect-new button{
+    margin: 1% ;
   }
 
 

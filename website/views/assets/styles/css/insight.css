@@ -38,20 +38,27 @@
 
 
 @media screen and (max-width: 400px) {
-  .news{
+
+  #news-container{
     display: grid;
-    grid-template-columns: 1fr   ;
-    grid-template-rows: 1fr ;
-    grid-gap: 50px;
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 2vw;
+    grid-row-gap: 10vh;
+
   }
   #news img {
-      width: 50vw;
+      width: 40vw;
       height: 20vh;
+
   }
   #news h3 , #news p{
     font-size: 0.8em;
     width: 80vw;
   }
+  #news p, #news h3{
+    width: 40vw;
+  }
+
 
 
   }

@@ -19,9 +19,9 @@
   font-size: 0.8em;
 }
 
-#big_image {
+#big_image{
   object-fit: cover;
-  height: 70vh;
+  height: 80vh;
   width: 100%;
 }
 
@@ -30,11 +30,18 @@
   width: 25%;
   padding: 2vh 0;
 }
-.column img{
+.column img, .column video{
   height: 20vh;
   object-fit: cover;
   width:100%;
   cursor: pointer;
+}
+#watch-video{
+  background: var(--color-blue);
+  color: white;
+  border:none;
+  padding: 1vh 1vw;
+
 }
 
 
@@ -47,7 +54,7 @@
 @media screen and (max-width: 400px) {
 
 #new{
-  margin: 15vh 10vw;
+  margin: 5vh 10vw;
 }
   #capa{
       display: none;
