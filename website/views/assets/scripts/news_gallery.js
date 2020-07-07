@@ -1,8 +1,11 @@
 
 
-function changeImage_image(source){
+function changeImage_image(poster,source){
 
   var big_image = document.getElementById("big_image")
-  big_image.src =  source ;
+  //var source= big_image.getElementsByTagName("source").src
+
+  big_image.setAttribute('poster', poster);
+  big_image.setAttribute('src', source);
 
 }

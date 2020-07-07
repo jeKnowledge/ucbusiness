@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="views/assets/styles/css/abous_us.css">
+    <link rel="stylesheet" href="views/assets/styles/css/admin_view.css">
 
     <?php require 'views/templates/base_head.php'; ?>
 

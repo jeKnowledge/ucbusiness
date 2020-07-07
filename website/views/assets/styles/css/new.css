@@ -24,7 +24,9 @@
   height: 80vh;
   width: 100%;
 }
-
+.cont_gallery{
+  margin-top: 2%;
+}
 .column {
   float: left;
   width: 25%;
@@ -51,7 +53,7 @@
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
 
 #new{
   margin: 5vh 10vw;
@@ -64,8 +66,8 @@
     height: 22vh;
     width: 100%;
   }
-  .column img{
-    height: 5vh;
+  .column video{
+    height: 4vh;
     object-fit: cover;
     width:100%;
     cursor: pointer;

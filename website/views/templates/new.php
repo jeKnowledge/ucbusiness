@@ -49,26 +49,38 @@
           <div class="cont_gallery">
 
             <div id="Big_image">
-            <video id="big_image"  onclick="changeImage_image(this.src)" poster="views/assets/images/value.png">
-            <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+              <video id="big_image"  poster=" " controls>
+                <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+              </video>
             </div>
 
 
             <div class="row">
 
               <div class="column">
-                <img id="img1" onclick="changeImage_image(this.src)" src="views/assets/images/value.png"   alt="Img1">
+                <video id="img1"  poster=" "  onclick="changeImage_image(this.poster,this.src)">
+                  <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                </video>
               </div>
 
               <div class="column">
-                <img id="img2" onclick="changeImage_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
+                <video id="img2"  poster=" views/assets/images/value.png"  onclick="changeImage_image(this.poster,this.src)">
+                  <source src=" "   alt="Img2">
+                </video>
               </div>
+
               <div class="column">
-                <img id="img3" onclick="changeImage_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
+                <video id="img3"  poster=" views/assets/images/invest.png" autoplay onclick="changeImage_image(this.poster,this.src)">
+                  <source src=""   alt="Img3">
+                </video>
               </div>
+
               <div class="column">
-                <img id="img3" onclick="changeImage_image(this.src)" src="views/assets/images/foto.png"    alt="Img4" >
+                <video id="img4"  poster=" views/assets/images/foto.png" autoplay onclick="changeImage_image(this.poster,this.src)">
+                  <source src=""   alt="Img4">
+                </video>
             </div>
+
           </div>
 
         </div>

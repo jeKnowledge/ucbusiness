@@ -2,11 +2,11 @@
 .container{
   padding: 15vh 0 10vh 5vw;
   display: flex;
-
+  justify-content: space-between;
 }
 
 #form{
-padding-right: 20vw;
+  padding-right: 20vw;
 }
 #contacts h1{
   padding-bottom: 5vh;
@@ -32,12 +32,11 @@ padding-right: 20vw;
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
 
 
   .container{
     display: block;
-
   }
 
 

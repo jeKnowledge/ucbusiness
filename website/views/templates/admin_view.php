@@ -2,12 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="views/assets/styles/css/general.css">
+    <link rel="stylesheet" href="views/assets/styles/css/colors.css">
+    <link rel="stylesheet" href="views/assets/styles/css/admin_view.css">
     <title>Admin Page</title>
   </head>
+
   <body>
-    <h1>Admin page</h1>
-    <br>
+
+    <div id="header">
+      <div id="header_left">
+        <img id="logo_ucb" src="views/assets/images/ucb_white.png" alt="logo_uc" />
+        <h2>Admin page</h2>
+      </div>
+
+      <div id="header_right">
+          <h3> Olá @user </h3>
+          <button>Log out</button>
+      </div>
+
+    </div>
+
+<div id="tables">
+
     <h2>Users</h2>
+
     <h3>Administrators</h3>
     <?php if ($admins) : ?>
       <table>
@@ -100,5 +119,7 @@
       <h3>No members to show...</h3>
     <?php endif ?>
     <br>
+
+  </div>
   </body>
 </html>

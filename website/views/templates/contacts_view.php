@@ -11,10 +11,10 @@
   </head>
   <body>
     <?php require 'views/templates/navbar.php'; ?>
-    
+
     <div class="container">
 
-      <section id="contacts">
+      <div id="contacts">
 
           <h1>
             Get in Touch
@@ -47,9 +47,9 @@
               <h4 > Twitter:
                 <a href=" https://twitter.com/business_uc" target="_blank" ><br>https://twitter.com/business_uc</a></h4>
           </p>
-      </section>
+      </div>
 
-      <section id="form">
+      <div id="form">
         <form>
           <h2 class=form-title>
               Send us a message
@@ -71,7 +71,8 @@
               Submit
           </button>
         </form>
-      </section>
+      </div>
+
     </div>
 
     <?php require 'views/templates/footer.php'; ?>
