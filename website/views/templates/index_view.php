@@ -42,14 +42,14 @@
               <?php endif ?>
             </div>
             <div class="descrip">
-              <a> 
+              <a>
               <?php
                   if (strlen($event->Description) > 75) {
                       echo substr($event->Description, 0, 75)."...";
                   } else {
                       echo $event->Description;
                   }
-              ?> 
+              ?>
               </a>
             </div>
             <a href=<?= "/events?q=".$event->Title ?>>
@@ -68,7 +68,7 @@
 
     <div id="info-ucb">
 
-        <video id="ucb-logo" width="100%" autoplay auto loop muted >
+        <video id="ucb-logo" width="100%" autoplay loop muted >
           <source src="views/assets/images/ucbusiness.mp4" type="video/MP4">
         </video>
 

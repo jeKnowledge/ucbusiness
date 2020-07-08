@@ -27,45 +27,64 @@
                 } else {
                   echo $event->TitleEn;
                 }
-              ?> 
+              ?>
             </h2>
             <h4> <?= $event->Location ?> </h4>
-            <p> 
+            <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {
                   echo $event->Description;
                 } else {
                   echo $event->DescriptionEn;
                 }
-              ?> 
+              ?>
             </p>
+
+            <button id="watch-video">
+                Ver vídeo
+            </button>
           </div>
 
           <?php if ($gallery) : ?>
-            <div class="cont_gallery">
 
-              <div id="Big_image">
-                  <img id= "big_image" src="views/assets/images/foto.png">
-              </div>
+          <div class="cont_gallery">
 
-              <div class="row">
-                <div class="column">
-                  <img id="img1" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img1">
-                </div>
-                <div class="column">
-                  <img id="img2" onclick="changeBig_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
-                </div>
-                <div class="column">
-                  <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
-                </div>
-                <div class="column">
-                  <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"    alt="Img4">
-                </div>
-              </div>
+            <div id="Big_image">
+              <video id="big_image"  poster=" " controls>
+                <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+              </video>
             </div>
+
+
+            <div class="row">
+
+              <div class="column">
+                <video id="img1"  poster=" "  onclick="changeImage_image(this.poster,this.src)">
+                  <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                </video>
+              </div>
+
+              <div class="column">
+                <video id="img2"  poster=" views/assets/images/value.png"  onclick="changeImage_image(this.poster,this.src)">
+                  <source src=" "   alt="Img2">
+                </video>
+              </div>
+
+              <div class="column">
+                <video id="img3"  poster=" views/assets/images/invest.png" autoplay onclick="changeImage_image(this.poster,this.src)">
+                  <source src=""   alt="Img3">
+                </video>
+              </div>
+
+              <div class="column">
+                <video id="img4"  poster=" views/assets/images/foto.png" autoplay onclick="changeImage_image(this.poster,this.src)">
+                  <source src=""   alt="Img4">
+                </video>
+            </div>
+
+          </div>
+
           <?php endif ?>
-
-
 
           <span id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </span>
 

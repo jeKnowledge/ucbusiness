@@ -1,21 +1,18 @@
 
-#contacts{
+.container{
   padding: 15vh 0 10vh 5vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 #form{
-  margin: 30vh 0 10vh 25vw;
-  border-radius: 5%;
-  padding: 20px 30px;
+  padding-right: 20vw;
 }
-
 #contacts h1{
   padding-bottom: 5vh;
   font-size: 2em;
 }
-.container{
-  display: flex;
-}
+
 #name, #mail, #text{
   width:210px;
 }
@@ -35,23 +32,22 @@
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
+
+
+  .container{
+    display: block;
+  }
+
 
   #contacts h1{
     font-size:1.5em
   }
-  .container{
-    display: block;
-  }
-  #form, #contacts{
-    margin-left:0;
-    margin-top: 0;
-    padding-bottom: 0;
-  }
+
   #form{
-    padding-left: 5vw;
-    padding-top: 5vh;
+  padding-top: 5vh;
   }
+
   .form-title{
     font-size: 1.1em;
     padding-bottom: 2vh;

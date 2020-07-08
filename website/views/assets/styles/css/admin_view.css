@@ -1,0 +1,40 @@
+
+
+#logo_ucb {
+  height: 5vh;
+  width: auto;
+}
+
+#logo_uc {
+  height: auto;
+  width: 10vw;
+}
+
+
+#header {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-blue);
+  color:white;
+  padding: 1%;
+  margin: 0;
+}
+#header *{
+  padding: 0 1%;
+}
+#header_left{
+  display: flex;
+  float: left;
+  width: 50%;
+  align-items: center;
+}
+#header_right{
+  display: flex;
+  float: right;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+#header_right button{
+  background-color: white;
+}
