@@ -16,7 +16,7 @@ class AdminController {
         $roles = $this->database->select('Roles', NULL, 'RolePosition', 5);
         $team_members = $this->database->selectCustom(
             'SELECT 
-            member.MemberName, member.MemberEmail, role.RoleName
+            member.*, role.RoleName
             FROM Members member
             INNER JOIN Roles role ON member.RoleId = role.RoleId
             ORDER BY

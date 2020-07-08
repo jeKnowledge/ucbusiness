@@ -11,8 +11,8 @@
 
     <?php require 'views/templates/navbar.php'; ?>
     
-    <?php if ($event->ImageUrl) : ?>
-      <img id="capa" src=<?= $event->ImageUrl ?> alt="newsImage">
+    <?php if ($cover_image) : ?>
+      <img id="capa" src=<?= $cover_image[0]->ImageUrl ?> alt="newsImage">
     <?php else : ?>
       <img id="capa" src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="newsImage">
     <?php endif ?>
@@ -41,30 +41,30 @@
             </p>
           </div>
 
+          <?php if ($gallery) : ?>
+            <div class="cont_gallery">
 
-          <div class="cont_gallery">
+              <div id="Big_image">
+                  <img id= "big_image" src="views/assets/images/foto.png">
+              </div>
 
-            <div id="Big_image">
-                <img id= "big_image" src="views/assets/images/foto.png">
+              <div class="row">
+                <div class="column">
+                  <img id="img1" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img1">
+                </div>
+                <div class="column">
+                  <img id="img2" onclick="changeBig_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
+                </div>
+                <div class="column">
+                  <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
+                </div>
+                <div class="column">
+                  <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"    alt="Img4">
+                </div>
+              </div>
             </div>
+          <?php endif ?>
 
-
-            <div class="row">
-              <div class="column">
-                <img id="img1" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"   alt="Img1">
-              </div>
-              <div class="column">
-                <img id="img2" onclick="changeBig_image(this.src)" src="views/assets/images/value.png"   alt="Img2">
-              </div>
-              <div class="column">
-                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/invest.png"  alt="Img3">
-              </div>
-              <div class="column">
-                <img id="img3" onclick="changeBig_image(this.src)" src="views/assets/images/foto.png"    alt="Img4">
-            </div>
-          </div>
-
-        </div>
 
 
           <span id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </span>

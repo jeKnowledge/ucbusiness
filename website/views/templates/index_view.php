@@ -35,7 +35,11 @@
                 <h4> <?= date("d/m/Y", strtotime($event->Date)) ?> <h4>
                 <h3> <?= $event->Title ?> </h3>
               </div>
-              <img src=<?= $event->ImageUrl ?>>
+              <?php if ($event->ImageUrl) : ?>
+                <img src=<?= $event->ImageUrl ?>>
+              <?php else : ?>
+                <img src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="">
+              <?php endif ?>
             </div>
             <div class="descrip">
               <a> 
