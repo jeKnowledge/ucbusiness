@@ -41,7 +41,7 @@
         </tr>
       <?php foreach ($admins as $admin) : ?>
         <tr>
-          <td><?= $admin->FirstName ?></td>
+          <td><a href=<?= "/admin/users?q=".$admin->Id ?>><?= $admin->FirstName ?></a></td>
           <td><?= $admin->Email ?></td>
         </tr>
       <?php endforeach ?>
@@ -59,7 +59,7 @@
         </tr>
       <?php foreach ($staff_members as $staff_member) : ?>
         <tr>
-          <td><?= $staff_member->FirstName ?></td>
+          <td><a href=<?= "/admin/users?q=".$staff_member->Id ?>><?= $staff_member->FirstName ?></a></td>
           <td><?= $staff_member->Email ?></td>
         </tr>
       <?php endforeach ?>
@@ -84,7 +84,7 @@
         </tr>
       <?php foreach ($events as $event) : ?>
         <tr>
-          <td><?= $event->Title ?></td>
+          <td><a href=<?= "/admin/events?q=".$event->EventId ?>><?= $event->Title ?></a></td>
           <td><?= $event->Location ?></td>
           <td><?= date("d/m/Y", strtotime($event->Date)) ?></td>
         </tr>
@@ -110,7 +110,7 @@
           </tr>
       <?php foreach ($roles as $role) : ?>
         <tr>
-          <td><?= $role->RoleName ?></td>
+          <td><a href=<?= "/admin/roles?q=".$role->RoleId ?>><?= $role->RoleName ?></a></td>
         </tr>
       <?php endforeach ?>
       </table>
@@ -135,7 +135,7 @@
         </tr>
       <?php foreach ($team_members as $team_member) : ?>
         <tr>
-          <td><?= $team_member->MemberName ?></td>
+          <td><a href=<?= "/admin/members?q=".$team_member->MemberId ?>><?= $team_member->MemberName ?></a></td>
           <td><?= $team_member->MemberEmail ?></td>
           <td><?= $team_member->RoleName ?></td>
         </tr>

@@ -19,50 +19,34 @@
     </h1>
   </div>
   <section id="team">
-
+    <?php if ($first_member) : ?>
         <div class="member1">
-          <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
+          <img src=<?= $first_member->MemberImage ?> alt=<?= $first_member->MemberName ?>/>
               <div class="member1-info">
-                <h4>Example Name</h4>
+                <h4><?= $first_member->MemberName ?></h4>
                 <h5>
-                  Example Role
+                  <?= $first_member->RoleName ?>
                 </h5>
-                <h5>example@mail.com</h5>
+                <h5><?= $first_member->MemberEmail ?></h5>
               </div>
         </div>
+    <?php endif ?>
 
-  <div id="team-grid">
-
-      <div class="member">
-        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
-          <div class="member-info">
-              <h4>Example Name</h4>
-              <p>Example Role<p>
-              <p>example@mail.com</p>
-          </div>
+    <?php if ($team_members) : ?>
+      <div id="team-grid">
+          <?php foreach ($team_members as $team_member) : ?>    
+            <div class="member">
+              <img src=<?= $team_member->MemberImage ?> alt=<?= $team_member->MemberName ?>/>
+                <div class="member-info">
+                    <h4><?= $team_member->MemberName ?></h4>
+                    <p><?= $team_member->RoleName ?><p>
+                    <p><?= $team_member->MemberEmail ?></p>
+                </div>
+            </div>
+          <?php endforeach ?>
       </div>
+    <?php endif ?>
 
-      <div class="member">
-        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
-          <div class="member-info">
-              <h4>Example Name</h4>
-              <p>Example Role<p>
-              <p>example@mail.com</p>
-          </div>
-      </div>
-
-      <div class="member">
-        <img src="views/assets/images/AnaRitaQuerido.jpg" alt="Example Name"/>
-          <div class="member-info">
-              <h4>Example Name</h4>
-              <p>Example Role<p>
-              <p>example@mail.com</p>
-          </div>
-      </div>
-
-
-
-    </div>
   </section>
 
     <?php require 'views/templates/footer.php'; ?>

@@ -22,6 +22,21 @@ class PagesController {
     }
 
     public function about() {
+        $team_members = $this->database->selectCustom(
+            'SELECT 
+            member.MemberName, member.MemberImage, member.MemberEmail, role.RoleName
+            FROM Members member
+            INNER JOIN Roles role ON member.RoleId = role.RoleId
+            ORDER BY
+            role.RolePosition,
+            member.MemberName
+            '
+        );
+
+        if ($team_members) {
+            $first_member = array_shift($team_members);
+        }
+
         require 'views/templates/about_us_view.php';
     }
 
@@ -43,6 +58,16 @@ class PagesController {
         }
         else {
             $event = $this->database->get('Events', 'Title', urldecode(htmlspecialchars($_GET['q'])));
+            $cover_image = $this->database->selectCustom(
+                "SELECT
+                    *
+                FROM Images
+                WHERE EventId = ".$event->EventId." AND IsCover = 1"
+            );
+            $videos = $this->database->select('Videos', 'EventId = '.$event->EventId, NULL, NULL);
+            $images = $this->database->select('Images', 'EventId = '.$event->EventId, 'IsCover desc', NULL);
+
+            $gallery = array_merge($videos, $images);
 
             if ($event) {
                 require 'views/templates/new.php';

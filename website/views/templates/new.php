@@ -10,9 +10,9 @@
   <body>
 
     <?php require 'views/templates/navbar.php'; ?>
-
-    <?php if ($event->ImageUrl) : ?>
-      <img id="capa" src=<?= $event->ImageUrl ?> alt="newsImage">
+    
+    <?php if ($cover_image) : ?>
+      <img id="capa" src=<?= $cover_image[0]->ImageUrl ?> alt="newsImage">
     <?php else : ?>
       <img id="capa" src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="newsImage">
     <?php endif ?>
@@ -45,6 +45,7 @@
             </button>
           </div>
 
+          <?php if ($gallery) : ?>
 
           <div class="cont_gallery">
 
@@ -83,8 +84,7 @@
 
           </div>
 
-        </div>
-
+          <?php endif ?>
 
           <span id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </span>
 
