@@ -13,14 +13,19 @@
             <?php
                 switch ($type) {
                     case 'Users':
-                        require 'views/templates/users_table.php';
+                        require 'views/templates/tables/users_table.php';
                         break;
 
                     case 'Events':
-                        require 'views/templates/events_table.php';
+                        require 'views/templates/tables/events_table.php';
                         break;
 
-                    case 'Team':
+                    case 'Roles':
+                        require 'views/templates/tables/roles_table.php';
+                        break;
+
+                    case 'Members':
+                        require 'views/templates/tables/members_table.php';
                         break;
 
                     default:

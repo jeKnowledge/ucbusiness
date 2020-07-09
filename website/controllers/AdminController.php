@@ -13,7 +13,7 @@ class AdminController {
         $users = $this->database->selectAll('Users', 'IsAdmin desc, FirstName asc');
         $events = $this->database->select('Events', NULL, 'DatePosted desc', 10);
         $roles = $this->database->select('Roles', NULL, 'RolePosition', 5);
-        $team_members = $this->database->selectCustom(
+        $members = $this->database->selectCustom(
             'SELECT 
             member.*, role.RoleName
             FROM Members member
