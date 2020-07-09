@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title><?= "Admin Page: ".$type ?></title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="/views/assets/styles/css/general.css">
+      <link rel="stylesheet" href="/views/assets/styles/css/colors.css">
+      <link rel="stylesheet" href="/views/assets/styles/css/admin_view.css">
+      <title><?= "Admin Page: ".$type ?></title>
     </head>
     <body>
+      <div id="header">
+        <div id="header_left">
+          <img id="logo_ucb" src="views/assets/images/ucb_white.png" alt="logo_uc" />
+          <h2>Admin page</h2>
+        </div>
+
+        <div id="header_right">
+            <h3> Olá @user </h3>
+            <button type="button"> Log out</button>
+        </div>
+
+      </div>
+
+
+
         <?php if ($type == 'Users') : ?>
             <form action="/addUser" method="post">
                 <label for="FirstName">First Name:</label>

@@ -21,7 +21,7 @@ h3 {
 
 h4,
 h5,
-h6,span {
+h6,span,table,input, label,form {
   font-family: Nexa-light;
 }
 p, span, ul, li, a, button{

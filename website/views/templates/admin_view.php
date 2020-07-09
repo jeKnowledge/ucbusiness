@@ -18,14 +18,19 @@
 
       <div id="header_right">
           <h3> Olá @user </h3>
-          <button>Log out</button>
+          <button type="button"> Log out</button>
       </div>
 
     </div>
 
 <div id="tables">
-
-    <h2>Users</h2>
+    <div class="head-table">
+      <h2>Users</h2>
+      <div class="buttons">
+        <button type="button"> Show more</button>
+        <button type="button"> + New User</button>
+      </div>
+    </div>
 
     <h3>Administrators</h3>
     <?php if ($users) : ?>
@@ -55,7 +60,13 @@
       <h3>No users to show...</h3>
     <?php endif ?>
     <br>
-    <h2>Events</h2>
+    <div class="head-table">
+      <h2>Events</h2>
+      <div class="buttons">
+        <button type="button"> Show more</button>
+        <button type="button"> + New Event</button>
+      </div>
+    </div>
     <?php if ($events) : ?>
       <table>
         <tr>
@@ -72,11 +83,18 @@
       <?php endforeach ?>
       </table>
     <?php else : ?>
-      <h3>No events to show...</h3>
+      <h4>No events to show...</h4>
     <?php endif ?>
     <br>
+
     <h2>Team</h2>
-    <h3>Roles</h3>
+    <div class="head-table">
+      <h3>Roles</h3>
+      <div class="buttons">
+        <button type="button"> Show more</button>
+        <button type="button"> + New Role</button>
+      </div>
+    </div>
     <?php if ($roles) : ?>
       <table>
           <tr>
@@ -89,10 +107,17 @@
       <?php endforeach ?>
       </table>
     <?php else : ?>
-      <h3>No roles to show...</h3>
+      <h4>No roles to show...</h4>
     <?php endif ?>
     <br>
-    <h3>Members</h3>
+
+    <div class="head-table">
+      <h3>Members</h3>
+      <div class="buttons">
+        <button type="button"> Show more</button>
+        <button type="button"> + New Member</button>
+      </div>
+    </div>
     <?php if ($team_members) : ?>
       <table>
         <tr>
@@ -109,10 +134,9 @@
       <?php endforeach ?>
       </table>
     <?php else : ?>
-      <h3>No members to show...</h3>
+      <h4>No members to show...</h4>
     <?php endif ?>
     <br>
-
   </div>
   </body>
 </html>

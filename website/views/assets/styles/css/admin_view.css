@@ -36,5 +36,45 @@
   align-items: center;
 }
 #header_right button{
-  background-color: white;
+  height:4vh;
+  width: 6vw;
+
 }
+.head-table{
+  width:80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons button{
+  height:4vh;
+  width: 8vw;
+  margin: 0 2%;
+}
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+
+}
+#tables{
+  margin: 2% 2%;
+}
+table {
+  width:80%;
+  border-collapse: collapse;
+}
+table th, table tr{
+  border: 1px solid #ddd;
+   padding: 8px;
+}
+table th{
+  background-color: var(--color-blue);
+  color: white;
+  text-align: left;
+}
+table tr:nth-child(even){
+background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;}

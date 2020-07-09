@@ -50,7 +50,7 @@
           <div class="cont_gallery">
 
             <div id="Big_image">
-              <video id="big_image"  poster=" " controls>
+              <video id="big_image"  poster=" " controls >
                 <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
               </video>
             </div>
@@ -59,19 +59,19 @@
             <div class="row">
 
               <div class="column">
-                <video id="img1"  poster=" "  onclick="changeImage_image(this.poster,this.src)">
+                <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
                   <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
                 </video>
               </div>
 
               <div class="column">
-                <video id="img2"  poster=" views/assets/images/value.png"  onclick="changeImage_image(this.poster,this.src)">
+                <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
                   <source src=" "   alt="Img2">
                 </video>
               </div>
 
               <div class="column">
-                <video id="img3"  poster=" views/assets/images/invest.png" autoplay onclick="changeImage_image(this.poster,this.src)">
+                <video id="img3"  poster=" views/assets/images/LuisSilva.jpg" autoplay onclick="changeImage_image(this.poster,this.src)">
                   <source src=""   alt="Img3">
                 </video>
               </div>
