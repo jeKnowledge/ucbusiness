@@ -10,8 +10,7 @@ class AdminController {
     }
 
     public function dashboard() {
-        $admins = $this->database->select('Users', 'IsAdmin = 1', 'FirstName desc', 5);
-        $staff_members = $this->database->select('Users', 'IsStaff = 1', 'FirstName desc', '10');
+        $users = $this->database->selectAll('Users', 'IsAdmin desc, FirstName asc');
         $events = $this->database->select('Events', NULL, 'DatePosted desc', 10);
         $roles = $this->database->select('Roles', NULL, 'RolePosition', 5);
         $team_members = $this->database->selectCustom(
@@ -31,10 +30,9 @@ class AdminController {
         $type = 'Users';
 
         if (!isset($_GET['q'])) {
-            $admins = $this->database->select('Users', 'IsAdmin = 1', 'FirstName asc', NULL);
-            $staff_members = $this->database->select('Users', 'IsStaff = 1', 'FirstName asc', NULL);
+            $users = $this->database->selectAll('Users', 'IsAdmin desc, FirstName asc');
             
-            if ($admins or $staff_members) {
+            if ($users) {
                 $results = TRUE;
             } else {
                 $results = FALSE;
@@ -43,9 +41,9 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $event = $this->database->get('Events', 'Id', urldecode(htmlspecialchars($_GET['q'])));
+            $user = $this->database->get('Users', 'Id', urldecode(htmlspecialchars($_GET['q'])));
 
-            if ($event) {
+            if ($user) {
                 require 'views/templates/admin_element.php';
             } else {
                 die('Não existe bro');
@@ -71,6 +69,65 @@ class AdminController {
             $event = $this->database->get('Events', 'EventId', urldecode(htmlspecialchars($_GET['q'])));
 
             if ($event) {
+                require 'views/templates/admin_element.php';
+            } else {
+                die('Não existe bro');
+            }
+        }
+    }
+
+    public function roles() {
+        $type = 'Roles';
+
+        if (!isset($_GET['q'])) {
+            $roles = $this->database->selectAll('Roles', 'RolePosition asc');
+            
+            if ($roles) {
+                $results = TRUE;
+            } else {
+                $results = FALSE;
+            }
+
+            require 'views/templates/admin_list.php';
+        }
+        else {
+            $role = $this->database->get('Role', 'RoleId', urldecode(htmlspecialchars($_GET['q'])));
+
+            if ($role) {
+                require 'views/templates/admin_element.php';
+            } else {
+                die('Não existe bro');
+            }
+        }
+    }
+
+    public function members() {
+        $type = 'Members';
+
+        if (!isset($_GET['q'])) {
+            $members = $this->database->selectCustom(
+                'SELECT 
+                member.* , role.RoleName
+                FROM Members member
+                INNER JOIN Roles role ON member.RoleId = role.RoleId
+                ORDER BY
+                role.RolePosition,
+                member.MemberName
+                '
+            );
+            
+            if ($members) {
+                $results = TRUE;
+            } else {
+                $results = FALSE;
+            }
+
+            require 'views/templates/admin_list.php';
+        }
+        else {
+            $member = $this->database->get('Members', 'MemberId', urldecode(htmlspecialchars($_GET['q'])));
+
+            if ($member) {
                 require 'views/templates/admin_element.php';
             } else {
                 die('Não existe bro');

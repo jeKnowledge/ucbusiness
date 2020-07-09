@@ -28,38 +28,31 @@
     <h2>Users</h2>
 
     <h3>Administrators</h3>
-    <?php if ($admins) : ?>
+    <?php if ($users) : ?>
       <table>
         <tr>
           <th>Name</th>
           <th>E-mail</th>
+          <th>Role</th>
         </tr>
-      <?php foreach ($admins as $admin) : ?>
+      <?php foreach ($users as $user) : ?>
         <tr>
-          <td><a href=<?= "/admin/users?q=".$admin->Id ?>><?= $admin->FirstName ?></a></td>
-          <td><?= $admin->Email ?></td>
+          <td><a href=<?= "/admin/users?q=".$user->Id ?>><?= $user->FirstName ?></a></td>
+          <td><?= $user->Email ?></td>
+          <td>
+            <?php 
+              if ($user->IsAdmin) {
+                echo 'Administrator';
+              } else {
+                echo 'Staff';
+              } 
+            ?>
+          </td>
         </tr>
       <?php endforeach ?>
       </table>
     <?php else : ?>
-      <h3>No admins to show...</h3>
-    <?php endif ?>
-    <h3>Staff</h3>
-    <?php if ($staff_members) : ?>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>E-mail</th>
-        </tr>
-      <?php foreach ($staff_members as $staff_member) : ?>
-        <tr>
-          <td><a href=<?= "/admin/users?q=".$staff_member->Id ?>><?= $staff_member->FirstName ?></a></td>
-          <td><?= $staff_member->Email ?></td>
-        </tr>
-      <?php endforeach ?>
-      </table>
-    <?php else : ?>
-      <h3>No staff members to show...</h3>
+      <h3>No users to show...</h3>
     <?php endif ?>
     <br>
     <h2>Events</h2>

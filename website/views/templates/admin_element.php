@@ -6,7 +6,7 @@
     <body>
         <form action="" method="post">
             <label for="Title">Title:</label>
-            <input type="text" name="Title" value=<?= $event->Title ?>><br>
+            <input type="text" name="Title" value="<?= $event->Title ?>"><br>
             <label for="TitleEn">Title(EN):</label>
             <input type="text" name="TitleEn" value=<?= $event->TitleEn ?>><br>
             <label for="Description">Description:</label>

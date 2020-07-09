@@ -12,11 +12,10 @@ $router->get([
     'admin/users/new' => 'AdminController@newUser',
     'admin/events' => 'AdminController@events',
     'admin/events/new' => 'AdminController@newEvent',
-    'admin/roles' => 'AdminController@dashboard',
+    'admin/roles' => 'AdminController@roles',
     'admin/roles/new' => 'AdminController@newRole',
-    'admin/members' => 'AdminController@dashboard',
-    'admin/members/new' => 'AdminController@newMember',
-    'admin/images/new' => 'AdminController@newImage'
+    'admin/members' => 'AdminController@members',
+    'admin/members/new' => 'AdminController@newMember'
 ]);
 
 //  -----   Private Website Routes  -----
