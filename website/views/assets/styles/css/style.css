@@ -93,7 +93,7 @@
 }
 .rect-new img{
   width: 15vw;
-  height: auto;
+  height: 20vh;
   object-fit: cover;
 }
 .cont{
@@ -172,7 +172,7 @@
     width: 80vw;
   }
   .txt-ucb{
-    margin-right:0;
+    margin:auto;
 
   }
 

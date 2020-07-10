@@ -18,8 +18,6 @@
     </video>
 
 
-
-
     <section id="news-container">
       <h1>
           Events

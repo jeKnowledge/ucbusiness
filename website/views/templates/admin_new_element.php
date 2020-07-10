@@ -22,7 +22,6 @@
       </div>
 
 
-
         <?php if ($type == 'Users') : ?>
             <form action="/addUser" method="post">
                 <label for="FirstName">First Name:</label>
@@ -37,7 +36,7 @@
                 <input type="checkbox" name="IsAdmin"><br>
                 <label for="IsStaff">Is Staff:</label>
                 <input type="checkbox" name="IsStaff"><br>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
             </form>
         <?php elseif ($type == 'Events') : ?>
             <form action="/addEvent" method="post">
@@ -65,7 +64,7 @@
                 <input type="text" name="NameEn" value=""><br>
                 <label for="Position">Position:</label>
                 <input type="text" name="Position" value=""><br>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
             </form>
         <?php elseif ($type == 'Members') : ?>
             <form action="/addMember" method="post">
@@ -81,7 +80,7 @@
                         <option value=<?= $role->RoleId ?>><?= $role->RoleName ?></option>
                     <?php endforeach ?>
                 </select><br>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
             </form>
         <?php elseif($type == 'Images') : ?>
             <form action="/addImage" method="post">
@@ -91,7 +90,7 @@
                 <input type="checkbox" name="IsCover" value=1><br>
                 <label for="EventId">Event ID:</label>
                 <input type="text" name="EventId" value="1"><br>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
             </form>
         <?php endif ?>
     </body>

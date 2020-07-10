@@ -10,7 +10,7 @@
   <body>
 
     <?php require 'views/templates/navbar.php'; ?>
-    
+
     <?php if ($cover_image) : ?>
       <img id="capa" src=<?= $cover_image[0]->ImageUrl ?> alt="newsImage">
     <?php else : ?>
@@ -40,9 +40,6 @@
               ?>
             </p>
 
-            <button id="watch-video">
-                Ver vídeo
-            </button>
           </div>
 
           <?php if ($gallery) : ?>
