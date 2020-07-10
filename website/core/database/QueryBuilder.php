@@ -12,7 +12,7 @@ class QueryBuilder {
 
     public function insert($table, $parameters) {
         $query = sprintf(
-            "insert into %s (%s) values (%s)",
+            "INSERT INTO %s (%s) VALUES (%s)",
             $this->tables[$table],
             implode(', ', array_keys($parameters)),
             ':'.implode(', :', array_keys($parameters))
@@ -20,6 +20,29 @@ class QueryBuilder {
 
         $statement = $this->pdo->prepare($query);
         $statement->execute($parameters);
+    }
+
+    public function update($table, $parameters, $where) {
+        $query = sprintf(
+            "UPDATE %s SET %s WHERE %s",
+            $table,
+            implode(', ', $parameters),
+            $where
+        );
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+    }
+
+    public function remove($table, $where) {
+        $query = sprintf(
+            "DELETE FROM %s WHERE %s",
+            $table,
+            $where
+        );
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
     }
 
     public function selectAll($table, $order) {

@@ -35,4 +35,15 @@
         <input type="time" name="Time" value=<?= $event->Time ?>><br>
         <button type="submit">Update Event</button>
     </form>
+
+    <?php if ($assets) : ?>
+        <?php foreach ($assets as $asset) : ?>
+            <?php if ($asset->IsVideo) : ?>
+                <video src="<?= $asset->AssetUrl ?>"></video>
+            <?php else: ?>
+                <img src="<?= $asset->AssetUrl ?>" alt="">
+            <?php endif ?>
+        <?php endforeach ?>
+    <?php endif ?>
+
 <?php endif ?>

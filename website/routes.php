@@ -26,8 +26,6 @@ $router->post([
     'sendEmail' => 'PagesController@send_email',
     'addUser' => 'AdminController@add_user',
     'addEvent' => 'AdminController@add_event',
-    'addImage' => 'AdminController@add_Image',
-    'addVideo' => 'AdminController@addVideo',
     'addRole' => 'AdminController@add_role',
     'addMember' => 'AdminController@add_member'
 ]);

@@ -42,6 +42,7 @@ class AdminController {
         }
         else {
             $user = $this->database->get('Users', 'Id', urldecode(htmlspecialchars($_GET['q'])));
+            $new_element = FALSE;
 
             if ($user) {
                 require 'views/templates/admin_element.php';
@@ -67,8 +68,10 @@ class AdminController {
         }
         else {
             $event = $this->database->get('Events', 'EventId', urldecode(htmlspecialchars($_GET['q'])));
+            $new_element = FALSE;
 
             if ($event) {
+                $assets = $this->database->select('EventAssets', 'EventId = '.$event->EventId, 'IsVideo desc, IsCover desc', NULL);
                 require 'views/templates/admin_element.php';
             } else {
                 die('Não existe bro');
@@ -92,6 +95,7 @@ class AdminController {
         }
         else {
             $role = $this->database->get('Role', 'RoleId', urldecode(htmlspecialchars($_GET['q'])));
+            $new_element = FALSE;
 
             if ($role) {
                 require 'views/templates/admin_element.php';
@@ -126,8 +130,10 @@ class AdminController {
         }
         else {
             $member = $this->database->get('Members', 'MemberId', urldecode(htmlspecialchars($_GET['q'])));
+            $new_element = FALSE;
 
             if ($member) {
+                $roles = $this->database->selectAll('Roles', 'RolePosition asc');
                 require 'views/templates/admin_element.php';
             } else {
                 die('Não existe bro');
@@ -137,28 +143,27 @@ class AdminController {
 
     public function newUser() {
         $type = 'Users';
-        require 'views/templates/admin_new_element.php';
+        $new_element = TRUE;
+        require 'views/templates/admin_element.php';
     }
 
     public function newEvent() {
         $type = 'Events';
-        require 'views/templates/admin_new_element.php';
+        $new_element = TRUE;
+        require 'views/templates/admin_element.php';
     }
 
     public function newRole() {
         $type = 'Roles';
-        require 'views/templates/admin_new_element.php';
+        $new_element = TRUE;
+        require 'views/templates/admin_element.php';
     }
 
     public function newMember() {
         $type = 'Members';
         $roles = $this->database->selectAll('Roles', 'RolePosition asc');
-        require 'views/templates/admin_new_element.php';
-    }
-
-    public function newImage() {
-        $type = 'Images';
-        require 'views/templates/admin_new_element.php';
+        $new_element = TRUE;
+        require 'views/templates/admin_element.php';
     }
 
     public function add_event() {
@@ -182,36 +187,6 @@ class AdminController {
         $uri = 'admin/events?q='.$event->EventId;
         header("Location: http://{$host}/{$uri}");
         exit;
-    }
-
-    public function add_image() {
-        $iscover = 0;
-        if (isset($_POST['IsCover'])) {
-            $iscover = 1;
-        }
-        $this->database->insert(
-            'Images',
-            [
-                'ImageUrl' => htmlspecialchars($_POST['ImageUrl']),
-                'IsCover' => $iscover,
-                'EventId' => htmlspecialchars($_POST['EventId'])
-            ]
-        );
-
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = 'admin/events';
-        header("Location: http://{$host}/{$uri}");
-        exit;
-    }
-    
-    public function add_video() {
-        $this->database->insert(
-            'Videos',
-            [
-                'Url' => htmlspecialchars($_POST['Url']),
-                'EventId' => htmlspecialchars($_POST['EventId'])
-            ]
-        );
     }
 
     public function add_role() {

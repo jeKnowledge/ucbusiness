@@ -22,8 +22,6 @@
         <input type="text" name="LastName" value="<?= $user->LastName ?>"><br>
         <label for="Email">E-mail:</label>
         <input type="email" name="Email" value="<?= $user->Email ?>"><br>
-        <label for="Password">Password:</label>
-        <input type="password" name="Password" value="<?= $user->Password ?>"><br>
         <label for="IsAdmin">Is Admin:</label>
         <input type="checkbox" name="IsAdmin" <?php if ($user->IsAdmin) : ?> checked <?php endif ?>><br>
         <label for="IsStaff">Is Staff:</label>

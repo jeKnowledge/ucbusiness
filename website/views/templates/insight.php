@@ -16,8 +16,8 @@
         <div id="news-container">
             <?php foreach ($events as $event) : ?>
               <div class="new">
-                  <?php if ($event->ImageUrl) : ?>
-                    <img src=<?= $event->ImageUrl ?> />
+                  <?php if ($event->AssetUrl) : ?>
+                    <img src=<?= $event->AssetUrl ?> />
                   <?php else : ?>
                     <img src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg">
                   <?php endif ?>

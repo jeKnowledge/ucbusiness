@@ -13,7 +13,7 @@ class PagesController {
             'SELECT
             *
             FROM Events
-            LEFT OUTER JOIN Images USING(EventId)
+            LEFT OUTER JOIN EventAssets USING(EventId)
             WHERE IsCover = 1 OR IsCover IS NULL
             ORDER BY DatePosted desc
             LIMIT 3'
@@ -50,7 +50,7 @@ class PagesController {
                 'SELECT
                 *
                 FROM Events
-                LEFT OUTER JOIN Images USING(EventId)
+                LEFT OUTER JOIN EventAssets USING(EventId)
                 WHERE IsCover = 1 OR IsCover IS NULL
                 ORDER BY DatePosted desc'
             );
@@ -63,13 +63,12 @@ class PagesController {
                 $cover_image = $this->database->selectCustom(
                     "SELECT
                         *
-                    FROM Images
+                    FROM EventAssets
                     WHERE EventId = ".$event->EventId." AND IsCover = 1"
                 );
-                $videos = $this->database->select('Videos', 'EventId = '.$event->EventId, NULL, NULL);
-                $images = $this->database->select('Images', 'EventId = '.$event->EventId, 'IsCover desc', NULL);
-    
-                $gallery = array_merge($videos, $images);
+                
+                $gallery = $this->database->select('EventAssets', 'EventId = '.$event->EventId, 'IsVideo desc, IsCover desc', NULL);
+
                 require 'views/templates/new.php';
             } else {
                 require 'views/templates/error.php';

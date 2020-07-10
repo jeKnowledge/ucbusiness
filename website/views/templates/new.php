@@ -12,7 +12,7 @@
     <?php require 'views/templates/navbar.php'; ?>
 
     <?php if ($cover_image) : ?>
-      <img id="capa" src=<?= $cover_image[0]->ImageUrl ?> alt="newsImage">
+      <img id="capa" src=<?= $cover_image[0]->AssetUrl ?> alt="newsImage">
     <?php else : ?>
       <img id="capa" src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="newsImage">
     <?php endif ?>
