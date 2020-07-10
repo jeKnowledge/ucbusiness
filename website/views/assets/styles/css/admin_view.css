@@ -87,3 +87,25 @@ form button{
   width: 8vw;
   margin-top: 1%;
 }
+/* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+@media screen and (max-width: 420px){
+  .buttons button, #header_right button, form button{
+  height:4vh;
+  width: 12vw;
+}
+table {
+  width:100%;
+
+}
+.head-table{
+  width:100%;
+
+}
+
+table{
+  font-size: 0.8em;
+}
+
+}

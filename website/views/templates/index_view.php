@@ -92,10 +92,3 @@
   <script type="text/javascript" src="views/assets/scripts/change_menu.js"></script>
 
 </html>
-
-<script>
-
-  var vid = document.getElementById("ucb-logo");
-  vid.playbackRate = 0.8;
-
-</script>

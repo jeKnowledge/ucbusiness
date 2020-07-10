@@ -7,7 +7,7 @@
             src="views/assets/images/linkedin.svg" height="35" width="35" alt="linkedin" /> </a>
         <a href=" https://twitter.com/business_uc" target="_blank"> <img id="twitter"
             src="views/assets/images/twitter.svg" height="35" width="35" alt="twitter" /> </a>
-            <a href=" https://www.instagram.com/uc.business/" target="_blank"> <img id="twitter" 
+            <a href=" https://www.instagram.com/uc.business/ x" target="_blank"> <img id="twitter" 
                 src="views/assets/images/instagram.svg" height="35" width="35" alt="twitter" /> </a>
       </div>
       <p id="txt_footer">UC Business ® 2020</p>
