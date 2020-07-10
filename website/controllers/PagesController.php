@@ -58,21 +58,21 @@ class PagesController {
         }
         else {
             $event = $this->database->get('Events', 'Title', urldecode(htmlspecialchars($_GET['q'])));
-            $cover_image = $this->database->selectCustom(
-                "SELECT
-                    *
-                FROM Images
-                WHERE EventId = ".$event->EventId." AND IsCover = 1"
-            );
-            $videos = $this->database->select('Videos', 'EventId = '.$event->EventId, NULL, NULL);
-            $images = $this->database->select('Images', 'EventId = '.$event->EventId, 'IsCover desc', NULL);
-
-            $gallery = array_merge($videos, $images);
 
             if ($event) {
+                $cover_image = $this->database->selectCustom(
+                    "SELECT
+                        *
+                    FROM Images
+                    WHERE EventId = ".$event->EventId." AND IsCover = 1"
+                );
+                $videos = $this->database->select('Videos', 'EventId = '.$event->EventId, NULL, NULL);
+                $images = $this->database->select('Images', 'EventId = '.$event->EventId, 'IsCover desc', NULL);
+    
+                $gallery = array_merge($videos, $images);
                 require 'views/templates/new.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/error.php';
             }
         }
     }
