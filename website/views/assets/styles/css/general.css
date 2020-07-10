@@ -173,7 +173,21 @@ li {
 height: 10vh;
 width: auto;
 }
+#error-message{
+  width: 40vw;
+  height: 18vh;
+  background-color: var(--color-blue);
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-top: 20%;
 
+}
+
+#error-message h1{
+  display: inline-block;
+  vertical-align: middle;
+}
 
 
 
@@ -203,8 +217,6 @@ width: auto;
 .menu a{
   padding-bottom: 2vh;
 }
-
-
 
 #container {
     display: inline;
@@ -246,6 +258,10 @@ width: auto;
   }
   .rect-menu{
     display: flex;
+  }
+  #error-message{
+    margin-top: 50%;
+    height: 10vh;
   }
 
 
