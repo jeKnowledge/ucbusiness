@@ -24,20 +24,31 @@
   height: 80vh;
   width: 100%;
 }
+
 .cont_gallery{
   margin-top: 2%;
+  width: 100%;
 }
-.column {
-  float: left;
-  width: 25%;
-  padding: 2vh 0;
+
+:root {
+  --imagesNum: ;
 }
-.column img, .column video{
-  height: 20vh;
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(var(--imagesNum), 1fr);
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+}
+
+
+.column video{
+  height: 15vh;
   object-fit: cover;
   width:100%;
   cursor: pointer;
 }
+
 
 
 

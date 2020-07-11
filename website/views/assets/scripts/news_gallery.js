@@ -17,3 +17,10 @@ else{
 }
 
 }
+
+let htmlStyles = window.getComputedStyle(document.querySelector("html"));
+let rowNum = parseInt(htmlStyles.getPropertyValue("--imagesNum"));
+
+var num= $('.row .column').length;
+
+document.documentElement.style.setProperty("--imagesNum", num);
