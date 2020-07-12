@@ -8,11 +8,11 @@
         <title>Admin Page: Login</title>
     </head>
     <body>
-        <form action="" method="post">
+        <form action="/login" method="post">
             <label for="Email">E-mail:</label>
-            <input type="email" name="Email" id=""><br>
+            <input type="email" name="Email"><br>
             <label for="Password">Password:</label>
-            <input type="password" name="Password" id=""><br>
+            <input type="password" name="Password"><br>
             <button type="submit">login</button>
         </form>
     </body>
