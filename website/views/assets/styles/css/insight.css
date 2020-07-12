@@ -14,6 +14,9 @@
 #news p, #news h3{
   width: 20vw;
 }
+#news p{
+  height:8vh;
+}
 .new{
   display: flex;
   flex-direction: column;
@@ -26,6 +29,7 @@
   border: none;
   margin-top:auto;
   align-self: end;
+  cursor: pointer;
 }
 #news-container{
   display: grid;
