@@ -79,14 +79,52 @@ background-color: #f2f2f2;
 table tr:hover {
   background-color: #ddd;
 }
-form{
-  margin: 2% 2%;
+#login{
+  padding: 5% 0;
 }
-form button{
-  height:4vh;
-  width: 8vw;
-  margin-top: 1%;
+
+.form-element{
+  padding: 2%;
+  font-size: 1.2em;
+  margin: auto;
 }
+.form-element input{
+    height: 3vh;
+    margin-top: 1vh;
+}
+.login-rect{
+  text-align:center;
+  margin: auto;
+  background-color: var(--color-blue);
+  color: white;
+  width: 45vw; 
+  margin-top: 10%;
+}
+
+.login-rect h1{
+text-align:center;
+
+}
+.form-but{
+  padding: 5% 2%;
+}
+.form-but button{
+  font-size: 1em;
+  width:15vw;
+  background-color: var(--color-lightblue);
+  color: white;
+  cursor: pointer;
+  border: none;
+  height: 4vh;
+}
+.form-but button:hover{
+    background: #0053ba;
+}
+
+form input {
+  width:15vw;
+}
+
 /* ------------------------------------------ Media Queries ------------------------------------------ */
 
 

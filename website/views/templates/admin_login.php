@@ -8,12 +8,34 @@
         <title>Admin Page: Login</title>
     </head>
     <body>
-        <form action="/login" method="post">
-            <label for="Email">E-mail:</label>
-            <input type="email" name="Email"><br>
-            <label for="Password">Password:</label>
-            <input type="password" name="Password"><br>
-            <button type="submit">login</button>
-        </form>
+
+      <div id="header">
+        <div id="header_left">
+          <a href=" ">
+            <img id="logo_ucb" src="/views/assets/images/ucb_white.png" alt="logo_uc" />
+          </a>
+          <h2>Admin page</h2>
+        </div>
+      </div>
+      
+      <div class="login-rect">
+        <div id="login">
+          <h1> USER LOGIN </h1>
+          <form action="/login" method="post">
+            <div class="form-element">
+              <label for="Email">E-mail:</label> <br>
+              <input type="email" name="Email">
+            </div>
+            <div class="form-element">
+              <label for="Password">Password:</label><br>
+              <input type="password" name="Password">
+            </div>
+            <div class="form-but">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </body>
+
 </html>
