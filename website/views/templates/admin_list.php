@@ -8,7 +8,8 @@
         <title><?= "Admin Page: ".$type ?></title>
     </head>
     <body>
-        <h1><?= $type ?></h1>
+      <div id="table-showmore">
+        <h2><?= $type ?></h2>
         <table>
         <?php if ($results) : ?>
             <?php
@@ -34,8 +35,9 @@
                 }
             ?>
         <?php else : ?>
-            <h3>Nothing to show...</h3>
+            <h4>Nothing to show...</h4>
         <?php endif ?>
         </table>
+      </div>
     </body>
 </html>

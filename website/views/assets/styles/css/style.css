@@ -92,12 +92,13 @@
   width: 10vw;
 }
 .rect-new img{
-  width: 15vw;
+  width: 60%;
   height: 20vh;
   object-fit: cover;
 }
 .cont{
   display: flex;
+  justify-content: space-between;
   padding: 0 2vw;
 }
 .descrip{

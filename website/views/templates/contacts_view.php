@@ -65,7 +65,7 @@
           <h4>
               Message:
           </h4>
-          <input name = "message" id="text" type="text" required ></input>
+          <textarea name = "message" id="text" type="text" required ></textarea>
 
           <button id="submit-button">
               Submit
