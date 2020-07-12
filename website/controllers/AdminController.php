@@ -7,9 +7,47 @@ class AdminController {
 
     function __construct($database) {
         $this->database = $database;
+
+        if (isset($_SESSION['loggedIn'])) {
+            $this->user = $this->database->get('Users', 'Id', $_SESSION['loggedIn']);
+        }
+    }
+
+    public function login() {
+        $email = htmlspecialchars($_POST['Email']);
+        $password = htmlspecialchars($_POST['Password']);
+
+        $user = $this->database->get('Users', 'Email', $email);
+
+        if ($user) {
+            if (password_verify($password, $user->Password)) {
+                $_SESSION['loggedIn'] = $user->Id;
+            }
+        }
+
+        $host = $_SERVER['HTTP_HOST'];
+        header("Location: //{$host}/admin");
+        exit;
+    }
+
+    public function logout() {
+
+        if (isset($_SESSION['loggedIn'])) {
+            unset($_SESSION['loggedIn']);
+        }
+        
+        $host = $_SERVER['HTTP_HOST'];
+        header("Location: //{$host}/");
+        exit;
     }
 
     public function dashboard() {
+
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $users = $this->database->selectAll('Users', 'IsAdmin desc, FirstName asc');
         $events = $this->database->select('Events', NULL, 'DatePosted desc', 10);
         $roles = $this->database->select('Roles', NULL, 'RolePosition', 5);
@@ -94,7 +132,7 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $role = $this->database->get('Role', 'RoleId', urldecode(htmlspecialchars($_GET['q'])));
+            $role = $this->database->get('Roles', 'RoleId', urldecode(htmlspecialchars($_GET['q'])));
             $new_element = FALSE;
 
             if ($role) {
@@ -184,7 +222,28 @@ class AdminController {
         $event = $this->database->get('Events', 'Title', htmlspecialchars($_POST['Title']));
 
         $host = $_SERVER['HTTP_HOST'];
-        $uri = 'admin/events?q='.$event->EventId;
+        $uri = '/admin/events?q='.$event->EventId;
+        header("Location: http://{$host}/{$uri}");
+        exit;
+    }
+
+    public function updateEvent() {
+        $this->database->update(
+            'Events',
+            [
+                'Title="'.htmlspecialchars($_POST['Title']).'"',
+                'TitleEn="'.htmlspecialchars($_POST['TitleEn']).'"',
+                'Description="'.htmlspecialchars($_POST['Description']).'"',
+                'DescriptionEn="'.htmlspecialchars($_POST['DescriptionEn']).'"',
+                'Location="'.htmlspecialchars($_POST['Location']).'"',
+                'Date="'.htmlspecialchars($_POST['Date']).'"',
+                'Time="'.htmlspecialchars($_POST['Time']).'"'
+            ],
+            "EventId=".htmlspecialchars($_POST['Id'])
+        );
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/events?q='.htmlspecialchars($_POST['Id']);
         header("Location: http://{$host}/{$uri}");
         exit;
     }
@@ -205,6 +264,17 @@ class AdminController {
         exit;
     }
 
+    public function updateRole() {
+        $this->database->update(
+            'Roles',
+            [
+                'RoleName='.htmlspecialchars($_POST['Name']),
+                'RoleNameEn='.htmlspecialchars($_POST['NameEn']),
+                'RolePosition='.htmlspecialchars($_POST['Position'])
+            ]
+        );
+    }
+
     public function add_member() {
         $this->database->insert(
             'Members',
@@ -220,6 +290,18 @@ class AdminController {
         $uri = 'admin/members';
         header("Location: http://{$host}/{$uri}");
         exit;
+    }
+
+    public function updateMember() {
+        $this->database->update(
+            'Members',
+            [
+                'MemberName='.htmlspecialchars($_POST['Name']),
+                'MemberEmail='.htmlspecialchars($_POST['Email']),
+                'MemberImage='.htmlspecialchars($_POST['Image']),
+                'RoleId='.htmlspecialchars($_POST['RoleId'])
+            ]
+        );
     }
 
     public function add_user() {
@@ -252,6 +334,33 @@ class AdminController {
         $uri = 'admin/users';
         header("Location: http://{$host}/{$uri}");
         exit;
+    }
+
+    public function updateUser() {
+        $is_admin = 0;
+        $is_staff = 0;
+        $is_active = 0;
+        if (isset($_POST['IsAdmin'])) {
+            $is_admin = 1;
+        }
+        if (isset($_POST['IsStaff'])) {
+            $is_staff = 1;
+        }
+        if (isset($_POST['IsActive'])) {
+            $is_active = 1;
+        }
+
+        $this->database->update(
+            'Users',
+            [
+                'FirstName='.htmlspecialchars($_POST['FirstName']),
+                'LastName='.htmlspecialchars($_POST['LastName']),
+                'Email='.htmlspecialchars($_POST['Email']),
+                'IsAdmin='.$is_admin,
+                'IsStaff='.$is_staff,
+                'IsActive='.$is_active
+            ]
+        );
     }
 
 }

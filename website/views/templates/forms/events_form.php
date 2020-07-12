@@ -18,7 +18,8 @@
         <button type="submit">Submit</button>
     </form>
 <?php else : ?>
-    <form action="" method="post">
+    <form action="/updateEvent" method="post">
+        <input type="hidden" name="Id" value=<?= $event->EventId ?> readonly>
         <label for="Title">Title:</label>
         <input type="text" name="Title" value="<?= $event->Title ?>"><br>
         <label for="TitleEn">Title(EN):</label>

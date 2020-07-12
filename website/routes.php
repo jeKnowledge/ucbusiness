@@ -7,6 +7,7 @@ $router->get([
     'about' => 'PagesController@about',
     'contacts' => 'PagesController@contacts',
     'events' => 'PagesController@events',
+    'logout' => 'AdminController@logout',
     'admin' => 'AdminController@dashboard',
     'admin/users' => 'AdminController@users',
     'admin/users/new' => 'AdminController@newUser',
@@ -24,10 +25,12 @@ $router->post([
     'changeLanguage' => 'PagesController@change_language',
     'hideCookieBanner' => 'PagesController@hide_cookie_banner',
     'sendEmail' => 'PagesController@send_email',
+    'login' => 'AdminController@login',
     'addUser' => 'AdminController@add_user',
     'addEvent' => 'AdminController@add_event',
     'addRole' => 'AdminController@add_role',
-    'addMember' => 'AdminController@add_member'
+    'addMember' => 'AdminController@add_member',
+    'updateEvent' => 'AdminController@updateEvent'
 ]);
 
 ?>

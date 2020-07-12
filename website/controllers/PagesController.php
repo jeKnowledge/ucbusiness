@@ -33,10 +33,6 @@ class PagesController {
             '
         );
 
-        if ($team_members) {
-            $first_member = array_shift($team_members);
-        }
-
         require 'views/templates/about_us_view.php';
     }
 

@@ -19,7 +19,9 @@
 
       <div id="header_right">
           <h3> Olá @user </h3>
-          <button type="button"> Log out</button>
+          <a href="/logout">
+            <button type="button"> Log out</button>
+          </a>
       </div>
 
     </div>

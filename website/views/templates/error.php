@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <link rel="stylesheet" href="/views/assets/styles/css/general.css">
-      <link rel="stylesheet" href="/views/assets/styles/css/colors.css">
-      <?php require '/views/templates/base_head.php'; ?>
+      <link rel="stylesheet" href="views/assets/styles/css/general.css">
+      <link rel="stylesheet" href="views/assets/styles/css/colors.css">
+      <?php require 'views/templates/base_head.php'; ?>
         <title>Page not found</title>
     </head>
     <body>
