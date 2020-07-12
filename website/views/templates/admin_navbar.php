@@ -20,7 +20,7 @@
       </div>
 
       <div id="header_right">
-          <h3> Olá @user </h3>
+          <h3> Olá <?= $this->user->FirstName." ".$this->user->LastName ?> </h3>
           <a href="/logout">
             <button type="button"> Log out</button>
           </a>

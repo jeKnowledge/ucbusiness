@@ -65,6 +65,11 @@ class AdminController {
     }
 
     public function users() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Users';
 
         if (!isset($_GET['q'])) {
@@ -91,6 +96,11 @@ class AdminController {
     }
 
     public function events() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Events';
 
         if (!isset($_GET['q'])) {
@@ -118,6 +128,11 @@ class AdminController {
     }
 
     public function roles() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Roles';
 
         if (!isset($_GET['q'])) {
@@ -144,6 +159,11 @@ class AdminController {
     }
 
     public function members() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Members';
 
         if (!isset($_GET['q'])) {
@@ -180,24 +200,44 @@ class AdminController {
     }
 
     public function newUser() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Users';
         $new_element = TRUE;
         require 'views/templates/admin_element.php';
     }
 
     public function newEvent() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Events';
         $new_element = TRUE;
         require 'views/templates/admin_element.php';
     }
 
     public function newRole() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Roles';
         $new_element = TRUE;
         require 'views/templates/admin_element.php';
     }
 
     public function newMember() {
+        if (!$this->user) {
+            require 'views/templates/admin_login.php';
+            die();
+        }
+
         $type = 'Members';
         $roles = $this->database->selectAll('Roles', 'RolePosition asc');
         $new_element = TRUE;
