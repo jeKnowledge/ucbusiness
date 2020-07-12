@@ -19,7 +19,7 @@
   margin: 0;
 }
 #header *{
-  padding: 0 1%;
+  margin: 0.5% 2%;
 }
 #header h2{
   width: 10vw;
@@ -64,8 +64,11 @@
   display: flex;
   justify-content: flex-end;
 }
+.head-table a{
+margin: 0 1%
+}
 #tables{
-  margin: 2% 2%;
+  margin: 3%;
 }
 table {
   width:80%;
@@ -88,7 +91,7 @@ table tr:hover {
   background-color: #ddd;
 }
 #table-showmore{
-  margin: 4%;
+  margin: 3%;
 }
 
 /* ------------ LOGIN----------- */

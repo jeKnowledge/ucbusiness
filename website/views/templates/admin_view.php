@@ -18,7 +18,7 @@
       <h2>Users</h2>
       <div class="buttons">
         <a href="/admin/users">
-          <button type="button"> Show more</button>
+          <button type="button"> Show all</button>
         </a>
         <a href="/admin/users/new">
           <button type="button"> + New User</button>
@@ -36,7 +36,10 @@
       <h2>Events</h2>
       <div class="buttons">
         <a href="/admin/events">
-          <button type="button"> Show more</button>
+          <button type="button"> Show all</button>
+        </a>
+        <a href="/events">
+          <button type="button"> Show website</button>
         </a>
         <a href="/admin/events/new">
           <button type="button"> + New Event</button>
@@ -55,7 +58,7 @@
       <h3>Roles</h3>
       <div class="buttons">
         <a href="/admin/roles">
-          <button type="button"> Show more</button>
+          <button type="button"> Show all</button>
         </a>
         <a href="/admin/roles/new">
           <button type="button"> + New Role</button>
@@ -73,7 +76,10 @@
       <h3>Members</h3>
       <div class="buttons">
         <a href="/admin/members">
-          <button type="button"> Show more</button>
+          <button type="button"> Show all</button>
+        </a>
+        <a href="/about">
+          <button type="button"> Show website</button>
         </a>
         <a href="/admin/members/new">
           <button type="button"> + New Member</button>
