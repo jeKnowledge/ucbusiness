@@ -1,5 +1,5 @@
 
-
+/* ------------HEADER----------- */
 #logo_ucb {
   height: 5vh;
   width: auto;
@@ -9,7 +9,6 @@
   height: auto;
   width: 10vw;
 }
-
 
 #header {
   display: flex;
@@ -21,6 +20,12 @@
 }
 #header *{
   padding: 0 1%;
+}
+#header h2, #header h3{
+  width: 10vw;
+}
+#header h3{
+  text-align: right;
 }
 #header_left{
   display: flex;
@@ -39,8 +44,8 @@
   height:4vh;
   width: 6vw;
   font-weight: bold;
-
 }
+/* ------------ADMIN INDEX----------- */
 .head-table{
   width:80%;
   display: flex;
@@ -48,7 +53,7 @@
   align-items: center;
 }
 .buttons button{
-  height:4vh;
+  height:5vh;
   width: 8vw;
   margin: 0 2%;
 }
@@ -79,17 +84,23 @@ background-color: #f2f2f2;
 table tr:hover {
   background-color: #ddd;
 }
+#table-showmore{
+  margin: 4%;
+}
+
+/* ------------ LOGIN----------- */
 #login{
   padding: 5% 0;
 }
-
-.form-element{
+.login-rect .form-element{
   padding: 2%;
   font-size: 1.2em;
   margin: auto;
+
 }
 .form-element input{
     height: 3vh;
+    width: 16vw;
     margin-top: 1vh;
 }
 .login-rect{
@@ -97,18 +108,17 @@ table tr:hover {
   margin: auto;
   background-color: var(--color-blue);
   color: white;
-  width: 45vw; 
-  margin-top: 10%;
+  width: 45vw;
+  margin-top: 8%;
 }
 
 .login-rect h1{
 text-align:center;
-
 }
-.form-but{
+.login-rect  .form-but{
   padding: 5% 2%;
 }
-.form-but button{
+.login-rect .form-but button{
   font-size: 1em;
   width:15vw;
   background-color: var(--color-lightblue);
@@ -117,12 +127,38 @@ text-align:center;
   border: none;
   height: 4vh;
 }
-.form-but button:hover{
+#login .form-but button:hover{
     background: #0053ba;
 }
 
-form input {
-  width:15vw;
+
+/* -----------NEW SOMETHING------------ */
+form{
+  margin:4%;
+}
+.form-element{
+  width:35vw;
+  margin: 1% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+textarea{
+  min-width: 16vw;
+  min-height: 10vh;
+}
+
+.form-but{
+  margin: 4% 0;
+
+}
+.form-but button{
+  font-size: 0.9em;
+  width:35vw;
+  height: 6vh;
+}
+.form-but button:hover{
+  background-color: #ddd;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */
@@ -139,11 +175,12 @@ table {
 }
 .head-table{
   width:100%;
-
 }
-
 table{
   font-size: 0.8em;
+}
+.form-element, .form-but button{
+  width:90vw;
 }
 
 }

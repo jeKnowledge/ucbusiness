@@ -12,7 +12,7 @@
           <div id="error-message">
             <h1 > 404 <br> Page not found </h1>
             <p>The page or resource you are looking for can't be found.</p>
-            <img id="logo_ucb" src="/views/assets/images/ucb_white.png" alt="logo_uc" />
+            <a href="/"><img id="logo_ucb" src="/views/assets/images/ucb_white.png" alt="logo_uc" /> </a>
           </div>
       </div>
     </body>
