@@ -5,6 +5,9 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+
     <title>Insight</title>
   </head>
   <body>
@@ -44,7 +47,9 @@
 
           <?php if ($gallery) : ?>
 
+
           <div class="cont_gallery">
+
 
             <div id="Big_image">
               <video id="big_image"  poster=" " controls >
@@ -52,34 +57,80 @@
               </video>
             </div>
 
+            <div id="slider">
 
-            <div class="row">
+              <div class="row">
 
-              <div class="column">
-                <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                  <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                </video>
-              </div>
+                <div class="column">
+                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
+                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                  </video>
+                </div>
 
-              <div class="column">
-                <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                  <source src=" "   alt="Img2">
-                </video>
-              </div>
+                <div class="column">
+                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
+                    <source src=" "   alt="Img2">
+                  </video>
+                </div>
+                <div class="column">
+                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
+                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                  </video>
+                </div>
 
-              <div class="column">
-                <video id="img3"  poster=" views/assets/images/LuisSilva.jpg" autoplay onclick="changeImage_image(this.poster,this.src)">
-                  <source src=""   alt="Img3">
-                </video>
-              </div>
+                <div class="column">
+                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
+                    <source src=" "   alt="Img2">
+                  </video>
+                </div>
+                <div class="column">
+                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
+                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                  </video>
+                </div>
 
-              <div class="column">
-                <video id="img4"  poster=" views/assets/images/foto.png" autoplay onclick="changeImage_image(this.poster,this.src)">
-                  <source src=""   alt="Img4">
-                </video>
+                <div class="column">
+                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
+                    <source src=" "   alt="Img2">
+                  </video>
+                </div>
+                <div class="column">
+                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
+                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                  </video>
+                </div>
+
+                <div class="column">
+                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
+                    <source src=" "   alt="Img2">
+                  </video>
+                </div>
+                <div class="column">
+                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
+                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
+                  </video>
+                </div>
+
+                <div class="column">
+                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
+                    <source src=" "   alt="Img2">
+                  </video>
+                </div>
+
+
+
+
+
+
             </div>
 
           </div>
+
+
+        </div>
+
+
+
 
           <?php endif ?>
 
@@ -89,6 +140,7 @@
 
 
     <?php require 'views/templates/footer.php'; ?>
+
 
   </body>
 

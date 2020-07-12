@@ -173,21 +173,18 @@ li {
 height: 10vh;
 width: auto;
 }
-#error-message{
-  width: 40vw;
-  height: 18vh;
+#error-rect{
   background-color: var(--color-blue);
   color: white;
+  width: 40vw;
+  height: 35vh;
+  margin: 15% auto;
+}
+#error-message{
   text-align: center;
-  margin: auto;
-  margin-top: 20%;
-
+  padding: 5% 0;
 }
 
-#error-message h1{
-  display: inline-block;
-  vertical-align: middle;
-}
 
 
 
@@ -259,9 +256,9 @@ width: auto;
   .rect-menu{
     display: flex;
   }
-  #error-message{
+  #error-rect{
     margin-top: 50%;
-    height: 10vh;
+    height: 24vh;
   }
 
 
