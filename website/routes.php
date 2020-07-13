@@ -30,7 +30,10 @@ $router->post([
     'addEvent' => 'AdminController@add_event',
     'addRole' => 'AdminController@add_role',
     'addMember' => 'AdminController@add_member',
-    'updateEvent' => 'AdminController@updateEvent'
+    'updateUser' => 'AdminController@updateUser',
+    'updateEvent' => 'AdminController@updateEvent',
+    'updateRole' => 'AdminController@updateRole',
+    'updateMember' => 'AdminController@updateMember'
 ]);
 
 ?>

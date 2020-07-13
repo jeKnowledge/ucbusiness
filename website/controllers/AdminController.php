@@ -308,11 +308,17 @@ class AdminController {
         $this->database->update(
             'Roles',
             [
-                'RoleName='.htmlspecialchars($_POST['Name']),
-                'RoleNameEn='.htmlspecialchars($_POST['NameEn']),
-                'RolePosition='.htmlspecialchars($_POST['Position'])
-            ]
+                'RoleName="'.htmlspecialchars($_POST['Name']).'"',
+                'RoleNameEn="'.htmlspecialchars($_POST['NameEn']).'"',
+                'RolePosition="'.htmlspecialchars($_POST['Position']).'"'
+            ],
+            "RoleId=".htmlspecialchars($_POST['Id'])
         );
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/roles?q='.htmlspecialchars($_POST['Id']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
     }
 
     public function add_member() {
@@ -336,12 +342,18 @@ class AdminController {
         $this->database->update(
             'Members',
             [
-                'MemberName='.htmlspecialchars($_POST['Name']),
-                'MemberEmail='.htmlspecialchars($_POST['Email']),
-                'MemberImage='.htmlspecialchars($_POST['Image']),
-                'RoleId='.htmlspecialchars($_POST['RoleId'])
-            ]
+                'MemberName="'.htmlspecialchars($_POST['Name']).'"',
+                'MemberEmail="'.htmlspecialchars($_POST['Email']).'"',
+                'MemberImage="'.htmlspecialchars($_POST['Image']).'"',
+                'RoleId="'.htmlspecialchars($_POST['RoleId']).'"'
+            ],
+            "MemberId=".htmlspecialchars($_POST['Id'])
         );
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/members?q='.htmlspecialchars($_POST['Id']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
     }
 
     public function add_user() {
@@ -393,14 +405,20 @@ class AdminController {
         $this->database->update(
             'Users',
             [
-                'FirstName='.htmlspecialchars($_POST['FirstName']),
-                'LastName='.htmlspecialchars($_POST['LastName']),
-                'Email='.htmlspecialchars($_POST['Email']),
+                'FirstName="'.htmlspecialchars($_POST['FirstName']).'"',
+                'LastName="'.htmlspecialchars($_POST['LastName']).'"',
+                'Email="'.htmlspecialchars($_POST['Email']).'"',
                 'IsAdmin='.$is_admin,
                 'IsStaff='.$is_staff,
                 'IsActive='.$is_active
-            ]
+            ],
+            "Id=".htmlspecialchars($_POST['Id'])
         );
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/users?q='.htmlspecialchars($_POST['Id']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
     }
 
 }
