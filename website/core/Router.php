@@ -38,7 +38,7 @@ class Router {
             );
         }
 
-        throw new Exception('404 no route defined!');
+        require 'views/templates/error.php';
     }
 
     protected function call_action($controller, $action) {

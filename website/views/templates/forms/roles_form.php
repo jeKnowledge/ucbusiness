@@ -18,8 +18,9 @@
       </div>
     </form>
 <?php else : ?>
-    <form action="/addRole" method="post">
+    <form action="/updateRole" method="post">
       <h2> EDIT ROLE </H2>
+      <input type="hidden" name="Id" value="<?= $role->RoleId ?>" readonly>
       <div class="form-element">
         <label for="Name">Name:</label>
         <input type="text" name="Name" value="<?= $role->RoleName ?>">

@@ -30,8 +30,9 @@
       </div>
     </form>
 <?php else : ?>
-    <form action="" method="post">
+    <form action="/updateUser" method="post">
       <h2> EDIT USER </H2>
+        <input type="hidden" name="Id" value="<?= $user->Id ?>" readonly>
         <div class="form-element">
           <label for="FirstName">First Name:</label>
           <input type="text" name="FirstName" value="<?= $user->FirstName ?>">

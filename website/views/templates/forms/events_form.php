@@ -72,14 +72,20 @@
         </div>
     </form>
 
-    <?php if ($assets) : ?>
-        <?php foreach ($assets as $asset) : ?>
-            <?php if ($asset->IsVideo) : ?>
-                <video src="<?= $asset->AssetUrl ?>"></video>
-            <?php else: ?>
-                <img src="<?= $asset->AssetUrl ?>" alt="">
-            <?php endif ?>
-        <?php endforeach ?>
-    <?php endif ?>
+    <h2>Event Assets</h2>
+
+    <?php foreach ($assets as $asset) : ?>
+
+      <?php if ($asset->IsVideo) : ?>
+        <form action="" method="post">
+          <input type="hidden" name="Id" value="<?= $asset->AssetId ?>" readonly>
+        </form>
+      <?php else : ?>
+        <form action="" method="post">
+          <input type="hidden" name="Id" value="<?= $asset->AssetId ?>" readonly>
+        </form>
+      <?php endif ?>
+
+    <?php endforeach ?>
 
 <?php endif ?>

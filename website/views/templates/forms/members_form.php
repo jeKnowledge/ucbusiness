@@ -27,8 +27,9 @@
 
     </form>
 <?php else : ?>
-    <form action="/addMember" method="post">
+    <form action="/updateMember" method="post">
       <h2> EDIT MEMBER </H2>
+      <input type="hidden" name="Id" value="<?= $member->MemberId ?>" readonly>
       <div class="form-element">
         <label for="Name">Name:</label>
         <input type="text" name="Name" value="<?= $member->MemberName ?>">
