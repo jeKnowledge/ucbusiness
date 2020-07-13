@@ -19,13 +19,14 @@
   margin: 0;
 }
 #header *{
-  padding: 0 1%;
+  margin: 0.5% 2%;
 }
-#header h2, #header h3{
+#header h2{
   width: 10vw;
 }
 #header h3{
   text-align: right;
+  width: 15vw;
 }
 #header_left{
   display: flex;
@@ -44,6 +45,7 @@
   height:4vh;
   width: 6vw;
   font-weight: bold;
+  cursor: pointer;
 }
 /* ------------ADMIN INDEX----------- */
 .head-table{
@@ -56,13 +58,17 @@
   height:5vh;
   width: 8vw;
   margin: 0 2%;
+  cursor: pointer;
 }
 .buttons{
   display: flex;
   justify-content: flex-end;
 }
+.head-table a{
+margin: 0 1%
+}
 #tables{
-  margin: 2% 2%;
+  margin: 3%;
 }
 table {
   width:80%;
@@ -85,7 +91,7 @@ table tr:hover {
   background-color: #ddd;
 }
 #table-showmore{
-  margin: 4%;
+  margin: 3%;
 }
 
 /* ------------ LOGIN----------- */
@@ -96,13 +102,14 @@ table tr:hover {
   padding: 2%;
   font-size: 1.2em;
   margin: auto;
-
 }
+
 .form-element input{
     height: 3vh;
     width: 16vw;
     margin-top: 1vh;
 }
+
 .login-rect{
   text-align:center;
   margin: auto;
@@ -150,12 +157,12 @@ textarea{
 
 .form-but{
   margin: 4% 0;
-
 }
 .form-but button{
   font-size: 0.9em;
   width:35vw;
   height: 6vh;
+  cursor: pointer;
 }
 .form-but button:hover{
   background-color: #ddd;
@@ -168,6 +175,7 @@ textarea{
   .buttons button, #header_right button, form button{
   height:4vh;
   width: 12vw;
+
 }
 table {
   width:100%;
@@ -182,5 +190,13 @@ table{
 .form-element, .form-but button{
   width:90vw;
 }
-
+.form-element input{
+  width:40vw;
+}
+#login .form-element{
+  width:70vw;
+}
+.login-rect{
+  width:90vw;
+}
 }

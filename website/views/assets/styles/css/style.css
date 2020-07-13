@@ -47,6 +47,7 @@
   padding-bottom: 0;
   border-radius: 3%;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .info button:hover{
@@ -109,6 +110,7 @@
   font-size: 0.8em;
   float: right;
   margin: 5%;
+  cursor: pointer;
 }
 
 
@@ -192,6 +194,7 @@
     width:18vw;
     margin-left: 20vw;
     margin-top: 2vh;
+    cursor: pointer;
   }
 
   #news-container h1{

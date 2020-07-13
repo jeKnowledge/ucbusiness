@@ -8,6 +8,7 @@
         <title><?= "Admin Page: ".$type ?></title>
     </head>
     <body>
+      <?php require 'views/templates/admin_navbar.php'; ?>
       <div id="table-showmore">
         <h2><?= $type ?></h2>
         <table>

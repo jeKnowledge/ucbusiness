@@ -30,6 +30,7 @@ textarea{
   margin-top: 2vh;
   height: 6vh;
   width: 100%;
+  cursor: pointer;
 }
 
 /* ------------------------------------------ Media Queries ------------------------------------------ */

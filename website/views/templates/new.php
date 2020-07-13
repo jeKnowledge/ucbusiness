@@ -32,7 +32,9 @@
                 }
               ?>
             </h2>
+
             <h4> <?= $event->Location ?> </h4>
+            <h5 id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </h5>
             <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {
@@ -44,6 +46,7 @@
             </p>
 
           </div>
+
 
           <?php if ($gallery) : ?>
 
@@ -116,25 +119,11 @@
                     <source src=" "   alt="Img2">
                   </video>
                 </div>
-
-
-
-
-
-
             </div>
-
           </div>
-
-
         </div>
 
-
-
-
           <?php endif ?>
-
-          <span id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </span>
 
     </section>
 
