@@ -34,6 +34,7 @@
         <button type="submit">Submit</button>
       </div>
     </form>
+
 <?php else : ?>
     <form action="/updateEvent" method="post">
       <h2> EDIT EVENT </H2>
@@ -48,11 +49,11 @@
         </div>
         <div class="form-element">
           <label for="Description">Description:</label>
-          <input type="text" name="Description" value="<?= $event->Description ?>">
+          <textarea type="text" name="Description" value="<?= $event->Description ?>"></textarea>
         </div>
         <div class="form-element">
           <label for="DescriptionEn">Description(EN):</label>
-          <input type="text" name="DescriptionEn" value="<?= $event->DescriptionEn ?>">
+          <textarea type="text" name="DescriptionEn" value="<?= $event->DescriptionEn ?>"></textarea>
         </div>
         <div class="form-element">
           <label for="Location">Location:</label>
