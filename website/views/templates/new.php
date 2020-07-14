@@ -50,78 +50,50 @@
 
           <?php if ($gallery) : ?>
 
+            <div class="cont_gallery">
 
-          <div class="cont_gallery">
 
+              <?php if ($gallery[0]->IsVideo) : ?>
+                <div id="Big_image">
+                  <video id="big_image"  poster=" " controls >
+                    <source src="<?= $gallery[0]->AssetUrl ?>"   alt="Img1">
+                  </video>
+                </div>
+              <?php else : ?>
+                <div id="Big_image">
+                  <video id="big_image"  poster="<?= $gallery[0]->AssetUrl ?>">
+                    <source src="" alt="Img1">
+                  </video>
+                </div>
+              <?php endif ?>
+    
+              <div id="slider">
 
-            <div id="Big_image">
-              <video id="big_image"  poster=" " controls >
-                <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-              </video>
+                <div class="row">
+
+                  <?php foreach ($gallery as $asset) : ?>
+
+                    <?php if ($asset->IsVideo) : ?>
+
+                      <div class="column">
+                        <video id="img1" poster=" "  onclick="changeImage_image(' ','<?= $asset->AssetUrl ?>')">
+                          <source src="<?= $asset->AssetUrl ?>"   alt="Img1">
+                        </video>
+                      </div>
+
+                    <?php else : ?>
+
+                      <div class="column">
+                        <video id="img2"  poster="<?= $asset->AssetUrl ?>"  onclick="changeImage_image(this.poster,this.src)"></video>
+                      </div>
+
+                    <?php endif ?>
+
+                  <?php endforeach ?>
+
+                </div>
+              </div>
             </div>
-
-            <div id="slider">
-
-              <div class="row">
-
-                <div class="column">
-                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                  </video>
-                </div>
-
-                <div class="column">
-                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                    <source src=" "   alt="Img2">
-                  </video>
-                </div>
-                <div class="column">
-                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                  </video>
-                </div>
-
-                <div class="column">
-                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                    <source src=" "   alt="Img2">
-                  </video>
-                </div>
-                <div class="column">
-                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                  </video>
-                </div>
-
-                <div class="column">
-                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                    <source src=" "   alt="Img2">
-                  </video>
-                </div>
-                <div class="column">
-                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                  </video>
-                </div>
-
-                <div class="column">
-                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                    <source src=" "   alt="Img2">
-                  </video>
-                </div>
-                <div class="column">
-                  <video id="img1"  poster=" "  onclick="changeImage_image(' ','views/assets/images/azul-amarelo.mp4')">
-                    <source src="views/assets/images/azul-amarelo.mp4"   alt="Img1">
-                  </video>
-                </div>
-
-                <div class="column">
-                  <video id="img2"  poster=" views/assets/images/CarlaMarques.jpg"  onclick="changeImage_image(this.poster,this.src)">
-                    <source src=" "   alt="Img2">
-                  </video>
-                </div>
-            </div>
-          </div>
-        </div>
 
           <?php endif ?>
 

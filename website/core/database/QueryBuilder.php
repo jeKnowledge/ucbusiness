@@ -84,18 +84,28 @@ class QueryBuilder {
         return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function get($table, $attribute, $value) {
+    public function get($table, $where) {
         $query = sprintf(
-            'select * from %s where %s="%s"',
+            'select * from %s where %s',
             $this->tables[$table],
-            $attribute,
-            $value
+            $where
         );
 
         $statement = $this->pdo->prepare($query);
         $statement->execute();
 
         return $statement->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function delete($table, $where) {
+        $query = sprintf(
+            'DELETE FROM %s WHERE %s',
+            $this->tables[$table],
+            $where
+        );
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
     }
 }
 

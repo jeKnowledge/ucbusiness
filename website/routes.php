@@ -28,10 +28,14 @@ $router->post([
     'login' => 'AdminController@login',
     'addUser' => 'AdminController@add_user',
     'addEvent' => 'AdminController@add_event',
+    'addVideo' => 'AdminController@add_video',
+    'addImage' => 'AdminController@add_image',
     'addRole' => 'AdminController@add_role',
     'addMember' => 'AdminController@add_member',
     'updateUser' => 'AdminController@updateUser',
     'updateEvent' => 'AdminController@updateEvent',
+    'updateImage' => 'AdminController@update_image',
+    'removeVideo' => 'AdminController@remove_video',
     'updateRole' => 'AdminController@updateRole',
     'updateMember' => 'AdminController@updateMember'
 ]);

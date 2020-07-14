@@ -9,7 +9,7 @@ class AdminController {
         $this->database = $database;
 
         if (isset($_SESSION['loggedIn'])) {
-            $this->user = $this->database->get('Users', 'Id', $_SESSION['loggedIn']);
+            $this->user = $this->database->get('Users', 'Id='.$_SESSION['loggedIn']);
         }
     }
 
@@ -17,7 +17,7 @@ class AdminController {
         $email = htmlspecialchars($_POST['Email']);
         $password = htmlspecialchars($_POST['Password']);
 
-        $user = $this->database->get('Users', 'Email', $email);
+        $user = $this->database->get('Users', 'Email='.$email);
 
         if ($user) {
             if (password_verify($password, $user->Password)) {
@@ -84,7 +84,7 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $user = $this->database->get('Users', 'Id', urldecode(htmlspecialchars($_GET['q'])));
+            $user = $this->database->get('Users', 'Id='.urldecode(htmlspecialchars($_GET['q'])));
             $new_element = FALSE;
 
             if ($user) {
@@ -115,11 +115,13 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $event = $this->database->get('Events', 'EventId', urldecode(htmlspecialchars($_GET['q'])));
+            $event = $this->database->get('Events', 'EventId='.urldecode(htmlspecialchars($_GET['q'])));
             $new_element = FALSE;
 
             if ($event) {
-                $assets = $this->database->select('EventAssets', 'EventId = '.$event->EventId, 'IsVideo desc, IsCover desc', NULL);
+                $videos = $this->database->select('EventAssets', 'EventId = '.$event->EventId.' and IsVideo = 1', NULL, NULL);
+                $images = $this->database->select('EventAssets', 'EventId = '.$event->EventId.' and IsImage = 1', 'IsCover desc', NULL);
+
                 require 'views/templates/admin_element.php';
             } else {
                 die('Não existe bro');
@@ -147,7 +149,7 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $role = $this->database->get('Roles', 'RoleId', urldecode(htmlspecialchars($_GET['q'])));
+            $role = $this->database->get('Roles', 'RoleId='.urldecode(htmlspecialchars($_GET['q'])));
             $new_element = FALSE;
 
             if ($role) {
@@ -187,7 +189,7 @@ class AdminController {
             require 'views/templates/admin_list.php';
         }
         else {
-            $member = $this->database->get('Members', 'MemberId', urldecode(htmlspecialchars($_GET['q'])));
+            $member = $this->database->get('Members', 'MemberId='.urldecode(htmlspecialchars($_GET['q'])));
             $new_element = FALSE;
 
             if ($member) {
@@ -259,7 +261,7 @@ class AdminController {
             ]
         );
 
-        $event = $this->database->get('Events', 'Title', htmlspecialchars($_POST['Title']));
+        $event = $this->database->get('Events', 'Title='.htmlspecialchars($_POST['Title']));
 
         $host = $_SERVER['HTTP_HOST'];
         $uri = '/admin/events?q='.$event->EventId;
@@ -268,22 +270,109 @@ class AdminController {
     }
 
     public function updateEvent() {
-        $this->database->update(
-            'Events',
+        if (htmlspecialchars($_POST['action']) == 'Update') {
+            $this->database->update(
+                'Events',
+                [
+                    'Title="'.htmlspecialchars($_POST['Title']).'"',
+                    'TitleEn="'.htmlspecialchars($_POST['TitleEn']).'"',
+                    'Description="'.htmlspecialchars($_POST['Description']).'"',
+                    'DescriptionEn="'.htmlspecialchars($_POST['DescriptionEn']).'"',
+                    'Location="'.htmlspecialchars($_POST['Location']).'"',
+                    'Date="'.htmlspecialchars($_POST['Date']).'"',
+                    'Time="'.htmlspecialchars($_POST['Time']).'"'
+                ],
+                "EventId=".htmlspecialchars($_POST['Id'])
+            );
+    
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/events?q='.htmlspecialchars($_POST['Id']);
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        } else if (htmlspecialchars($_POST['action'] == 'Delete')) {
+            $this->database->delete('EventAssets', 'EventId='.htmlspecialchars($_POST['Id']));
+            $this->database->delete('Events', 'EventId='.htmlspecialchars($_POST['Id']));
+            
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/events';
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        }
+    }
+
+    public function add_video() {
+        $this->database->insert(
+            'EventAssets',
             [
-                'Title="'.htmlspecialchars($_POST['Title']).'"',
-                'TitleEn="'.htmlspecialchars($_POST['TitleEn']).'"',
-                'Description="'.htmlspecialchars($_POST['Description']).'"',
-                'DescriptionEn="'.htmlspecialchars($_POST['DescriptionEn']).'"',
-                'Location="'.htmlspecialchars($_POST['Location']).'"',
-                'Date="'.htmlspecialchars($_POST['Date']).'"',
-                'Time="'.htmlspecialchars($_POST['Time']).'"'
-            ],
-            "EventId=".htmlspecialchars($_POST['Id'])
+                'AssetUrl' => htmlspecialchars($_POST['AssetUrl']),
+                'IsCover' => 0,
+                'IsImage' => 0,
+                'IsVideo' => 1,
+                'EventId' => htmlspecialchars($_POST['Id'])
+            ]
         );
 
         $host = $_SERVER['HTTP_HOST'];
         $uri = 'admin/events?q='.htmlspecialchars($_POST['Id']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
+    }
+
+    public function remove_video() {
+        $this->database->delete('EventAssets', 'AssetId = '.htmlspecialchars($_POST['Id']));
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/events?q='.htmlspecialchars($_POST['EventId']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
+    }
+
+    public function add_image() {
+        $this->database->insert(
+            'EventAssets',
+            [
+                'AssetUrl' => htmlspecialchars($_POST['AssetUrl']),
+                'IsCover' => 0,
+                'IsImage' => 1,
+                'IsVideo' => 0,
+                'EventId' => htmlspecialchars($_POST['Id'])
+            ]
+        );
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/events?q='.htmlspecialchars($_POST['Id']);
+        header("Location: http://{$host}/{$uri}");
+        exit;
+    }
+
+    public function update_image() {
+        if (htmlspecialchars($_POST['action']) == 'Update') {
+            $coverImage = $this->database->get('EventAssets', 'EventId='.$_POST['EventId'].' and IsCover=1');
+            
+            if ($coverImage) {
+                $this->database->update(
+                    'EventAssets',
+                    [
+                        'IsCover=0'
+                    ],
+                    'AssetId='.$coverImage->AssetId
+                );
+            }
+
+            $this->database->update(
+                'EventAssets',
+                [
+                    'IsCover=1'
+                ],
+                "AssetId=".htmlspecialchars($_POST['Id'])
+            );
+
+        } else if (htmlspecialchars($_POST['action']) == 'Delete') {
+            $this->database->delete('EventAssets', 'AssetId = '.htmlspecialchars($_POST['Id']));
+        }
+
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = 'admin/events?q='.htmlspecialchars($_POST['EventId']);
         header("Location: http://{$host}/{$uri}");
         exit;
     }
@@ -305,20 +394,29 @@ class AdminController {
     }
 
     public function updateRole() {
-        $this->database->update(
-            'Roles',
-            [
-                'RoleName="'.htmlspecialchars($_POST['Name']).'"',
-                'RoleNameEn="'.htmlspecialchars($_POST['NameEn']).'"',
-                'RolePosition="'.htmlspecialchars($_POST['Position']).'"'
-            ],
-            "RoleId=".htmlspecialchars($_POST['Id'])
-        );
-
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = 'admin/roles?q='.htmlspecialchars($_POST['Id']);
-        header("Location: http://{$host}/{$uri}");
-        exit;
+        if (htmlspecialchars($_POST['action']) == 'Update') {
+            $this->database->update(
+                'Roles',
+                [
+                    'RoleName="'.htmlspecialchars($_POST['Name']).'"',
+                    'RoleNameEn="'.htmlspecialchars($_POST['NameEn']).'"',
+                    'RolePosition="'.htmlspecialchars($_POST['Position']).'"'
+                ],
+                "RoleId=".htmlspecialchars($_POST['Id'])
+            );
+    
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/roles?q='.htmlspecialchars($_POST['Id']);
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        } else if (htmlspecialchars($_POST['action']) == 'Delete') {
+            $this->database->delete('Roles', 'RoleId = '.htmlspecialchars($_POST['Id']));
+        
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/roles';
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        }
     }
 
     public function add_member() {
@@ -339,21 +437,30 @@ class AdminController {
     }
 
     public function updateMember() {
-        $this->database->update(
-            'Members',
-            [
-                'MemberName="'.htmlspecialchars($_POST['Name']).'"',
-                'MemberEmail="'.htmlspecialchars($_POST['Email']).'"',
-                'MemberImage="'.htmlspecialchars($_POST['Image']).'"',
-                'RoleId="'.htmlspecialchars($_POST['RoleId']).'"'
-            ],
-            "MemberId=".htmlspecialchars($_POST['Id'])
-        );
-
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = 'admin/members?q='.htmlspecialchars($_POST['Id']);
-        header("Location: http://{$host}/{$uri}");
-        exit;
+        if (htmlspecialchars($_POST['action']) == 'Update') {
+            $this->database->update(
+                'Members',
+                [
+                    'MemberName="'.htmlspecialchars($_POST['Name']).'"',
+                    'MemberEmail="'.htmlspecialchars($_POST['Email']).'"',
+                    'MemberImage="'.htmlspecialchars($_POST['Image']).'"',
+                    'RoleId="'.htmlspecialchars($_POST['RoleId']).'"'
+                ],
+                "MemberId=".htmlspecialchars($_POST['Id'])
+            );
+    
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/members?q='.htmlspecialchars($_POST['Id']);
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        } else if (htmlspecialchars($_POST['action']) == 'Delete') {
+            $this->database->delete('Members', 'MemberId = '.htmlspecialchars($_POST['Id']));
+        
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/members';
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        }
     }
 
     public function add_user() {
@@ -389,38 +496,46 @@ class AdminController {
     }
 
     public function updateUser() {
-        $is_admin = 0;
-        $is_staff = 0;
-        $is_active = 0;
-        if (isset($_POST['IsAdmin'])) {
-            $is_admin = 1;
-        }
-        if (isset($_POST['IsStaff'])) {
-            $is_staff = 1;
-        }
-        if (isset($_POST['IsActive'])) {
-            $is_active = 1;
-        }
+        if (htmlspecialchars($_POST['action']) == 'Update') {
+            $is_admin = 0;
+            $is_staff = 0;
+            $is_active = 0;
+            if (isset($_POST['IsAdmin'])) {
+                $is_admin = 1;
+            }
+            if (isset($_POST['IsStaff'])) {
+                $is_staff = 1;
+            }
+            if (isset($_POST['IsActive'])) {
+                $is_active = 1;
+            }
 
-        $this->database->update(
-            'Users',
-            [
-                'FirstName="'.htmlspecialchars($_POST['FirstName']).'"',
-                'LastName="'.htmlspecialchars($_POST['LastName']).'"',
-                'Email="'.htmlspecialchars($_POST['Email']).'"',
-                'IsAdmin='.$is_admin,
-                'IsStaff='.$is_staff,
-                'IsActive='.$is_active
-            ],
-            "Id=".htmlspecialchars($_POST['Id'])
-        );
+            $this->database->update(
+                'Users',
+                [
+                    'FirstName="'.htmlspecialchars($_POST['FirstName']).'"',
+                    'LastName="'.htmlspecialchars($_POST['LastName']).'"',
+                    'Email="'.htmlspecialchars($_POST['Email']).'"',
+                    'IsAdmin='.$is_admin,
+                    'IsStaff='.$is_staff,
+                    'IsActive='.$is_active
+                ],
+                "Id=".htmlspecialchars($_POST['Id'])
+            );
 
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = 'admin/users?q='.htmlspecialchars($_POST['Id']);
-        header("Location: http://{$host}/{$uri}");
-        exit;
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/users?q='.htmlspecialchars($_POST['Id']);
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        } else if (htmlspecialchars($_POST['action']) == 'Delete') {
+            $this->database->delete('Users', 'Id = '.htmlspecialchars($_POST['Id']));
+        
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin/users';
+            header("Location: http://{$host}/{$uri}");
+            exit;
+        }
     }
-
 }
 
 ?>

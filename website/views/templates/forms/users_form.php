@@ -58,7 +58,8 @@
           <input type="checkbox" name="IsActive" <?php if ($user->IsActive) : ?> checked <?php endif ?> >
         </div>
         <div class="form-but">
-          <button type="submit">Update User</button>
+          <button type="submit" name="action" value="Update">Update User</button>
+          <button type="submit" name="action" value="Delete">Delete User</button>
         </div>
     </form>
 <?php endif ?>

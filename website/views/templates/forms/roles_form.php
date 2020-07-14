@@ -34,7 +34,8 @@
         <input type="text" name="Position" value="<?= $role->RolePosition ?>">
       </div>
       <div class="form-but">
-        <button type="submit">Update Role</button>
+        <button type="submit" name="action" value="Update">Update Role</button>
+        <button type="submit" name="action" value="Delete">Delete Role</button>
       </div>
     </form>
 <?php endif ?>

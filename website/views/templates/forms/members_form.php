@@ -51,7 +51,8 @@
         </select><br>
       </div>
       <div class="form-but">
-        <button type="submit">Update Member</button>
+        <button type="submit" name="action" value="Update">Update Member</button>
+        <button type="submit" name="action" value="Delete">Delete Member</button>
       </div>
     </form>
 <?php endif ?>

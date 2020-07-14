@@ -53,7 +53,7 @@ class PagesController {
             require 'views/templates/insight.php';
         }
         else {
-            $event = $this->database->get('Events', 'Title', urldecode(htmlspecialchars($_GET['q'])));
+            $event = $this->database->get('Events', 'Title="'.urldecode(htmlspecialchars($_GET['q'])).'"');
 
             if ($event) {
                 $cover_image = $this->database->selectCustom(
