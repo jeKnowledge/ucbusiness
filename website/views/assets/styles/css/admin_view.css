@@ -1,202 +1,210 @@
 
-/* ------------HEADER----------- */
-#logo_ucb {
-  height: 5vh;
-  width: auto;
-}
+  /* ------------HEADER----------- */
+  #logo_ucb {
+    height: 5vh;
+    width: auto;
+  }
 
-#logo_uc {
-  height: auto;
-  width: 10vw;
-}
+  #logo_uc {
+    height: auto;
+    width: 10vw;
+  }
 
-#header {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-blue);
-  color:white;
-  padding: 1%;
-  margin: 0;
-}
-#header *{
-  margin: 0.5% 2%;
-}
-#header h2{
-  width: 10vw;
-}
-#header h3{
-  text-align: right;
-  width: 15vw;
-}
-#header_left{
-  display: flex;
-  float: left;
-  width: 50%;
-  align-items: center;
-}
-#header_right{
-  display: flex;
-  float: right;
-  width: 50%;
-  justify-content: flex-end;
-  align-items: center;
-}
-#header_right button{
-  height:4vh;
-  width: 6vw;
-  font-weight: bold;
-  cursor: pointer;
-}
-/* ------------ADMIN INDEX----------- */
-.head-table{
-  width:80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.buttons button{
-  height:5vh;
-  width: 8vw;
-  margin: 0 2%;
-  cursor: pointer;
-}
-.buttons{
-  display: flex;
-  justify-content: flex-end;
-}
-.head-table a{
-margin: 0 1%
-}
-#tables{
-  margin: 3%;
-}
-table {
-  width:80%;
-  border-collapse: collapse;
-}
-table th, table tr{
-  border: 1px solid #ddd;
-   padding: 8px;
-}
-table th{
-  background-color: var(--color-blue);
-  color: white;
-  text-align: left;
-}
-table tr:nth-child(even){
-background-color: #f2f2f2;
-}
+  #header {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-blue);
+    color:white;
+    padding: 1%;
+    margin: 0;
+  }
+  #header *{
+    margin: 0.5% 2%;
+  }
+  #header h2{
+    width: 10vw;
+  }
+  #header h3{
+    text-align: right;
+    width: 15vw;
+  }
+  #header_left{
+    display: flex;
+    float: left;
+    width: 50%;
+    align-items: center;
+  }
+  #header_right{
+    display: flex;
+    float: right;
+    width: 50%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  #header_right button{
+    height:4vh;
+    width: 6vw;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  /* ------------ADMIN INDEX----------- */
+  .head-table{
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .buttons button{
+    height:5vh;
+    width: 8vw;
+    margin: 0 2%;
+    cursor: pointer;
+  }
+  .buttons{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .head-table a{
+  margin: 0 1%
+  }
+  #tables{
+    margin: 3%;
+  }
+  table {
+    width:80%;
+    border-collapse: collapse;
+  }
+  table th, table tr{
+    border: 1px solid #ddd;
+     padding: 8px;
+  }
+  table th{
+    background-color: var(--color-blue);
+    color: white;
+    text-align: left;
+  }
+  table tr:nth-child(even){
+  background-color: #f2f2f2;
+  }
 
-table tr:hover {
-  background-color: #ddd;
-}
-#table-showmore{
-  margin: 3%;
-}
+  table tr:hover {
+    background-color: #ddd;
+  }
+  #table-showmore{
+    margin: 3%;
+  }
 
-/* ------------ LOGIN----------- */
-#login{
-  padding: 5% 0;
-}
-.login-rect .form-element{
-  padding: 2%;
-  font-size: 1.2em;
-  margin: auto;
-}
+  /* ------------ LOGIN----------- */
+  #login{
+    padding: 5% 0;
+  }
+  .login-rect .form-element{
+    padding: 2%;
+    font-size: 1.2em;
+    margin: auto;
+  }
 
-.form-element input{
-    height: 3vh;
-    width: 16vw;
-    margin-top: 1vh;
-}
+  .form-element input{
+      height: 3vh;
+      width: 16vw;
+      margin-top: 1vh;
+  }
 
-.login-rect{
+  .login-rect{
+    text-align:center;
+    margin: auto;
+    background-color: var(--color-blue);
+    color: white;
+    width: 45vw;
+    margin-top: 8%;
+  }
+
+  .login-rect h1{
   text-align:center;
-  margin: auto;
-  background-color: var(--color-blue);
-  color: white;
-  width: 45vw;
-  margin-top: 8%;
-}
-
-.login-rect h1{
-text-align:center;
-}
-.login-rect  .form-but{
-  padding: 5% 2%;
-}
-.login-rect .form-but button{
-  font-size: 1em;
-  width:15vw;
-  background-color: var(--color-lightblue);
-  color: white;
-  cursor: pointer;
-  border: none;
-  height: 4vh;
-}
-#login .form-but button:hover{
-    background: #0053ba;
-}
+  }
+  .login-rect  .form-but{
+    padding: 5% 2%;
+  }
+  .login-rect .form-but button{
+    font-size: 1em;
+    width:15vw;
+    background-color: var(--color-lightblue);
+    color: white;
+    cursor: pointer;
+    border: none;
+    height: 4vh;
+  }
+  #login .form-but button:hover{
+      background: #0053ba;
+  }
 
 
-/* -----------NEW SOMETHING------------ */
-form{
-  margin:4%;
-}
-.form-element{
-  width:35vw;
-  margin: 1% 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-textarea{
-  min-width: 16vw;
-  min-height: 10vh;
-}
 
-.form-but{
-  margin: 4% 0;
-}
-.form-but button{
-  font-size: 0.9em;
-  width:35vw;
-  height: 6vh;
-  cursor: pointer;
-}
-.form-but button:hover{
-  background-color: #ddd;
-}
+  /* -----------NEW SOMETHING------------ */
+  form{
+    margin:4%;
+  }
+  .form-element{
+    width:35vw;
+    margin: 1% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  textarea{
+    min-width: 16vw;
+    min-height: 10vh;
+  }
 
-/* ------------------------------------------ Media Queries ------------------------------------------ */
+  .form-but{
+    margin: 4% 0;
+  }
+  .form-but button{
+    font-size: 0.9em;
+    width:35vw;
+    height: 6vh;
+    cursor: pointer;
+  }
+  .form-but button:hover{
+    background-color: #ddd;
+  }
+  .form-element select {
+    width:30vw;
+    margin-left: 16vw;
 
 
-@media screen and (max-width: 420px){
-  .buttons button, #header_right button, form button{
-  height:4vh;
-  width: 12vw;
 
-}
-table {
-  width:100%;
+  }
 
-}
-.head-table{
-  width:100%;
-}
-table{
-  font-size: 0.8em;
-}
-.form-element, .form-but button{
-  width:90vw;
-}
-.form-element input{
-  width:40vw;
-}
-#login .form-element{
-  width:70vw;
-}
-.login-rect{
-  width:90vw;
-}
-}
+  /* ------------------------------------------ Media Queries ------------------------------------------ */
+
+
+  @media screen and (max-width: 420px){
+    .buttons button, #header_right button, form button{
+    height:4vh;
+    width: 12vw;
+
+  }
+  table {
+    width:100%;
+
+  }
+  .head-table{
+    width:100%;
+  }
+  table{
+    font-size: 0.8em;
+  }
+  .form-element, .form-but button{
+    width:90vw;
+  }
+  .form-element input{
+    width:40vw;
+  }
+  #login .form-element{
+    width:70vw;
+  }
+  .login-rect{
+    width:90vw;
+  }
+  }
