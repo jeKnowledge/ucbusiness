@@ -1,4 +1,4 @@
-
+<div id="form_events">
 <?php if ($new_element) : ?>
     <form action="/addEvent" method="post">
       <h2> NEW EVENT </h2>
@@ -73,49 +73,57 @@
         </div>
     </form>
 
-    <h2>Videos</h2>
+    <h2 class="title_new">Videos</h2>
 
     <form action="/addVideo" method="post">
-      <h3>New Video</h3>
+      <h4>New Video</h4>
       <input type="hidden" name="Id" value="<?= $event->EventId ?>" readonly>
       <label for="AssetUrl">Url:</label>
       <input type="text" name="AssetUrl" value="">
       <button type="submit">Add Video</button>
     </form>
 
-    <?php foreach ($videos as $video) : ?>
+    <div class="grid">
+      <?php foreach ($videos as $video) : ?>
 
-      <form action="/removeVideo" method="post">
-        <video controls>
-          <source src="<?= $video->AssetUrl ?>">
-        </video>
-        <input type="hidden" name="EventId" value="<?= $event->EventId ?>" readonly>
-        <input type="hidden" name="Id" value="<?= $video->AssetId ?>" readonly>
-        <button type="submit">Remove</button>
-      </form>
+        <form action="/removeVideo" method="post">
+          <video controls>
+            <source src="<?= $video->AssetUrl ?>">
+          </video>
+          <input type="hidden" name="EventId" value="<?= $event->EventId ?>" readonly>
+          <input type="hidden" name="Id" value="<?= $video->AssetId ?>" readonly>
+          <button type="submit">Remove</button>
+        </form>
 
-    <?php endforeach ?>
+      <?php endforeach ?>
+    </div>
 
-    <h2>Images</h2>
+    <h2 class="title_new">Images</h2>
 
     <form action="/addImage" method="post">
-      <h3>New Image</h3>
+      <h4 >New Image</h4>
       <input type="hidden" name="Id" value="<?= $event->EventId ?>" readonly>
       <label for="AssetUrl">Url:</label>
       <input type="text" name="AssetUrl" value="">
       <button type="submit">Add Image</button>
     </form>
 
-    <?php foreach ($images as $image) : ?>
-      <form action="/updateImage" method="post">
-        <img src="<?= $image->AssetUrl ?>">
-        <input type="hidden" name="EventId" value="<?= $event->EventId ?>" readonly>
-        <input type="hidden" name="Id" value="<?= $image->AssetId ?>" readonly>
-        <button type="submit" name="action" value="Delete">Remove</button>
-        <?php if (!$image->IsCover) : ?>
-          <button type="submit" name="action" value="Update">Make Cover</button>
-        <?php endif ?>
-      </form>
-    <?php endforeach ?>
+    <div class="grid">
+      <?php foreach ($images as $image) : ?>
+
+        <form action="/updateImage" method="post">
+          <div class="img_but">
+              <img src="<?= $image->AssetUrl ?>">
+              <input type="hidden" name="EventId" value="<?= $event->EventId ?>" readonly>
+              <input type="hidden" name="Id" value="<?= $image->AssetId ?>" readonly>
+              <button type="submit" name="action" value="Delete">Remove</button>
+              <?php if (!$image->IsCover) : ?>
+                <button type="submit" name="action" value="Update">Make Cover</button>
+              <?php endif ?>
+          </div>
+        </form>
+      <?php endforeach ?>
+    </div>
 
 <?php endif ?>
+</div>
