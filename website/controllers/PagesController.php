@@ -50,7 +50,7 @@ class PagesController {
                 WHERE IsCover = 1 OR IsCover IS NULL
                 ORDER BY DatePosted desc'
             );
-            require 'views/templates/insight.php';
+            require 'views/templates/events.php';
         }
         else {
             $event = $this->database->get('Events', 'Title="'.urldecode(htmlspecialchars($_GET['q'])).'"');
@@ -65,7 +65,7 @@ class PagesController {
                 
                 $gallery = $this->database->select('EventAssets', 'EventId = '.$event->EventId, 'IsVideo desc, IsCover desc', NULL);
 
-                require 'views/templates/new.php';
+                require 'views/templates/event.php';
             } else {
                 require 'views/templates/error.php';
             }

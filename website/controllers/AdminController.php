@@ -17,7 +17,7 @@ class AdminController {
         $email = htmlspecialchars($_POST['Email']);
         $password = htmlspecialchars($_POST['Password']);
 
-        $user = $this->database->get('Users', 'Email='.$email);
+        $user = $this->database->get('Users', 'Email="'.$email.'"');
 
         if ($user) {
             if (password_verify($password, $user->Password)) {
