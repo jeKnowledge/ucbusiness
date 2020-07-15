@@ -33,8 +33,8 @@
               ?>
             </h2>
 
-            <h4> <?= $event->Location ?> </h4>
-            <h5 id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </h5>
+            <h3> <?= $event->Location ?> </h3>
+            <h4 id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </h4>
             <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {

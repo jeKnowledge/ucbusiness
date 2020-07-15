@@ -1,7 +1,15 @@
+.about{
+  margin: 15vh 0 2vh 5vw;
+}
 .about h1 {
-    padding: 15vh 0 2vh 5vw;
     font-size: 2.5em;
 }
+.about p{
+  width:85vw;
+  justify-content: space-around;
+  font-size: 1.2em;
+}
+
 
 #team {
   margin: auto;
@@ -82,20 +90,31 @@
 
   .member1{
     align-items: center;
-    padding-top: 0;
-    padding-bottom: 4vh;
+    padding-top: 4vh;
+    padding-bottom: 8vh;
   }
   #team-grid{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 5vw;
+      grid-column-gap: 8vw;
       grid-row-gap: 3vh;
 
     }
   .about h1{
-    font-size: 1.2em;
-    margin-left: 8vw;
+    font-size: 1.3em;
     padding-left: 0;
+  }
+  .about p  {
+    font-size: 0.9em;
+  }
+  .member-info p, .member-info h4{
+    font-size: 1em;
+  }
+  .about{
+    margin: 15vh 0 2vh 9vw;
+  }
+  .member1-info, .member-info{
+    line-height: 1vh;
   }
 
 }

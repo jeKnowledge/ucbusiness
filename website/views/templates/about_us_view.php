@@ -17,6 +17,7 @@
     <h1>
         Team
     </h1>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed eros facilisis est porta imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur molestie eget mi id feugiat. Donec hendrerit libero mi. Suspendisse rhoncus malesuada ullamcorper. Nam feugiat placerat mauris at rutrum.  </p>
   </div>
 
   <?php if ($team_members) : ?>
@@ -34,7 +35,7 @@
       </div>
 
       <div id="team-grid">
-          <?php foreach ($team_members as $team_member) : ?>    
+          <?php foreach ($team_members as $team_member) : ?>
             <div class="member">
               <img src=<?= $team_member->MemberImage ?> alt=<?= $team_member->MemberName ?>/>
                 <div class="member-info">
