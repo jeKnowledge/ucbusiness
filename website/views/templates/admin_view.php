@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/views/assets/styles/css/general.css">
-    <link rel="stylesheet" href="/views/assets/styles/css/colors.css">
-    <link rel="stylesheet" href="/views/assets/styles/css/admin_view.css">
-    <?php require 'views/templates/base_head.php'; ?>
+    <?php require 'views/templates/admin_head.php'; ?>
     <title>Admin Page</title>
   </head>
 
@@ -14,24 +10,27 @@
   <?php require 'views/templates/admin_navbar.php'; ?>
 
 <div id="tables">
-    <div class="head-table">
-      <h2>Users</h2>
-      <div class="buttons">
-        <a href="/admin/users">
-          <button type="button"> Show all</button>
-        </a>
-        <a href="/admin/users/new">
-          <button type="button"> + New User</button>
-        </a>
-      </div>
-    </div>
 
-    <?php if ($users) : ?>
-      <?php require 'views/templates/tables/users_table.php' ?>
-    <?php else : ?>
-      <h3>No users to show...</h3>
+    <?php if ($this->user->IsAdmin) : ?>
+      <div class="head-table">
+        <h2>Users</h2>
+        <div class="buttons">
+          <a href="/admin/users">
+            <button type="button"> Show all</button>
+          </a>
+          <a href="/admin/users/new">
+            <button type="button"> + New User</button>
+          </a>
+        </div>
+      </div>
+
+      <?php if ($users) : ?>
+        <?php require 'views/templates/tables/users_table.php' ?>
+      <?php else : ?>
+        <h3>No users to show...</h3>
+      <?php endif ?>
+      <br>
     <?php endif ?>
-    <br>
     <div class="head-table">
       <h2>Events</h2>
       <div class="buttons">

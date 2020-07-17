@@ -38,9 +38,9 @@
             <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {
-                  echo $event->Description;
+                  echo html_entity_decode(htmlspecialchars_decode($event->Description));
                 } else {
-                  echo $event->DescriptionEn;
+                  echo html_entity_decode(htmlspecialchars_decode($event->DescriptionEn));
                 }
               ?>
             </p>
@@ -66,7 +66,8 @@
                   </video>
                 </div>
               <?php endif ?>
-    
+              
+              <?php if (sizeof($gallery) > 1) : ?>
               <div id="slider">
 
                 <div class="row">
@@ -92,6 +93,8 @@
                   <?php endforeach ?>
 
                 </div>
+
+                <?php endif ?>
               </div>
             </div>
 

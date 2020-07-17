@@ -25,9 +25,9 @@
                   <p>
                       <?php
                           if (strlen($event->Description) > 75) {
-                              echo substr($event->Description, 0, 75)."...";
+                              echo html_entity_decode(htmlspecialchars_decode(substr($event->Description, 0, 75)))."...";
                           } else {
-                              echo $event->Description;
+                              echo html_entity_decode(htmlspecialchars_decode($event->Description));
                           }
                       ?>
                   </p>
