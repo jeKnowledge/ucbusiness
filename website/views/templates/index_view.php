@@ -18,46 +18,35 @@
     </video>
 
 
-    <section id="news-container">
+    <section id="news">
       <h1>
           Events
       </h1>
-
-
-      <div id="news">
-
-        <?php foreach($events as $event) : ?>
-          <div class="rect-new">
-            <div class="cont">
-              <div class="txt-left">
-                <h4> <?= date("d/m/Y", strtotime($event->Date)) ?> <h4>
+      <div id="news-container">
+          <?php foreach ($events as $event) : ?>
+            <div class="new">
+                <?php if ($event->AssetUrl) : ?>
+                  <img src=<?= $event->AssetUrl ?> />
+                <?php else : ?>
+                  <img src="views/assets/images/ucb_cover.png">
+                <?php endif ?>
                 <h3> <?= $event->Title ?> </h3>
-              </div>
-              <?php if ($event->AssetUrl) : ?>
-                <img src=<?= $event->AssetUrl ?>>
-              <?php else : ?>
-                <img src="views/assets/images/ucb_cover.png" alt="">
-              <?php endif ?>
+                <p>
+                    <?php
+                        if (strlen($event->Description) > 75) {
+                            echo substr($event->Description, 0, 75)."...";
+                        } else {
+                            echo $event->Description;
+                        }
+                    ?>
+                </p>
+                <a href=<?= "/events?q=".urlencode($event->Title) ?>>
+                    <button>
+                        Read More
+                    </button>
+                </a>
             </div>
-            <div class="descrip">
-              <a>
-              <?php
-                  if (strlen($event->Description) > 75) {
-                      echo substr($event->Description, 0, 75)."...";
-                  } else {
-                      echo $event->Description;
-                  }
-              ?>
-              </a>
-            </div>
-            <a href=<?= "/events?q=".$event->Title ?>>
-              <button type="button">
-                  > Find out more
-              </button>
-            </a>
-          </div>
-        <?php endforeach ?>
-
+          <?php endforeach; ?>
       </div>
 
     </section>

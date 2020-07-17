@@ -14,8 +14,11 @@
 #news p, #news h3{
   width: 20vw;
 }
-#news p{
+ #news p {
   height:8vh;
+}
+#news h2, #news h3 {
+  font-size: 1.6em;
 }
 .new{
   display: flex;
@@ -53,15 +56,21 @@
   #news img {
       width: 40vw;
       height: 20vh;
-
   }
   #news h3 , #news p{
     font-size: 0.8em;
     width: 80vw;
   }
+   #news button{
+     font-size: 0.9em;
+   }
   #news p, #news h3{
     width: 40vw;
   }
+  #news p{
+    height: 12vh;
+  }
+
 
 
 
