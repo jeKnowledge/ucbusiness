@@ -9,13 +9,15 @@
 class Router {
 
     protected $database;
+    protected $translations;
     protected $routes = [
         'GET' => [],
         'POST' => []
     ];
 
-    function __construct($database) {
+    function __construct($database, $translations) {
         $this->database = $database;
+        $this->translations = $translations;
     }
 
     public function get($definitions) {
@@ -42,7 +44,7 @@ class Router {
     }
 
     protected function call_action($controller, $action) {
-        return (new $controller($this->database))->$action();
+        return (new $controller($this->database, $this->translations))->$action();
     }
 
 }

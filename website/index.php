@@ -5,7 +5,9 @@ $web_app = require 'config.php';
 $database = require 'core/db_init.php';
 require 'controllers/controllers_init.php';
 
-$router = new Router($database);
+$translations = require 'translations.php';
+
+$router = new Router($database, $translations);
 require 'routes.php';
 
 session_start();

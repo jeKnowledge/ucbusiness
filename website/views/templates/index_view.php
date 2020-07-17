@@ -20,7 +20,7 @@
 
     <section id="news">
       <h1>
-          Events
+          <?= $this->translations["home"][$_SESSION["lang"]]["events"]["Title"] ?>
       </h1>
       <div id="news-container">
           <?php foreach ($events as $event) : ?>
@@ -30,19 +30,35 @@
                 <?php else : ?>
                   <img src="views/assets/images/ucb_cover.png">
                 <?php endif ?>
-                <h3> <?= $event->Title ?> </h3>
+                <h3> 
+                  <?php
+                    if ($_SESSION["lang"] == "en") {
+                      echo $event->TitleEn;
+                    } else {
+                      echo $event->Title;
+                    }
+                  ?> 
+                </h3>
                 <p>
                     <?php
                         if (strlen($event->Description) > 75) {
-                            echo substr($event->Description, 0, 75)."...";
+                            if ($_SESSION["lang"] == "en") {
+                              echo substr($event->DescriptionEn, 0, 75)."...";
+                            } else {
+                              echo substr($event->Description, 0, 75)."...";
+                            }
                         } else {
-                            echo $event->Description;
+                            if ($_SESSION["lang"] == "en") {
+                              echo $event->DescriptionEn;
+                            } else {
+                              echo $event->Description;
+                            }
                         }
                     ?>
                 </p>
                 <a href=<?= "/events?q=".urlencode($event->Title) ?>>
                     <button>
-                        Read More
+                      <?= $this->translations["home"][$_SESSION["lang"]]["events"]["Button"] ?>
                     </button>
                 </a>
             </div>
@@ -61,12 +77,12 @@
 
         <div class="txt-ucb">
           <h4>
-            Transform the University of Coimbra into an essential partner for the business world, structured in 3 major business areas:
+            <?= $this->translations["home"][$_SESSION["lang"]]["info"]["Text"] ?>
           </h4>
           <div id="areas">
-            <h3>Large Companies</h3>
-            <h3>National SMEs</h3>
-            <h3>Start-ups and Spin-offs</h3>
+            <h3><?= $this->translations["home"][$_SESSION["lang"]]["info"]["BusinessAreas"][0] ?></h3>
+            <h3><?= $this->translations["home"][$_SESSION["lang"]]["info"]["BusinessAreas"][1] ?></h3>
+            <h3><?= $this->translations["home"][$_SESSION["lang"]]["info"]["BusinessAreas"][2] ?></h3>
           </div>
         </div>
       </div>

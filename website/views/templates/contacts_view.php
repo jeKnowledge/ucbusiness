@@ -5,7 +5,7 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
-    <title>Insight</title>
+    <title><?= $this->translations["navbar"][$_SESSION["lang"]][3] ?></title>
   </head>
   <body>
     <?php require 'views/templates/navbar.php'; ?>
@@ -15,17 +15,21 @@
       <div id="contacts">
 
           <h1>
-            Get in Touch
+            <?= $this->translations["contacts"][$_SESSION["lang"]]["info"]["Title"] ?>
           </h1>
 
           <p>
             <h3>
-                Address
+              <?php
+                if ($_SESSION["lang"] == "en") {
+                  echo "Address";
+                } else {
+                  echo "Morada";
+                }
+              ?>
             </h3>
             <h4>
-                Rectory Pólo II
-                <br>R. Luís Reis dos Santos 290,
-                <br>3030-790 Coimbra
+              <?= $this->translations["contacts"][$_SESSION["lang"]]["info"]["Address"] ?>
             </h4>
           </p>
 
@@ -36,7 +40,13 @@
 
           <p>
             <h3>
-                Social Media
+              <?php
+                if ($_SESSION["lang"] == "en") {
+                  echo "Social Media";
+                } else {
+                  echo "Redes Sociais";
+                }
+              ?>
             </h3>
               <h4>Facebook:
               <a href="https://www.facebook.com/UCBusinessGlobal/" target="_blank"><br>https://www.facebook.com/UCBusinessGlobal/ </a></h4>
@@ -50,10 +60,16 @@
       <div id="form">
         <form action="/sendEmail" method="post">
           <h2 class=form-title>
-              Send us a message
+            <?= $this->translations["contacts"][$_SESSION["lang"]]["formTitle"] ?>
           </h2>
           <h4>
-              Name:
+            <?php
+              if ($_SESSION["lang"] == "en") {
+                echo "Name:";
+              } else {
+                echo "Nome:";
+              }
+            ?>
           </h4>
           <input name = "name" id="name" type="name"  required >
   
@@ -61,12 +77,24 @@
           <input name = "email" id="mail" type="email"  required >
   
           <h4>
-              Message:
+            <?php
+              if ($_SESSION["lang"] == "en") {
+                echo "Message:";
+              } else {
+                echo "Mensagem:";
+              }
+            ?>
           </h4>
           <textarea name = "message" id="text" type="text" required ></textarea>
   
           <button type="submit" id="submit-button">
-            Send
+            <?php
+              if ($_SESSION["lang"] == "en") {
+                echo "Send";
+              } else {
+                echo "Enviar";
+              }
+            ?>
           </button>
         </form>
       </div>

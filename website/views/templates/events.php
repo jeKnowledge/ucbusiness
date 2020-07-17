@@ -5,14 +5,14 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
-    <title>Events</title>
+    <title><?= $this->translations["navbar"][$_SESSION["lang"]][2] ?></title>
   </head>
   <body>
     <?php require 'views/templates/navbar.php'; ?>
 
     <section id="news">
 
-      <h1>Events</h1>
+      <h1><?= $this->translations["events"][$_SESSION["lang"]]["Title"] ?></h1>
         <div id="news-container">
             <?php foreach ($events as $event) : ?>
               <div class="new">
@@ -21,19 +21,35 @@
                   <?php else : ?>
                     <img src="views/assets/images/ucb_cover.png">
                   <?php endif ?>
-                  <h3> <?= $event->Title ?> </h3>
+                  <h3>
+                    <?php
+                      if ($_SESSION["lang"] == "en") {
+                        echo $event->TitleEn;
+                      } else {
+                        echo $event->Title;
+                      }
+                    ?>
+                  </h3>
                   <p>
                       <?php
                           if (strlen($event->Description) > 75) {
+                            if ($_SESSION["lang"] == "en") {
+                              echo html_entity_decode(htmlspecialchars_decode(substr($event->DescriptionEn, 0, 75)))."...";
+                            } else {
                               echo html_entity_decode(htmlspecialchars_decode(substr($event->Description, 0, 75)))."...";
+                            }
                           } else {
+                            if ($_SESSION["lang"] == "en") {
+                              echo html_entity_decode(htmlspecialchars_decode($event->DescriptionEn));
+                            } else {
                               echo html_entity_decode(htmlspecialchars_decode($event->Description));
+                            }
                           }
                       ?>
                   </p>
                   <a href=<?= "/events?q=".urlencode($event->Title) ?>>
                       <button>
-                          Read More
+                          <?= $this->translations["events"][$_SESSION["lang"]]["Button"] ?>
                       </button>
                   </a>
               </div>

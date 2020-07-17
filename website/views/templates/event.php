@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
-    <title>Insight</title>
+    <title><?= $this->translations["navbar"][$_SESSION["lang"]][2] ?></title>
   </head>
   <body>
 
@@ -25,10 +25,10 @@
           <div id="text">
             <h2>
               <?php
-                if ($_SESSION["lang"] == "pt") {
-                  echo $event->Title;
-                } else {
+                if ($_SESSION["lang"] == "en") {
                   echo $event->TitleEn;
+                } else {
+                  echo $event->Title;
                 }
               ?>
             </h2>
@@ -37,10 +37,10 @@
             <h5 id ="date"> <?= date("d/m/Y", strtotime($event->Date))." ".date("H:i", strtotime($event->Time)) ?> </h5>
             <p>
               <?php
-                if ($_SESSION["lang"] == "pt") {
-                  echo html_entity_decode(htmlspecialchars_decode($event->Description));
-                } else {
+                if ($_SESSION["lang"] == "en") {
                   echo html_entity_decode(htmlspecialchars_decode($event->DescriptionEn));
+                } else {
+                  echo html_entity_decode(htmlspecialchars_decode($event->Description));
                 }
               ?>
             </p>

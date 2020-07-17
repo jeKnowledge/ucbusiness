@@ -3,10 +3,12 @@
 class AdminController {
 
     protected $database;
+    protected $translations;
     protected $user;
 
-    function __construct($database) {
+    function __construct($database, $translations) {
         $this->database = $database;
+        $this->translations = $translations;
 
         if (isset($_SESSION['loggedIn'])) {
             $this->user = $this->database->get('Users', 'Id='.$_SESSION['loggedIn']);

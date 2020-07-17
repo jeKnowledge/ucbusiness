@@ -3,9 +3,11 @@
 class PagesController {
 
     protected $database;
+    protected $translations;
 
-    function __construct($database) {
+    function __construct($database, $translations) {
         $this->database = $database;
+        $this->translations = $translations;
     }
 
     public function home() {
@@ -24,7 +26,7 @@ class PagesController {
     public function about() {
         $team_members = $this->database->selectCustom(
             'SELECT 
-            member.MemberName, member.MemberImage, member.MemberEmail, role.RoleName
+            member.*, role.*
             FROM Members member
             INNER JOIN Roles role ON member.RoleId = role.RoleId
             ORDER BY

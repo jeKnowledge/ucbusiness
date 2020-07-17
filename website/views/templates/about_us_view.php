@@ -6,7 +6,7 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
-    <title>About Us</title>
+    <title><?= $this->translations["navbar"][$_SESSION["lang"]][1] ?></title>
   </head>
   <body>
     <?php require 'views/templates/navbar.php'; ?>
@@ -15,9 +15,9 @@
     <div class="about">
 
     <h1>
-        Team
+      <?= $this->translations["about"][$_SESSION["lang"]]["TeamTitle"] ?>
     </h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed eros facilisis est porta imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur molestie eget mi id feugiat. Donec hendrerit libero mi. Suspendisse rhoncus malesuada ullamcorper. Nam feugiat placerat mauris at rutrum.  </p>
+    <p> <?= $this->translations["about"][$_SESSION["lang"]]["Text"] ?> </p>
   </div>
 
   <?php if ($team_members) : ?>
@@ -28,7 +28,13 @@
             <div class="member1-info">
               <h4><?= $first_member->MemberName ?></h4>
               <h5>
-                <?= $first_member->RoleName ?>
+                <?php
+                  if ($_SESSION["lang"] == "en") {
+                    echo $first_member->RoleNameEn;
+                  } else {
+                    echo $first_member->RoleName;
+                  }
+                ?>
               </h5>
               <h5><?= $first_member->MemberEmail ?></h5>
             </div>
@@ -40,7 +46,15 @@
               <img src=<?= $team_member->MemberImage ?> alt=<?= $team_member->MemberName ?>/>
                 <div class="member-info">
                     <h4><?= $team_member->MemberName ?></h4>
-                    <p><?= $team_member->RoleName ?><p>
+                    <p>
+                      <?php
+                        if ($_SESSION["lang"] == "en") {
+                          echo $team_member->RoleNameEn;
+                        } else {
+                          echo $team_member->RoleName;
+                        }
+                      ?>
+                    <p>
                     <p><?= $team_member->MemberEmail ?></p>
                 </div>
             </div>

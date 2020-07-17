@@ -20,11 +20,11 @@
         <div class="cookiebanner-message">
         <h2 class="cookiebanner-text">
             <p>
-                This website site uses cookies to improve your browsing experience. By continuing to use this site, you are agreeing to our use of cookies.
+                <?= $this->translations["cookieBanner"][$_SESSION["lang"]]["Text"] ?>
             </p>
         </h2>
         <button id="cookie-button">
-            Accept and close
+            <?= $this->translations["cookieBanner"][$_SESSION["lang"]]["Button"] ?>
         </button>
         </div>
     </div>
@@ -41,10 +41,10 @@
             </button>
 
             <h4 id="menu-txt">
-                <a href="/">Home</a>
-                <a href="/about">About us</a>
-                <a href="/events">Events</a>
-                <a href="/contacts">Contacts</a>
+                <a href="/"><?= $this->translations["navbar"][$_SESSION["lang"]][0] ?></a>
+                <a href="/about"><?= $this->translations["navbar"][$_SESSION["lang"]][1] ?></a>
+                <a href="/events"><?= $this->translations["navbar"][$_SESSION["lang"]][2] ?></a>
+                <a href="/contacts"><?= $this->translations["navbar"][$_SESSION["lang"]][3] ?></a>
             </h4>
         </div>
     </div>
