@@ -5,8 +5,6 @@
 
     <?php require 'views/templates/base_head.php'; ?>
 
-    <script src="views/assets/scripts/get_form_info.js"></script>
-
     <title>Insight</title>
   </head>
   <body>
@@ -50,7 +48,7 @@
       </div>
 
       <div id="form">
-        <form>
+        <form action="/sendEmail" method="post">
           <h2 class=form-title>
               Send us a message
           </h2>
@@ -58,17 +56,17 @@
               Name:
           </h4>
           <input name = "name" id="name" type="name"  required >
-
+  
           <h4> E-mail:</h4>
           <input name = "email" id="mail" type="email"  required >
-
+  
           <h4>
               Message:
           </h4>
           <textarea name = "message" id="text" type="text" required ></textarea>
-
-          <button id="submit-button">
-              Submit
+  
+          <button type="submit" id="submit-button">
+            Send
           </button>
         </form>
       </div>
