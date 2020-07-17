@@ -1,7 +1,15 @@
 <?php
 
 return [
-    "navbar" => [],
+    "navbar" => [
+        "en" => [
+            'Home',
+            'About us'
+        ],
+        "pt" => [
+            'Pagina inicial'
+        ]
+    ],
     "home" => [],
     "about" => [],
     "events" => [],

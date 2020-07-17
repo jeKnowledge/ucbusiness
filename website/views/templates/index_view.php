@@ -36,7 +36,7 @@
               <?php if ($event->AssetUrl) : ?>
                 <img src=<?= $event->AssetUrl ?>>
               <?php else : ?>
-                <img src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="">
+                <img src="views/assets/images/ucb_cover.png" alt="">
               <?php endif ?>
             </div>
             <div class="descrip">

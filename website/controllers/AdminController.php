@@ -90,7 +90,7 @@ class AdminController {
             if ($user) {
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/error.php';
             }
         }
     }
@@ -124,7 +124,7 @@ class AdminController {
 
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/error.php';
             }
         }
     }
@@ -155,7 +155,7 @@ class AdminController {
             if ($role) {
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/error.php';
             }
         }
     }
@@ -196,7 +196,7 @@ class AdminController {
                 $roles = $this->database->selectAll('Roles', 'RolePosition asc');
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/error.php';
             }
         }
     }
@@ -261,10 +261,11 @@ class AdminController {
             ]
         );
 
-        $event = $this->database->get('Events', 'Title='.htmlspecialchars($_POST['Title']));
+        $title = htmlspecialchars($_POST['Title']);
+        $event = $this->database->get('Events', "Title='{$title}'");
 
         $host = $_SERVER['HTTP_HOST'];
-        $uri = '/admin/events?q='.$event->EventId;
+        $uri = 'admin/events?q='.$event->EventId;
         header("Location: http://{$host}/{$uri}");
         exit;
     }

@@ -16,7 +16,7 @@
       </div>
       <div class="form-element">
         <label for="DescriptionEn">Description(EN):</label>
-        <textarea type="text" name="DescriptionEn" value=""> </textarea>
+        <textarea type="text" name="DescriptionEn" value=""></textarea>
       </div>
       <div class="form-element">
         <label for="Location">Location:</label>
@@ -49,11 +49,11 @@
         </div>
         <div class="form-element">
           <label for="Description">Description:</label>
-          <textarea type="text" name="Description" value="<?= $event->Description ?>"></textarea>
+          <textarea type="text" name="Description"><?= $event->Description ?></textarea>
         </div>
         <div class="form-element">
           <label for="DescriptionEn">Description(EN):</label>
-          <textarea type="text" name="DescriptionEn" value="<?= $event->DescriptionEn ?>"></textarea>
+          <textarea type="text" name="DescriptionEn"><?= $event->DescriptionEn ?></textarea>
         </div>
         <div class="form-element">
           <label for="Location">Location:</label>
