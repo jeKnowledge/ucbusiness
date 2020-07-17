@@ -19,15 +19,15 @@
                   <?php if ($event->AssetUrl) : ?>
                     <img src=<?= $event->AssetUrl ?> />
                   <?php else : ?>
-                    <img src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg">
+                    <img src="views/assets/images/ucb_cover.png">
                   <?php endif ?>
                   <h3> <?= $event->Title ?> </h3>
                   <p>
                       <?php
                           if (strlen($event->Description) > 75) {
-                              echo substr($event->Description, 0, 75)."...";
+                              echo html_entity_decode(htmlspecialchars_decode(substr($event->Description, 0, 75)))."...";
                           } else {
-                              echo $event->Description;
+                              echo html_entity_decode(htmlspecialchars_decode($event->Description));
                           }
                       ?>
                   </p>

@@ -3,19 +3,19 @@
       <h2> NEW MEMBER </h2>
       <div class="form-element">
         <label for="Name">Name:</label>
-        <input type="text" name="Name" value="">
+        <input type="text" name="Name" value="" required>
       </div>
       <div class="form-element">
         <label for="Email">E-mail:</label>
-        <input type="text" name="Email" value="">
+        <input type="text" name="Email" value="" required>
       </div>
       <div class="form-element">
         <label for="Image">Image(URL):</label>
-        <input type="text" name="Image" value="">
+        <input type="text" name="Image" value="" required>
       </div>
       <div class="form-element">
         <label for="RoleId">Role:</label>
-        <select name="RoleId" id="">
+        <select name="RoleId" id="" required>
             <?php foreach($roles as $role) : ?>
                 <option value=<?= $role->RoleId ?>><?= $role->RoleName ?></option>
             <?php endforeach ?>
@@ -32,19 +32,19 @@
       <input type="hidden" name="Id" value="<?= $member->MemberId ?>" readonly>
       <div class="form-element">
         <label for="Name">Name:</label>
-        <input type="text" name="Name" value="<?= $member->MemberName ?>">
+        <input type="text" name="Name" value="<?= $member->MemberName ?>" required>
       </div>
       <div class="form-element">
         <label for="Email">E-mail:</label>
-        <input type="text" name="Email" value="<?= $member->MemberEmail ?>">
+        <input type="text" name="Email" value="<?= $member->MemberEmail ?>" required>
       </div>
       <div class="form-element">
         <label for="Image">Image(URL):</label>
-        <input type="text" name="Image" value="<?= $member->MemberImage ?>">
+        <input type="text" name="Image" value="<?= $member->MemberImage ?>" required>
       </div>
       <div class="form-element">
         <label for="RoleId">Role:</label>
-        <select name="RoleId" id="">
+        <select name="RoleId" id="" required>
             <?php foreach($roles as $role) : ?>
                 <option value=<?= $role->RoleId ?> <?php if ($role->RoleId == $member->RoleId) : ?> selected <?php endif ?>><?= $role->RoleName ?></option>
             <?php endforeach ?>

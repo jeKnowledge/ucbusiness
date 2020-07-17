@@ -19,7 +19,7 @@ class AdminController {
 
         $user = $this->database->get('Users', 'Email="'.$email.'"');
 
-        if ($user) {
+        if ($user && $user->IsActive) {
             if (password_verify($password, $user->Password)) {
                 $_SESSION['loggedIn'] = $user->Id;
             }
@@ -43,7 +43,7 @@ class AdminController {
 
     public function dashboard() {
 
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -65,9 +65,16 @@ class AdminController {
     }
 
     public function users() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
+        }
+
+        if (!$this->user->IsAdmin) {
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin';
+            header("Location: http://{$host}/{$uri}");
+            exit;
         }
 
         $type = 'Users';
@@ -90,13 +97,13 @@ class AdminController {
             if ($user) {
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/admin_error.php';
             }
         }
     }
 
     public function events() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -124,13 +131,13 @@ class AdminController {
 
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/admin_error.php';
             }
         }
     }
 
     public function roles() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -155,13 +162,13 @@ class AdminController {
             if ($role) {
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/admin_error.php';
             }
         }
     }
 
     public function members() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -196,15 +203,22 @@ class AdminController {
                 $roles = $this->database->selectAll('Roles', 'RolePosition asc');
                 require 'views/templates/admin_element.php';
             } else {
-                die('Não existe bro');
+                require 'views/templates/admin_error.php';
             }
         }
     }
 
     public function newUser() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
+        }
+
+        if (!$this->user->IsAdmin) {
+            $host = $_SERVER['HTTP_HOST'];
+            $uri = 'admin';
+            header("Location: http://{$host}/{$uri}");
+            exit;
         }
 
         $type = 'Users';
@@ -213,7 +227,7 @@ class AdminController {
     }
 
     public function newEvent() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -224,7 +238,7 @@ class AdminController {
     }
 
     public function newRole() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -235,7 +249,7 @@ class AdminController {
     }
 
     public function newMember() {
-        if (!$this->user) {
+        if (!$this->user || !$this->user->IsActive) {
             require 'views/templates/admin_login.php';
             die();
         }
@@ -252,8 +266,8 @@ class AdminController {
             [
                 'Title' => htmlspecialchars($_POST['Title']),
                 'TitleEn' => htmlspecialchars($_POST['TitleEn']),
-                'Description' => htmlspecialchars($_POST['Description']),
-                'DescriptionEn' => htmlspecialchars($_POST['DescriptionEn']),
+                'Description' => htmlentities(htmlspecialchars($_POST['Description'])),
+                'DescriptionEn' => htmlentities(htmlspecialchars($_POST['DescriptionEn'])),
                 'Location' => htmlspecialchars($_POST['Location']),
                 'Date' => htmlspecialchars($_POST['Date']),
                 'Time' => htmlspecialchars($_POST['Time']),
@@ -261,26 +275,36 @@ class AdminController {
             ]
         );
 
-        $event = $this->database->get('Events', 'Title='.htmlspecialchars($_POST['Title']));
+        $title = htmlspecialchars($_POST['Title']);
+        $event = $this->database->get('Events', "Title='{$title}'");
 
         $host = $_SERVER['HTTP_HOST'];
-        $uri = '/admin/events?q='.$event->EventId;
+        $uri = 'admin/events?q='.$event->EventId;
         header("Location: http://{$host}/{$uri}");
         exit;
     }
 
     public function updateEvent() {
         if (htmlspecialchars($_POST['action']) == 'Update') {
+
+            $title = htmlspecialchars($_POST['Title']);
+            $title_en = htmlspecialchars($_POST['TitleEn']);
+            $description = htmlentities(htmlspecialchars($_POST['Description']));
+            $description_en = htmlentities(htmlspecialchars($_POST['DescriptionEn']));
+            $location = htmlspecialchars($_POST['Location']);
+            $date = htmlspecialchars($_POST['Date']);
+            $time = htmlspecialchars($_POST['Time']);
+
             $this->database->update(
                 'Events',
                 [
-                    'Title="'.htmlspecialchars($_POST['Title']).'"',
-                    'TitleEn="'.htmlspecialchars($_POST['TitleEn']).'"',
-                    'Description="'.htmlspecialchars($_POST['Description']).'"',
-                    'DescriptionEn="'.htmlspecialchars($_POST['DescriptionEn']).'"',
-                    'Location="'.htmlspecialchars($_POST['Location']).'"',
-                    'Date="'.htmlspecialchars($_POST['Date']).'"',
-                    'Time="'.htmlspecialchars($_POST['Time']).'"'
+                    "Title='{$title}'",
+                    "TitleEn='{$title_en}'",
+                    "Description='{$description}'",
+                    "DescriptionEn='{$description_en}'",
+                    "Location='{$location}'",
+                    "Date='{$date}'",
+                    "Time='{$time}'"
                 ],
                 "EventId=".htmlspecialchars($_POST['Id'])
             );
@@ -395,12 +419,17 @@ class AdminController {
 
     public function updateRole() {
         if (htmlspecialchars($_POST['action']) == 'Update') {
+
+            $role_name = htmlspecialchars($_POST['Name']);
+            $role_name_en = htmlspecialchars($_POST['NameEn']);
+            $role_position = htmlspecialchars($_POST['Position']);
+
             $this->database->update(
                 'Roles',
                 [
-                    'RoleName="'.htmlspecialchars($_POST['Name']).'"',
-                    'RoleNameEn="'.htmlspecialchars($_POST['NameEn']).'"',
-                    'RolePosition="'.htmlspecialchars($_POST['Position']).'"'
+                    "RoleName='{$role_name}'",
+                    "RoleNameEn='{$role_name_en}'",
+                    "RolePosition='{$role_position}'"
                 ],
                 "RoleId=".htmlspecialchars($_POST['Id'])
             );
@@ -438,13 +467,19 @@ class AdminController {
 
     public function updateMember() {
         if (htmlspecialchars($_POST['action']) == 'Update') {
+
+            $member_name = htmlspecialchars($_POST['Name']);
+            $member_email = htmlspecialchars($_POST['Email']);
+            $member_image = htmlspecialchars($_POST['Image']);
+            $role_id = htmlspecialchars($_POST['RoleId']);
+
             $this->database->update(
                 'Members',
                 [
-                    'MemberName="'.htmlspecialchars($_POST['Name']).'"',
-                    'MemberEmail="'.htmlspecialchars($_POST['Email']).'"',
-                    'MemberImage="'.htmlspecialchars($_POST['Image']).'"',
-                    'RoleId="'.htmlspecialchars($_POST['RoleId']).'"'
+                    "MemberName='{$member_name}'",
+                    "MemberEmail='{$member_email}'",
+                    "MemberImage='{$member_image}'",
+                    "RoleId='{$role_id}'"
                 ],
                 "MemberId=".htmlspecialchars($_POST['Id'])
             );
@@ -465,12 +500,8 @@ class AdminController {
 
     public function add_user() {
         $is_admin = 0;
-        $is_staff = 0;
         if (isset($_POST['IsAdmin'])) {
             $is_admin = 1;
-        }
-        if (isset($_POST['IsStaff'])) {
-            $is_staff = 1;
         }
 
         $password = htmlspecialchars($_POST['Password']);
@@ -484,7 +515,6 @@ class AdminController {
                 'Email' => htmlspecialchars($_POST['Email']),
                 'Password' => $hashed_password,
                 'IsAdmin' => $is_admin,
-                'IsStaff' => $is_staff,
                 'IsActive' => 1
             ]
         );
@@ -503,25 +533,43 @@ class AdminController {
             if (isset($_POST['IsAdmin'])) {
                 $is_admin = 1;
             }
-            if (isset($_POST['IsStaff'])) {
-                $is_staff = 1;
-            }
             if (isset($_POST['IsActive'])) {
                 $is_active = 1;
             }
 
-            $this->database->update(
-                'Users',
-                [
-                    'FirstName="'.htmlspecialchars($_POST['FirstName']).'"',
-                    'LastName="'.htmlspecialchars($_POST['LastName']).'"',
-                    'Email="'.htmlspecialchars($_POST['Email']).'"',
-                    'IsAdmin='.$is_admin,
-                    'IsStaff='.$is_staff,
-                    'IsActive='.$is_active
-                ],
-                "Id=".htmlspecialchars($_POST['Id'])
-            );
+            $first_name = htmlspecialchars($_POST['FirstName']);
+            $last_name = htmlspecialchars($_POST['LastName']);
+            $email = htmlspecialchars($_POST['Email']);
+            
+            if (isset($_POST['ChangePassword'])) {
+                $password = htmlspecialchars($_POST['Password']);
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                $this->database->update(
+                    'Users',
+                    [
+                        "FirstName='{$first_name}'",
+                        "LastName='{$last_name}'",
+                        "Email='{$email}'",
+                        "Password='{$hashed_password}'",
+                        "IsAdmin='{$is_admin}'",
+                        "IsActive='{$is_active}'"
+                    ],
+                    "Id=".htmlspecialchars($_POST['Id'])
+                );
+            } else {
+                $this->database->update(
+                    'Users',
+                    [
+                        "FirstName='{$first_name}'",
+                        "LastName='{$last_name}'",
+                        "Email='{$email}'",
+                        "IsAdmin='{$is_admin}'",
+                        "IsActive='{$is_active}'"
+                    ],
+                    "Id=".htmlspecialchars($_POST['Id'])
+                );
+            }
 
             $host = $_SERVER['HTTP_HOST'];
             $uri = 'admin/users?q='.htmlspecialchars($_POST['Id']);

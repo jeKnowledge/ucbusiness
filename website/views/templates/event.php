@@ -17,7 +17,7 @@
     <?php if ($cover_image) : ?>
       <img id="capa" src=<?= $cover_image[0]->AssetUrl ?> alt="newsImage">
     <?php else : ?>
-      <img id="capa" src="https://live.staticflickr.com/2469/3640569080_819b5294b3_b.jpg" alt="newsImage">
+      <img id="capa" src="views/assets/images/ucb_cover.png" alt="newsImage">
     <?php endif ?>
     <section id="new">
 
@@ -38,9 +38,9 @@
             <p>
               <?php
                 if ($_SESSION["lang"] == "pt") {
-                  echo $event->Description;
+                  echo html_entity_decode(htmlspecialchars_decode($event->Description));
                 } else {
-                  echo $event->DescriptionEn;
+                  echo html_entity_decode(htmlspecialchars_decode($event->DescriptionEn));
                 }
               ?>
             </p>
@@ -66,7 +66,8 @@
                   </video>
                 </div>
               <?php endif ?>
-    
+              
+              <?php if (sizeof($gallery) > 1) : ?>
               <div id="slider">
 
                 <div class="row">
@@ -92,6 +93,8 @@
                   <?php endforeach ?>
 
                 </div>
+
+                <?php endif ?>
               </div>
             </div>
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <?php require 'views/templates/base_head.php'; ?>
+        <?php require 'views/templates/admin_head.php'; ?>
         <title>Page not found</title>
     </head>
     <body>
-        <?php require 'views/templates/navbar.php'; ?>
+        <?php require 'views/templates/admin_navbar.php'; ?>
       <div id="error-rect">
           <div id="error-message">
             <h1 > 404 <br> Page not found </h1>

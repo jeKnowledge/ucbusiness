@@ -7,14 +7,14 @@
     </tr>
     <?php foreach ($users as $user) : ?>
         <tr>
-            <td><a href=<?= "/admin/users?q=".$user->Id ?>><?= $user->FirstName ?></a></td>
+            <td><a href=<?= "/admin/users?q=".$user->Id ?>><?= $user->FirstName." ".$user->LastName ?></a></td>
             <td><?= $user->Email ?></td>
             <td>
             <?php 
                 if ($user->IsAdmin) {
-                echo 'Administrator';
+                    echo 'Administrator';
                 } else {
-                echo 'Staff';
+                    echo 'Staff';
                 } 
             ?>
             </td>
