@@ -3,7 +3,6 @@
   <head>
     <meta name="keywords" content="uc, business, coimbra, portugal, invest, partnership, value, students, investigator">
     <link rel="stylesheet" href="views/assets/styles/css/style.css">
-
     <?php require 'views/templates/base_head.php'; ?>
 
     <title>UC Business</title>
@@ -30,14 +29,14 @@
                 <?php else : ?>
                   <img src="views/assets/images/ucb_cover.png">
                 <?php endif ?>
-                <h3> 
+                <h3>
                   <?php
                     if ($_SESSION["lang"] == "en") {
                       echo $event->TitleEn;
                     } else {
                       echo $event->Title;
                     }
-                  ?> 
+                  ?>
                 </h3>
                 <p>
                     <?php
