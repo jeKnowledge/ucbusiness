@@ -98,13 +98,13 @@
   #login{
     padding: 5% 0;
   }
-  .login-rect .form-element{
+  .login-rect .login-form-element{
     padding: 2%;
     font-size: 1.2em;
     margin: auto;
   }
 
-  #login .form-element input{
+  .login-form-element input{
       height: 3vh;
       width: 16vw;
       margin-top: 1vh;
@@ -134,10 +134,9 @@
     border: none;
     height: 4vh;
   }
-  #login .form-but button:hover{
+  .login-form-but button:hover{
       background: #0053ba;
   }
-
 
 
   /* -----------NEW SOMETHING------------ */
@@ -178,7 +177,6 @@
   }
   .form-element select {
     width:30vw;
-    margin-left: 16vw;
   }
   form img, form video{
     height: 22vh;
