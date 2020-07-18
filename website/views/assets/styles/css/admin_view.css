@@ -1,3 +1,4 @@
+
   /* ------------HEADER----------- */
   #logo_ucb {
     height: 5vh;
@@ -103,7 +104,7 @@
     margin: auto;
   }
 
-  .form-element input{
+  #login .form-element input{
       height: 3vh;
       width: 16vw;
       margin-top: 1vh;
@@ -140,15 +141,23 @@
 
 
   /* -----------NEW SOMETHING------------ */
+
   form{
     margin:4%;
   }
   .form-element{
-    width:45vw;
-    margin: 1% 0;
-
-    align-items: center;
+    width:60vw;
+    margin: 2% 0;
+  }
+  .form-element label{
     display: block;
+  }
+  .form-element input, .form-element textarea{
+    margin-top: 2vh;
+  }
+  .form-element input{
+      height: 3vh;
+      width: 30vw;
   }
   textarea{
     min-width: 30vw;
