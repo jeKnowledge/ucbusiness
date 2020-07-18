@@ -145,14 +145,14 @@
     margin:4%;
   }
   .form-element{
-    width:35vw;
+    width:45vw;
     margin: 1% 0;
-    display: flex;
-    justify-content: space-between;
+
     align-items: center;
+    display: block;
   }
   textarea{
-    min-width: 16vw;
+    min-width: 30vw;
     min-height: 20vh;
   }
 
@@ -224,6 +224,7 @@
   #login .form-element{
     width:70vw;
   }
+
   .login-rect{
     width:90vw;
   }
