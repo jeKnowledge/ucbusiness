@@ -32,17 +32,17 @@
                   </h3>
                   <p>
                       <?php
-                          if (strlen($event->Description) > 75) {
-                            if ($_SESSION["lang"] == "en") {
-                              echo html_entity_decode(htmlspecialchars_decode(substr($event->DescriptionEn, 0, 75)))."...";
+                          if ($_SESSION["lang"] == "en") {
+                            if (strlen($event->DescriptionEn) > 120) {
+                              echo html_entity_decode(htmlspecialchars_decode(substr($event->DescriptionEn, 0, 120)))."...";
                             } else {
-                              echo html_entity_decode(htmlspecialchars_decode(substr($event->Description, 0, 75)))."...";
+                              echo $event->DescriptionEn;
                             }
                           } else {
-                            if ($_SESSION["lang"] == "en") {
-                              echo html_entity_decode(htmlspecialchars_decode($event->DescriptionEn));
+                            if (strlen($event->Description) > 120) {
+                              echo html_entity_decode(htmlspecialchars_decode(substr($event->Description, 0, 120)))."...";
                             } else {
-                              echo html_entity_decode(htmlspecialchars_decode($event->Description));
+                              echo $event->Description;
                             }
                           }
                       ?>
