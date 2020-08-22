@@ -94,18 +94,15 @@ class PagesController {
         $message_body = htmlspecialchars($_POST["message"]);
 
         $message = sprintf(
-            "%s\n\n%s\n%s",
-            $message_body,
+            "From: %s\nE-mail: %s\n\n%s",
             $name,
-            $email
+            $email,
+            $message_body
         );
 
-        mail("jfacc31@gmail.com", "Website form submition", $message);
+        mail("ucbusiness@uc.pt", "Website form submition", $message);
 
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = 'contacts';
-        header("Location: http://{$host}/{$uri}");
-        exit;
+        header("Refresh:0");
     }
 
 }
